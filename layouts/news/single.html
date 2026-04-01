@@ -1,24 +1,24 @@
 {{ define "main" }}
-<div class="page-header">
-  <div class="container">
-    <p style="font-size:.875rem;color:rgba(255,255,255,.5);margin-bottom:.5rem;"><a href="/news" style="color:rgba(255,255,255,.5);">News</a> &rsaquo;</p>
-    <h1>{{ .Title }}</h1>
-    <p style="margin-top:.5rem;">{{ .Date.Format "2 January 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}</p>
+<div class="bg-surface text-white py-12">
+  <div class="max-w-container mx-auto px-6">
+    <p class="text-[0.875rem] text-white/50 mb-2"><a href="/news" class="text-white/50 hover:text-white transition-colors">News</a> &rsaquo;</p>
+    <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold">{{ .Title }}</h1>
+    <p class="mt-2 text-white/70 text-[1.05rem]">{{ .Date.Format "2 January 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}</p>
   </div>
 </div>
 
-<section class="section">
-  <div class="container">
+<section class="py-16">
+  <div class="max-w-[800px] mx-auto px-6">
     {{ with .Params.image }}
-    <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%;max-width:800px;border-radius:5px;margin-bottom:2rem;aspect-ratio:16/9;object-fit:cover;">
+    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full max-w-[800px] rounded mb-8 aspect-[16/9] object-cover">
     {{ end }}
 
     <div class="article-content">
       {{ .Content }}
     </div>
 
-    <div style="margin-top:2.5rem;">
-      <a href="/news" class="btn btn-primary">&larr; Back to News</a>
+    <div class="mt-10">
+      <a href="/news" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">&larr; Back to News</a>
     </div>
   </div>
 </section>

@@ -1,31 +1,31 @@
 {{ define "main" }}
 
 {{/* ── Hero ── */}}
-<section class="hero" {{ with .Params.hero_image }}style="background-image:url('{{ . }}')"{{ end }}>
-  <div class="container">
-    <div class="hero-content">
-      <h1>Working together for a better Ashford</h1>
-      <p>Ashford Wide is a Business Improvement District and community initiative bringing businesses, residents and volunteers together to make Ashford a great place to live, work and visit.</p>
-      <div class="hero-btns">
-        <a href="/events" class="btn btn-primary">Upcoming Events</a>
-        <a href="/membership" class="btn btn-outline-white">Join Us</a>
+<section class="relative min-h-[420px] md:min-h-[520px] flex items-center bg-surface bg-center bg-cover bg-no-repeat text-white after:content-[''] after:absolute after:inset-0 after:bg-black/55" {{ with .Params.hero_image }}style="background-image:url('{{ . }}')"{{ end }}>
+  <div class="max-w-container mx-auto px-6 relative z-10 w-full">
+    <div class="max-w-[680px]">
+      <h1 class="text-[clamp(2rem,5vw,3.25rem)] font-bold leading-[1.15] mb-4">Working together for a better Ashford</h1>
+      <p class="text-[1.125rem] mb-7 opacity-90 max-w-[520px]">Ashford Wide is a Business Improvement District and community initiative bringing businesses, residents and volunteers together to make Ashford a great place to live, work and visit.</p>
+      <div class="flex gap-3 flex-wrap">
+        <a href="/events" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">Upcoming Events</a>
+        <a href="/membership" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-white bg-transparent text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">Join Us</a>
       </div>
     </div>
   </div>
 </section>
 
 {{/* ── About ── */}}
-<section class="section section-alt">
-  <div class="container">
-    <h2 class="section-title">About Ashford Wide</h2>
-    <p class="section-sub">Our vision is to make Ashford a thriving town centre the whole community is proud of.</p>
-    <div class="grid grid-2" style="align-items:center;gap:3rem;">
-      <div class="article-content">
-        <p>Ashford Wide is a not-for-profit Business Improvement District (BID) working in partnership with local businesses, community groups and Ashford Borough Council to deliver projects and services that improve the town centre experience for everyone.</p>
-        <p>From events and promotions to safety initiatives and environmental improvements, we're here to make a real difference for businesses and visitors alike.</p>
-        <a href="/about" class="btn btn-primary" style="margin-top:.5rem;">Learn More</a>
+<section class="py-16 bg-[#f8f9fa]">
+  <div class="max-w-container mx-auto px-6">
+    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5">About Ashford Wide</h2>
+    <p class="text-muted mb-10 text-[1.05rem]">Our vision is to make Ashford a thriving town centre the whole community is proud of.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+      <div class="max-w-[800px]">
+        <p class="mb-5">Ashford Wide is a not-for-profit Business Improvement District (BID) working in partnership with local businesses, community groups and Ashford Borough Council to deliver projects and services that improve the town centre experience for everyone.</p>
+        <p class="mb-5">From events and promotions to safety initiatives and environmental improvements, we're here to make a real difference for businesses and visitors alike.</p>
+        <a href="/about" class="mt-2 inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">Learn More</a>
       </div>
-      <div style="background:var(--surface);border-radius:5px;aspect-ratio:4/3;"></div>
+      <div class="bg-surface rounded aspect-[4/3]"></div>
     </div>
   </div>
 </section>
@@ -34,59 +34,59 @@
 {{- $upcoming := where (where .Site.RegularPages "Section" "events") ".Date" "ge" now -}}
 {{- $upcoming = $upcoming | first 3 -}}
 {{ if $upcoming }}
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Upcoming Events</h2>
-    <p class="section-sub">Don't miss what's happening in Ashford town centre.</p>
-    <div class="grid grid-3">
+<section class="py-16">
+  <div class="max-w-container mx-auto px-6">
+    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5">Upcoming Events</h2>
+    <p class="text-muted mb-10 text-[1.05rem]">Don't miss what's happening in Ashford town centre.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{ range $upcoming }}
-      <a href="{{ .Permalink }}" class="card">
-        {{ with .Params.image }}<div class="card-img"><img src="{{ . }}" alt="{{ $.Title }}"></div>{{ end }}
-        <div class="card-body">
-          <div class="card-meta">{{ .Date.Format "2 January 2006" }}{{ with .Params.location }} &middot; {{ . }}{{ end }}</div>
-          <div class="card-title">{{ .Title }}</div>
-          <div class="card-text">{{ .Params.description | default .Summary }}</div>
-          <span class="card-link">Find out more &rarr;</span>
+      <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] transition-all duration-250 hover:-translate-y-[3px] flex flex-col group">
+        {{ with .Params.image }}<div class="aspect-[16/9] overflow-hidden bg-[#333] shrink-0"><img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250"></div>{{ end }}
+        <div class="p-5 flex-1 flex flex-col">
+          <div class="text-[0.78rem] text-white/55 mb-1.5">{{ .Date.Format "2 January 2006" }}{{ with .Params.location }} &middot; {{ . }}{{ end }}</div>
+          <div class="text-[1.1rem] font-semibold mb-2 leading-[1.3]">{{ .Title }}</div>
+          <div class="text-[0.875rem] text-white/75 line-clamp-3 overflow-hidden">{{ .Params.description | default .Summary }}</div>
+          <span class="mt-auto pt-4 text-[0.825rem] font-semibold text-white/85 border-b border-white/30 inline-block self-start">Find out more &rarr;</span>
         </div>
       </a>
       {{ end }}
     </div>
-    <div style="margin-top:2rem;">
-      <a href="/events" class="btn btn-primary">View All Events</a>
+    <div class="mt-8">
+      <a href="/events" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">View All Events</a>
     </div>
   </div>
 </section>
 {{ end }}
 
 {{/* ── Business Membership CTA ── */}}
-<section class="section section-dark">
-  <div class="container">
-    <div class="grid grid-2" style="align-items:center;gap:3rem;">
+<section class="py-16 bg-surface text-white">
+  <div class="max-w-container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
       <div>
-        <h2 class="section-title">Business Membership</h2>
-        <p class="section-sub">Join Ashford Wide and be part of something bigger.</p>
-        <p style="color:rgba(255,255,255,.8);margin-bottom:1.5rem;">As an Ashford Wide business member you benefit from increased footfall, a stronger local economy and a seat at the table when it comes to shaping the future of Ashford town centre. Our members enjoy exclusive promotions, events and networking opportunities.</p>
-        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-          <a href="/business-membership" class="btn btn-outline-white">Business Membership</a>
-          <a href="/membership" class="btn btn-outline-white">Join as a Member</a>
+        <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5">Business Membership</h2>
+        <p class="text-white/65 mb-10 text-[1.05rem]">Join Ashford Wide and be part of something bigger.</p>
+        <p class="text-white/80 mb-6">As an Ashford Wide business member you benefit from increased footfall, a stronger local economy and a seat at the table when it comes to shaping the future of Ashford town centre. Our members enjoy exclusive promotions, events and networking opportunities.</p>
+        <div class="flex gap-3 flex-wrap">
+          <a href="/business-membership" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-white bg-transparent text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">Business Membership</a>
+          <a href="/membership" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-white bg-transparent text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">Join as a Member</a>
         </div>
       </div>
-      <div class="grid grid-2" style="gap:1rem;">
-        <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:1.5rem;">
-          <div style="font-size:1.75rem;font-weight:700;color:#fff;">500+</div>
-          <div style="font-size:.875rem;color:rgba(255,255,255,.6);">Local Businesses</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white/10 rounded p-6">
+          <div class="text-[1.75rem] font-bold text-white">500+</div>
+          <div class="text-[0.875rem] text-white/60">Local Businesses</div>
         </div>
-        <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:1.5rem;">
-          <div style="font-size:1.75rem;font-weight:700;color:#fff;">50+</div>
-          <div style="font-size:.875rem;color:rgba(255,255,255,.6);">Annual Events</div>
+        <div class="bg-white/10 rounded p-6">
+          <div class="text-[1.75rem] font-bold text-white">50+</div>
+          <div class="text-[0.875rem] text-white/60">Annual Events</div>
         </div>
-        <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:1.5rem;">
-          <div style="font-size:1.75rem;font-weight:700;color:#fff;">100k+</div>
-          <div style="font-size:.875rem;color:rgba(255,255,255,.6);">Visitors Per Year</div>
+        <div class="bg-white/10 rounded p-6">
+          <div class="text-[1.75rem] font-bold text-white">100k+</div>
+          <div class="text-[0.875rem] text-white/60">Visitors Per Year</div>
         </div>
-        <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:1.5rem;">
-          <div style="font-size:1.75rem;font-weight:700;color:#fff;">10+</div>
-          <div style="font-size:.875rem;color:rgba(255,255,255,.6);">Years Supporting Ashford</div>
+        <div class="bg-white/10 rounded p-6">
+          <div class="text-[1.75rem] font-bold text-white">10+</div>
+          <div class="text-[0.875rem] text-white/60">Years Supporting Ashford</div>
         </div>
       </div>
     </div>
@@ -94,17 +94,17 @@
 </section>
 
 {{/* ── Member Logos marquee ── */}}
-{{ $members := hugo.Data.members }}
+{{- $members := where site.Data.businesses "logo" "!=" nil -}}
 {{ if $members }}
-<section style="padding:1rem 0 0;">
-  <div style="text-align:center;padding:1.5rem 0 .5rem;color:var(--muted);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;">Our Members</div>
-  <div class="marquee-wrap">
-    <div class="marquee-track">
+<section class="pt-4">
+  <div class="text-center pt-6 pb-2 text-muted text-[0.8rem] font-bold uppercase tracking-[0.07em]">Our Members</div>
+  <div class="overflow-hidden bg-[#f8f9fa] py-8 group">
+    <div class="flex gap-12 w-max animate-[marquee_30s_linear_infinite] group-hover:[animation-play-state:paused]">
       {{ range $members }}
-      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}">
+      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200">
       {{ end }}
       {{ range $members }}
-      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" aria-hidden="true">
+      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" aria-hidden="true" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200">
       {{ end }}
     </div>
   </div>
@@ -112,13 +112,13 @@
 {{ end }}
 
 {{/* ── Newsletter ── */}}
-<section class="section section-dark">
-  <div class="container" style="text-align:center;">
-    <h2 class="section-title">Stay in the Loop</h2>
-    <p class="section-sub" style="max-width:480px;margin-left:auto;margin-right:auto;">Get the latest news and events from Ashford Wide delivered straight to your inbox.</p>
-    <form class="newsletter-form" style="margin:0 auto;" action="#" method="post">
-      <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
-      <button type="submit">Subscribe</button>
+<section class="py-16 bg-surface text-white">
+  <div class="max-w-container mx-auto px-6 text-center">
+    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5">Stay in the Loop</h2>
+    <p class="text-white/65 mb-10 text-[1.05rem] max-w-[480px] mx-auto">Get the latest news and events from Ashford Wide delivered straight to your inbox.</p>
+    <form class="flex flex-col md:flex-row gap-3 max-w-[460px] mx-auto" action="#" method="post">
+      <input type="email" name="email" placeholder="Your email address" required aria-label="Email address" class="flex-1 min-w-0 px-4 py-2.5 border border-white/30 rounded bg-white/10 text-white text-[0.9rem] placeholder:text-white/50 focus:outline-none focus:border-white">
+      <button type="submit" class="px-5 py-2.5 bg-white text-surface border-none rounded font-bold text-[0.875rem] cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">Subscribe</button>
     </form>
   </div>
 </section>
