@@ -1,0 +1,8 @@
+.DS_Store
+/resources
+/public
+*.icloud
+*.swp
+*.swo
+/wrangler.jsonc
+node_modules/
