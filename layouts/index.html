@@ -1,0 +1,126 @@
+{{ define "main" }}
+
+{{/* ── Hero ── */}}
+<section class="hero" {{ with .Params.hero_image }}style="background-image:url('{{ . }}')"{{ end }}>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Working together for a better Ashford</h1>
+      <p>Ashford Wide is a Business Improvement District and community initiative bringing businesses, residents and volunteers together to make Ashford a great place to live, work and visit.</p>
+      <div class="hero-btns">
+        <a href="/events" class="btn btn-primary">Upcoming Events</a>
+        <a href="/membership" class="btn btn-outline-white">Join Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ── About ── */}}
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">About Ashford Wide</h2>
+    <p class="section-sub">Our vision is to make Ashford a thriving town centre the whole community is proud of.</p>
+    <div class="grid grid-2" style="align-items:center;gap:3rem;">
+      <div class="article-content">
+        <p>Ashford Wide is a not-for-profit Business Improvement District (BID) working in partnership with local businesses, community groups and Ashford Borough Council to deliver projects and services that improve the town centre experience for everyone.</p>
+        <p>From events and promotions to safety initiatives and environmental improvements, we're here to make a real difference for businesses and visitors alike.</p>
+        <a href="/about" class="btn btn-primary" style="margin-top:.5rem;">Learn More</a>
+      </div>
+      <div style="background:var(--surface);border-radius:5px;aspect-ratio:4/3;"></div>
+    </div>
+  </div>
+</section>
+
+{{/* ── Upcoming Events ── */}}
+{{- $upcoming := where (where .Site.RegularPages "Section" "events") ".Date" "ge" now -}}
+{{- $upcoming = $upcoming | first 3 -}}
+{{ if $upcoming }}
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Upcoming Events</h2>
+    <p class="section-sub">Don't miss what's happening in Ashford town centre.</p>
+    <div class="grid grid-3">
+      {{ range $upcoming }}
+      <a href="{{ .Permalink }}" class="card">
+        {{ with .Params.image }}<div class="card-img"><img src="{{ . }}" alt="{{ $.Title }}"></div>{{ end }}
+        <div class="card-body">
+          <div class="card-meta">{{ .Date.Format "2 January 2006" }}{{ with .Params.location }} &middot; {{ . }}{{ end }}</div>
+          <div class="card-title">{{ .Title }}</div>
+          <div class="card-text">{{ .Params.description | default .Summary }}</div>
+          <span class="card-link">Find out more &rarr;</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+    <div style="margin-top:2rem;">
+      <a href="/events" class="btn btn-primary">View All Events</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Business Membership CTA ── */}}
+<section class="section section-dark">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:center;gap:3rem;">
+      <div>
+        <h2 class="section-title">Business Membership</h2>
+        <p class="section-sub">Join Ashford Wide and be part of something bigger.</p>
+        <p style="color:rgba(255,255,255,.8);margin-bottom:1.5rem;">As an Ashford Wide business member you benefit from increased footfall, a stronger local economy and a seat at the table when it comes to shaping the future of Ashford town centre. Our members enjoy exclusive promotions, events and networking opportunities.</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <a href="/business-membership" class="btn btn-outline-white">Business Membership</a>
+          <a href="/membership" class="btn btn-outline-white">Join as a Member</a>
+        </div>
+      </div>
+      <div class="grid grid-2" style="gap:1rem;">
+        <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:1.5rem;">
+          <div style="font-size:1.75rem;font-weight:700;color:#fff;">500+</div>
+          <div style="font-size:.875rem;color:rgba(255,255,255,.6);">Local Businesses</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:1.5rem;">
+          <div style="font-size:1.75rem;font-weight:700;color:#fff;">50+</div>
+          <div style="font-size:.875rem;color:rgba(255,255,255,.6);">Annual Events</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:1.5rem;">
+          <div style="font-size:1.75rem;font-weight:700;color:#fff;">100k+</div>
+          <div style="font-size:.875rem;color:rgba(255,255,255,.6);">Visitors Per Year</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:1.5rem;">
+          <div style="font-size:1.75rem;font-weight:700;color:#fff;">10+</div>
+          <div style="font-size:.875rem;color:rgba(255,255,255,.6);">Years Supporting Ashford</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ── Member Logos marquee ── */}}
+{{ $members := hugo.Data.members }}
+{{ if $members }}
+<section style="padding:1rem 0 0;">
+  <div style="text-align:center;padding:1.5rem 0 .5rem;color:var(--muted);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;">Our Members</div>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      {{ range $members }}
+      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}">
+      {{ end }}
+      {{ range $members }}
+      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" aria-hidden="true">
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Newsletter ── */}}
+<section class="section section-dark">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title">Stay in the Loop</h2>
+    <p class="section-sub" style="max-width:480px;margin-left:auto;margin-right:auto;">Get the latest news and events from Ashford Wide delivered straight to your inbox.</p>
+    <form class="newsletter-form" style="margin:0 auto;" action="#" method="post">
+      <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+{{ end }}

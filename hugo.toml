@@ -1,0 +1,22 @@
+baseURL = "https://www.ashfordwide.com/"
+languageCode = "en-gb"
+title = "Ashford Wide"
+publishDir = "public"
+buildDrafts = false
+buildFuture = true
+enableRobotsTXT = true
+disableHugoGeneratorInject = true
+
+[params]
+  description = "Working together for a better Ashford"
+  tagline = "Working together for a better Ashford"
+  email = "info@ashfordwide.com"
+  facebook = "https://www.facebook.com/AshfordWide"
+  twitter = "https://twitter.com/AshfordWide"
+  instagram = "https://www.instagram.com/ashfordwide"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[taxonomies]
+  tag = "tags"

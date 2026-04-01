@@ -1,0 +1,17 @@
+- name: "Timeless IMS"
+  category: "Technology"
+  description: "Local technology company supporting businesses across Ashford and beyond."
+  website: "https://www.timelessims.com"
+  logo: "/images/businesses/timeless-ims.png"
+
+- name: "Ashford Borough Council"
+  category: "Public Sector"
+  description: "Local government authority serving the borough of Ashford."
+  website: "https://www.ashford.gov.uk"
+  logo: "/images/businesses/ashford-borough-council.png"
+
+- name: "East Kent College"
+  category: "Education"
+  description: "Further education college providing vocational and academic courses."
+  website: "https://www.eastkent.ac.uk"
+  logo: "/images/businesses/east-kent-college.png"

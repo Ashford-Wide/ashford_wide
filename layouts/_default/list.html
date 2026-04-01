@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    {{ with .Content }}
+    <div class="article-content" style="margin-bottom:2.5rem;">{{ . }}</div>
+    {{ end }}
+    {{ if .Pages }}
+    <div class="grid grid-3">
+      {{ range .Pages.ByDate.Reverse }}
+      <a href="{{ .Permalink }}" class="card">
+        <div class="card-body">
+          <div class="card-meta">{{ .Date.Format "2 January 2006" }}</div>
+          <div class="card-title">{{ .Title }}</div>
+          {{ with .Description }}<div class="card-text">{{ . }}</div>{{ end }}
+          <span class="card-link">Read more &rarr;</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

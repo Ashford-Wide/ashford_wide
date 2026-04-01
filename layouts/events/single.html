@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <p style="font-size:.875rem;color:rgba(255,255,255,.5);margin-bottom:.5rem;"><a href="/events" style="color:rgba(255,255,255,.5);">Events</a> &rsaquo;</p>
+    <h1>{{ .Title }}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%;max-width:800px;border-radius:5px;margin-bottom:2rem;aspect-ratio:16/9;object-fit:cover;">
+    {{ end }}
+
+    <div class="event-meta">
+      <div class="event-meta-item">
+        <span class="event-meta-label">Date</span>
+        <span class="event-meta-value">{{ .Date.Format "Monday 2 January 2006" }}</span>
+      </div>
+      {{ with .Params.time }}
+      <div class="event-meta-item">
+        <span class="event-meta-label">Time</span>
+        <span class="event-meta-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.location }}
+      <div class="event-meta-item">
+        <span class="event-meta-label">Location</span>
+        <span class="event-meta-value">{{ . }}</span>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+
+    <div style="margin-top:2.5rem;">
+      <a href="/events" class="btn btn-primary">&larr; Back to Events</a>
+    </div>
+  </div>
+</section>
+{{ end }}

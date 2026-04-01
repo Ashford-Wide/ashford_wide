@@ -1,0 +1,8 @@
+- name: "Town Manager"
+  role: "Oversees day-to-day operations and member relations"
+
+- name: "Events Coordinator"
+  role: "Plans and delivers the annual events programme"
+
+- name: "Marketing & Communications"
+  role: "Manages digital channels, newsletters and promotions"

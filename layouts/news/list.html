@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>News</h1>
+    <p>The latest from Ashford Wide.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {{ $pages := where .Site.RegularPages "Section" "news" }}
+    {{ if $pages }}
+    <div class="grid grid-3">
+      {{ range $pages.ByDate.Reverse }}
+      <a href="{{ .Permalink }}" class="card">
+        {{ with .Params.image }}<div class="card-img"><img src="{{ . }}" alt="{{ $.Title }}"></div>{{ end }}
+        <div class="card-body">
+          <div class="card-meta">{{ .Date.Format "2 January 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}</div>
+          <div class="card-title">{{ .Title }}</div>
+          <div class="card-text">{{ .Summary }}</div>
+          <span class="card-link">Read more &rarr;</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p style="color:var(--muted);">No news posts yet. Check back soon!</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

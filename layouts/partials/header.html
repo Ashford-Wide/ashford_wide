@@ -1,0 +1,52 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        {{- if fileExists "static/images/logo.png" -}}
+          <img src="/images/logo.png" alt="Ashford Wide" height="48">
+        {{- else -}}
+          <span class="logo-text">Ashford Wide<span>Working together for a better Ashford</span></span>
+        {{- end -}}
+      </a>
+
+      <nav>
+        <ul class="main-nav" id="main-nav">
+          <li><a href="/">Home</a></li>
+          <li>
+            <a href="/about">About Us</a>
+            <ul class="dropdown">
+              <li><a href="/about">Who We Are</a></li>
+              <li><a href="/about#team">The Team</a></li>
+              <li><a href="/volunteer">Volunteer</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/events">Events</a>
+            <ul class="dropdown">
+              <li><a href="/events">All Events</a></li>
+              <li><a href="/remembrance">Remembrance</a></li>
+              <li><a href="/remembrance/sponsor-a-poppy">Sponsor a Poppy</a></li>
+              <li><a href="/remembrance/virtual-poppy-wall">Virtual Poppy Wall</a></li>
+            </ul>
+          </li>
+          <li><a href="/news">News</a></li>
+          <li>
+            <a href="/membership">Membership</a>
+            <ul class="dropdown">
+              <li><a href="/membership">Join Ashford Wide</a></li>
+              <li><a href="/business-membership">Business Membership</a></li>
+            </ul>
+          </li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <a href="/support" class="btn-support">SUPPORT US</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

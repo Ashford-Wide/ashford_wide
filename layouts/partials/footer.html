@@ -1,0 +1,59 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-text">Ashford Wide</div>
+        <p class="footer-tagline">Working together for a better Ashford</p>
+        <p style="margin-top:1rem;font-size:.875rem;color:rgba(255,255,255,.6);">
+          Ashford Wide is a Business Improvement District (BID) and community initiative bringing together businesses, residents and volunteers to improve Ashford town centre.
+        </p>
+      </div>
+      <div>
+        <h3 class="footer-heading">About Us</h3>
+        <ul class="footer-links">
+          <li><a href="/about">Who We Are</a></li>
+          <li><a href="/about#team">The Team</a></li>
+          <li><a href="/volunteer">Volunteer</a></li>
+          <li><a href="{{ .Site.Params.facebook }}">Social Media</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/news">News</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/membership">Membership</a></li>
+          <li><a href="/business-membership">Business Membership</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/support">Support Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" style="color:rgba(255,255,255,.5);">{{ .Site.Params.email }}</a></p>
+      <div class="social-links">
+        {{ with .Site.Params.facebook }}
+        <a href="{{ . }}" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+        {{ end }}
+        {{ with .Site.Params.twitter }}
+        <a href="{{ . }}" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">𝕏</a>
+        {{ end }}
+        {{ with .Site.Params.instagram }}
+        <a href="{{ . }}" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">i</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>

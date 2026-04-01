@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <p style="font-size:.875rem;color:rgba(255,255,255,.5);margin-bottom:.5rem;"><a href="/news" style="color:rgba(255,255,255,.5);">News</a> &rsaquo;</p>
+    <h1>{{ .Title }}</h1>
+    <p style="margin-top:.5rem;">{{ .Date.Format "2 January 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%;max-width:800px;border-radius:5px;margin-bottom:2rem;aspect-ratio:16/9;object-fit:cover;">
+    {{ end }}
+
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+
+    <div style="margin-top:2.5rem;">
+      <a href="/news" class="btn btn-primary">&larr; Back to News</a>
+    </div>
+  </div>
+</section>
+{{ end }}
