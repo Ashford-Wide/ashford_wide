@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #212529;
+  --color-text: #333;
+  --color-muted: #6c757d;
+  
+  --radius: 5px;
+  
+  --shadow: 0 2px 8px rgba(0,0,0,.1);
+  --shadow-lg: 0 .5rem 1.5rem rgba(0,0,0,.2);
+  
+  --spacing-header: 72px;
+  --width-container: 1200px;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+@layer components {
+  .nav-open {
+    @apply !flex flex-col items-start fixed top-header left-0 right-0 bg-white p-6 shadow-lg z-[99];
+  }
+}

@@ -1,16 +1,16 @@
 {{ define "main" }}
 {{- $businesses := hugo.Data.businesses -}}
 
-<div class="page-header">
-  <div class="container">
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+<div class="bg-surface text-white py-12">
+  <div class="max-w-container mx-auto px-6">
+    <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold">{{ .Title }}</h1>
+    {{ with .Description }}<p class="mt-2 text-white/70 text-[1.05rem]">{{ . }}</p>{{ end }}
   </div>
 </div>
 
-<section class="section section-alt">
-  <div class="container">
-    {{ with .Content }}<p class="biz-intro">{{ . }}</p>{{ end }}
+<section class="py-16 bg-[#f8f9fa]">
+  <div class="max-w-container mx-auto px-6">
+    {{ with .Content }}<p class="text-muted mb-8 text-base">{{ . }}</p>{{ end }}
 
     {{/* ── Category filter ── */}}
     {{- $categories := slice -}}
@@ -21,59 +21,59 @@
     {{- end -}}
     {{- $categories = $categories | uniq | sort -}}
     {{ if gt (len $categories) 1 }}
-    <div class="biz-filters" role="group" aria-label="Filter by category">
-      <button class="biz-filter active" data-filter="all">All</button>
+    <div class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter by category">
+      <button class="biz-filter px-3.5 py-1.5 border border-[#d0d0d0] rounded-[2rem] text-[0.8rem] font-semibold cursor-pointer transition-colors duration-150 bg-surface text-white border-surface bg-white text-text hover:border-surface" data-filter="all">All</button>
       {{ range $categories }}
-      <button class="biz-filter" data-filter="{{ . | urlize }}">{{ . }}</button>
+      <button class="biz-filter px-3.5 py-1.5 border border-[#d0d0d0] rounded-[2rem] bg-white text-text text-[0.8rem] font-semibold cursor-pointer transition-colors duration-150 hover:border-surface" data-filter="{{ . | urlize }}">{{ . }}</button>
       {{ end }}
     </div>
     {{ end }}
 
     {{/* ── Directory grid ── */}}
-    <div class="biz-grid" id="biz-grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="biz-grid">
       {{- range (sort $businesses "name") -}}
-      <div class="biz-card" data-category="{{ .category | urlize }}">
+      <div class="biz-card bg-white border border-[#e5e7eb] rounded overflow-hidden flex flex-col transition-all duration-200 hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] hover:-translate-y-[2px]" data-category="{{ .category | urlize }}">
         {{ if .logo }}
-        <div class="biz-logo">
-          <img src="{{ .logo }}" alt="{{ .name }}">
+        <div class="px-5 pt-4 pb-2 bg-[#f8f9fa] border-b border-[#f0f0f0] flex items-center">
+          <img src="{{ .logo }}" alt="{{ .name }}" class="h-12 w-auto object-contain">
         </div>
         {{ end }}
-        <div class="biz-body">
-          <div class="biz-header">
+        <div class="p-5 flex-1 flex flex-col gap-2">
+          <div class="flex flex-col gap-1.5">
             <div>
               {{ if .website }}
-              <a href="{{ .website }}" class="biz-name" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+              <a href="{{ .website }}" class="text-base font-bold text-surface leading-[1.3] hover:underline" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
               {{ else }}
-              <span class="biz-name">{{ .name }}</span>
+              <span class="text-base font-bold text-surface leading-[1.3]">{{ .name }}</span>
               {{ end }}
-              {{ with .category }}<span class="biz-cat">{{ . }}</span>{{ end }}
+              {{ with .category }}<span class="inline-block text-[0.7rem] font-bold uppercase tracking-[0.05em] text-muted bg-[#f0f0f0] py-[0.15rem] px-2 rounded-[2rem] w-fit">{{ . }}</span>{{ end }}
             </div>
           </div>
-          {{ with .description }}<p class="biz-desc">{{ . }}</p>{{ end }}
-          <ul class="biz-contacts">
-            {{ with .address }}<li class="biz-contact-item biz-contact--address">{{ . }}</li>{{ end }}
-            {{ with .telephone }}<li class="biz-contact-item"><a href="tel:{{ . | replaceRE `\s` `` }}">{{ . }}</a></li>{{ end }}
-            {{ with .mobile }}<li class="biz-contact-item"><a href="tel:{{ . | replaceRE `\s` `` }}">{{ . }} (mobile)</a></li>{{ end }}
-            {{ with .email }}<li class="biz-contact-item"><a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
+          {{ with .description }}<p class="text-[0.875rem] text-text leading-[1.5] flex-1">{{ . }}</p>{{ end }}
+          <ul class="flex flex-col gap-1 mt-1 p-0 list-none">
+            {{ with .address }}<li class="text-[0.8rem] text-muted">{{ . }}</li>{{ end }}
+            {{ with .telephone }}<li class="text-[0.8rem] text-muted hover:text-surface transition-colors duration-150"><a href="tel:{{ . | replaceRE `\s` `` }}">{{ . }}</a></li>{{ end }}
+            {{ with .mobile }}<li class="text-[0.8rem] text-muted hover:text-surface transition-colors duration-150"><a href="tel:{{ . | replaceRE `\s` `` }}">{{ . }} (mobile)</a></li>{{ end }}
+            {{ with .email }}<li class="text-[0.8rem] text-muted hover:text-surface transition-colors duration-150"><a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
             {{ with .website }}
-            <li class="biz-contact-item biz-contact--web">
+            <li class="break-all text-[0.8rem] text-muted hover:text-surface transition-colors duration-150">
               <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ . | replaceRE `^https?://` `` | strings.TrimRight "/" }}</a>
             </li>
             {{ end }}
           </ul>
           {{ $hasSocial := or .facebook .instagram .x .twitter }}
           {{ if $hasSocial }}
-          <div class="biz-social">
-            {{ with .facebook }}<a href="{{ . }}" class="biz-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <div class="flex gap-1.5 mt-2">
+            {{ with .facebook }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>{{ end }}
-            {{ with .instagram }}<a href="{{ . }}" class="biz-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            {{ with .instagram }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>{{ end }}
-            {{ with .x }}<a href="{{ . }}" class="biz-social-link" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            {{ with .x }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>{{ end }}
-            {{ with .twitter }}<a href="{{ . }}" class="biz-social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            {{ with .twitter }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>{{ end }}
           </div>
@@ -83,7 +83,7 @@
       {{- end -}}
     </div>
 
-    <p class="biz-empty" id="biz-empty" style="display:none;">No businesses found in this category.</p>
+    <p class="text-center p-12 text-muted text-base" id="biz-empty" style="display:none;">No businesses found in this category.</p>
   </div>
 </section>
 
@@ -95,8 +95,12 @@
   filters.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var filter = this.dataset.filter;
-      filters.forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
+      filters.forEach(function(b) {
+        b.classList.remove('bg-surface', 'text-white', 'border-surface');
+        b.classList.add('bg-white', 'text-text');
+      });
+      this.classList.remove('bg-white', 'text-text');
+      this.classList.add('bg-surface', 'text-white', 'border-surface');
       var visible = 0;
       cards.forEach(function(card) {
         var show = filter === 'all' || card.dataset.category === filter;

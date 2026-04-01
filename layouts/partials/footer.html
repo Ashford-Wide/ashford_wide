@@ -1,46 +1,46 @@
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
+<footer class="bg-surface text-white/80 pt-12 pb-6">
+  <div class="max-w-container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-10">
       <div>
-        <div class="footer-logo-text">Ashford Wide</div>
-        <p class="footer-tagline">Working together for a better Ashford</p>
-        <p style="margin-top:1rem;font-size:.875rem;color:rgba(255,255,255,.6);">
+        <div class="text-[1.15rem] font-bold text-white">Ashford Wide</div>
+        <p class="mt-2 italic text-[0.9rem] text-white/55">Working together for a better Ashford</p>
+        <p class="mt-4 text-[0.875rem] text-white/60">
           Ashford Wide is a Business Improvement District (BID) and community initiative bringing together businesses, residents and volunteers to improve Ashford town centre.
         </p>
       </div>
       <div>
-        <h3 class="footer-heading">About Us</h3>
-        <ul class="footer-links">
-          <li><a href="/about">Who We Are</a></li>
-          <li><a href="/about#team">The Team</a></li>
-          <li><a href="/volunteer">Volunteer</a></li>
-          <li><a href="{{ .Site.Params.facebook }}">Social Media</a></li>
+        <h3 class="text-[0.8rem] font-bold uppercase tracking-[0.07em] text-white mb-4">About Us</h3>
+        <ul class="flex flex-col gap-2">
+          <li><a href="/about" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Who We Are</a></li>
+          <li><a href="/about#team" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">The Team</a></li>
+          <li><a href="/volunteer" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Volunteer</a></li>
+          <li><a href="{{ .Site.Params.facebook }}" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Social Media</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="footer-heading">Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="/news">News</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/membership">Membership</a></li>
-          <li><a href="/business-membership">Business Membership</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-          <li><a href="/support">Support Us</a></li>
+        <h3 class="text-[0.8rem] font-bold uppercase tracking-[0.07em] text-white mb-4">Quick Links</h3>
+        <ul class="flex flex-col gap-2">
+          <li><a href="/news" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">News</a></li>
+          <li><a href="/events" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Events</a></li>
+          <li><a href="/membership" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Membership</a></li>
+          <li><a href="/business-membership" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Business Membership</a></li>
+          <li><a href="/contact" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Contact Us</a></li>
+          <li><a href="/support" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Support Us</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" style="color:rgba(255,255,255,.5);">{{ .Site.Params.email }}</a></p>
-      <div class="social-links">
+    <div class="border-t border-white/10 pt-6 flex justify-between items-center flex-wrap gap-4">
+      <p class="text-[0.8rem] text-white/40">&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" class="text-white/50">{{ .Site.Params.email }}</a></p>
+      <div class="flex gap-[0.6rem]">
         {{ with .Site.Params.facebook }}
-        <a href="{{ . }}" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 text-[0.8rem] hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">f</a>
         {{ end }}
         {{ with .Site.Params.twitter }}
-        <a href="{{ . }}" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">𝕏</a>
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 text-[0.8rem] hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">𝕏</a>
         {{ end }}
         {{ with .Site.Params.instagram }}
-        <a href="{{ . }}" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">i</a>
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 text-[0.8rem] hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">i</a>
         {{ end }}
       </div>
     </div>
@@ -52,7 +52,7 @@
   const nav = document.getElementById('main-nav');
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
+      const open = nav.classList.toggle('nav-open');
       toggle.setAttribute('aria-expanded', open);
     });
   }

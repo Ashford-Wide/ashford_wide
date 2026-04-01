@@ -2,5 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<link rel="stylesheet" href="/css/main.css">
+{{ $css := resources.Get "css/main.css" | postCSS }}
+{{ if hugo.IsProduction }}
+  {{ $css = $css | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ else }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
+{{ end }}
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">

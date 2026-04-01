@@ -1,30 +1,30 @@
 {{ define "main" }}
-<div class="page-header">
-  <div class="container">
-    <h1>News</h1>
-    <p>The latest from Ashford Wide.</p>
+<div class="bg-surface text-white py-12">
+  <div class="max-w-container mx-auto px-6">
+    <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold">News</h1>
+    <p class="mt-2 text-white/70 text-[1.05rem]">The latest from Ashford Wide.</p>
   </div>
 </div>
 
-<section class="section">
-  <div class="container">
+<section class="py-16">
+  <div class="max-w-container mx-auto px-6">
     {{ $pages := where .Site.RegularPages "Section" "news" }}
     {{ if $pages }}
-    <div class="grid grid-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{ range $pages.ByDate.Reverse }}
-      <a href="{{ .Permalink }}" class="card">
-        {{ with .Params.image }}<div class="card-img"><img src="{{ . }}" alt="{{ $.Title }}"></div>{{ end }}
-        <div class="card-body">
-          <div class="card-meta">{{ .Date.Format "2 January 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}</div>
-          <div class="card-title">{{ .Title }}</div>
-          <div class="card-text">{{ .Summary }}</div>
-          <span class="card-link">Read more &rarr;</span>
+      <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] transition-all duration-250 hover:-translate-y-[3px] flex flex-col group">
+        {{ with .Params.image }}<div class="aspect-[16/9] overflow-hidden bg-[#333] shrink-0"><img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250"></div>{{ end }}
+        <div class="p-5 flex-1 flex flex-col">
+          <div class="text-[0.78rem] text-white/55 mb-1.5">{{ .Date.Format "2 January 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}</div>
+          <div class="text-[1.1rem] font-semibold mb-2 leading-[1.3]">{{ .Title }}</div>
+          <div class="text-[0.875rem] text-white/75 line-clamp-3 overflow-hidden">{{ .Summary }}</div>
+          <span class="mt-auto pt-4 text-[0.825rem] font-semibold text-white/85 border-b border-white/30 inline-block self-start">Read more &rarr;</span>
         </div>
       </a>
       {{ end }}
     </div>
     {{ else }}
-    <p style="color:var(--muted);">No news posts yet. Check back soon!</p>
+    <p class="text-muted">No news posts yet. Check back soon!</p>
     {{ end }}
   </div>
 </section>

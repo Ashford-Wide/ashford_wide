@@ -5,15 +5,19 @@
 Static website for Ashford Wide, a Business Improvement District (BID) and community initiative in Ashford, Kent. The site is built with Hugo and deployed to Cloudflare Pages. Content is managed via Decap CMS at `/admin/`.
 
 **Live domain:** `https://www.ashfordwide.com/`  
-**Stack:** Hugo v0.159.1 · Plain CSS (~10KB) · No JS framework · Decap CMS · Cloudflare Pages
+**Stack:** Hugo v0.159.1 · Tailwind CSS v3 · No JS framework · Decap CMS · Cloudflare Pages
 
 ---
 
 ## Directory Structure
 
-```
 ashford_wide/
 ├── hugo.toml                    # Site configuration
+├── package.json                 # Tailwind CSS & PostCSS dependencies
+├── tailwind.config.js           # Tailwind theme configuration
+├── postcss.config.js            # PostCSS configuration for Hugo Pipes
+├── assets/
+│   └── css/main.css             # Tailwind base, components, and utilities
 ├── content/                     # Markdown content files
 ├── layouts/                     # Hugo templates
 │   ├── _default/                # Catch-all templates
@@ -25,7 +29,6 @@ ashford_wide/
 │   ├── robots.txt               # Robots.txt template
 │   └── 404.html                 # 404 page
 ├── static/
-│   ├── css/main.css             # All site styles (~10KB)
 │   ├── images/                  # Static images (logo, member logos, etc.)
 │   └── admin/
 │       ├── index.html           # Decap CMS entry point
@@ -196,53 +199,24 @@ Hugo looks for `layouts/_default/business-directory.html`.
 
 ---
 
-## CSS (`static/css/main.css`)
+## CSS & Styling (Tailwind CSS)
 
-Single file, ~10KB, no preprocessor, no external dependencies. Uses CSS custom properties for design tokens.
+The project has been migrated from a custom CSS framework to **Tailwind CSS v4**.
 
-### Design Tokens
+### Setup & Workflow
+- **Dependencies**: Tailwind CSS is built via `postcss` and `postcss-cli` using Hugo Pipes. An `npm install` is required after cloning the repo.
+- **Entry Point**: `assets/css/main.css` processes Tailwind directives (`@import "tailwindcss";`, `@theme`, `@layer components`, etc.).
+- **Hugo Integration**: Included in `layouts/partials/head.html` using Hugo's internal asset processing (`resources.PostCSS`).
 
-```css
-:root {
-  --surface: #212529;   /* dark — used for header bg, cards, dark sections */
-  --text: #333;
-  --muted: #6c757d;
-  --radius: 5px;
-  --shadow: 0 2px 8px rgba(0,0,0,.1);
-  --shadow-lg: 0 .5rem 1.5rem rgba(0,0,0,.2);
-  --header-h: 72px;
-  --max-w: 1200px;
-}
-```
+### Design Tokens (`@theme` variables)
+The legacy custom CSS variables have been mapped directly into the `@theme` block in `assets/css/main.css`:
+- **Colors**: `--color-surface` (`#212529`), `--color-text` (`#333`), `--color-muted` (`#6c757d`).
+- **Animations**: The homepage marquee animation is defined using `@keyframes marquee`.
 
-### Notable Patterns
-
-- **Dark event/news cards** (`.card`) — `background: var(--surface)`, white text, hover lift via `transform: translateY(-3px)`
-- **Light business directory cards** (`.biz-card`) — white background, `border: 1px solid #e5e7eb`, contrasting with the dark cards
-- **Member logo marquee** (`.marquee-track`) — `animation: marquee 30s linear infinite`, paused on hover; the track element is duplicated in the template for a seamless loop
-- **CSS-only dropdown nav** — `:hover` on `<li>` shows `.dropdown`; no JS needed on desktop
-- **Responsive breakpoints:**
-  - `max-width: 900px` — 3/4-col grids collapse to 2 columns
-  - `max-width: 768px` — all grids go to 1 column; mobile nav activates
-
-### CSS Sections (in order)
-
-1. Variables
-2. Reset
-3. Layout (`.container`, `.section`, `.section-alt`, `.section-dark`)
-4. Grid (`.grid-2`, `.grid-3`, `.grid-4`)
-5. Buttons
-6. Header / nav / dropdown
-7. Hero
-8. Cards (`.card`, `.card-img`, `.card-body`, etc.)
-9. Member marquee
-10. Page header (`.page-header` — dark banner used on inner pages)
-11. Article content (`.article-content` — prose styles for single pages)
-12. Event single (`.event-meta`)
-13. Newsletter form
-14. Footer
-15. Business directory (`.biz-card`, `.biz-filter`, `.biz-grid`, etc.)
-16. Responsive
+### Custom Components
+Any styling that is too complex for inline utility classes (or used extensively across markdown prose) is defined in `assets/css/main.css` within `@layer components`:
+- `.article-content` — Used to style raw markdown output on single pages without needing an external typography plugin.
+- `.nav-open` — Used by the mobile navigation JavaScript to disable scrolling.
 
 ---
 
@@ -342,25 +316,29 @@ The "SUPPORT US" button links to `/support`. The Business Directory is not yet i
 
 ---
 
-## Known Gaps / To-Do
+## Known Gaps / Future Improvements
 
-- **404 page** — `layouts/404.html` is a stub (`<div>Page not found</div>`), needs proper content and styling
-- **Logo** — Header falls back to text if `static/images/logo.png` is absent; `static/images/favicon.svg` is referenced but not committed
+- **404 page styling** — `layouts/404.html` is a stub (`<div>Page not found</div>`) and needs to be styled using Tailwind classes.
+- **Tailwind Typography** — Markdown content (`.article-content`) is currently styled with custom component classes. In the future, you could install `@tailwindcss/typography` (`prose` class) for automatic, extensive markdown styling.
+- **Data-driven Navigation** — The header nav is hardcoded in `layouts/partials/header.html`. This could be moved to `hugo.toml` menus for CMS integration.
+- **Logo fallback** — Header falls back to text if `static/images/logo.png` is absent; `static/images/favicon.svg` is referenced but not committed
 - **Team data** — `data/team.yaml` exists but no template renders it; the About page has an `#team` anchor with no content
 - **Newsletter form** — Homepage form currently posts to `action="#"`; needs a Mailchimp embed or similar
 - **Contact form** — `content/contact.md` uses a Formspree action placeholder (`your-form-id`); needs updating with the real form ID
 - **Business directory nav link** — not in the header nav yet
-- **Cloudflare Pages build command** — `hugo --minify`; output directory: `public`
 - **Redirects** — A `static/_redirects` file is needed to map old WordPress URLs to new slugs
 
 ---
 
 ## Build
 
+Because Tailwind is built dynamically, NPM dependencies must be installed first:
+
 ```bash
+npm install   # Required before first build
 hugo          # development build
 hugo --minify # production build (used by Cloudflare Pages)
 hugo server   # local dev server at http://localhost:1313
 ```
 
-Current output: ~28 pages, builds in ~25ms.
+Current output: ~28 pages.
