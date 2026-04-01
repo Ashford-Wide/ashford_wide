@@ -6,9 +6,7 @@ location: "Church Road, Ashford"
 description: "The biggest market of the year during the festive season. Stalls, live music, mulled wine and festive entertainment for all the family."
 ---
 
-Join us for the annual Ashford Wide Christmas Market, taking place on Church Road in the heart of Ashford town centre.
-
-This year's event promises to be bigger and better than ever, with over 50 market stalls selling gifts, food and festive treats, plus live music, entertainment and a visit from Santa himself.
+Get ready to step into the festive spirit at the Ashford Wide Christmas Market! Join us on Wednesday, 3rd December 2025, for an evening full of holiday cheer, local crafts, delicious treats, and joyful entertainment.
 
 ## What to Expect
 
@@ -20,7 +18,7 @@ This year's event promises to be bigger and better than ever, with over 50 marke
 
 ## Getting There
 
-The Christmas Market takes place on Church Road, Ashford, TN23. Ashford town centre is easily accessible by train (Ashford International station), bus, and on foot from the town's car parks.
+The Christmas Market takes place on Church Road, Ashford, TW15. Ashford town centre is easily accessible by train, bus, and on foot from the town's car parks.
 
 We look forward to seeing you there!
 
