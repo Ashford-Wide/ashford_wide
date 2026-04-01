@@ -1,0 +1,111 @@
+{{ define "main" }}
+{{- $businesses := hugo.Data.businesses -}}
+
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="container">
+    {{ with .Content }}<p class="biz-intro">{{ . }}</p>{{ end }}
+
+    {{/* ── Category filter ── */}}
+    {{- $categories := slice -}}
+    {{- range $businesses -}}
+      {{- with .category -}}
+        {{- $categories = $categories | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $categories = $categories | uniq | sort -}}
+    {{ if gt (len $categories) 1 }}
+    <div class="biz-filters" role="group" aria-label="Filter by category">
+      <button class="biz-filter active" data-filter="all">All</button>
+      {{ range $categories }}
+      <button class="biz-filter" data-filter="{{ . | urlize }}">{{ . }}</button>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* ── Directory grid ── */}}
+    <div class="biz-grid" id="biz-grid">
+      {{- range (sort $businesses "name") -}}
+      <div class="biz-card" data-category="{{ .category | urlize }}">
+        {{ if .logo }}
+        <div class="biz-logo">
+          <img src="{{ .logo }}" alt="{{ .name }}">
+        </div>
+        {{ end }}
+        <div class="biz-body">
+          <div class="biz-header">
+            <div>
+              {{ if .website }}
+              <a href="{{ .website }}" class="biz-name" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+              {{ else }}
+              <span class="biz-name">{{ .name }}</span>
+              {{ end }}
+              {{ with .category }}<span class="biz-cat">{{ . }}</span>{{ end }}
+            </div>
+          </div>
+          {{ with .description }}<p class="biz-desc">{{ . }}</p>{{ end }}
+          <ul class="biz-contacts">
+            {{ with .address }}<li class="biz-contact-item biz-contact--address">{{ . }}</li>{{ end }}
+            {{ with .telephone }}<li class="biz-contact-item"><a href="tel:{{ . | replaceRE `\s` `` }}">{{ . }}</a></li>{{ end }}
+            {{ with .mobile }}<li class="biz-contact-item"><a href="tel:{{ . | replaceRE `\s` `` }}">{{ . }} (mobile)</a></li>{{ end }}
+            {{ with .email }}<li class="biz-contact-item"><a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
+            {{ with .website }}
+            <li class="biz-contact-item biz-contact--web">
+              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ . | replaceRE `^https?://` `` | strings.TrimRight "/" }}</a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ $hasSocial := or .facebook .instagram .x .twitter }}
+          {{ if $hasSocial }}
+          <div class="biz-social">
+            {{ with .facebook }}<a href="{{ . }}" class="biz-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>{{ end }}
+            {{ with .instagram }}<a href="{{ . }}" class="biz-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>{{ end }}
+            {{ with .x }}<a href="{{ . }}" class="biz-social-link" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>{{ end }}
+            {{ with .twitter }}<a href="{{ . }}" class="biz-social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{- end -}}
+    </div>
+
+    <p class="biz-empty" id="biz-empty" style="display:none;">No businesses found in this category.</p>
+  </div>
+</section>
+
+<script>
+(function() {
+  var filters = document.querySelectorAll('.biz-filter');
+  var cards = document.querySelectorAll('.biz-card');
+  var empty = document.getElementById('biz-empty');
+  filters.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = this.dataset.filter;
+      filters.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      var visible = 0;
+      cards.forEach(function(card) {
+        var show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      empty.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+})();
+</script>
+{{ end }}
