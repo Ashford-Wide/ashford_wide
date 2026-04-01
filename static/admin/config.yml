@@ -1,0 +1,153 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_ORG/ashford_wide
+  branch: main
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+
+  - name: events
+    label: Events
+    folder: content/events
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: Time, name: time, widget: string, hint: "e.g. 10am–3pm", required: false }
+      - { label: Location, name: location, widget: string, required: false }
+      - { label: Description, name: description, widget: text, hint: "Short summary shown on event cards" }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: news
+    label: News
+    folder: content/news
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: Author, name: author, widget: string, default: "Ashford Wide Team", required: false }
+      - { label: Description, name: description, widget: text, hint: "Short summary shown on news cards" }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: pages
+    label: Pages
+    files:
+      - label: About
+        name: about
+        file: content/about.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Membership
+        name: membership
+        file: content/membership.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Business Membership
+        name: business-membership
+        file: content/business-membership.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Volunteer
+        name: volunteer
+        file: content/volunteer.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Support Us
+        name: support
+        file: content/support.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Contact
+        name: contact
+        file: content/contact.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+  - name: remembrance
+    label: Remembrance
+    files:
+      - label: Remembrance (main)
+        name: remembrance-index
+        file: content/remembrance/_index.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Order of Services
+        name: order-of-services
+        file: content/remembrance/order-of-services.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Sponsor a Poppy
+        name: sponsor-a-poppy
+        file: content/remembrance/sponsor-a-poppy.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Virtual Poppy Wall
+        name: virtual-poppy-wall
+        file: content/remembrance/virtual-poppy-wall.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+  - name: members
+    label: Member Logos
+    files:
+      - label: Members
+        name: members
+        file: data/members.yaml
+        fields:
+          - label: Members
+            name: members
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Logo, name: logo, widget: image }
+
+  - name: businesses
+    label: Business Directory
+    files:
+      - label: Businesses
+        name: businesses
+        file: data/businesses.yaml
+        fields:
+          - label: Businesses
+            name: businesses
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Category, name: category, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Website, name: website, widget: string, required: false }
+              - { label: Logo, name: logo, widget: image, required: false }
