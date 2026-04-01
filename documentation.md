@@ -172,10 +172,10 @@ baseof.html
 
 ### Key Template Patterns
 
-**Accessing data files** — use `hugo.Data` (not the deprecated `.Site.Data`):
+**Accessing data files** — use `site.Data` (not `hugo.Data` or the older `.Site.Data` context-bound method):
 ```go
-{{ $businesses := hugo.Data.businesses }}
-{{ $members := hugo.Data.members }}
+{{ $businesses := site.Data.businesses }}
+{{ $members := site.Data.members }}
 ```
 
 **Event date filtering:**
