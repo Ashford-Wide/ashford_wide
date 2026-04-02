@@ -94,7 +94,7 @@
 </section>
 
 {{/* ── Member Logos marquee ── */}}
-{{- $members := where site.Data.businesses "logo" "!=" nil -}}
+{{- $members := where hugo.Data.businesses "logo" "!=" nil -}}
 {{ if $members }}
 <section class="pt-4">
   <div class="text-center pt-6 pb-2 text-muted text-[0.8rem] font-bold uppercase tracking-[0.07em]">Our Members</div>
