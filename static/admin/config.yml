@@ -1,10 +1,12 @@
+local_backend: true
+
 backend:
   name: github
   repo: YOUR_GITHUB_ORG/ashford_wide
   branch: main
 
-media_folder: static/images/uploads
-public_folder: /images/uploads
+media_folder: /static/images
+public_folder: /images
 
 collections:
 
