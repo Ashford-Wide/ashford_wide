@@ -11,6 +11,7 @@ Static website for Ashford Wide, a Business Improvement District (BID) and commu
 
 ## Directory Structure
 
+```
 ashford_wide/
 ├── hugo.toml                    # Site configuration
 ├── package.json                 # Tailwind CSS & PostCSS dependencies
