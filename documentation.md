@@ -5,7 +5,7 @@
 Static website for Ashford Wide, a Business Improvement District (BID) and community initiative in Ashford, Kent. The site is built with Hugo and deployed to Cloudflare Pages. Content is managed via Decap CMS at `/admin/`.
 
 **Live domain:** `https://www.ashfordwide.com/`  
-**Stack:** Hugo v0.159.1 · Tailwind CSS v3 · No JS framework · Decap CMS · Cloudflare Pages
+**Stack:** Hugo v0.159.1 · Tailwind CSS v4 · No JS framework · Decap CMS · Cloudflare Pages
 
 ---
 
@@ -17,7 +17,10 @@ ashford_wide/
 ├── tailwind.config.js           # Tailwind theme configuration
 ├── postcss.config.js            # PostCSS configuration for Hugo Pipes
 ├── assets/
-│   └── css/main.css             # Tailwind base, components, and utilities
+│   ├── css/main.css             # Tailwind base, components, and utilities
+│   └── js/
+│       ├── nav.js               # Mobile nav toggle (served via Hugo Pipes)
+│       └── business-directory.js # Category filter for business directory
 ├── content/                     # Markdown content files
 ├── layouts/                     # Hugo templates
 │   ├── _default/                # Catch-all templates
@@ -29,6 +32,7 @@ ashford_wide/
 │   ├── robots.txt               # Robots.txt template
 │   └── 404.html                 # 404 page
 ├── static/
+│   ├── _headers                 # Cloudflare Pages HTTP headers (CSP, etc.)
 │   ├── images/                  # Static images (logo, member logos, etc.)
 │   └── admin/
 │       ├── index.html           # Decap CMS entry point
@@ -44,10 +48,11 @@ ashford_wide/
 ## Configuration (`hugo.toml`)
 
 ```toml
-baseURL = "https://www.ashfordwide.com/"
+baseURL = "https://ashford-wide.pages.dev"
 languageCode = "en-gb"
 title = "Ashford Wide"
 publishDir = "public"
+paginate = 9             # News list pages — 9 per page (fits 3-column grid evenly)
 buildDrafts = false
 buildFuture = true       # Required — events are often future-dated
 enableRobotsTXT = true
@@ -59,6 +64,7 @@ disableHugoGeneratorInject = true
   email = "info@ashfordwide.com"
   facebook = "https://www.facebook.com/AshfordWide"
   twitter = "https://twitter.com/AshfordWide"
+  instagram = "https://www.instagram.com/ashfordwide"
 
 [markup.goldmark.renderer]
   unsafe = true   # Allows raw HTML inside Markdown (used in contact form, support page)
@@ -161,7 +167,7 @@ baseof.html
 | `layouts/index.html` | Homepage — hero, about section, upcoming events grid (first 3), membership CTA, member logo marquee, newsletter form |
 | `layouts/events/list.html` | Events index — splits into upcoming/past using Hugo date comparisons |
 | `layouts/events/single.html` | Single event page with date/time/location meta panel |
-| `layouts/news/list.html` | News index — grid sorted by date descending |
+| `layouts/news/list.html` | News index — grid sorted by date descending, paginated (9 per page) |
 | `layouts/news/single.html` | Single news article with breadcrumb |
 | `layouts/_default/single.html` | Generic single page — page header + article content |
 | `layouts/_default/business-directory.html` | Business directory — data-driven, category filter, JS filtering |
@@ -222,24 +228,21 @@ Any styling that is too complex for inline utility classes (or used extensively 
 
 ## JavaScript
 
-There is no JavaScript framework. Two small inline scripts only:
+There is no JavaScript framework. Two small scripts served from `assets/js/` via Hugo Pipes (minified and fingerprinted in production):
 
-**Mobile nav toggle** — in `layouts/partials/footer.html`:
-```js
-const toggle = document.getElementById('nav-toggle');
-const nav = document.getElementById('main-nav');
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-}
-```
+**`assets/js/nav.js`** — loaded on every page via `layouts/partials/footer.html`:
+Wires up the hamburger button (`#nav-toggle`) to toggle the `nav-open` class on `#main-nav` and update `aria-expanded`.
 
-**Business directory category filter** — inline at the bottom of `layouts/_default/business-directory.html`:
-```js
-// Sets data-category on each .biz-card, filter buttons toggle .active,
-// cards are shown/hidden via display:none
+**`assets/js/business-directory.js`** — loaded only on the business directory page via `layouts/_default/business-directory.html`:
+Handles category filter button clicks — toggles active styles on `.biz-filter` buttons and shows/hides `.biz-card` elements by matching `data-category`.
+
+Both scripts are included using Hugo Pipes in the same pattern as the CSS:
+```go
+{{ $js := resources.Get "js/nav.js" }}
+{{ if hugo.IsProduction }}
+  {{ $js = $js | minify | fingerprint }}
+{{ end }}
+<script src="{{ $js.Permalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
 ```
 
 ---
@@ -327,6 +330,42 @@ The "SUPPORT US" button links to `/support`. The Business Directory is not yet i
 - **Contact form** — `content/contact.md` uses a Formspree action placeholder (`your-form-id`); needs updating with the real form ID
 - **Business directory nav link** — not in the header nav yet
 - **Redirects** — A `static/_redirects` file is needed to map old WordPress URLs to new slugs
+
+---
+
+## Security
+
+### Content Security Policy
+
+HTTP response headers are set via `static/_headers`, which Cloudflare Pages reads and applies automatically. The file uses `#` comments to document each directive.
+
+The full policy is a single line in `static/_headers` (required by the Cloudflare Pages `_headers` format — multi-line values and inline comments are not supported).
+
+Current policy summary:
+
+| Directive | Value | Reason |
+|---|---|---|
+| `script-src` | `'self'` | All JS is served from `/js/` via Hugo Pipes — no inline scripts |
+| `style-src` | `'self' 'unsafe-inline'` | `style="..."` attributes are used in templates (e.g. `display:none` on the business directory empty state) |
+| `img-src` | `'self' https: data:` | Business directory logos link to arbitrary external domains |
+| `frame-src` | `https://www.youtube-nocookie.com` | YouTube embed on the homepage (`youtube-nocookie.com` avoids cross-site tracking) |
+| `default-src` | `'self'` | Everything else self-hosted only |
+| `object-src` | `'none'` | Prevent `<object>` and `<embed>` entirely |
+| `base-uri` | `'self'` | Prevent `<base>` tag hijacking |
+| `form-action` | `'self'` | Restrict where forms can submit |
+
+### Cloudflare features
+
+Wrangler is a CLI/deploy tool only and has no client-side presence — it does not affect the CSP.
+
+The following Cloudflare features are not currently enabled, but would require CSP changes if added:
+
+| Feature | Addition required |
+|---|---|
+| Web Analytics | `script-src static.cloudflareinsights.com` + `connect-src cloudflareinsights.com` |
+| Rocket Loader | `script-src ajax.cloudflare.com` — also breaks `integrity` checks on scripts |
+| Zaraz | `script-src 'unsafe-inline'` or per-tool origins |
+| Turnstile | `script-src challenges.cloudflare.com` + `frame-src challenges.cloudflare.com` |
 
 ---
 

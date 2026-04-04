@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:www.ashfordwide.com)",
       "Bash(hugo version:*)",
-      "Bash(hugo)"
+      "Bash(hugo)",
+      "WebFetch(domain:b9fa7bbf.ashford-wide.pages.dev)",
+      "Bash(curl -s \"https://b9fa7bbf.ashford-wide.pages.dev/\")",
+      "Bash(curl -sI \"https://b9fa7bbf.ashford-wide.pages.dev/\")"
     ]
   }
 }
