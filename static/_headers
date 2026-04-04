@@ -1,2 +1,5 @@
 /*
-  Content-Security-Policy: script-src 'self' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' https: data:; frame-src https://www.youtube-nocookie.com; default-src 'self'; connect-src 'self' https://identity.netlify.com https://ashford-wide.pages.dev; object-src 'none'; base-uri 'self'; form-action 'self';
+  Content-Security-Policy: script-src 'self' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' https: data:; frame-src https://www.youtube-nocookie.com; default-src 'self'; connect-src 'self' https://identity.netlify.com https://ashford-wide.pages.dev https://unpkg.com; object-src 'none'; base-uri 'self'; form-action 'self';
+
+/admin/*
+  Content-Security-Policy: script-src 'self' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' https: data:; frame-src https://www.youtube-nocookie.com; default-src 'self'; connect-src 'self' https://identity.netlify.com https://ashford-wide.pages.dev https://unpkg.com https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self';
