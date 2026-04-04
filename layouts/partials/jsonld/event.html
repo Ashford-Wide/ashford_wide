@@ -1,0 +1,22 @@
+{{- $event := dict
+  "@context" "https://schema.org"
+  "@type" "Event"
+  "name" .Title
+  "startDate" (.Date.Format "2006-01-02")
+  "url" .Permalink
+  "organizer" (dict
+    "@type" "Organization"
+    "name" .Site.Title
+    "url" (.Site.BaseURL | strings.TrimRight "/")
+  )
+-}}
+{{- with .Description -}}
+  {{- $event = merge $event (dict "description" .) -}}
+{{- end -}}
+{{- with .Params.location -}}
+  {{- $event = merge $event (dict "location" (dict "@type" "Place" "name" .)) -}}
+{{- end -}}
+{{- with .Params.image -}}
+  {{- $event = merge $event (dict "image" (absURL .)) -}}
+{{- end -}}
+<script type="application/ld+json">{{ $event | jsonify | safeJS }}</script>
