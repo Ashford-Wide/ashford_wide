@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Static website for Ashford Wide, a Business Improvement District (BID) and community initiative in Ashford, Kent. The site is built with Hugo and deployed to Cloudflare Pages. Content is managed via Decap CMS at `/admin/`.
+Static website for Ashford Wide, a Business Improvement District (BID) and community initiative in [Ashford, Surrey](https://en.wikipedia.org/wiki/Ashford,_Surrey). The site is built with Hugo and deployed to Cloudflare Pages. Content is managed via Decap CMS at `/admin/`.
 
 **Live domain:** `https://www.ashfordwide.com/`  
 **Stack:** Hugo v0.159.1 · Tailwind CSS v4 · No JS framework · Decap CMS · Cloudflare Pages
@@ -28,6 +28,7 @@ ashford_wide/
 │   ├── events/                  # Event-specific templates
 │   ├── news/                    # News-specific templates
 │   ├── partials/                # Reusable template fragments
+│   │   ├── jsonld/              # Schema.org JSON-LD partials
 │   ├── index.html               # Homepage template
 │   ├── sitemap.xml              # Custom sitemap template
 │   ├── robots.txt               # Robots.txt template
@@ -63,6 +64,7 @@ disableHugoGeneratorInject = true
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
   email = "info@ashfordwide.com"
+  ogImage = "/images/og-default.jpg"   # Default Open Graph image (1200×630px)
   facebook = "https://www.facebook.com/AshfordWide"
   twitter = "https://twitter.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
@@ -72,9 +74,16 @@ disableHugoGeneratorInject = true
 
 [taxonomies]
   tag = "tags"
+
+[permalinks]
+  [permalinks.page]
+    news = "/news/:contentbasename/"
+    events = "/events/:contentbasename/"
 ```
 
 `buildFuture = true` is essential — without it Hugo will not render pages for future-dated events.
+
+The `permalinks` rules use `:contentbasename` (filename only, no directory) so that news and events can be organised into year subdirectories without the year appearing in the URL. For example, `content/events/2026/summer-market-2026.md` resolves to `/events/summer-market-2026/`.
 
 ---
 
@@ -84,7 +93,7 @@ disableHugoGeneratorInject = true
 
 ```
 content/
-├── _index.md                        # Homepage (no body content — layout drives everything)
+├── _index.md
 ├── about.md
 ├── business-directory.md            # Uses layout: "business-directory"
 ├── business-membership.md
@@ -94,13 +103,28 @@ content/
 ├── volunteer.md
 ├── events/
 │   ├── _index.md
-│   ├── christmas-market-2025.md
-│   ├── spring-festival-2026.md
-│   └── summer-market-2026.md
+│   ├── past.md                      # Renders /events/past/ archive page; excluded from page lists
+│   ├── 2022/
+│   │   └── jubilee-picnic-park.md
+│   ├── 2025/
+│   │   ├── christmas-market-2025.md
+│   │   ├── classic-car-show-2025.md
+│   │   └── remberance-sunday-2025.md
+│   └── 2026/
+│       ├── ritual-sacrifice.md
+│       ├── spring-festival-2026.md
+│       └── summer-market-2026.md
 ├── news/
 │   ├── _index.md
 │   ├── welcome-to-ashford-wide.md
-│   └── spring-events-announced.md
+│   ├── 2014/
+│   ├── 2015/
+│   ├── 2016/
+│   ├── 2017/
+│   ├── 2019/
+│   ├── 2022/
+│   ├── 2025/
+│   └── 2026/
 └── remembrance/
     ├── _index.md
     ├── order-of-services.md
@@ -108,20 +132,43 @@ content/
     └── virtual-poppy-wall.md
 ```
 
+### Year Subdirectory Organisation
+
+Both `content/news/` and `content/events/` organise files into year subdirectories (`2025/`, `2026/`, etc.) without affecting public URLs. This is achieved via the `permalinks` config (see above). Adding new content to the correct year folder requires no other changes — the URL is always derived from the filename alone.
+
+### `content/events/past.md`
+
+This file exists solely to generate the `/events/past/` archive page using `layouts/events/past.html`. It is excluded from all Hugo page collections via:
+
+```yaml
+build:
+  list: never
+  render: always
+```
+
+Do not delete this file — the `/events/past/` URL depends on it.
+
 ### Event Front Matter
 
 ```yaml
 ---
 title: "Summer Market 2026"
 date: 2026-07-11
-time: "10am–3pm"
+startTime: "10:00"          # 24hr HH:MM — optional
+endTime: "15:00"            # 24hr HH:MM — optional
 location: "High Street, Ashford"
+address: "High Street"      # Street address — optional, added to schema.org output
 description: "Short summary shown on event cards and in meta tags."
 image: "/images/events/summer-market-2026.jpg"  # optional
+endDate: "2026-07-12"       # optional — only for multi-day events
+eventStatus: EventCancelled # optional — overrides default EventScheduled
+attendanceMode: OnlineEventAttendanceMode  # optional — overrides default OfflineEventAttendanceMode
 ---
 ```
 
 The `date` field drives all event filtering. The events list template splits events into upcoming (`date >= now`) and past (`date < now`) automatically. No manual archiving is needed.
+
+`startTime` and `endTime` are stored as `HH:MM` 24hr strings. The `layouts/partials/event-time.html` partial formats them for display (e.g. `10am–3pm`). They are also combined with `date` to produce ISO-8601 datetime values in the schema.org JSON-LD output (e.g. `2026-07-11T10:00`).
 
 ### News Front Matter
 
@@ -155,19 +202,23 @@ All pages extend `layouts/_default/baseof.html` via `{{ define "main" }}` blocks
 
 ```
 baseof.html
-  └── partial: head.html        (meta, CSS link, favicon)
+  └── partial: head.html        (meta, CSS link, favicon, Open Graph tags, JSON-LD)
+  └── block: head_extra         (defined per-template — e.g. event JSON-LD on event pages)
   └── partial: header.html      (sticky nav, logo, mobile toggle)
   └── block: main               (defined per-template)
   └── partial: footer.html      (3-column footer, social links, mobile nav JS)
 ```
+
+`{{ block "head_extra" . }}{{ end }}` is defined in `baseof.html` directly (not inside `head.html`) so that page templates can override it. Blocks inside partials do not participate in the template inheritance chain.
 
 ### Layout Files
 
 | File | Purpose |
 |------|---------|
 | `layouts/index.html` | Homepage — hero, about section, upcoming events grid (first 3), membership CTA, member logo marquee, newsletter form |
-| `layouts/events/list.html` | Events index — splits into upcoming/past using Hugo date comparisons |
-| `layouts/events/single.html` | Single event page with date/time/location meta panel |
+| `layouts/events/list.html` | Events index — splits into upcoming/past using Hugo date comparisons; shows 3 most recent past events with a link to the full archive |
+| `layouts/events/single.html` | Single event page with date/time/location meta panel; injects Event JSON-LD via `head_extra` |
+| `layouts/events/past.html` | Full archive of all past events as a card grid, linked from the events index |
 | `layouts/news/list.html` | News index — grid sorted by date descending, paginated (9 per page) |
 | `layouts/news/single.html` | Single news article with breadcrumb |
 | `layouts/_default/single.html` | Generic single page — page header + article content |
@@ -175,11 +226,23 @@ baseof.html
 | `layouts/_default/list.html` | Default section list (fallback) |
 | `layouts/_default/taxonomy.html` | Tag/taxonomy pages |
 | `layouts/sitemap.xml` | Custom sitemap — `<loc>` and `<lastmod>` only, no priority/changefreq |
-| `layouts/404.html` | 404 page (stub — needs content) |
+| `layouts/404.html` | 404 page |
+
+### Partials
+
+| File | Purpose |
+|------|---------|
+| `partials/head.html` | `<head>` contents — charset, viewport, title, description, CSS, favicon, canonical, Open Graph, org JSON-LD |
+| `partials/header.html` | Sticky nav, logo, mobile hamburger |
+| `partials/footer.html` | 3-column footer, social links, nav JS |
+| `partials/opengraph.html` | Open Graph + Twitter Card meta tags — used on all pages |
+| `partials/event-time.html` | Formats `startTime`/`endTime` frontmatter into a display range (e.g. `10am–3pm`) |
+| `partials/jsonld/org.html` | Schema.org `Organization` JSON-LD — output on every page |
+| `partials/jsonld/event.html` | Schema.org `Event` JSON-LD — output on event single pages via `head_extra` |
 
 ### Key Template Patterns
 
-**Accessing data files** — use `site.Data` (not `hugo.Data` or the older `.Site.Data` context-bound method):
+**Accessing data files** — use `site.Data`:
 ```go
 {{ $businesses := site.Data.businesses }}
 {{ $members := site.Data.members }}
@@ -204,11 +267,60 @@ layout: "business-directory"
 ```
 Hugo looks for `layouts/_default/business-directory.html`.
 
+**Rendering event time range:**
+```go
+{{ partial "event-time.html" . }}
+```
+Outputs nothing if `startTime` is not set. Outputs `10am` if only `startTime` is set. Outputs `10am–3pm` if both `startTime` and `endTime` are set.
+
 ---
 
-## CSS & Styling (Tailwind CSS)
+## Open Graph & Social Previews
 
-The project has been migrated from a custom CSS framework to **Tailwind CSS v4**.
+All pages output Open Graph and Twitter Card meta tags via `layouts/partials/opengraph.html`, included from `head.html`.
+
+**Image priority:**
+1. Page-level `image:` frontmatter param (news/events)
+2. `site.Params.ogImage` — the site-wide default (`/images/og-default.jpg`)
+
+**`og:type` by section:**
+- `article` — news pages (also outputs `article:published_time` and `article:author`)
+- `website` — all other pages
+
+**`twitter:card`** is set to `summary_large_image` when an image is available, otherwise `summary`.
+
+The default OG image (`/images/og-default.jpg`) should be **1200×630px** — ideally the Ashford Wide logo on a branded background. This file does not yet exist and needs to be created.
+
+---
+
+## Schema.org / JSON-LD
+
+Two JSON-LD blocks are output per page:
+
+| Partial | Output on | Type |
+|---------|-----------|------|
+| `partials/jsonld/org.html` | Every page (via `head.html`) | `Organization` |
+| `partials/jsonld/event.html` | Event single pages (via `head_extra`) | `Event` |
+
+### Event JSON-LD fields
+
+| Field | Source | Notes |
+|-------|--------|-------|
+| `name` | `.Title` | |
+| `startDate` | `date` + `startTime` | ISO-8601 — `2026-07-11T10:00` if time set, `2026-07-11` otherwise |
+| `endDate` | `date` + `endTime` | Only output if `endTime` is set |
+| `eventStatus` | `eventStatus` param | Defaults to `EventScheduled` |
+| `eventAttendanceMode` | `attendanceMode` param | Defaults to `OfflineEventAttendanceMode` |
+| `location.name` | `location` param | |
+| `location.address` | Always set | Locality/region hardcoded to Ashford, Surrey, GB; `streetAddress` from `address` param if set |
+| `description` | `.Description` | |
+| `image` | `image` param | Absolute URL |
+| `url` | `.Permalink` | |
+| `organizer` | Site config | Name and URL from `hugo.toml` |
+
+---
+
+## CSS & Styling (Tailwind CSS v4)
 
 ### Setup & Workflow
 - **Dependencies**: Tailwind CSS is built via `postcss` and `postcss-cli` using Hugo Pipes. `@tailwindcss/typography` is also installed for markdown prose styling. An `npm install` is required after cloning the repo.
@@ -216,13 +328,12 @@ The project has been migrated from a custom CSS framework to **Tailwind CSS v4**
 - **Hugo Integration**: Included in `layouts/partials/head.html` using Hugo's internal asset processing (`resources.PostCSS`).
 
 ### Design Tokens (`@theme` variables)
-The legacy custom CSS variables have been mapped directly into the `@theme` block in `assets/css/main.css`:
 - **Colors**: `--color-surface` (`#212529`), `--color-text` (`#333`), `--color-muted` (`#6c757d`).
 - **Animations**: The homepage marquee animation is defined using `@keyframes marquee`.
 
 ### Custom Components
-Any styling that is too complex for inline utility classes (or used extensively across markdown prose) is defined in `assets/css/main.css` within `@layer components`:
-- `.article-content` — Applies `prose` from `@tailwindcss/typography` to markdown output on single pages. Overrides keep headings and links consistent with the site's existing colour conventions (`text-surface` / `#212529`). Used in `_default/single.html`, `_default/list.html`, `news/single.html`, and `events/single.html`.
+Defined in `assets/css/main.css` within `@layer components`:
+- `.article-content` — Applies `prose` from `@tailwindcss/typography` to markdown output on single pages.
 - `.nav-open` — Used by the mobile navigation JavaScript to disable scrolling.
 
 ---
@@ -237,7 +348,7 @@ Wires up the hamburger button (`#nav-toggle`) to toggle the `nav-open` class on 
 **`assets/js/business-directory.js`** — loaded only on the business directory page via `layouts/_default/business-directory.html`:
 Handles category filter button clicks — toggles active styles on `.biz-filter` buttons and shows/hides `.biz-card` elements by matching `data-category`.
 
-Both scripts are included using Hugo Pipes in the same pattern as the CSS:
+Both scripts are included using Hugo Pipes:
 ```go
 {{ $js := resources.Get "js/nav.js" }}
 {{ if hugo.IsProduction }}
@@ -267,7 +378,6 @@ Drives the `/business-directory/` page. Fields:
 | `facebook` | string (URL) | no |
 | `instagram` | string (URL) | no |
 | `x` | string (URL) | no |
-| `twitter` | string (URL) | no |
 | `logo` | string (path) | no |
 
 ### `data/members.yaml`
@@ -276,7 +386,7 @@ Drives the homepage member logo marquee. Fields: `name`, `logo` (image path).
 
 ### `data/team.yaml`
 
-Placeholder team data. Fields: `name`, `role`. Not currently rendered in any template — needs a team section adding to `content/about.md` or a dedicated partial.
+Placeholder team data. Fields: `name`, `role`. Not currently rendered in any template.
 
 ---
 
@@ -292,9 +402,20 @@ Served at `/admin/`. Edits are committed directly to the GitHub repo, triggering
    - **GitHub OAuth App**: create an OAuth App in GitHub, deploy a Cloudflare OAuth worker, keep `name: github`
 3. Optionally add Cloudflare Access to restrict `/admin/` to specific email addresses
 
-### Markdown Widget — Supported Formatting
+### CMS Collections
 
-All body fields use `widget: markdown`, which provides a WYSIWYG rich text editor with a toggle to raw Markdown mode.
+| Collection | Type | Manages |
+|-----------|------|---------|
+| `events` | folder | `content/events/{year}/*.md` — nested depth 2, path `{{year}}/{{slug}}` |
+| `news` | folder | `content/news/{year}/*.md` |
+| `pages` | files | about, membership, business-membership, volunteer, support, contact |
+| `remembrance` | files | All 4 remembrance pages |
+| `members` | files | `data/members.yaml` |
+| `businesses` | files | `data/businesses.yaml` |
+
+The events collection uses `nested: { depth: 2 }` and `path: "{{year}}/{{slug}}"` so Decap CMS scans year subdirectories and creates new events in the correct folder. `content/events/past.md` is excluded because it does not match the year/slug path pattern.
+
+### Markdown Widget — Supported Formatting
 
 | Element | Rich text editor | Raw Markdown mode |
 |---|---|---|
@@ -303,18 +424,7 @@ All body fields use `widget: markdown`, which provides a WYSIWYG rich text edito
 | Table | **No** — no visual table builder | Yes (GFM pipe syntax) |
 | Code block | Yes — toolbar button | Yes |
 
-Tables must be written in raw Markdown mode using standard GFM syntax. Hugo's Goldmark renderer supports them natively and `prose` styles them automatically.
-
-### CMS Collections
-
-| Collection | Type | Manages |
-|-----------|------|---------|
-| `events` | folder | `content/events/*.md` |
-| `news` | folder | `content/news/*.md` |
-| `pages` | files | about, membership, business-membership, volunteer, support, contact |
-| `remembrance` | files | All 4 remembrance pages |
-| `members` | files | `data/members.yaml` |
-| `businesses` | files | `data/businesses.yaml` |
+Tables must be written in raw Markdown mode using standard GFM syntax.
 
 ---
 
@@ -329,21 +439,22 @@ The header nav is hardcoded in `layouts/partials/header.html` (not data-driven).
 - Membership → Join Ashford Wide, Business Membership
 - Contact Us
 
-The "SUPPORT US" button links to `/support`. The Business Directory is not yet in the nav — add a link to `/business-directory` when ready.
+The "SUPPORT US" button links to `/support`. The Business Directory is not yet in the nav.
 
 ---
 
-## Known Gaps / Future Improvements
+## Known Gaps / Future Work
 
-- **404 page styling** — Done. `layouts/404.html` uses the standard dark page header band and a centred content section with a "Back to home" button.
-- **Tailwind Typography** — Installed. Markdown content uses the `prose` class via `.article-content`. Custom `prose-headings` and `prose-a` modifiers preserve the site's colour conventions.
-- **Data-driven Navigation** — The header nav is hardcoded in `layouts/partials/header.html`. This could be moved to `hugo.toml` menus for CMS integration.
-- **Logo fallback** — Header falls back to text if `static/images/logo.png` is absent. Favicon is `static/images/favicon.png` (referenced in `head.html` as both `rel="icon"` and `rel="apple-touch-icon"`).
-- **Team data** — `data/team.yaml` exists but no template renders it; the About page has an `#team` anchor with no content
-- **Newsletter form** — Homepage form currently posts to `action="#"`; needs a Mailchimp embed or similar
-- **Contact form** — `content/contact.md` uses a Formspree action placeholder (`your-form-id`); needs updating with the real form ID
-- **Business directory nav link** — not in the header nav yet
-- **Redirects** — A `static/_redirects` file is needed to map old WordPress URLs to new slugs
+| Item | Notes |
+|------|-------|
+| **Default OG image** | `static/images/og-default.jpg` needs creating at 1200×630px — logo on a branded background. Until it exists, pages without a specific `image:` param will have no social preview image. |
+| **Team data** | `data/team.yaml` exists but no template renders it; `about.md` has an `#team` anchor with no content |
+| **Newsletter form** | Homepage form posts to `action="#"`; needs a Mailchimp embed or equivalent |
+| **Contact form** | `content/contact.md` uses a Formspree placeholder (`your-form-id`); needs updating with the real form ID |
+| **Business directory nav link** | Not yet in the header nav — add a link to `/business-directory/` when ready |
+| **Redirects** | A `static/_redirects` file is needed to map any old WordPress URLs to new slugs |
+| **Data-driven navigation** | Header nav is hardcoded in `header.html`; could be moved to `hugo.toml` menus |
+| **News CMS nested folders** | The `news` collection in `config.yml` does not yet have `nested: { depth: 2 }` — adding this (as was done for events) would allow the CMS to browse and create news items in year subdirectories |
 
 ---
 
@@ -351,30 +462,24 @@ The "SUPPORT US" button links to `/support`. The Business Directory is not yet i
 
 ### Content Security Policy
 
-HTTP response headers are set via `static/_headers`, which Cloudflare Pages reads and applies automatically. The file uses `#` comments to document each directive.
-
-The full policy is a single line in `static/_headers` (required by the Cloudflare Pages `_headers` format — multi-line values and inline comments are not supported).
+HTTP response headers are set via `static/_headers`, which Cloudflare Pages reads automatically.
 
 Current policy summary:
 
 | Directive | Value | Reason |
 |---|---|---|
 | `script-src` | `'self'` | All JS is served from `/js/` via Hugo Pipes — no inline scripts |
-| `style-src` | `'self' 'unsafe-inline'` | `style="..."` attributes are used in templates (e.g. `display:none` on the business directory empty state) |
+| `style-src` | `'self' 'unsafe-inline'` | `style="..."` attributes used in templates |
 | `img-src` | `'self' https: data:` | Business directory logos link to arbitrary external domains |
-| `frame-src` | `https://www.youtube-nocookie.com` | YouTube embed on the homepage (`youtube-nocookie.com` avoids cross-site tracking) |
-| `default-src` | `'self'` | Everything else self-hosted only |
-| `object-src` | `'none'` | Prevent `<object>` and `<embed>` entirely |
+| `frame-src` | `https://www.youtube-nocookie.com` | YouTube embed on the homepage |
+| `default-src` | `'self'` | Everything else self-hosted |
+| `object-src` | `'none'` | Prevent `<object>` and `<embed>` |
 | `base-uri` | `'self'` | Prevent `<base>` tag hijacking |
 | `form-action` | `'self'` | Restrict where forms can submit |
 
-### Cloudflare features
+### Cloudflare Features (not currently enabled)
 
-Wrangler is a CLI/deploy tool only and has no client-side presence — it does not affect the CSP.
-
-The following Cloudflare features are not currently enabled, but would require CSP changes if added:
-
-| Feature | Addition required |
+| Feature | CSP addition required |
 |---|---|
 | Web Analytics | `script-src static.cloudflareinsights.com` + `connect-src cloudflareinsights.com` |
 | Rocket Loader | `script-src ajax.cloudflare.com` — also breaks `integrity` checks on scripts |
@@ -385,13 +490,9 @@ The following Cloudflare features are not currently enabled, but would require C
 
 ## Build
 
-Because Tailwind is built dynamically, NPM dependencies must be installed first:
-
 ```bash
-npm install   # Required before first build
-hugo          # development build
-hugo --minify # production build (used by Cloudflare Pages)
-hugo server   # local dev server at http://localhost:1313
+npm install        # Required before first build
+hugo               # Development build
+hugo --minify      # Production build (used by Cloudflare Pages)
+hugo server        # Local dev server at http://localhost:1313
 ```
-
-Current output: ~28 pages.
