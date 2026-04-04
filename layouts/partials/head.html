@@ -9,7 +9,8 @@
 {{ else }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ end }}
-<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
 <link rel="canonical" href="{{ .Permalink }}">
 {{ partial "jsonld/org.html" . }}
 {{ block "head_extra" . }}{{ end }}
