@@ -10,3 +10,5 @@
   <link rel="stylesheet" href="{{ $css.Permalink }}">
 {{ end }}
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+{{ partial "jsonld/org.html" . }}
+{{ block "head_extra" . }}{{ end }}
