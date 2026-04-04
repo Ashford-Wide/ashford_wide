@@ -8,10 +8,10 @@
 
 <section class="py-16">
   <div class="max-w-container mx-auto px-6">
-    {{ $pages := where .Site.RegularPages "Section" "news" }}
-    {{ if $pages }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "news").ByDate.Reverse }}
+    {{ if $paginator.Pages }}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{ range $pages.ByDate.Reverse }}
+      {{ range $paginator.Pages }}
       <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] transition-all duration-250 hover:-translate-y-[3px] flex flex-col group">
         {{ with .Params.image }}<div class="aspect-[16/9] overflow-hidden bg-[#333] shrink-0"><img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250"></div>{{ end }}
         <div class="p-5 flex-1 flex flex-col">
@@ -23,6 +23,25 @@
       </a>
       {{ end }}
     </div>
+
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
+      {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}" class="px-4 py-2 rounded bg-surface text-white/80 hover:text-white hover:opacity-80 transition-all text-sm font-medium">&larr; Newer</a>
+      {{ else }}
+      <span class="px-4 py-2 rounded bg-surface text-white/30 text-sm font-medium cursor-not-allowed">&larr; Newer</span>
+      {{ end }}
+
+      <span class="px-4 py-2 text-muted text-sm">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+
+      {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}" class="px-4 py-2 rounded bg-surface text-white/80 hover:text-white hover:opacity-80 transition-all text-sm font-medium">Older &rarr;</a>
+      {{ else }}
+      <span class="px-4 py-2 rounded bg-surface text-white/30 text-sm font-medium cursor-not-allowed">Older &rarr;</span>
+      {{ end }}
+    </nav>
+    {{ end }}
+
     {{ else }}
     <p class="text-muted">No news posts yet. Check back soon!</p>
     {{ end }}
