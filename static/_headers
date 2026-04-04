@@ -1,0 +1,2 @@
+/*
+  Content-Security-Policy: script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; frame-src https://www.youtube-nocookie.com; default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';

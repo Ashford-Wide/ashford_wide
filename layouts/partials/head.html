@@ -5,9 +5,9 @@
 {{ $css := resources.Get "css/main.css" | postCSS }}
 {{ if hugo.IsProduction }}
   {{ $css = $css | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{ else }}
-  <link rel="stylesheet" href="{{ $css.Permalink }}">
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ end }}
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="canonical" href="{{ .Permalink }}">
