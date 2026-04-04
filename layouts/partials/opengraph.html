@@ -1,0 +1,36 @@
+{{- $title := cond .IsHome (printf "%s — %s" .Site.Title .Site.Params.tagline) (printf "%s | %s" .Title .Site.Title) -}}
+{{- $description := or .Description .Site.Params.description -}}
+{{- $url := .Permalink -}}
+
+{{- $image := "" -}}
+{{- with .Params.image -}}
+  {{- $image = absURL . -}}
+{{- else -}}
+  {{- with $.Site.Params.ogImage -}}
+    {{- $image = absURL . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $type := "website" -}}
+{{- if eq .Section "news" -}}{{- $type = "article" -}}{{- end -}}
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:type" content="{{ $type }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $url }}">
+{{ with $image }}<meta property="og:image" content="{{ . }}">
+<meta property="og:image:alt" content="{{ $title }}">{{ end }}
+{{ if eq $type "article" }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ with .Params.author }}<meta property="article:author" content="{{ . }}">{{ end }}
+{{ end }}
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="{{ if $image }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{ with $image }}<meta name="twitter:image" content="{{ . }}">
+<meta name="twitter:image:alt" content="{{ $title }}">{{ end }}
+{{ with .Site.Params.twitter }}<meta name="twitter:site" content="{{ . }}">{{ end }}
