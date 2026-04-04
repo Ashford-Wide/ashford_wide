@@ -1,25 +1,2 @@
 /*
-  Content-Security-Policy:
-    # No inline scripts - JS is served from /js/ via Hugo pipes (assets/js/)
-    script-src 'self';
-    # No inline styles would be ideal, but style="" attributes are used throughout
-    # (e.g. display:none on business directory empty state, aspect-ratio on YouTube embed)
-    style-src 'self' 'unsafe-inline';
-    # Business directory logos are served from arbitrary external domains
-    img-src 'self' https: data:;
-    # YouTube embed on the homepage (youtube-nocookie.com avoids cross-site tracking)
-    frame-src https://www.youtube-nocookie.com;
-    # Cloudflare features that would require additional origins if enabled:
-    #   Web Analytics:  script-src static.cloudflareinsights.com + connect-src cloudflareinsights.com
-    #   Rocket Loader:  script-src ajax.cloudflare.com (also breaks integrity checks on scripts)
-    #   Zaraz:          script-src 'unsafe-inline' or per-tool origins
-    #   Turnstile:      script-src challenges.cloudflare.com + frame-src challenges.cloudflare.com
-    # Wrangler is a CLI/deploy tool only and has no client-side presence.
-    # Everything else defaults to self-hosted only
-    default-src 'self';
-    # Prevent <object> and <embed> entirely
-    object-src 'none';
-    # Restrict <base> tag to same origin
-    base-uri 'self';
-    # Restrict where forms can submit
-    form-action 'self';
+  Content-Security-Policy: script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; frame-src https://www.youtube-nocookie.com; default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';

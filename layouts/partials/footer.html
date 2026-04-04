@@ -57,4 +57,4 @@
 {{ if hugo.IsProduction }}
   {{ $js = $js | minify | fingerprint }}
 {{ end }}
-<script src="{{ $js.Permalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
+<script src="{{ $js.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
