@@ -37,7 +37,7 @@
     <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5 mt-8">Past Events</h2>
     <p class="text-muted mb-10 text-[1.05rem]">Events that have already taken place.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-70">
-      {{ range $past | first 6 }}
+      {{ range $past | first 3 }}
       <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] transition-all duration-250 hover:-translate-y-[3px] flex flex-col group">
         {{ with .Params.image }}<div class="aspect-[16/9] overflow-hidden bg-[#333] shrink-0"><img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250"></div>{{ end }}
         <div class="p-5 flex-1 flex flex-col">
@@ -47,6 +47,12 @@
         </div>
       </a>
       {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if $past }}
+    <div class="mt-8">
+      <a href="/events/past/" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">View all past events &rarr;</a>
     </div>
     {{ end }}
 
