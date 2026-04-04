@@ -53,13 +53,8 @@
   </div>
 </footer>
 
-<script>
-  const toggle = document.getElementById('nav-toggle');
-  const nav = document.getElementById('main-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('nav-open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-  }
-</script>
+{{ $js := resources.Get "js/nav.js" }}
+{{ if hugo.IsProduction }}
+  {{ $js = $js | minify | fingerprint }}
+{{ end }}
+<script src="{{ $js.Permalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
