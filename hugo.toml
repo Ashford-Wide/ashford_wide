@@ -21,3 +21,8 @@ disableHugoGeneratorInject = true
 
 [taxonomies]
   tag = "tags"
+
+[permalinks]
+  [permalinks.page]
+    news = "/news/:contentbasename/"
+    events = "/events/:contentbasename/"
