@@ -22,7 +22,7 @@
     {{- $categories = $categories | uniq | sort -}}
     {{ if gt (len $categories) 1 }}
     <div class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter by category">
-      <button class="biz-filter px-3.5 py-1.5 border border-[#d0d0d0] rounded-[2rem] text-[0.8rem] font-semibold cursor-pointer transition-colors duration-150 bg-surface text-white border-surface bg-white text-text hover:border-surface" data-filter="all">All</button>
+      <button class="biz-filter px-3.5 py-1.5 border rounded-[2rem] text-[0.8rem] font-semibold cursor-pointer transition-colors duration-150 bg-surface text-white border-surface" data-filter="all">All</button>
       {{ range $categories }}
       <button class="biz-filter px-3.5 py-1.5 border border-[#d0d0d0] rounded-[2rem] bg-white text-text text-[0.8rem] font-semibold cursor-pointer transition-colors duration-150 hover:border-surface" data-filter="{{ . | urlize }}">{{ . }}</button>
       {{ end }}
