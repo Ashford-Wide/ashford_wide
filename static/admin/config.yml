@@ -14,6 +14,9 @@ collections:
     label: Events
     folder: content/events
     create: true
+    nested:
+      depth: 2
+    path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
     fields:
       - { label: Title, name: title, widget: string }
