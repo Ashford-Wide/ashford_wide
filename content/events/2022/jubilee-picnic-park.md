@@ -1,7 +1,8 @@
 ---
 title: "Platinum Jubilee Picnic in The Park"
 date: 2022-06-05
-time: "12pm–5pm"
+startTime: "12:00"
+endTime: "17:00"
 location: "Ashford Recreation Ground, Clockhouse Land, Ashford"
 description: "Ashford Wide are proud to present our Picnic in the Park, to celebrate Queen Elizabeth’s Platinum Jubilee"
 ---

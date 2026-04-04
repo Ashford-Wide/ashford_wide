@@ -1,7 +1,7 @@
 ---
 title: Remberance Sunday 2025
 date: 2025-11-09
-time: 10.45am
+startTime: "10:45"
 location: Ashford War Memorial
 description: Join Ashford Wide for this years Remebrance Sunday parade and service on Sunday 9th November.
 ---

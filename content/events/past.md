@@ -1,7 +1,7 @@
 ---
 title: "Past Events"
 layout: "past"
-_build:
+build:
   list: never
   render: always
 ---

@@ -1,7 +1,8 @@
 ---
 title: "Ashford Spring Festival 2026"
 date: 2026-04-18
-time: "11am–4pm"
+startTime: "11:00"
+endTime: "16:00"
 location: "County Square, Ashford"
 description: "Celebrate the arrival of spring with live music, local food producers and family activities in the heart of Ashford."
 ---

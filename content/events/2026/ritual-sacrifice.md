@@ -1,7 +1,8 @@
 ---
 title: Ritual Sacrifice
 date: 2026-04-16
-time: 10am–2pm
+startTime: "10:00"
+endTime: "14:00"
 location: Greggs, Church Road, Ashford
 description: Join us for the annual ritual sacrifice to the ancient sun god
   Atum, held every 16 April outside Greggs since 906 AD.

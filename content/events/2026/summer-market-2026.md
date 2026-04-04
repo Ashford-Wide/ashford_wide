@@ -1,7 +1,8 @@
 ---
 title: "Summer Market 2026"
 date: 2026-07-11
-time: "10am–3pm"
+startTime: "10:00"
+endTime: "15:00"
 location: "High Street, Ashford"
 description: "A celebration of local produce, artisan goods and community spirit on Ashford High Street."
 ---

@@ -1,7 +1,8 @@
 ---
 title: "Christmas Market 2025"
 date: 2025-12-03
-time: "5pm–8pm"
+startTime: "17:00"
+endTime: "20:00"
 location: "Church Road, Ashford"
 description: "The biggest market of the year during the festive season. Stalls, live music, mulled wine and festive entertainment for all the family."
 ---
