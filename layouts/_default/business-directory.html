@@ -74,16 +74,16 @@
           {{ if $hasSocial }}
           <div class="flex gap-1.5 mt-2">
             {{ with .facebook }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              {{ partial "icons/facebook.html" . }}
             </a>{{ end }}
             {{ with .instagram }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              {{ partial "icons/instagram.html" . }}
             </a>{{ end }}
             {{ with .x }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              {{ partial "icons/twitter.html" . }}
             </a>{{ end }}
             {{ with .twitter }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              {{ partial "icons/twitter.html" . }}
             </a>{{ end }}
           </div>
           {{ end }}

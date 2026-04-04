@@ -34,13 +34,19 @@
       <p class="text-[0.8rem] text-white/40">&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" class="text-white/50">{{ .Site.Params.email }}</a></p>
       <div class="flex gap-[0.6rem]">
         {{ with .Site.Params.facebook }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 text-[0.8rem] hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">
+          {{ partial "icons/facebook.html" . }}
+        </a>
         {{ end }}
         {{ with .Site.Params.twitter }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 text-[0.8rem] hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">𝕏</a>
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">
+          {{ partial "icons/twitter.html" . }}
+        </a>
         {{ end }}
         {{ with .Site.Params.instagram }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 text-[0.8rem] hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">i</a>
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">
+          {{ partial "icons/instagram.html" . }}
+        </a>
         {{ end }}
       </div>
     </div>
