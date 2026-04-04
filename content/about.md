@@ -4,26 +4,37 @@ description: Working together for a better Ashford
 ---
 ## Who We Are
 
-Ashford Wide is a Business Improvement District (BID) and community initiative working across Ashford town centre. We bring together businesses, residents, volunteers and the local council to deliver projects and services that make Ashford a better place to live, work and visit.
+Ashford Wide is Ashford’s main community organisation. We’re a non-profit community group running only with volunteers. We bring together Residents, Businesses, Community Groups and Town Events in Ashford, Surrey.
 
-Established to give businesses a collective voice, Ashford Wide delivers real, tangible improvements to the town centre environment and experience—from safety initiatives and events to environmental enhancements and promotional campaigns.
+## Working together for a better Ashford.
 
-## Our Vision
+In the past there were several local groups working independently, all with different objectives, but all with the same goal.
 
-Our vision is simple: a thriving, vibrant Ashford town centre that the whole community is proud of.
+>To bring something positive to Ashford whether that be in business, through community groups, or local events.” These groups unanimously decided that working together as one, with one vision would achieve far greater results for the Town & Community. Ashford Chamber of Commerce, Ashford Pride and Ashford Events joined forces with the current Ashford Wide group, creating a new expanded group who are very much looking forward to bringing new and exciting projects to Ashford.
 
-We believe that by working together—businesses, residents, visitors and the council—we can achieve far more than any one organisation could alone.
+Individually the groups achieved a lot & really motivated by what can be achieved by working together.
 
-## What We Do
+This year we will be:
 
-* **Events:** We organise and support events throughout the year, from seasonal markets and celebrations to community gatherings that bring people into the town centre.
-* **Safety & Security:** We work with local police, the council and businesses to keep Ashford town centre safe and welcoming.
-* **Environmental Improvements:** We invest in making Ashford look its best, through planting, lighting, cleansing and public realm improvements.
-* **Promotion & Marketing:** We promote Ashford as a destination, attracting visitors, shoppers and investors to the town centre.
-* **Business Support:** We support local businesses with resources, networking events and access to grants and funding opportunities.
+- Putting Up Flags throughout the year to commemorate key events.
+  - St George’s Flags – April 23rd
+  - Union Flags Year round
+  - VE & VJ day
+  - Surrey Pride in September
+  - Halloween
+  - Remembrance Day in November
+  - Christmas in November/December
+- Summer Classic Car Show and family fun day
+- Remembrance Day parade & service
+- Summer Street Markets
+- Ashford Christmas lights & Christmas tree
+- Annual Ashford Christmas Market
+- More events to be announced
 
-## The Team {#team}
+Ashford Pride has always done a fantastic job with the flags in the town, commemorating and celebrating special and significant days throughout the year, and this is something that we will continue to do.
 
-Our dedicated team works year-round to deliver projects and support our members.
+In the past it has been Ashford Chamber of Commerce, along with the support of our local businesses that have been responsible for the Christmas lights in our town, Ashford Wide has now taken on the task of lightning up Ashford!
 
-If you'd like to get involved or join our team of volunteers, please [get in touch](/contact).
+The Ashford Wide team are always keen to hear from you, the local community.
+
+We would love to have your help making Ashford a better place to live, whether through donations or volunteering, every little helps.
