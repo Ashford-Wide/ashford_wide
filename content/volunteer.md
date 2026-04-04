@@ -9,22 +9,24 @@ Ashford Wide is a volunteer-driven organisation and we couldn't do what we do wi
 
 ## How You Can Help
 
-**Event Volunteers**
+### Event Volunteers
 
-We need volunteers to help at our events throughout the year — from marshalling and stewarding to setting up and handing out information. Events range from the Christmas Market and town celebrations to smaller community gatherings.
+We need volunteers to help at our events throughout the year — from marshalling and stewarding to setting up and handing out information.
 
-**Street Ambassador**
+Together, we work to bring people together and make Ashford thrive through projects like:
 
-Our Street Ambassadors are the friendly face of Ashford town centre — helping visitors find their way, providing information about local businesses and events, and generally making people feel welcome.
-
-**Committee Members**
-
-If you have skills in business, marketing, finance or community engagement, we'd welcome your input on one of our working committees.
-
-**General Volunteering**
-
-There are always tasks that need doing — from helping with social media to assisting with environmental improvement days. If you have skills to offer, we want to hear from you.
+- Classic car show
+- Rememberance Day
+- Christmas Market
+- Town flags
+- and much more!
 
 ## Get Involved
 
 To find out more about volunteering with Ashford Wide, please [contact us](/contact) with a brief description of how you'd like to help and we'll be in touch.
+
+We are committed to providing a safe and supportive environment for everyone involved in our activities; including volunteers, participants, and members of the public. Safeguarding is everyone's responsibility, and we expect all volunteers to share our commitment to protecting children, young people, and vulnerable adults from harm.
+
+All volunteers may be required to complete basic safeguarding training and, where appropriate, an enhanced DBS check before starting their role.
+
+If you have any concerns about safeguarding, please speak to a member of our team or contact our Designated Safeguarding Lead at [TBA].
