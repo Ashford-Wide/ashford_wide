@@ -1,8 +1,18 @@
+{{- $eventStatus := printf "https://schema.org/%s" (or .Params.eventStatus "EventScheduled") -}}
+{{- $attendanceMode := printf "https://schema.org/%s" (or .Params.attendanceMode "OfflineEventAttendanceMode") -}}
+{{- $dateOnly := .Date.Format "2006-01-02" -}}
+{{- $startDate := $dateOnly -}}
+{{- with .Params.startTime -}}{{- $startDate = printf "%sT%s" $dateOnly . -}}{{- end -}}
+{{- $endDate := "" -}}
+{{- with .Params.endTime -}}{{- $endDate = printf "%sT%s" $dateOnly . -}}{{- end -}}
+
 {{- $event := dict
   "@context" "https://schema.org"
   "@type" "Event"
   "name" .Title
-  "startDate" (.Date.Format "2006-01-02")
+  "startDate" $startDate
+  "eventStatus" $eventStatus
+  "eventAttendanceMode" $attendanceMode
   "url" .Permalink
   "organizer" (dict
     "@type" "Organization"
@@ -13,8 +23,15 @@
 {{- with .Description -}}
   {{- $event = merge $event (dict "description" .) -}}
 {{- end -}}
+{{- if $endDate -}}
+  {{- $event = merge $event (dict "endDate" $endDate) -}}
+{{- end -}}
 {{- with .Params.location -}}
-  {{- $event = merge $event (dict "location" (dict "@type" "Place" "name" .)) -}}
+  {{- $address := dict "@type" "PostalAddress" "addressLocality" "Ashford" "addressRegion" "Surrey" "addressCountry" "GB" -}}
+  {{- with $.Params.address -}}
+    {{- $address = merge $address (dict "streetAddress" .) -}}
+  {{- end -}}
+  {{- $event = merge $event (dict "location" (dict "@type" "Place" "name" . "address" $address)) -}}
 {{- end -}}
 {{- with .Params.image -}}
   {{- $event = merge $event (dict "image" (absURL .)) -}}

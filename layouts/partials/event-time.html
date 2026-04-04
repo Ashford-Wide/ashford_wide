@@ -1,0 +1,9 @@
+{{- with .Params.startTime -}}
+  {{- $d := $.Date.Format "2006-01-02" -}}
+  {{- $st := time (printf "%sT%s:00Z" $d .) -}}
+  {{- if eq ($st.Format "04") "00" -}}{{ $st.Format "3pm" }}{{- else -}}{{ $st.Format "3:04pm" }}{{- end -}}
+  {{- with $.Params.endTime -}}
+    {{- $et := time (printf "%sT%s:00Z" $d .) -}}
+    &#8211;{{- if eq ($et.Format "04") "00" -}}{{ $et.Format "3pm" }}{{- else -}}{{ $et.Format "3:04pm" }}{{- end -}}
+  {{- end -}}
+{{- end -}}

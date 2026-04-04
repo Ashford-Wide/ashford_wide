@@ -21,7 +21,8 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
-      - { label: Time, name: time, widget: string, hint: "e.g. 10am–3pm", required: false }
+      - { label: Start Time, name: startTime, widget: string, hint: "24hr format, e.g. 10:00", required: false }
+      - { label: End Time, name: endTime, widget: string, hint: "24hr format, e.g. 14:00", required: false }
       - { label: Location, name: location, widget: string, required: false }
       - { label: Description, name: description, widget: text, hint: "Short summary shown on event cards" }
       - { label: Image, name: image, widget: image, required: false }
