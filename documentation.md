@@ -211,7 +211,7 @@ Hugo looks for `layouts/_default/business-directory.html`.
 The project has been migrated from a custom CSS framework to **Tailwind CSS v4**.
 
 ### Setup & Workflow
-- **Dependencies**: Tailwind CSS is built via `postcss` and `postcss-cli` using Hugo Pipes. An `npm install` is required after cloning the repo.
+- **Dependencies**: Tailwind CSS is built via `postcss` and `postcss-cli` using Hugo Pipes. `@tailwindcss/typography` is also installed for markdown prose styling. An `npm install` is required after cloning the repo.
 - **Entry Point**: `assets/css/main.css` processes Tailwind directives (`@import "tailwindcss";`, `@theme`, `@layer components`, etc.).
 - **Hugo Integration**: Included in `layouts/partials/head.html` using Hugo's internal asset processing (`resources.PostCSS`).
 
@@ -222,7 +222,7 @@ The legacy custom CSS variables have been mapped directly into the `@theme` bloc
 
 ### Custom Components
 Any styling that is too complex for inline utility classes (or used extensively across markdown prose) is defined in `assets/css/main.css` within `@layer components`:
-- `.article-content` — Used to style raw markdown output on single pages without needing an external typography plugin.
+- `.article-content` — Applies `prose` from `@tailwindcss/typography` to markdown output on single pages. Overrides keep headings and links consistent with the site's existing colour conventions (`text-surface` / `#212529`). Used in `_default/single.html`, `_default/list.html`, `news/single.html`, and `events/single.html`.
 - `.nav-open` — Used by the mobile navigation JavaScript to disable scrolling.
 
 ---
@@ -292,6 +292,19 @@ Served at `/admin/`. Edits are committed directly to the GitHub repo, triggering
    - **GitHub OAuth App**: create an OAuth App in GitHub, deploy a Cloudflare OAuth worker, keep `name: github`
 3. Optionally add Cloudflare Access to restrict `/admin/` to specific email addresses
 
+### Markdown Widget — Supported Formatting
+
+All body fields use `widget: markdown`, which provides a WYSIWYG rich text editor with a toggle to raw Markdown mode.
+
+| Element | Rich text editor | Raw Markdown mode |
+|---|---|---|
+| Headings, bold, italic, links, lists | Yes — toolbar buttons | Yes |
+| Blockquote | Yes — toolbar button | Yes (`>` syntax) |
+| Table | **No** — no visual table builder | Yes (GFM pipe syntax) |
+| Code block | Yes — toolbar button | Yes |
+
+Tables must be written in raw Markdown mode using standard GFM syntax. Hugo's Goldmark renderer supports them natively and `prose` styles them automatically.
+
 ### CMS Collections
 
 | Collection | Type | Manages |
@@ -322,10 +335,10 @@ The "SUPPORT US" button links to `/support`. The Business Directory is not yet i
 
 ## Known Gaps / Future Improvements
 
-- **404 page styling** — `layouts/404.html` is a stub (`<div>Page not found</div>`) and needs to be styled using Tailwind classes.
-- **Tailwind Typography** — Markdown content (`.article-content`) is currently styled with custom component classes. In the future, you could install `@tailwindcss/typography` (`prose` class) for automatic, extensive markdown styling.
+- **404 page styling** — Done. `layouts/404.html` uses the standard dark page header band and a centred content section with a "Back to home" button.
+- **Tailwind Typography** — Installed. Markdown content uses the `prose` class via `.article-content`. Custom `prose-headings` and `prose-a` modifiers preserve the site's colour conventions.
 - **Data-driven Navigation** — The header nav is hardcoded in `layouts/partials/header.html`. This could be moved to `hugo.toml` menus for CMS integration.
-- **Logo fallback** — Header falls back to text if `static/images/logo.png` is absent; `static/images/favicon.svg` is referenced but not committed
+- **Logo fallback** — Header falls back to text if `static/images/logo.png` is absent. Favicon is `static/images/favicon.png` (referenced in `head.html` as both `rel="icon"` and `rel="apple-touch-icon"`).
 - **Team data** — `data/team.yaml` exists but no template renders it; the About page has an `#team` anchor with no content
 - **Newsletter form** — Homepage form currently posts to `action="#"`; needs a Mailchimp embed or similar
 - **Contact form** — `content/contact.md` uses a Formspree action placeholder (`your-form-id`); needs updating with the real form ID
