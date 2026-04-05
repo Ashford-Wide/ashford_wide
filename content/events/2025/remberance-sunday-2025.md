@@ -1,5 +1,5 @@
 ---
-title: Remberance Sunday 2025
+title: Remembrance Sunday 2025
 date: 2025-11-09
 startTime: "10:45"
 location: Ashford War Memorial
