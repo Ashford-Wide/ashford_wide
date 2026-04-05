@@ -9,6 +9,7 @@ enableRobotsTXT = true
 disableHugoGeneratorInject = true
 
 [params]
+  legalName = "Ashford Wide"
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
   showRemembrance = false
