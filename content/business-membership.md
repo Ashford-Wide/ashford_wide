@@ -14,7 +14,7 @@ As an Ashford Wide business member, you'll benefit from:
 * **Business Directory:** A prominent listing on our website business directory, complete with your logo, description and website link.
 * **Marketing & Promotion:** Your business promoted through our social media channels, newsletter and printed materials.
 * **Networking Events:** Exclusive access to business networking events, breakfast meetings and seminars.
-* **Collective Voice:** Representation at Ashford Borough Council and with other local stakeholders on issues that affect your business.
+* **Collective Voice:** Representation at Spelthorne Borough Council and with other local stakeholders on issues that affect your business.
 * **Grants & Funding:** Advice and support on accessing available grants and funding for business improvements.
 
 ## How to Join
