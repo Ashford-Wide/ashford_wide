@@ -1,8 +1,15 @@
-- name: "Town Manager"
-  role: "Oversees day-to-day operations and member relations"
+- name: "Barry Muggeridge"
+  role: "Chairperson"
+  photo: "/images/team/barry-muggeridge.jpg"
 
-- name: "Events Coordinator"
-  role: "Plans and delivers the annual events programme"
+- name: "John Smith"
+  role: "Treasurer"
+  photo: "/images/team/john-smith.jpg"
 
-- name: "Marketing & Communications"
-  role: "Manages digital channels, newsletters and promotions"
+- name: "Jenny Frost"
+  role: "Secretary"
+  photo: "/images/team/jenny-frost.jpg"
+
+- name: "Emma Gray"
+  role: "Business Lead"
+  photo: "/images/team/emma-gray.jpg"
