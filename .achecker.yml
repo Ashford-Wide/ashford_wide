@@ -1,0 +1,13 @@
+# .achecker.yml
+ruleArchive: latest
+policies:
+  - WCAG_2_2
+failLevels:
+  - violation
+reportLevels:
+  - violation
+  - potentialviolation
+outputFormat:
+  - json
+  - html
+outputFolder: accessibility-reports
