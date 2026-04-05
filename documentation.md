@@ -18,6 +18,10 @@ ashford_wide/
 ├── .achecker.yml                # Accessibility checker configuration (WCAG 2.2)
 ├── scripts/
 │   └── a11y-test.js             # Accessibility scan script (uses achecker programmatic API)
+├── functions/
+│   └── api/auth/
+│       ├── index.js             # OAuth start — redirects to GitHub
+│       └── callback.js          # OAuth callback — exchanges code, checks collaborator access
 ├── tailwind.config.js           # Tailwind theme configuration
 ├── postcss.config.js            # PostCSS configuration for Hugo Pipes
 ├── assets/
@@ -64,12 +68,14 @@ enableRobotsTXT = true
 disableHugoGeneratorInject = true
 
 [params]
+  legalName = "Ashford Wide"                 # Legal registered name — used in org JSON-LD
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
   showRemembrance = false                    # Set true to show Remembrance link in nav
   email = "community@ashfordwide.com"        # General contact email
   businessEmail = "business@ashfordwide.com" # Business-specific contact email
   ogImage = "/images/og-default.jpg"         # Default Open Graph image (1200×630px)
+  companyNumber = ""                         # Companies House number — omitted from JSON-LD if blank
   facebook = "https://www.facebook.com/AshfordWide"
   twitter = "https://twitter.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
@@ -239,7 +245,7 @@ baseof.html
 |------|---------|
 | `partials/head.html` | `<head>` contents — charset, viewport, title, description, CSS, SVG favicon, canonical, Open Graph, org JSON-LD |
 | `partials/header.html` | Sticky nav, logo, mobile hamburger |
-| `partials/footer.html` | 3-column footer, social links, nav JS |
+| `partials/footer.html` | 3-column footer (light theme), logo, social links, nav JS |
 | `partials/opengraph.html` | Open Graph + Twitter Card meta tags — used on all pages |
 | `partials/event-time.html` | Formats `startTime`/`endTime` frontmatter into a display range (e.g. `10am–3pm`) |
 | `partials/jsonld/org.html` | Schema.org `Organization` JSON-LD — output on every page |
@@ -320,6 +326,30 @@ Two JSON-LD blocks are output per page:
 |---------|-----------|------|
 | `partials/jsonld/org.html` | Every page (via `head.html`) | `Organization` |
 | `partials/jsonld/event.html` | Event single pages (via `head_extra`) | `Event` |
+
+### Organisation JSON-LD fields
+
+Output on every page via `partials/jsonld/org.html`.
+
+| Field | Source | Notes |
+|-------|--------|-------|
+| `@id` | `baseURL` | `https://ashfordwide.com/#organization` — stable graph node identifier |
+| `@type` | hardcoded | `Organization` |
+| `additionalType` | hardcoded | Wikidata Q5154974 — community interest company |
+| `name` | `site.Title` | |
+| `legalName` | `params.legalName` | |
+| `url` | `baseURL` | Trailing slash stripped |
+| `description` | `params.description` | Omitted if blank |
+| `logo` | `params.logo` | Absolute URL — omitted if blank |
+| `foundingDate` | `params.foundingDate` | Omitted if blank |
+| `slogan` | `params.slogan` | Omitted if blank |
+| `email` | `params.email` | Omitted if blank |
+| `telephone` | `params.phone` | Omitted if blank |
+| `identifier` | `params.companyNumber` | `PropertyValue` with Companies House URL — entire block omitted if blank |
+| `address` | `params.address.*` + hardcoded | `PostalAddress` — locality Ashford, region Surrey, country GB |
+| `knowsAbout` | hardcoded | Community Development (Wikidata Q5154974) |
+| `areaServed` | hardcoded | City: Ashford (Wikidata Q725270); DefinedRegion: TW15 |
+| `sameAs` | `params.facebook`, `.twitter`, `.instagram` | Omitted entirely if none are set |
 
 ### Event JSON-LD fields
 
@@ -413,13 +443,70 @@ Placeholder team data. Fields: `name`, `role`. Not currently rendered in any tem
 
 Served at `/admin/`. Edits are committed directly to the GitHub repo, triggering a Cloudflare Pages rebuild (~30 seconds).
 
-### Setup Required
+### Authentication
 
-1. Update `repo:` in `static/admin/config.yml` with the actual GitHub org/repo
-2. Configure OAuth — either:
-   - **Decap Cloud** (free): change backend to `name: git-gateway` and register at `app.decapcms.org`
-   - **GitHub OAuth App**: create an OAuth App in GitHub, deploy a Cloudflare OAuth worker, keep `name: github`
-3. Optionally add Cloudflare Access to restrict `/admin/` to specific email addresses
+Decap CMS authenticates editors via GitHub OAuth. The OAuth flow is handled by two Cloudflare Pages Functions (no external service required):
+
+| File | Route | Purpose |
+|------|-------|---------|
+| `functions/api/auth/index.js` | `GET /api/auth` | Redirects to GitHub OAuth authorisation |
+| `functions/api/auth/callback.js` | `GET /api/auth/callback` | Exchanges code for token, checks collaborator access |
+
+```mermaid
+sequenceDiagram
+    actor Editor
+    participant CMS as Decap CMS<br/>(/admin)
+    participant Auth as Pages Function<br/>(/api/auth)
+    participant CB as Pages Function<br/>(/api/auth/callback)
+    participant GH as GitHub
+
+    Editor->>CMS: Visit /admin, click "Login with GitHub"
+    CMS->>Auth: Open popup → GET /api/auth?provider=github
+    Auth->>GH: Redirect to github.com/login/oauth/authorize
+    GH->>Editor: Show "Authorise Ashford Wide" screen
+    Editor->>GH: Approve
+    GH->>CB: Redirect to /api/auth/callback?code=xxx
+    CB->>GH: POST /login/oauth/access_token (exchange code)
+    GH->>CB: Return access token
+    CB->>GH: GET /user (fetch username)
+    GH->>CB: Return user login
+    CB->>GH: GET /repos/{repo}/collaborators/{login}
+    alt Is a collaborator
+        GH->>CB: 204 No Content
+        CB->>CMS: postMessage → authorization:github:success:{token}
+        CMS->>Editor: CMS loads, editor can create/edit content
+    else Not a collaborator
+        GH->>CB: 404 Not Found
+        CB->>CMS: postMessage → authorization:github:error
+        CMS->>Editor: Error shown in popup, access denied
+    end
+```
+
+#### Required environment variables (Cloudflare Pages dashboard)
+
+| Variable | Value |
+|----------|-------|
+| `GITHUB_CLIENT_ID` | From the GitHub OAuth App |
+| `GITHUB_CLIENT_SECRET` | From the GitHub OAuth App |
+| `GITHUB_REPO` | e.g. `magnoliaceiling/ashford_wide` |
+
+#### One-time setup steps
+
+1. **Create a GitHub OAuth App** — GitHub → Settings → Developer settings → OAuth Apps → New OAuth App:
+   - Homepage URL: `https://www.ashfordwide.com`
+   - Authorization callback URL: `https://www.ashfordwide.com/api/auth/callback`
+2. **Add the three environment variables** above in the Cloudflare Pages dashboard
+3. **Update `static/admin/config.yml`** — set `repo:` and replace `https://YOUR_DOMAIN` with the live domain
+
+#### Managing editor access
+
+Access is controlled by GitHub repository collaborators. To grant CMS access to an editor:
+
+- GitHub repo → Settings → Collaborators → Add people → enter their GitHub username
+
+The Pages Function checks collaborator status at login time — non-collaborators are blocked before the CMS loads with a clear error message identifying their GitHub username.
+
+To revoke access, remove them as a collaborator on GitHub.
 
 ### CMS Collections
 
