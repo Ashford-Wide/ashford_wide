@@ -11,7 +11,7 @@ disableHugoGeneratorInject = true
 [params]
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
-  email = "info@ashfordwide.com"
+  email = "community@ashfordwide.com"
   ogImage = "/images/og-default.jpg"
   foundedYear = 2012
   facebook = "https://www.facebook.com/AshfordWide"
