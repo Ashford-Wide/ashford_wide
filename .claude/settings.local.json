@@ -6,7 +6,15 @@
       "Bash(hugo)",
       "WebFetch(domain:b9fa7bbf.ashford-wide.pages.dev)",
       "Bash(curl -s \"https://b9fa7bbf.ashford-wide.pages.dev/\")",
-      "Bash(curl -sI \"https://b9fa7bbf.ashford-wide.pages.dev/\")"
+      "Bash(curl -sI \"https://b9fa7bbf.ashford-wide.pages.dev/\")",
+      "Bash(npm install:*)",
+      "Bash(curl -sI https://ashford-wide.pages.dev/admin/)",
+      "WebFetch(domain:developers.google.com)",
+      "WebFetch(domain:decapcms.org)",
+      "Bash(gh pr:*)",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(json.dumps\\(i, indent=2\\)\\) for i in data['results'] if i['level'] == 'violation']\")",
+      "Bash(python3 -c ':*)",
+      "WebFetch(domain:decapbridge.com)"
     ]
   }
 }
