@@ -2,11 +2,8 @@
   <div class="max-w-container mx-auto px-6 h-full">
     <div class="flex items-center justify-between h-full">
       <a href="/" class="flex items-center gap-3">
-        {{- if fileExists "static/images/logo.png" -}}
-          <img src="/images/logo.png" alt="Ashford Wide" height="48">
-        {{- else -}}
-          <span class="text-[1.2rem] font-bold text-surface leading-[1.2]">Ashford Wide<span class="block text-[0.75rem] font-normal text-muted">Working together for a better Ashford</span></span>
-        {{- end -}}
+        <img src="/images/logo.svg" alt="Ashford Wide" class="h-10 w-auto">
+        <span class="text-[1.2rem] font-bold text-surface leading-[1.2]">Ashford Wide<span class="block text-[0.75rem] font-normal text-muted">Working together for a better Ashford</span></span>
       </a>
 
       <nav>
