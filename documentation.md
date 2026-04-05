@@ -63,8 +63,9 @@ disableHugoGeneratorInject = true
 [params]
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
-  email = "info@ashfordwide.com"
-  ogImage = "/images/og-default.jpg"   # Default Open Graph image (1200×630px)
+  email = "community@ashfordwide.com"        # General contact email
+  businessEmail = "business@ashfordwide.com" # Business-specific contact email
+  ogImage = "/images/og-default.jpg"         # Default Open Graph image (1200×630px)
   facebook = "https://www.facebook.com/AshfordWide"
   twitter = "https://twitter.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
@@ -126,7 +127,7 @@ content/
 │   ├── 2025/
 │   └── 2026/
 └── remembrance/
-    ├── _index.md
+    ├── _index.md                        # Uses layout: single — suppresses default child-page card grid
     ├── order-of-services.md
     ├── sponsor-a-poppy.md
     └── virtual-poppy-wall.md
@@ -232,13 +233,27 @@ baseof.html
 
 | File | Purpose |
 |------|---------|
-| `partials/head.html` | `<head>` contents — charset, viewport, title, description, CSS, favicon, canonical, Open Graph, org JSON-LD |
+| `partials/head.html` | `<head>` contents — charset, viewport, title, description, CSS, SVG favicon, canonical, Open Graph, org JSON-LD |
 | `partials/header.html` | Sticky nav, logo, mobile hamburger |
 | `partials/footer.html` | 3-column footer, social links, nav JS |
 | `partials/opengraph.html` | Open Graph + Twitter Card meta tags — used on all pages |
 | `partials/event-time.html` | Formats `startTime`/`endTime` frontmatter into a display range (e.g. `10am–3pm`) |
 | `partials/jsonld/org.html` | Schema.org `Organization` JSON-LD — output on every page |
 | `partials/jsonld/event.html` | Schema.org `Event` JSON-LD — output on event single pages via `head_extra` |
+
+### Shortcodes
+
+| File | Purpose |
+|------|---------|
+| `shortcodes/param.html` | Outputs a site param by name — use in Markdown content to reference `hugo.toml` values without hardcoding them |
+| `shortcodes/paypal-donate.html` | PayPal donation embed — used on the support page |
+
+**`param` shortcode usage** — reference any `[params]` key from `hugo.toml` inside content Markdown:
+```markdown
+[{{</* param "email" */>}}](mailto:{{</* param "email" */>}})
+[Facebook]({{</* param "facebook" */>}})
+```
+This keeps email addresses and social URLs in sync with `hugo.toml` across all content files.
 
 ### Key Template Patterns
 
