@@ -11,6 +11,7 @@ disableHugoGeneratorInject = true
 [params]
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
+  showRemembrance = false
   email = "community@ashfordwide.com"
   businessEmail = "business@ashfordwide.com"
   ogImage = "/images/og-default.jpg"
