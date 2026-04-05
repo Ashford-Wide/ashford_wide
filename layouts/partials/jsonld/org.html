@@ -9,7 +9,7 @@
   "@type" "Organization"
   "additionalType" "https://www.wikidata.org/wiki/Q5154974"
   "name" .Site.Title
-  "legalName" (default .Site.Title .Site.Params.legalName)
+  "legalName" (.Site.Params.legalName)
   "url" (.Site.BaseURL | strings.TrimRight "/")
 -}}
 {{- with .Site.Params.description }}{{- $org = merge $org (dict "description" .) -}}{{- end -}}
@@ -29,28 +29,18 @@
   {{- $org = merge $org (dict "identifier" $identifier) -}}
 {{- end -}}
 
-{{- /* 4. Specific Expertise & Service Area */ -}}
 {{- $org = merge $org (dict 
   "knowsAbout" (slice 
     
     (dict "@type" "Thing" "name" "Community Development" "sameAs" "https://www.wikidata.org/wiki/Q5154974")
   )
-  "address" (dict
-    "@type" "PostalAddress"
-    "streetAddress" .Site.Params.address.street
-    "addressLocality" "Ashford"
-    "addressRegion" "Surrey"
-    "postalCode" .Site.Params.address.postcode
-    "addressCountry" "GB"
-  )
+  
   "areaServed" (slice
     (dict "@type" "City" "name" "Ashford" "sameAs" "https://www.wikidata.org/wiki/Q725270")
     (dict "@type" "DefinedRegion" "addressCountry" "GB" "postalCodePrefix" "TW15")
-    (dict "@type" "DefinedRegion" "addressCountry" "GB" "postalCodePrefix" "TW16")
   )
 ) -}}
 
-{{- /* 5. Final Identity Merge */ -}}
 {{- if $sameAs -}}
   {{- $org = merge $org (dict "sameAs" $sameAs) -}}
 {{- end -}}
