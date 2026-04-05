@@ -469,7 +469,7 @@ The "SUPPORT US" button links to `/support`. The Business Directory is not yet i
 | **Business directory nav link** | Not yet in the header nav — add a link to `/business-directory/` when ready |
 | **Redirects** | A `static/_redirects` file is needed to map any old WordPress URLs to new slugs |
 | **Data-driven navigation** | Header nav is hardcoded in `header.html`; could be moved to `hugo.toml` menus |
-| **News CMS nested folders** | The `news` collection in `config.yml` does not yet have `nested: { depth: 2 }` — adding this (as was done for events) would allow the CMS to browse and create news items in year subdirectories |
+| **News CMS nested folders** | ~~Done~~ — `nested: { depth: 2 }` and `path: "{{year}}/{{slug}}"` added to the news collection in `config.yml` |
 
 ---
 
@@ -490,7 +490,7 @@ Current policy summary:
 | `default-src` | `'self'` | Everything else self-hosted |
 | `object-src` | `'none'` | Prevent `<object>` and `<embed>` |
 | `base-uri` | `'self'` | Prevent `<base>` tag hijacking |
-| `form-action` | `'self'` | Restrict where forms can submit |
+| `form-action` | `'self' https://www.paypal.com https://formspree.io` | PayPal donate form and Formspree contact form submissions |
 
 ### Cloudflare Features (not currently enabled)
 
