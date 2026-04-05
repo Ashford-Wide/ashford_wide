@@ -97,7 +97,7 @@
 {{- $members := where hugo.Data.businesses "logo" "!=" nil -}}
 {{ if $members }}
 <section class="pt-4">
-  <div class="text-center pt-6 pb-2 text-muted text-[0.8rem] font-bold uppercase tracking-[0.07em]">Our Members</div>
+  <h2 class="text-center pt-6 pb-2 text-[clamp(1.5rem,3vw,2rem)] font-bold">Our Members</h2>
   <div class="overflow-hidden bg-[#f8f9fa] py-8 group">
     <div class="flex gap-12 w-max animate-[marquee_30s_linear_infinite] group-hover:[animation-play-state:paused]">
       {{ range $members }}
