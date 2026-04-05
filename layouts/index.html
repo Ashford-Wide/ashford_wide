@@ -4,7 +4,7 @@
 <section class="relative min-h-[420px] md:min-h-[520px] flex items-center bg-surface bg-center bg-cover bg-no-repeat text-white after:content-[''] after:absolute after:inset-0 after:bg-black/55" {{ with .Params.hero_image }}style="background-image:url('{{ . }}')"{{ end }}>
   <div class="max-w-container mx-auto px-6 relative z-10 w-full">
     <div class="max-w-[680px]">
-      <h1 class="text-[clamp(2rem,5vw,3.25rem)] font-bold leading-[1.15] mb-4">Working together for a better Ashford</h1>
+      <h1 class="text-[clamp(2rem,5vw,3.25rem)] font-bold leading-[1.15] mb-4">{{ .Site.Params.description }}</h1>
       <p class="text-[1.125rem] mb-7 opacity-90 max-w-[520px]">Supporting our town with events, promoting local business, and building community spirit.</p>
       <div class="flex gap-3 flex-wrap">
         <a href="/events" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-[var(--color-secondary)] bg-[var(--color-secondary)] text-white hover:bg-white hover:text-[var(--color-secondary)] transition-colors leading-[1.4]">Upcoming Events</a>
