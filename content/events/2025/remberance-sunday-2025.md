@@ -13,4 +13,4 @@ Please donate generously to our Remembrance Day fund, or why not sponsor a poppy
 
 ## Would you want to lay a wreath at the service?
 
-Please email [community@ashfordwide.com](mailto:community@ashfordwide.com) if you wish to purchase a £25 wreath and wish to lay it at our Ashford service. Service people and dignitaries are welcome to join Ashford Wide for tea at the Fordbridge Centre on Clarendon Road after the ceremony.
+Please email [{{< param "email" >}}](mailto:{{< param "email" >}}) if you wish to purchase a £25 wreath and wish to lay it at our Ashford service. Service people and dignitaries are welcome to join Ashford Wide for tea at the Fordbridge Centre on Clarendon Road after the ceremony.
