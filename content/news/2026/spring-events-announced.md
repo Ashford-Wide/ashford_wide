@@ -19,6 +19,6 @@ The summer market is back on Ashford High Street, celebrating local produce, art
 
 ## How to Stay Informed
 
-For the latest event news and updates, follow us on [Facebook](https://www.facebook.com/AshfordWide) or sign up to our newsletter on the homepage.
+For the latest event news and updates, follow us on [Facebook]({{< param "facebook" >}}) or sign up to our newsletter on the homepage.
 
 We look forward to seeing you at our events!
