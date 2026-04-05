@@ -16,7 +16,9 @@ collections:
     create: true
     nested:
       depth: 2
-    path: "{{year}}/{{slug}}"
+      summary: '{{title}}'
+      subfolders: false
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
     slug: "{{slug}}"
     fields:
       - { label: Title, name: title, widget: string }
@@ -32,6 +34,11 @@ collections:
     label: News
     folder: content/news
     create: true
+    nested:
+      depth: 2
+      summary: '{{title}}'
+      subfolders: false
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
     slug: "{{slug}}"
     fields:
       - { label: Title, name: title, widget: string }
