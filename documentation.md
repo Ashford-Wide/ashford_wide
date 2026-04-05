@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Static website for Ashford Wide, a Business Improvement District (BID) and community initiative in [Ashford, Surrey](https://en.wikipedia.org/wiki/Ashford,_Surrey). The site is built with Hugo and deployed to Cloudflare Pages. Content is managed via Decap CMS at `/admin/`.
+Static website for Ashford Wide, a non-profit community group in [Ashford, Surrey](https://en.wikipedia.org/wiki/Ashford,_Surrey). The site is built with Hugo and deployed to Cloudflare Pages. Content is managed via Decap CMS at `/admin/`.
 
 **Live domain:** `https://www.ashfordwide.com/`  
 **Stack:** Hugo v0.159.1 · Tailwind CSS v4 · No JS framework · Decap CMS · Cloudflare Pages
@@ -63,6 +63,7 @@ disableHugoGeneratorInject = true
 [params]
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
+  showRemembrance = false                    # Set true to show Remembrance link in nav
   email = "community@ashfordwide.com"        # General contact email
   businessEmail = "business@ashfordwide.com" # Business-specific contact email
   ogImage = "/images/og-default.jpg"         # Default Open Graph image (1200×630px)
@@ -428,7 +429,7 @@ Served at `/admin/`. Edits are committed directly to the GitHub repo, triggering
 | `members` | files | `data/members.yaml` |
 | `businesses` | files | `data/businesses.yaml` |
 
-The events collection uses `nested: { depth: 2 }` and `path: "{{year}}/{{slug}}"` so Decap CMS scans year subdirectories and creates new events in the correct folder. `content/events/past.md` is excluded because it does not match the year/slug path pattern.
+Both the events and news collections use `nested: { depth: 2, subfolders: false }` with `meta: { path: { index_file: '_index' } }`. This renders a folder tree in the CMS grouped by year. Each year directory contains an `_index.md` file that acts as the folder node (not editable by CMS users). `content/events/past.md` is excluded because it sits outside the year folder structure.
 
 ### Markdown Widget — Supported Formatting
 
@@ -447,14 +448,19 @@ Tables must be written in raw Markdown mode using standard GFM syntax.
 
 The header nav is hardcoded in `layouts/partials/header.html` (not data-driven). Current structure:
 
-- Home
-- About Us → Who We Are, The Team (`/about#team`), Volunteer
-- Events → All Events, Remembrance, Sponsor a Poppy, Virtual Poppy Wall
+- About Us
+- Events
+- Remembrance *(conditional — see below)*
 - News
-- Membership → Join Ashford Wide, Business Membership
+- Membership
+- Business Directory
 - Contact Us
 
-The "SUPPORT US" button links to `/support`. The Business Directory is not yet in the nav.
+The "SUPPORT US" button links to `/support`.
+
+### Remembrance nav item
+
+The Remembrance link is controlled by `showRemembrance` in `hugo.toml`. Set it to `true` to show the link in the nav, `false` to hide it. This allows the link to be enabled seasonally without a template change — just update `hugo.toml` and redeploy.
 
 ---
 
@@ -469,7 +475,7 @@ The "SUPPORT US" button links to `/support`. The Business Directory is not yet i
 | **Business directory nav link** | Not yet in the header nav — add a link to `/business-directory/` when ready |
 | **Redirects** | A `static/_redirects` file is needed to map any old WordPress URLs to new slugs |
 | **Data-driven navigation** | Header nav is hardcoded in `header.html`; could be moved to `hugo.toml` menus |
-| **News CMS nested folders** | ~~Done~~ — `nested: { depth: 2 }` and `path: "{{year}}/{{slug}}"` added to the news collection in `config.yml` |
+| **News CMS nested folders** | ~~Done~~ — both events and news collections use `nested` with `subfolders: false` and `meta.path`; year `_index.md` folder nodes created |
 
 ---
 
