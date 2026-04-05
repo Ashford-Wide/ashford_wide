@@ -25,4 +25,4 @@ We look forward to seeing you there!
 
 ## Want to get involved?
 
-If you're interested in running a stall, please email [community@ashfordwide.com](mailto:community@ashfordwide.com)
+If you're interested in running a stall, please email [{{< param "email" >}}](mailto:{{< param "email" >}})
