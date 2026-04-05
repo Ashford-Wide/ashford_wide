@@ -492,7 +492,7 @@ Current policy summary:
 | `script-src` | `'self'` | All JS is served from `/js/` via Hugo Pipes — no inline scripts |
 | `style-src` | `'self' 'unsafe-inline'` | `style="..."` attributes used in templates |
 | `img-src` | `'self' https: data:` | Business directory logos link to arbitrary external domains |
-| `frame-src` | `https://www.youtube-nocookie.com` | YouTube embed on the homepage |
+| `frame-src` | `https://player.vimeo.com` | Vimeo embed on the homepage |
 | `default-src` | `'self'` | Everything else self-hosted |
 | `object-src` | `'none'` | Prevent `<object>` and `<embed>` |
 | `base-uri` | `'self'` | Prevent `<base>` tag hijacking |
