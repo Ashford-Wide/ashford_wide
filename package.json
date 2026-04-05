@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "hugo --minify",
-    "test:a11y": "hugo && find public -name '*.html' | xargs npx achecker",
+    "test:a11y": "hugo && node scripts/a11y-test.js",
     "test:a11y:report": "open accessibility-reports/"
   },
   "repository": {
