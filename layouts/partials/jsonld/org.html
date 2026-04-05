@@ -1,56 +1,56 @@
-{{- /* 1. Collect Socials & Identity Links */ -}}
-{{- $sameAs := slice "https://www.wikidata.org/wiki/Q725270" -}} {{/* Your Town Link */}}
-{{- with .Site.Params.facebook }}{{ $sameAs = $sameAs | append . }}{{ end -}}
-{{- with .Site.Params.twitter }}{{ $sameAs = $sameAs | append . }}{{ end -}}
-{{- with .Site.Params.instagram }}{{ $sameAs = $sameAs | append . }}{{ end -}}
-{{- with .Site.Params.linkedin }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+{{- $sameAs := slice -}}
+{{- with .Site.Params.facebook }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
+{{- with .Site.Params.twitter }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
+{{- with .Site.Params.instagram }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
 
-{{- /* 2. Define the Core Organization Object */ -}}
 {{- $org := dict
   "@context" "https://schema.org"
   "@id" (print .Site.BaseURL "#organization")
   "@type" "Organization"
+  "additionalType" "https://www.wikidata.org/wiki/Q5154974"
   "name" .Site.Title
   "legalName" (default .Site.Title .Site.Params.legalName)
   "url" (.Site.BaseURL | strings.TrimRight "/")
-  "logo" (absURL (default "images/logo.png" .Site.Params.logo))
-  "nonprofitStatus" "https://schema.org/UnincorporatedAssociationCharity"
-  "foundingDate" .Site.Params.foundedYear
-  "slogan" .Site.Params.slogan
 -}}
+{{- with .Site.Params.description }}{{- $org = merge $org (dict "description" .) -}}{{- end -}}
+{{- with .Site.Params.logo }}{{- $org = merge $org (dict "logo" (absURL .)) -}}{{- end -}}
+{{- with .Site.Params.foundingDate }}{{- $org = merge $org (dict "foundingDate" .) -}}{{- end -}}
+{{- with .Site.Params.slogan }}{{- $org = merge $org (dict "slogan" .) -}}{{- end -}}
+{{- with .Site.Params.email }}{{- $org = merge $org (dict "email" .) -}}{{- end -}}
+{{- with .Site.Params.phone }}{{- $org = merge $org (dict "telephone" .) -}}{{- end -}}
 
-{{- /* 3. Add Contact Details & Address */ -}}
-{{- $address := dict
-  "@type" "PostalAddress"
-  "streetAddress" .Site.Params.address.street
-  "addressLocality" "Ashford"
-  "addressRegion" "Surrey"
-  "postalCode" .Site.Params.address.postcode
-  "addressCountry" "GB"
--}}
-{{- $org = merge $org (dict "address" $address) -}}
+{{- with .Site.Params.companyNumber -}}
+  {{- $identifier := dict 
+      "@type" "PropertyValue" 
+      "name" "Companies House Number" 
+      "value" . 
+      "url" (print "https://find-and-update.company-information.service.gov.uk/company/" .)
+  -}}
+  {{- $org = merge $org (dict "identifier" $identifier) -}}
+{{- end -}}
 
-{{- /* 4. Add Expertise & Authority (The 2026 "Secret Sauce") */ -}}
-{{- $knowsAbout := slice 
-    (dict "@type" "Thing" "name" "Community Support" "sameAs" "https://www.wikidata.org/wiki/Q15303741")
-    (dict "@type" "Thing" "name" "Charity" "sameAs" "https://www.wikidata.org/wiki/Q16338")
--}}
-{{- $org = merge $org (dict "knowsAbout" $knowsAbout "knowsLanguage" (slice "en-GB")) -}}
-
-{{- /* 5. Service Area (Your original logic + the Wikidata Town) */ -}}
-{{- $areaServed := slice
+{{- /* 4. Specific Expertise & Service Area */ -}}
+{{- $org = merge $org (dict 
+  "knowsAbout" (slice 
+    
+    (dict "@type" "Thing" "name" "Community Development" "sameAs" "https://www.wikidata.org/wiki/Q5154974")
+  )
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" .Site.Params.address.street
+    "addressLocality" "Ashford"
+    "addressRegion" "Surrey"
+    "postalCode" .Site.Params.address.postcode
+    "addressCountry" "GB"
+  )
+  "areaServed" (slice
     (dict "@type" "City" "name" "Ashford" "sameAs" "https://www.wikidata.org/wiki/Q725270")
     (dict "@type" "DefinedRegion" "addressCountry" "GB" "postalCodePrefix" "TW15")
     (dict "@type" "DefinedRegion" "addressCountry" "GB" "postalCodePrefix" "TW16")
--}}
-{{- $org = merge $org (dict "areaServed" $areaServed) -}}
+  )
+) -}}
 
-{{- /* 6. Policies & Transparency */ -}}
-{{- with .Site.Params.ethicsPolicy -}}
-  {{- $org = merge $org (dict "ethicsPolicy" (absURL .)) -}}
-{{- end -}}
-
-{{- /* 7. Social Links */ -}}
+{{- /* 5. Final Identity Merge */ -}}
 {{- if $sameAs -}}
   {{- $org = merge $org (dict "sameAs" $sameAs) -}}
 {{- end -}}
