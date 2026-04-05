@@ -38,14 +38,14 @@
           {{ partial "icons/facebook.html" . }}
         </a>
         {{ end }}
-        {{ with .Site.Params.twitter }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">
-          {{ partial "icons/twitter.html" . }}
-        </a>
-        {{ end }}
         {{ with .Site.Params.instagram }}
         <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">
           {{ partial "icons/instagram.html" . }}
+        </a>
+        {{ end }}
+        {{ with .Site.Params.twitter }}
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">
+          {{ partial "icons/twitter.html" . }}
         </a>
         {{ end }}
       </div>
