@@ -14,7 +14,8 @@ Static website for Ashford Wide, a non-profit community group in [Ashford, Surre
 ```
 ashford_wide/
 ├── hugo.toml                    # Site configuration
-├── package.json                 # Tailwind CSS & PostCSS dependencies
+├── package.json                 # Node dependencies and npm scripts
+├── .achecker.yml                # Accessibility checker configuration (WCAG 2.2)
 ├── tailwind.config.js           # Tailwind theme configuration
 ├── postcss.config.js            # PostCSS configuration for Hugo Pipes
 ├── assets/
@@ -492,7 +493,7 @@ Current policy summary:
 | `script-src` | `'self'` | All JS is served from `/js/` via Hugo Pipes — no inline scripts |
 | `style-src` | `'self' 'unsafe-inline'` | `style="..."` attributes used in templates |
 | `img-src` | `'self' https: data:` | Business directory logos link to arbitrary external domains |
-| `frame-src` | `https://www.youtube-nocookie.com` | YouTube embed on the homepage |
+| `frame-src` | `https://player.vimeo.com` | Vimeo embed on the homepage |
 | `default-src` | `'self'` | Everything else self-hosted |
 | `object-src` | `'none'` | Prevent `<object>` and `<embed>` |
 | `base-uri` | `'self'` | Prevent `<base>` tag hijacking |
@@ -517,3 +518,39 @@ hugo               # Development build
 hugo --minify      # Production build (used by Cloudflare Pages)
 hugo server        # Local dev server at http://localhost:1313
 ```
+
+---
+
+## Accessibility Testing
+
+Automated accessibility scanning is provided by [`accessibility-checker`](https://www.npmjs.com/package/accessibility-checker) (IBM Equal Access Checker), installed as a dev dependency.
+
+### npm Scripts
+
+| Script | Command | Purpose |
+|--------|---------|---------|
+| `npm run test:a11y` | `hugo && find public -name '*.html' \| xargs npx achecker` | Builds the site then scans all HTML output files |
+| `npm run test:a11y:report` | `open accessibility-reports/` | Opens the report folder in Finder after a scan |
+
+### Configuration (`.achecker.yml`)
+
+```yaml
+ruleArchive: latest
+policies:
+  - WCAG_2_2          # WCAG 2.2 (AA level implicit)
+failLevels:
+  - violation         # Exit non-zero only on confirmed violations
+reportLevels:
+  - violation
+  - potentialviolation
+outputFormat:
+  - json
+  - html
+outputFolder: accessibility-reports
+```
+
+### Reports
+
+After running `npm run test:a11y`, each scanned HTML page produces its own report file in `accessibility-reports/`. Files are named after the scanned path (e.g. `public_contact_index.html`). The folder is excluded from git via `.gitignore`.
+
+`npm run test:a11y:report` opens the folder so you can browse individual page reports. The JSON output is also available alongside each HTML report for programmatic inspection.

@@ -6,3 +6,4 @@
 *.swo
 /wrangler.jsonc
 node_modules/
+accessibility-reports/
