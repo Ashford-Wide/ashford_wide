@@ -21,12 +21,7 @@ Your support helps us to:
 
 You can support us through a one-off or regular donation via PayPal:
 
-<div style="margin:2rem 0;">
-  <form action="https://www.paypal.com/donate" method="post" target="_top">
-    <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID">
-    <button type="submit" class="btn btn-primary">Donate via PayPal</button>
-  </form>
-</div>
+{{< paypal-donate >}}
 
 ## Other Ways to Support
 
