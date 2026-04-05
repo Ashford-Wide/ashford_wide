@@ -1,50 +1,53 @@
-<footer class="bg-surface text-white/80 pt-12 pb-6">
+<footer class="bg-white text-surface/80 pt-12 pb-6">
   <div class="max-w-container mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-10">
       <div>
-        <div class="text-[1.15rem] font-bold text-white">Ashford Wide</div>
-        <p class="mt-2 italic text-[0.9rem] text-white/55">Working together for a better Ashford</p>
-        <p class="mt-4 text-[0.875rem] text-white/60">
+        <div class="flex items-center gap-3">
+          <img src="/images/logo.svg" alt="Ashford Wide" class="h-10 w-auto">
+          <div class="text-[1.15rem] font-bold text-surface">Ashford Wide</div>
+        </div>
+        <p class="mt-2 italic text-[0.9rem] text-surface/55">Working together for a better Ashford</p>
+        <p class="mt-4 text-[0.875rem] text-surface/60">
           We're a non-profit community group running only with volunteers.
         </p>
       </div>
       <div>
-        <h3 class="text-[0.8rem] font-bold uppercase tracking-[0.07em] text-white mb-4">About Us</h3>
+        <h3 class="text-[0.8rem] font-bold uppercase tracking-[0.07em] text-surface mb-4">About Us</h3>
         <ul class="flex flex-col gap-2">
-          <li><a href="/about" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Who We Are</a></li>
-          <li><a href="/volunteer" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Volunteer</a></li>
-          <li><a href="/data" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Cookies and data collection</a></li>
+          <li><a href="/about" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Who We Are</a></li>
+          <li><a href="/volunteer" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Volunteer</a></li>
+          <li><a href="/data" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Cookies and data collection</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="text-[0.8rem] font-bold uppercase tracking-[0.07em] text-white mb-4">Quick Links</h3>
+        <h3 class="text-[0.8rem] font-bold uppercase tracking-[0.07em] text-surface mb-4">Quick Links</h3>
         <ul class="flex flex-col gap-2">
-          <li><a href="/news" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">News</a></li>
-          <li><a href="/events" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Events</a></li>
-          <li><a href="/membership" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Membership</a></li>
-          <li><a href="/business-membership" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Business Membership</a></li>
-          <li><a href="/contact" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Contact Us</a></li>
-          <li><a href="/support" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Support Us</a></li>
-          <li><a href="/stallholders" class="text-[0.875rem] text-white/65 hover:text-white transition-colors duration-200">Stallholder information</a></li>
+          <li><a href="/news" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">News</a></li>
+          <li><a href="/events" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Events</a></li>
+          <li><a href="/membership" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Membership</a></li>
+          <li><a href="/business-membership" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Business Membership</a></li>
+          <li><a href="/contact" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Contact Us</a></li>
+          <li><a href="/support" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Support Us</a></li>
+          <li><a href="/stallholders" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Stallholder information</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="border-t border-white/10 pt-6 flex justify-between items-center flex-wrap gap-4">
-      <p class="text-[0.8rem] text-white/60">&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" class="text-white/70">{{ .Site.Params.email }}</a></p>
+    <div class="border-t border-surface/10 pt-6 flex justify-between items-center flex-wrap gap-4">
+      <p class="text-[0.8rem] text-surface/60">&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" class="text-surface/70">{{ .Site.Params.email }}</a></p>
       <div class="flex gap-[0.6rem]">
         {{ with .Site.Params.facebook }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">
           {{ partial "icons/facebook.html" . }}
         </a>
         {{ end }}
         {{ with .Site.Params.instagram }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">
           {{ partial "icons/instagram.html" . }}
         </a>
         {{ end }}
         {{ with .Site.Params.twitter }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-white/25 text-white/65 hover:bg-white hover:text-surface hover:-translate-y-[3px] transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">
           {{ partial "icons/twitter.html" . }}
         </a>
         {{ end }}
