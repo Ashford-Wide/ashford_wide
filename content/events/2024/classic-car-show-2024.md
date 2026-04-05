@@ -1,6 +1,6 @@
 ---
 title: Classic Car Show 2024
-date: 2025-09-01
+date: 2024-09-01
 startTime: "10:00"
 endTime: "16:00"
 location: Ashford Recreation Ground, Clockhouse Lane, Ashford
