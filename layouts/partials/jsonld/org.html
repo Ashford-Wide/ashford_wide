@@ -2,7 +2,6 @@
 {{- with .Site.Params.facebook }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
 {{- with .Site.Params.twitter }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
 {{- with .Site.Params.instagram }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
-
 {{- $org := dict
   "@context" "https://schema.org"
   "@type" "Organization"
@@ -12,6 +11,7 @@
   "areaServed" (slice
     (dict "@type" "DefinedRegion" "addressCountry" "GB" "postalCodePrefix" "TW15")
     (dict "@type" "DefinedRegion" "addressCountry" "GB" "postalCodePrefix" "TW16")
+    (dict "@type" "Place" "name" "Ashford" "sameAs" "https://www.wikidata.org/wiki/Q725270")
   )
 -}}
 {{- with .Site.Params.logo -}}
