@@ -1,15 +1,11 @@
 - name: "Barry Muggeridge"
   role: "Chairperson"
-  photo: "/images/team/barry-muggeridge.jpg"
 
 - name: "John Smith"
   role: "Treasurer"
-  photo: "/images/team/john-smith.jpg"
 
 - name: "Jenny Frost"
   role: "Secretary"
-  photo: "/images/team/jenny-frost.jpg"
 
 - name: "Emma Gray"
   role: "Business Lead"
-  photo: "/images/team/emma-gray.jpg"
