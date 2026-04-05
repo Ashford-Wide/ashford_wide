@@ -1,17 +1,8 @@
 - name: "Timeless IMS"
   logo: "/images/members/timeless-ims.png"
 
-- name: "Ashford Borough Council"
-  logo: "/images/members/ashford-borough-council.png"
+- name: "Spelthorne Borough Council"
+  logo: "/images/members/spelthorne-borough-council.png"
 
-- name: "East Kent College"
-  logo: "/images/members/east-kent-college.png"
-
-- name: "Kent County Council"
-  logo: "/images/members/kent-county-council.png"
-
-- name: "Ashford Outlet"
-  logo: "/images/members/ashford-outlet.png"
-
-- name: "The Park Mall"
-  logo: "/images/members/park-mall.png"
+- name: "Surrey County Council"
+  logo: "/images/members/surrey-county-council.png"
