@@ -13,6 +13,7 @@ disableHugoGeneratorInject = true
   tagline = "Working together for a better Ashford"
   email = "info@ashfordwide.com"
   ogImage = "/images/og-default.jpg"
+  foundedYear = 2012
   facebook = "https://www.facebook.com/AshfordWide"
   twitter = "https://twitter.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
