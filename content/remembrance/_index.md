@@ -1,6 +1,7 @@
 ---
 title: "Remembrance"
 description: "Honouring those who gave their lives in service"
+layout: single
 ---
 
 ## Remembrance in Ashford
