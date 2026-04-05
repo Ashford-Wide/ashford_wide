@@ -16,6 +16,7 @@ disableHugoGeneratorInject = true
   businessEmail = "business@ashfordwide.com"
   ogImage = "/images/og-default.jpg"
   foundedYear = 2012
+  companyNumber = ""
   facebook = "https://www.facebook.com/AshfordWide"
   twitter = "https://twitter.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
