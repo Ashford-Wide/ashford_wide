@@ -38,3 +38,12 @@ In the past it has been Ashford Chamber of Commerce, along with the support of o
 The Ashford Wide team are always keen to hear from you, the local community.
 
 We would love to have your help making Ashford a better place to live, whether through donations or volunteering, every little helps.
+
+## The Team
+
+Our leadership team is elected annually from our volunteers and is currently:
+
+- **Barry Muggeridge** — Chair
+- **John Smith** — Treasurer
+- **Jenny Frost** — Secretary
+- **Emma Gray** — Business Lead
