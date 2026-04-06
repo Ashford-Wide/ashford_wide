@@ -2,10 +2,10 @@
 
 ## Project Overview
 
-Static website for Ashford Wide, a non-profit community group in [Ashford, Surrey](https://en.wikipedia.org/wiki/Ashford,_Surrey). The site is built with Hugo and deployed to Cloudflare Pages. Content is managed via Decap CMS at `/admin/`.
+Static website for Ashford Wide, a non-profit community group in [Ashford, Surrey](https://en.wikipedia.org/wiki/Ashford,_Surrey). The site is built with [Hugo](https://gohugo.io/documentation/) and deployed to [Cloudflare Pages](https://developers.cloudflare.com/pages/). Content is managed via [Sveltia CMS](https://sveltiacms.app/en/) at `/admin/`.
 
 **Live domain:** `https://www.ashfordwide.com/`  
-**Stack:** Hugo v0.159.1 · Tailwind CSS v4 · No JS framework · Decap CMS · Cloudflare Pages
+**Stack:** Hugo v0.159.1 · Tailwind CSS v4 · No JS framework · Sveltia CMS · Cloudflare Pages
 
 ---
 
@@ -44,8 +44,8 @@ ashford_wide/
 │   ├── _headers                 # Cloudflare Pages HTTP headers (CSP, etc.)
 │   ├── images/                  # Static images (logo, member logos, etc.)
 │   └── admin/
-│       ├── index.html           # Decap CMS entry point
-│       └── config.yml           # Decap CMS schema
+│       ├── index.html           # Sveltia CMS entry point
+│       └── config.yml           # Sveltia CMS schema
 └── data/
     ├── businesses.yaml          # Business directory entries
     ├── members.yaml             # Member logos for homepage marquee
@@ -55,6 +55,8 @@ ashford_wide/
 ---
 
 ## Configuration (`hugo.toml`)
+
+Full reference: [Hugo site configuration](https://gohugo.io/configuration/all/)
 
 ```toml
 baseURL = "https://ashford-wide.pages.dev"
@@ -92,9 +94,9 @@ disableHugoGeneratorInject = true
     events = "/events/:contentbasename/"
 ```
 
-`buildFuture = true` is essential — without it Hugo will not render pages for future-dated events.
+[`buildFuture = true`](https://gohugo.io/configuration/build/) is essential — without it Hugo will not render pages for future-dated events.
 
-The `permalinks` rules use `:contentbasename` (filename only, no directory) so that news and events can be organised into year subdirectories without the year appearing in the URL. For example, `content/events/2026/summer-market-2026.md` resolves to `/events/summer-market-2026/`.
+The [`permalinks`](https://gohugo.io/configuration/permalinks/) rules use `:contentbasename` (filename only, no directory) so that news and events can be organised into year subdirectories without the year appearing in the URL. For example, `content/events/2026/summer-market-2026.md` resolves to `/events/summer-market-2026/`.
 
 ---
 
@@ -145,7 +147,7 @@ content/
 
 ### Year Subdirectory Organisation
 
-Both `content/news/` and `content/events/` organise files into year subdirectories (`2025/`, `2026/`, etc.) without affecting public URLs. This is achieved via the `permalinks` config (see above). Adding new content to the correct year folder requires no other changes — the URL is always derived from the filename alone.
+Both `content/news/` and `content/events/` organise files into year subdirectories (`2025/`, `2026/`, etc.) without affecting public URLs. This is achieved via the [`permalinks`](https://gohugo.io/configuration/permalinks/) config (see above). Adding new content to the correct year folder requires no other changes — the URL is always derived from the filename alone.
 
 ### `content/events/past.md`
 
@@ -160,6 +162,8 @@ build:
 Do not delete this file — the `/events/past/` URL depends on it.
 
 ### Event Front Matter
+
+Full reference: [Hugo front matter](https://gohugo.io/content-management/front-matter/)
 
 ```yaml
 ---
@@ -180,6 +184,10 @@ attendanceMode: OnlineEventAttendanceMode  # optional — overrides default Offl
 The `date` field drives all event filtering. The events list template splits events into upcoming (`date >= now`) and past (`date < now`) automatically. No manual archiving is needed.
 
 `startTime` and `endTime` are stored as `HH:MM` 24hr strings. The `layouts/partials/event-time.html` partial formats them for display (e.g. `10am–3pm`). They are also combined with `date` to produce ISO-8601 datetime values in the schema.org JSON-LD output (e.g. `2026-07-11T10:00`).
+
+`eventStatus` accepts values defined by [Schema.org/EventStatusType](https://schema.org/EventStatusType) (e.g. `EventScheduled`, `EventCancelled`, `EventPostponed`, `EventRescheduled`).
+
+`attendanceMode` accepts values defined by [Schema.org/EventAttendanceModeEnumeration](https://schema.org/EventAttendanceModeEnumeration) (e.g. `OfflineEventAttendanceMode`, `OnlineEventAttendanceMode`, `MixedEventAttendanceMode`).
 
 ### News Front Matter
 
@@ -207,6 +215,8 @@ layout: "business-directory"  # optional — overrides the default template
 
 ## Template Architecture
 
+Full reference: [Hugo templates](https://gohugo.io/templates/)
+
 ### Inheritance
 
 All pages extend `layouts/_default/baseof.html` via `{{ define "main" }}` blocks:
@@ -220,7 +230,7 @@ baseof.html
   └── partial: footer.html      (3-column footer, social links, mobile nav JS)
 ```
 
-`{{ block "head_extra" . }}{{ end }}` is defined in `baseof.html` directly (not inside `head.html`) so that page templates can override it. Blocks inside partials do not participate in the template inheritance chain.
+`{{ block "head_extra" . }}{{ end }}` is defined in `baseof.html` directly (not inside `head.html`) so that page templates can override it. [Blocks inside partials do not participate in the template inheritance chain.](https://gohugo.io/templates/base/)
 
 ### Layout Files
 
@@ -241,6 +251,8 @@ baseof.html
 
 ### Partials
 
+Full reference: [Hugo partials](https://gohugo.io/templates/types/#partial)
+
 | File | Purpose |
 |------|---------|
 | `partials/head.html` | `<head>` contents — charset, viewport, title, description, CSS, SVG favicon, canonical, Open Graph, org JSON-LD |
@@ -252,6 +264,8 @@ baseof.html
 | `partials/jsonld/event.html` | Schema.org `Event` JSON-LD — output on event single pages via `head_extra` |
 
 ### Shortcodes
+
+Full reference: [Hugo shortcodes](https://gohugo.io/shortcodes/) · [Custom shortcode templates](https://gohugo.io/templates/shortcode/)
 
 | File | Purpose |
 |------|---------|
@@ -265,9 +279,20 @@ baseof.html
 ```
 This keeps email addresses and social URLs in sync with `hugo.toml` across all content files.
 
+**Instagram shortcode** — Hugo has a [built-in instagram shortcode](https://gohugo.io/shortcodes/instagram/):
+```markdown
+{{</* instagram POST_ID */>}}
+```
+By default this calls Instagram's oEmbed API. To avoid needing an access token, enable [simple mode](https://gohugo.io/shortcodes/instagram/#privacy) in `hugo.toml`, which generates a static image card instead:
+```toml
+[privacy]
+  [privacy.instagram]
+    simple = true
+```
+
 ### Key Template Patterns
 
-**Accessing data files** — use `site.Data`:
+**Accessing data files** — use `site.Data` ([data templates reference](https://gohugo.io/functions/hugo/data/)):
 ```go
 {{ $businesses := site.Data.businesses }}
 {{ $members := site.Data.members }}
@@ -302,7 +327,7 @@ Outputs nothing if `startTime` is not set. Outputs `10am` if only `startTime` is
 
 ## Open Graph & Social Previews
 
-All pages output Open Graph and Twitter Card meta tags via `layouts/partials/opengraph.html`, included from `head.html`.
+All pages output [Open Graph](https://ogp.me/) and [Twitter/X Card](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards) meta tags via `layouts/partials/opengraph.html`, included from `head.html`.
 
 **Image priority:**
 1. Page-level `image:` frontmatter param (news/events)
@@ -324,8 +349,8 @@ Two JSON-LD blocks are output per page:
 
 | Partial | Output on | Type |
 |---------|-----------|------|
-| `partials/jsonld/org.html` | Every page (via `head.html`) | `Organization` |
-| `partials/jsonld/event.html` | Event single pages (via `head_extra`) | `Event` |
+| `partials/jsonld/org.html` | Every page (via `head.html`) | [`Organization`](https://schema.org/Organization) |
+| `partials/jsonld/event.html` | Event single pages (via `head_extra`) | [`Event`](https://schema.org/Event) |
 
 ### Organisation JSON-LD fields
 
@@ -335,7 +360,7 @@ Output on every page via `partials/jsonld/org.html`.
 |-------|--------|-------|
 | `@id` | `baseURL` | `https://ashfordwide.com/#organization` — stable graph node identifier |
 | `@type` | hardcoded | `Organization` |
-| `additionalType` | hardcoded | Wikidata Q5154974 — community interest company |
+| `additionalType` | hardcoded | [Wikidata Q5154974](https://www.wikidata.org/wiki/Q5154974) — community interest company |
 | `name` | `site.Title` | |
 | `legalName` | `params.legalName` | |
 | `url` | `baseURL` | Trailing slash stripped |
@@ -347,19 +372,21 @@ Output on every page via `partials/jsonld/org.html`.
 | `telephone` | `params.phone` | Omitted if blank |
 | `identifier` | `params.companyNumber` | `PropertyValue` with Companies House URL — entire block omitted if blank |
 | `address` | `params.address.*` + hardcoded | `PostalAddress` — locality Ashford, region Surrey, country GB |
-| `knowsAbout` | hardcoded | Community Development (Wikidata Q5154974) |
-| `areaServed` | hardcoded | City: Ashford (Wikidata Q725270); DefinedRegion: TW15 |
+| `knowsAbout` | hardcoded | Community Development ([Wikidata Q5154974](https://www.wikidata.org/wiki/Q5154974)) |
+| `areaServed` | hardcoded | City: Ashford ([Wikidata Q725270](https://www.wikidata.org/wiki/Q725270)); DefinedRegion: TW15 |
 | `sameAs` | `params.facebook`, `.twitter`, `.instagram` | Omitted entirely if none are set |
 
 ### Event JSON-LD fields
+
+Full reference: [Schema.org/Event](https://schema.org/Event)
 
 | Field | Source | Notes |
 |-------|--------|-------|
 | `name` | `.Title` | |
 | `startDate` | `date` + `startTime` | ISO-8601 — `2026-07-11T10:00` if time set, `2026-07-11` otherwise |
 | `endDate` | `date` + `endTime` | Only output if `endTime` is set |
-| `eventStatus` | `eventStatus` param | Defaults to `EventScheduled` |
-| `eventAttendanceMode` | `attendanceMode` param | Defaults to `OfflineEventAttendanceMode` |
+| `eventStatus` | `eventStatus` param | Defaults to `EventScheduled` — see [EventStatusType](https://schema.org/EventStatusType) |
+| `eventAttendanceMode` | `attendanceMode` param | Defaults to `OfflineEventAttendanceMode` — see [EventAttendanceModeEnumeration](https://schema.org/EventAttendanceModeEnumeration) |
 | `location.name` | `location` param | |
 | `location.address` | Always set | Locality/region hardcoded to Ashford, Surrey, GB; `streetAddress` from `address` param if set |
 | `description` | `.Description` | |
@@ -371,25 +398,27 @@ Output on every page via `partials/jsonld/org.html`.
 
 ## CSS & Styling (Tailwind CSS v4)
 
-### Setup & Workflow
-- **Dependencies**: Tailwind CSS is built via `postcss` and `postcss-cli` using Hugo Pipes. `@tailwindcss/typography` is also installed for markdown prose styling. An `npm install` is required after cloning the repo.
-- **Entry Point**: `assets/css/main.css` processes Tailwind directives (`@import "tailwindcss";`, `@theme`, `@layer components`, etc.).
-- **Hugo Integration**: Included in `layouts/partials/head.html` using Hugo's internal asset processing (`resources.PostCSS`).
+Full reference: [Tailwind CSS docs](https://tailwindcss.com/docs/)
 
-### Design Tokens (`@theme` variables)
+### Setup & Workflow
+- **Dependencies**: [Tailwind CSS](https://tailwindcss.com/docs/) is built via [PostCSS](https://postcss.org/) and `postcss-cli` using [Hugo Pipes](https://gohugo.io/hugo-pipes/). [`@tailwindcss/typography`](https://tailwindcss.com/docs/typography-plugin) is also installed for markdown prose styling. An `npm install` is required after cloning the repo.
+- **Entry Point**: `assets/css/main.css` processes Tailwind directives (`@import "tailwindcss";`, `@theme`, `@layer components`, etc.).
+- **Hugo Integration**: Included in `layouts/partials/head.html` using Hugo's internal asset processing (`resources.PostCSS`). See [Hugo Pipes — PostCSS](https://gohugo.io/hugo-pipes/postcss/).
+
+### Design Tokens ([`@theme`](https://tailwindcss.com/docs/theme) variables)
 - **Colors**: `--color-surface` (`#212529`), `--color-text` (`#333`), `--color-muted` (`#6c757d`).
 - **Animations**: The homepage marquee animation is defined using `@keyframes marquee`.
 
 ### Custom Components
-Defined in `assets/css/main.css` within `@layer components`:
-- `.article-content` — Applies `prose` from `@tailwindcss/typography` to markdown output on single pages.
+Defined in `assets/css/main.css` within [`@layer components`](https://tailwindcss.com/docs/adding-custom-styles#adding-component-classes):
+- `.article-content` — Applies `prose` from [`@tailwindcss/typography`](https://tailwindcss.com/docs/typography-plugin) to markdown output on single pages.
 - `.nav-open` — Used by the mobile navigation JavaScript to disable scrolling.
 
 ---
 
 ## JavaScript
 
-There is no JavaScript framework. Two small scripts served from `assets/js/` via Hugo Pipes (minified and fingerprinted in production):
+There is no JavaScript framework. Two small scripts served from `assets/js/` via [Hugo Pipes](https://gohugo.io/hugo-pipes/) (minified and fingerprinted in production):
 
 **`assets/js/nav.js`** — loaded on every page via `layouts/partials/footer.html`:
 Wires up the hamburger button (`#nav-toggle`) to toggle the `nav-open` class on `#main-nav` and update `aria-expanded`.
@@ -397,7 +426,7 @@ Wires up the hamburger button (`#nav-toggle`) to toggle the `nav-open` class on 
 **`assets/js/business-directory.js`** — loaded only on the business directory page via `layouts/_default/business-directory.html`:
 Handles category filter button clicks — toggles active styles on `.biz-filter` buttons and shows/hides `.biz-card` elements by matching `data-category`.
 
-Both scripts are included using Hugo Pipes:
+Both scripts are included using [Hugo Pipes](https://gohugo.io/hugo-pipes/):
 ```go
 {{ $js := resources.Get "js/nav.js" }}
 {{ if hugo.IsProduction }}
@@ -409,6 +438,8 @@ Both scripts are included using Hugo Pipes:
 ---
 
 ## Data Files
+
+Full reference: [Hugo data templates](https://gohugo.io/functions/hugo/data/)
 
 ### `data/businesses.yaml`
 
@@ -441,13 +472,15 @@ Placeholder team data. Fields: `name`, `role`. Not currently rendered in any tem
 
 ## Sveltia CMS (`static/admin/`)
 
+Full reference: [Sveltia CMS docs](https://sveltiacms.app/en/docs/intro) · [Hugo framework guide](https://sveltiacms.app/en/docs/frameworks/hugo)
+
 Served at `/admin/`. Edits are committed directly to the GitHub repo, triggering a Cloudflare Pages rebuild (~30 seconds).
 
-Sveltia CMS is a drop-in replacement for Decap CMS. It uses the same `config.yml` schema and the same GitHub OAuth flow, but is significantly smaller (~600 KB vs 1.5 MB) and does not require `unsafe-eval` in the CSP.
+[Sveltia CMS](https://sveltiacms.app/en/docs/intro) is a drop-in replacement for Decap CMS. It uses the same `config.yml` schema and the same GitHub OAuth flow, but is significantly smaller (~600 KB vs 1.5 MB) and does not require `unsafe-eval` in the CSP.
 
 ### Authentication
 
-Sveltia CMS authenticates editors via GitHub OAuth. The OAuth flow is handled by two Cloudflare Pages Functions (no external service required):
+Sveltia CMS authenticates editors via [GitHub OAuth](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app). The OAuth flow is handled by two [Cloudflare Pages Functions](https://developers.cloudflare.com/pages/functions/) (no external service required):
 
 | File | Route | Purpose |
 |------|-------|---------|
@@ -484,7 +517,7 @@ sequenceDiagram
     end
 ```
 
-#### Required environment variables (Cloudflare Pages dashboard)
+#### Required environment variables ([Cloudflare Pages dashboard](https://developers.cloudflare.com/pages/configuration/build-configuration/#environment-variables))
 
 | Variable | Value |
 |----------|-------|
@@ -494,7 +527,7 @@ sequenceDiagram
 
 #### One-time setup steps
 
-1. **Create a GitHub OAuth App** — GitHub → Settings → Developer settings → OAuth Apps → New OAuth App:
+1. **Create a GitHub OAuth App** — GitHub → Settings → Developer settings → OAuth Apps → [New OAuth App](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app):
    - Homepage URL: `https://www.ashfordwide.com`
    - Authorization callback URL: `https://www.ashfordwide.com/api/auth/callback`
 2. **Add the three environment variables** above in the Cloudflare Pages dashboard
@@ -502,7 +535,7 @@ sequenceDiagram
 
 #### Managing editor access
 
-Access is controlled by GitHub repository collaborators. To grant CMS access to an editor:
+Access is controlled by [GitHub repository collaborators](https://docs.github.com/en/rest/collaborators/collaborators). To grant CMS access to an editor:
 
 - GitHub repo → Settings → Collaborators → Add people → enter their GitHub username
 
@@ -512,7 +545,7 @@ To revoke access, remove them as a collaborator on GitHub.
 
 ### Local development
 
-Sveltia CMS does not use a proxy server for local development. Instead it uses the browser's **File System Access API** to read and write files directly in your local repo.
+Sveltia CMS does not use a proxy server for local development. Instead it uses the browser's [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) to read and write files directly in your local repo.
 
 1. Run `hugo server` as normal
 2. Visit `http://localhost:1313/admin/`
@@ -523,6 +556,8 @@ Sveltia CMS does not use a proxy server for local development. Instead it uses t
 **Browser compatibility:** Chrome or Edge required for File System Access API. Safari support is limited.
 
 ### CMS Collections
+
+Full reference: [Sveltia CMS collections](https://sveltiacms.app/en/docs/collections) · [Sveltia CMS fields](https://sveltiacms.app/en/docs/fields)
 
 | Collection | Type | Manages |
 |-----------|------|---------|
@@ -579,7 +614,7 @@ The Remembrance link is controlled by `showRemembrance` in `hugo.toml`. Set it t
 | **Newsletter form** | Homepage form posts to `action="#"`; needs a Mailchimp embed or equivalent |
 | **Contact form** | `content/contact.md` uses a Formspree placeholder (`your-form-id`); needs updating with the real form ID |
 | **Business directory nav link** | Not yet in the header nav — add a link to `/business-directory/` when ready |
-| **Redirects** | A `static/_redirects` file is needed to map any old WordPress URLs to new slugs |
+| **Redirects** | A `static/_redirects` file is needed to map any old WordPress URLs to new slugs — see [Cloudflare Pages redirects](https://developers.cloudflare.com/pages/configuration/redirects/) |
 | **Data-driven navigation** | Header nav is hardcoded in `header.html`; could be moved to `hugo.toml` menus |
 | **News CMS nested folders** | ~~Done~~ — both events and news collections use `nested` with `subfolders: false` and `meta.path`; year `_index.md` folder nodes created |
 
@@ -589,7 +624,7 @@ The Remembrance link is controlled by `showRemembrance` in `hugo.toml`. Set it t
 
 ### Content Security Policy
 
-HTTP response headers are set via `static/_headers`, which Cloudflare Pages reads automatically.
+HTTP response headers are set via `static/_headers`, which [Cloudflare Pages reads automatically](https://developers.cloudflare.com/pages/configuration/headers/).
 
 Current policy summary:
 
@@ -611,14 +646,16 @@ Note: `unsafe-eval` was previously required by Decap CMS and has been removed no
 
 | Feature | CSP addition required |
 |---|---|
-| Web Analytics | `script-src static.cloudflareinsights.com` + `connect-src cloudflareinsights.com` |
-| Rocket Loader | `script-src ajax.cloudflare.com` — also breaks `integrity` checks on scripts |
-| Zaraz | `script-src 'unsafe-inline'` or per-tool origins |
-| Turnstile | `script-src challenges.cloudflare.com` + `frame-src challenges.cloudflare.com` |
+| [Web Analytics](https://developers.cloudflare.com/analytics/web-analytics/) | `script-src static.cloudflareinsights.com` + `connect-src cloudflareinsights.com` |
+| [Rocket Loader](https://developers.cloudflare.com/speed/optimization/content/rocket-loader/) | `script-src ajax.cloudflare.com` — also breaks `integrity` checks on scripts |
+| [Zaraz](https://developers.cloudflare.com/zaraz/) | `script-src 'unsafe-inline'` or per-tool origins |
+| [Turnstile](https://developers.cloudflare.com/turnstile/) | `script-src challenges.cloudflare.com` + `frame-src challenges.cloudflare.com` |
 
 ---
 
 ## Build
+
+Full reference: [Hugo CLI](https://gohugo.io/commands/)
 
 ```bash
 npm install        # Required before first build
@@ -655,7 +692,7 @@ Scanning is handled via a Node.js script using achecker's programmatic API rathe
 ```yaml
 ruleArchive: latest
 policies:
-  - WCAG_2_2          # WCAG 2.2 (AA level implicit)
+  - WCAG_2_2          # WCAG 2.2 (AA level implicit) — https://www.w3.org/TR/WCAG22/
 failLevels:
   - violation         # Exit non-zero only on confirmed violations
 reportLevels:
