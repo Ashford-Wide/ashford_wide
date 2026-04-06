@@ -377,6 +377,8 @@ Output on every page via `partials/jsonld/org.html`.
 | `knowsAbout` | hardcoded | Community Development ([Wikidata Q5154974](https://www.wikidata.org/wiki/Q5154974)) |
 | `areaServed` | hardcoded | City: Ashford ([Wikidata Q725270](https://www.wikidata.org/wiki/Q725270)); DefinedRegion: TW15 |
 | `sameAs` | `params.facebook`, `.twitter`, `.instagram` | Omitted entirely if none are set |
+| `contactPoint` | `params.email` | `ContactPoint` with `contactType: "Contact email"` — omitted if `email` is blank |
+| `potentialAction` | hardcoded + `baseURL` | `DonateAction` with `recipient` set to the org and `target` pointing to `/support/` |
 
 ### Event JSON-LD fields
 
