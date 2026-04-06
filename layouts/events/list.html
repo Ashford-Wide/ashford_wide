@@ -19,7 +19,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {{ range $upcoming }}
       <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] transition-all duration-250 hover:-translate-y-[3px] flex flex-col group">
-        {{ with .Params.image }}<div class="aspect-[16/9] overflow-hidden bg-[#333] shrink-0"><img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250"></div>{{ end }}
+        {{ with .Params.image }}<div class="aspect-[16/9] overflow-hidden bg-[#333] shrink-0"><img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250"></div>{{ end }}
         <div class="p-5 flex-1 flex flex-col">
           <div class="text-[0.78rem] text-white/55 mb-1.5">{{ .Date.Format "Monday 2 January 2006" }}{{ with .Params.startTime }} &middot; {{ partial "event-time.html" $ }}{{ end }}</div>
           <div class="text-[1.1rem] font-semibold mb-2 leading-[1.3]">{{ .Title }}</div>
@@ -39,7 +39,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-70">
       {{ range $past | first 3 }}
       <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] transition-all duration-250 hover:-translate-y-[3px] flex flex-col group">
-        {{ with .Params.image }}<div class="aspect-[16/9] overflow-hidden bg-[#333] shrink-0"><img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250"></div>{{ end }}
+        {{ with .Params.image }}<div class="aspect-[16/9] overflow-hidden bg-[#333] shrink-0"><img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250"></div>{{ end }}
         <div class="p-5 flex-1 flex flex-col">
           <div class="text-[0.78rem] text-white/55 mb-1.5">{{ .Date.Format "Monday 2 January 2006" }}</div>
           <div class="text-[1.1rem] font-semibold mb-2 leading-[1.3]">{{ .Title }}</div>
