@@ -651,7 +651,7 @@ The Remembrance link is controlled by `showRemembrance` in `hugo.toml`. Set it t
 | Item | Notes |
 |------|-------|
 | **Default OG image** | `static/images/og-default.jpg` needs creating at 1200×630px — logo on a branded background. Until it exists, pages without a specific `image:` param will have no social preview image. |
-| **Team data** | `data/team.yaml` exists but no template renders it; `about.md` has an `#team` anchor with no content |
+| **Team data** | `data/team.yaml` exists but no template renders it |
 | **Newsletter form** | Homepage form posts to `action="#"`; needs a Mailchimp embed or equivalent |
 | **Contact form** | `content/contact.md` uses a Formspree placeholder (`your-form-id`); needs updating with the real form ID |
 | **Business directory nav link** | Not yet in the header nav — add a link to `/business-directory/` when ready |
