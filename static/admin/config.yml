@@ -96,7 +96,7 @@ collections:
     files:
       - label: Remembrance (main)
         name: remembrance-index
-        file: content/remembrance/_index.md
+        file: content/remembrance-day/_index.md
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
@@ -104,7 +104,7 @@ collections:
 
       - label: Order of Services
         name: order-of-services
-        file: content/remembrance/order-of-services.md
+        file: content/remembrance-day/order-of-services.md
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
@@ -112,7 +112,7 @@ collections:
 
       - label: Sponsor a Poppy
         name: sponsor-a-poppy
-        file: content/remembrance/sponsor-a-poppy.md
+        file: content/remembrance-day/sponsor-a-poppy.md
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
@@ -120,7 +120,7 @@ collections:
 
       - label: Virtual Poppy Wall
         name: virtual-poppy-wall
-        file: content/remembrance/virtual-poppy-wall.md
+        file: content/remembrance-day/virtual-poppy-wall.md
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
