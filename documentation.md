@@ -262,6 +262,7 @@ Full reference: [Hugo partials](https://gohugo.io/templates/types/#partial)
 | `partials/event-time.html` | Formats `startTime`/`endTime` frontmatter into a display range (e.g. `10am–3pm`) |
 | `partials/jsonld/org.html` | Schema.org `Organization` JSON-LD — output on every page |
 | `partials/jsonld/event.html` | Schema.org `Event` JSON-LD — output on event single pages via `head_extra` |
+| `partials/jsonld/webpage.html` | Schema.org `WebPage` JSON-LD — output on default single pages via `head_extra` |
 
 ### Shortcodes
 
@@ -345,12 +346,13 @@ The default OG image (`/images/og-default.jpg`) should be **1200×630px** — id
 
 ## Schema.org / JSON-LD
 
-Two JSON-LD blocks are output per page:
+Two or three JSON-LD blocks are output per page:
 
 | Partial | Output on | Type |
 |---------|-----------|------|
 | `partials/jsonld/org.html` | Every page (via `head.html`) | [`Organization`](https://schema.org/Organization) |
 | `partials/jsonld/event.html` | Event single pages (via `head_extra`) | [`Event`](https://schema.org/Event) |
+| `partials/jsonld/webpage.html` | Default single pages (via `head_extra` in `_default/single.html`) | [`WebPage`](https://schema.org/WebPage) |
 
 ### Organisation JSON-LD fields
 
@@ -393,6 +395,31 @@ Full reference: [Schema.org/Event](https://schema.org/Event)
 | `image` | `image` param | Absolute URL |
 | `url` | `.Permalink` | |
 | `organizer` | Site config | Name and URL from `hugo.toml` |
+
+### WebPage JSON-LD fields
+
+Full reference: [Schema.org/WebPage](https://schema.org/WebPage)
+
+Output on default single pages (about, support, volunteer, membership, etc.) via `partials/jsonld/webpage.html`. Pages under `news/` and `events/` use their own specific types and are unaffected.
+
+| Field | Source | Notes |
+|-------|--------|-------|
+| `@type` | hardcoded | `WebPage` |
+| `name` | `.Title` | |
+| `url` | `.Permalink` | |
+| `inLanguage` | hardcoded | `en-GB` |
+| `publisher` | Site config | Name and URL from `hugo.toml` |
+| `description` | `.Description` | Omitted if blank |
+| `datePublished` | `date` front matter | ISO-8601 — omitted if not set |
+| `dateModified` | `lastmod` front matter | ISO-8601 — omitted if not set |
+| `lastReviewed` | `lastmod` front matter | Date only (`YYYY-MM-DD`) — omitted if `lastmod` not set |
+
+To enable date fields on a page, add `date` and `lastmod` to its front matter:
+
+```yaml
+date: 2024-01-01
+lastmod: 2026-04-06
+```
 
 ---
 
