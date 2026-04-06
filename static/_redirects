@@ -1,0 +1,17 @@
+# WordPress → Hugo redirects
+
+# News (was /news-and-events/ on WordPress)
+/news-and-events/       /news/          301
+/news-and-events/*      /news/:splat    301
+
+# Remembrance (renamed)
+/remembrance/           /remembrance-day/           301
+/remembrance/*          /remembrance-day/:splat     301
+
+# WordPress common paths
+/wp-admin               /admin/         301
+/wp-admin/              /admin/         301
+/feed/                  /index.xml     301
+/feed                   /index.xml     301
+/?p=*                   /              301
+/?page_id=*             /              301
