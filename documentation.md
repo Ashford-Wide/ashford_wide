@@ -628,6 +628,18 @@ The header nav is hardcoded in `layouts/partials/header.html` (not data-driven).
 
 The "SUPPORT US" button links to `/support`.
 
+#### SUPPORT US microdata
+
+The SUPPORT US button is annotated with HTML microdata using [Schema.org `DonateAction`](https://schema.org/DonateAction):
+
+```html
+<div itemprop="potentialAction" itemscope itemtype="https://schema.org/DonateAction">
+  <a itemprop="target" href="/support" ...>SUPPORT US</a>
+</div>
+```
+
+This supplements the `DonateAction` already declared in the Organisation JSON-LD (see `partials/jsonld/org.html`). The `itemprop="potentialAction"` attribute is meaningful to search engines when it appears inside an ancestor element with `itemscope itemtype="https://schema.org/Organization"` — if that ancestor is ever added to the `<header>`, the microdata will form a complete inline structured data block. Without it the attributes are still valid and harmless.
+
 ### Remembrance nav item
 
 The Remembrance link is controlled by `showRemembrance` in `hugo.toml`. Set it to `true` to show the link in the nav, `false` to hide it. This allows the link to be enabled seasonally without a template change — just update `hugo.toml` and redeploy.
