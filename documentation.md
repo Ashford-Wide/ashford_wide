@@ -42,6 +42,8 @@ ashford_wide/
 │   └── 404.html                 # 404 page
 ├── static/
 │   ├── _headers                 # Cloudflare Pages HTTP headers (CSP, etc.)
+│   ├── .well-known/
+│   │   └── traffic-advice       # Google Private Prefetch Proxy opt-in
 │   ├── images/                  # Static images (logo, member logos, etc.)
 │   └── admin/
 │       ├── index.html           # Sveltia CMS entry point
@@ -682,6 +684,21 @@ Current policy summary:
 | `form-action` | `'self' https://www.paypal.com https://formspree.io` | PayPal donate form and Formspree contact form submissions |
 
 Note: `unsafe-eval` was previously required by Decap CMS and has been removed now that Sveltia CMS is in use.
+
+### Traffic Advice (`/.well-known/traffic-advice`)
+
+The file at `static/.well-known/traffic-advice` is served at `/.well-known/traffic-advice` and opts the site in to [Google's Private Prefetch Proxy](https://developer.chrome.com/docs/privacy-security/private-prefetch-proxy). This allows Chrome to speculatively prefetch pages on behalf of users arriving from Google Search, improving perceived load time.
+
+```json
+[{
+  "user_agent": "prefetch-proxy",
+  "fraction": 1.0
+}]
+```
+
+`fraction` is a value between `0.0` and `1.0` controlling what proportion of prefetch requests are allowed. `1.0` permits all of them. This is appropriate for a fully public static site with no personalised or gated content.
+
+The file is served with `Content-Type: application/trafficadvice+json`, set via the `/.well-known/traffic-advice` rule in `static/_headers`.
 
 ### Cloudflare Features (not currently enabled)
 
