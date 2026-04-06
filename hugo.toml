@@ -1,5 +1,5 @@
 baseURL = "https://ashford-wide.pages.dev"
-languageCode = "en-gb"
+languageCode = "en-GB"
 title = "Ashford Wide"
 publishDir = "public"
 paginate = 9
@@ -13,6 +13,7 @@ disableHugoGeneratorInject = true
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
   showRemembrance = false
+  logo = "/images/aw-logo.png"
   email = "community@ashfordwide.com"
   businessEmail = "business@ashfordwide.com"
   ogImage = "/images/og-default.jpg"
