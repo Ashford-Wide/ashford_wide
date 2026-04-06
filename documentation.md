@@ -439,13 +439,15 @@ Placeholder team data. Fields: `name`, `role`. Not currently rendered in any tem
 
 ---
 
-## Decap CMS (`static/admin/`)
+## Sveltia CMS (`static/admin/`)
 
 Served at `/admin/`. Edits are committed directly to the GitHub repo, triggering a Cloudflare Pages rebuild (~30 seconds).
 
+Sveltia CMS is a drop-in replacement for Decap CMS. It uses the same `config.yml` schema and the same GitHub OAuth flow, but is significantly smaller (~600 KB vs 1.5 MB) and does not require `unsafe-eval` in the CSP.
+
 ### Authentication
 
-Decap CMS authenticates editors via GitHub OAuth. The OAuth flow is handled by two Cloudflare Pages Functions (no external service required):
+Sveltia CMS authenticates editors via GitHub OAuth. The OAuth flow is handled by two Cloudflare Pages Functions (no external service required):
 
 | File | Route | Purpose |
 |------|-------|---------|
@@ -455,7 +457,7 @@ Decap CMS authenticates editors via GitHub OAuth. The OAuth flow is handled by t
 ```mermaid
 sequenceDiagram
     actor Editor
-    participant CMS as Decap CMS<br/>(/admin)
+    participant CMS as Sveltia CMS<br/>(/admin)
     participant Auth as Pages Function<br/>(/api/auth)
     participant CB as Pages Function<br/>(/api/auth/callback)
     participant GH as GitHub
@@ -496,7 +498,7 @@ sequenceDiagram
    - Homepage URL: `https://www.ashfordwide.com`
    - Authorization callback URL: `https://www.ashfordwide.com/api/auth/callback`
 2. **Add the three environment variables** above in the Cloudflare Pages dashboard
-3. **Update `static/admin/config.yml`** — set `repo:` and replace `https://YOUR_DOMAIN` with the live domain
+3. **Update `static/admin/config.yml`** — set `repo:` to the correct GitHub org/repo
 
 #### Managing editor access
 
@@ -508,18 +510,32 @@ The Pages Function checks collaborator status at login time — non-collaborator
 
 To revoke access, remove them as a collaborator on GitHub.
 
+### Local development
+
+Sveltia CMS does not use a proxy server for local development. Instead it uses the browser's **File System Access API** to read and write files directly in your local repo.
+
+1. Run `hugo server` as normal
+2. Visit `http://localhost:1313/admin/`
+3. When prompted, open your local repo folder via the browser file picker
+4. Edits are written directly to your local files
+5. Commit and push changes using git as normal
+
+**Browser compatibility:** Chrome or Edge required for File System Access API. Safari support is limited.
+
 ### CMS Collections
 
 | Collection | Type | Manages |
 |-----------|------|---------|
-| `events` | folder | `content/events/{year}/*.md` — nested depth 2, path `{{year}}/{{slug}}` |
-| `news` | folder | `content/news/{year}/*.md` |
+| `events` | folder | `content/events/{year}/*.md` — path template `{{year}}/{{slug}}` |
+| `news` | folder | `content/news/{year}/*.md` — path template `{{year}}/{{slug}}` |
 | `pages` | files | about, membership, business-membership, volunteer, support, contact |
 | `remembrance` | files | All 4 remembrance pages |
 | `members` | files | `data/members.yaml` |
 | `businesses` | files | `data/businesses.yaml` |
 
-Both the events and news collections use `nested: { depth: 2, subfolders: false }` with `meta: { path: { index_file: '_index' } }`. This renders a folder tree in the CMS grouped by year. Each year directory contains an `_index.md` file that acts as the folder node (not editable by CMS users). `content/events/past.md` is excluded because it sits outside the year folder structure.
+Events and news use a `path: "{{year}}/{{slug}}"` template to preserve the year-subfolder structure in the repo (keeping Hugo's `permalinks` config working). Editors see a flat list in the CMS rather than a year tree — Sveltia's nested collection support is planned for v2.0 (mid-2026). `content/events/past.md` sits outside the year folder structure and is not managed by the CMS.
+
+`omit_empty_optional_fields: true` is set globally so optional fields are not written to front matter when left blank.
 
 ### Markdown Widget — Supported Formatting
 
@@ -579,14 +595,17 @@ Current policy summary:
 
 | Directive | Value | Reason |
 |---|---|---|
-| `script-src` | `'self'` | All JS is served from `/js/` via Hugo Pipes — no inline scripts |
-| `style-src` | `'self' 'unsafe-inline'` | `style="..."` attributes used in templates |
+| `script-src` | `'self' https://unpkg.com https://player.vimeo.com` | Sveltia CMS and Vimeo player loaded from unpkg CDN |
+| `style-src` | `'self' 'unsafe-inline' https://unpkg.com` | `style="..."` attributes in templates; Sveltia styles from unpkg |
 | `img-src` | `'self' https: data:` | Business directory logos link to arbitrary external domains |
 | `frame-src` | `https://player.vimeo.com` | Vimeo embed on the homepage |
 | `default-src` | `'self'` | Everything else self-hosted |
+| `connect-src` | `'self' https://ashford-wide.pages.dev https://unpkg.com https://api.github.com` | Sveltia CMS communicates with GitHub API |
 | `object-src` | `'none'` | Prevent `<object>` and `<embed>` |
 | `base-uri` | `'self'` | Prevent `<base>` tag hijacking |
 | `form-action` | `'self' https://www.paypal.com https://formspree.io` | PayPal donate form and Formspree contact form submissions |
+
+Note: `unsafe-eval` was previously required by Decap CMS and has been removed now that Sveltia CMS is in use.
 
 ### Cloudflare Features (not currently enabled)
 
@@ -626,7 +645,7 @@ Automated accessibility scanning is provided by [`accessibility-checker`](https:
 Scanning is handled via a Node.js script using achecker's programmatic API rather than the CLI. This is necessary because the CLI only processes one file per invocation. The script:
 
 - Finds all HTML files under `public/` using `find`
-- Excludes pages that shouldn't be tested: `/admin/` (Decap CMS), `/data/`, and Hugo pagination paths (`/news/page/`, `/events/page/`)
+- Excludes pages that shouldn't be tested: `/admin/` (Sveltia CMS), `/data/`, and Hugo pagination paths (`/news/page/`, `/events/page/`)
 - Scans each page using `aChecker.getCompliance()` with a `file://` URL
 - Wraps each scan in try/catch so a Puppeteer navigation error on one page doesn't abort the run
 - Exits non-zero if any page has violations or errors
