@@ -1,6 +1,8 @@
 ---
 title: "Support Us"
 description: "Help Ashford Wide continue its work in the community"
+date: 2024-01-01
+lastmod: 2026-04-06
 ---
 
 ## Support Ashford Wide
