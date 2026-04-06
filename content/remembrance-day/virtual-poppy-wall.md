@@ -1,6 +1,8 @@
 ---
 title: "Virtual Poppy Wall"
 description: "Place a virtual poppy on our online memorial wall in memory of a loved one"
+date: 2024-01-01
+lastmod: 2026-04-06
 ---
 
 ## Virtual Poppy Wall

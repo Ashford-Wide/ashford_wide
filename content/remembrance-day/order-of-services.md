@@ -1,6 +1,8 @@
 ---
 title: "Order of Services"
 description: "Details of the Remembrance Day order of services in Ashford"
+date: 2024-01-01
+lastmod: 2026-04-06
 ---
 
 ## Remembrance Sunday Order of Service

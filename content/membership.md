@@ -1,6 +1,8 @@
 ---
 title: Membership
 description: Join Ashford Wide and help shape the future of Ashford town centre
+date: 2024-01-01
+lastmod: 2026-04-06
 ---
 ## Join Ashford Wide
 

@@ -1,6 +1,8 @@
 ---
 title: Stallholder Information
 description: Guidance for stallholders at Ashford Wide events
+date: 2024-01-01
+lastmod: 2026-04-06
 ---
 
 ## Thinking of running a stall at an Ashford Wide event?

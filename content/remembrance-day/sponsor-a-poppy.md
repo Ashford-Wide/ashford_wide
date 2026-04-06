@@ -1,6 +1,8 @@
 ---
 title: "Sponsor a Poppy"
 description: "Sponsor a poppy and help us remember those who gave their lives"
+date: 2024-01-01
+lastmod: 2026-04-06
 ---
 
 ## Sponsor a Poppy

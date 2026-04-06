@@ -1,6 +1,8 @@
 ---
 title: Cookies and data
 description: What data we collect and how we use it
+date: 2024-01-01
+lastmod: 2026-04-06
 ---
 
 ## Cookies

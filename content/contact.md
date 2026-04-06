@@ -1,6 +1,8 @@
 ---
 title: "Contact Us"
 description: "Get in touch with Ashford Wide"
+date: 2024-01-01
+lastmod: 2026-04-06
 ---
 
 ## Get in Touch
