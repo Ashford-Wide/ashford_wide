@@ -45,4 +45,20 @@
   {{- $org = merge $org (dict "sameAs" $sameAs) -}}
 {{- end -}}
 
+{{- with .Site.Params.email -}}
+  {{- $contactPoint := dict
+    "@type" "ContactPoint"
+    "email" .
+    "contactType" "Contact email"
+  -}}
+  {{- $org = merge $org (dict "contactPoint" $contactPoint) -}}
+{{- end -}}
+
+{{- $donateAction := dict
+  "@type" "DonateAction"
+  "recipient" (dict "@type" "Organization" "name" .Site.Title)
+  "target" (print (.Site.BaseURL | strings.TrimRight "/") "/support/")
+-}}
+{{- $org = merge $org (dict "potentialAction" $donateAction) -}}
+
 <script type="application/ld+json">{{ $org | jsonify | safeJS }}</script>
