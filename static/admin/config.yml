@@ -1,5 +1,3 @@
-local_backend: true
-
 backend:
   name: github
   repo: YOUR_GITHUB_ORG/ashford_wide
@@ -8,17 +6,15 @@ backend:
 media_folder: /static/images
 public_folder: /images
 
+omit_empty_optional_fields: true
+
 collections:
 
   - name: events
     label: Events
     folder: content/events
     create: true
-    nested:
-      depth: 2
-      summary: '{{title}}'
-      subfolders: false
-    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
     fields:
       - { label: Title, name: title, widget: string }
@@ -34,11 +30,7 @@ collections:
     label: News
     folder: content/news
     create: true
-    nested:
-      depth: 2
-      summary: '{{title}}'
-      subfolders: false
-    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
     fields:
       - { label: Title, name: title, widget: string }
