@@ -7,6 +7,7 @@ Two or three JSON-LD blocks are output per page:
 | Partial | Output on | Type |
 |---------|-----------|------|
 | `partials/jsonld/org.html` | Every page (via `head.html`) | [`Organization`](https://schema.org/Organization) |
+| `partials/jsonld/article.html` | News single pages (via `head_extra` in `news/single.html`) | [`NewsArticle`](https://schema.org/NewsArticle) |
 | `partials/jsonld/event.html` | Event single pages (via `head_extra`) | [`Event`](https://schema.org/Event) |
 | `partials/jsonld/webpage.html` | Default single pages (via `head_extra` in `_default/single.html`) | [`WebPage`](https://schema.org/WebPage) |
 
@@ -35,6 +36,25 @@ Output on every page via `partials/jsonld/org.html`.
 | `sameAs` | `params.facebook`, `.twitter`, `.instagram` | Omitted entirely if none are set |
 | `contactPoint` | `params.email` | `ContactPoint` with `contactType: "Contact email"` — omitted if `email` is blank |
 | `potentialAction` | hardcoded + `baseURL` | `DonateAction` with `recipient` set to the org and `target` pointing to `/support/` |
+
+### NewsArticle JSON-LD fields
+
+Full reference: [Schema.org/NewsArticle](https://schema.org/NewsArticle)
+
+Output on news single pages via `partials/jsonld/article.html`, included through `head_extra` in `layouts/news/single.html`.
+
+| Field | Source | Notes |
+|-------|--------|-------|
+| `@type` | hardcoded | `NewsArticle` |
+| `headline` | `.Title` | |
+| `datePublished` | `.Date` | ISO-8601 datetime |
+| `dateModified` | `.Lastmod` | ISO-8601 datetime — falls back to `.Date` if `lastmod` not set in front matter |
+| `url` | `.Permalink` | |
+| `wordCount` | `.WordCount` | Computed by Hugo |
+| `publisher` | Site config | `Organization` with name and URL from `hugo.toml` |
+| `author` | `author` param or site config | Defaults to the site `Organization`; if `author` front matter is set, outputs a `Person` node with that name instead |
+| `description` | `.Description` | Omitted if blank |
+| `image` | `image` param | Absolute URL — omitted if not set |
 
 ### Event JSON-LD fields
 
