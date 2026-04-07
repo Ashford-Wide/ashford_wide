@@ -45,7 +45,9 @@ Full reference: [Hugo partials](https://gohugo.io/templates/types/#partial)
 | `partials/footer.html` | 3-column footer (light theme), logo, social links, nav JS |
 | `partials/opengraph.html` | Open Graph + Twitter Card meta tags — used on all pages |
 | `partials/event-time.html` | Formats `startTime`/`endTime` frontmatter into a display range (e.g. `10am–3pm`) |
+| `partials/homepage/*.html` | Seasonal/campaign promo blocks — one loaded on the homepage when `activePromo` is set in `hugo.toml` (see [Homepage Promotions](#homepage-promotions)) |
 | `partials/jsonld/org.html` | Schema.org `Organization` JSON-LD — output on every page |
+| `partials/jsonld/article.html` | Schema.org `NewsArticle` JSON-LD — output on news single pages via `head_extra` |
 | `partials/jsonld/event.html` | Schema.org `Event` JSON-LD — output on event single pages via `head_extra` |
 | `partials/jsonld/webpage.html` | Schema.org `WebPage` JSON-LD — output on default single pages via `head_extra` |
 
@@ -109,6 +111,49 @@ Hugo looks for `layouts/_default/business-directory.html`.
 ```
 Outputs nothing if `startTime` is not set. Outputs `10am` if only `startTime` is set. Outputs `10am–3pm` if both `startTime` and `endTime` are set.
 
+
+## Homepage Promotions
+
+Seasonal or campaign-specific promotional blocks can be added to the homepage without touching `index.html`. Each promotion is a self-contained partial in `layouts/partials/homepage/`. One can be activated at a time via `hugo.toml`.
+
+### Enabling a promo
+
+Set `activePromo` in `hugo.toml` to the filename of the partial (without `.html`):
+
+```toml
+[params]
+  activePromo = "best-dressed-window"
+```
+
+Set it to an empty string (or omit it) to show nothing:
+
+```toml
+  activePromo = ""
+```
+
+The block renders between the hero and the About section on the homepage.
+
+### Adding a new promo
+
+Create a new file in `layouts/partials/homepage/`, e.g. `layouts/partials/homepage/summer-festival.html`, then set `activePromo = "summer-festival"` in `hugo.toml` and redeploy.
+
+### Existing promos
+
+| File | Campaign |
+|------|----------|
+| `partials/homepage/best-dressed-window.html` | Best Dressed Window & Best Dressed Christmas Tree voting |
+
+### How it works
+
+`layouts/index.html` contains:
+
+```go
+{{- with .Site.Params.activePromo -}}
+  {{- partial (printf "homepage/%s.html" .) $ -}}
+{{- end -}}
+```
+
+`with` short-circuits when `activePromo` is empty, so no partial is loaded. When set, Hugo resolves the partial path at build time — an invalid name will cause a build error, catching typos early.
 
 ## Navigation
 
