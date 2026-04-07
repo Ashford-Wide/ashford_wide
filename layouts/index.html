@@ -21,6 +21,11 @@
   </div>
 </section>
 
+{{/* ── Homepage promo (set params.activePromo in hugo.toml to enable) ── */}}
+{{- with .Site.Params.activePromo -}}
+  {{- partial (printf "homepage/%s.html" .) $ -}}
+{{- end -}}
+
 {{/* ── About ── */}}
 <section class="py-16 bg-[#f8f9fa]">
   <div class="max-w-container mx-auto px-6">
