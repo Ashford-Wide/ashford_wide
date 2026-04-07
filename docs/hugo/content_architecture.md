@@ -110,3 +110,11 @@ description: "Used in <meta name='description'> and page header subtitle."
 layout: "business-directory"  # optional — overrides the default template
 ---
 ```
+
+## RSS Feeds
+
+The site has three RSS feeds which are built automatically and can be used to pass data onto other systems:
+
+- `/index.xml` - Site wide feed
+- `/events/index.xml` - Event specific feed
+- `/news/index.xml` - News specific feed
