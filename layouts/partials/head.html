@@ -11,6 +11,7 @@
 {{ end }}
 {{ if and .IsHome .Params.hero_image }}<link rel="preload" as="image" href="{{ .Params.hero_image }}" fetchpriority="high">{{ end }}
 <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="canonical" href="{{ .Permalink }}">
 {{ partial "opengraph.html" . }}
 {{ partial "jsonld/org.html" . }}
