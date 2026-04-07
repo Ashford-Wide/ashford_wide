@@ -11,7 +11,7 @@
         business, and building community spirit.</p>
       <div class="flex gap-3 flex-wrap">
         <a href="/events"
-          class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-[var(--color-secondary)] bg-[var(--color-secondary)] text-white hover:bg-white hover:text-[var(--color-secondary)] transition-colors leading-[1.4]">Upcoming
+          class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">Upcoming
           Events</a>
         <a href="/membership"
           class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-white bg-transparent text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">Join
@@ -27,7 +27,7 @@
 {{- end -}}
 
 {{/* ── About ── */}}
-<section class="py-16 bg-[#f8f9fa]">
+<section class="py-4 bg-[#f8f9fa]">
   <div class="max-w-container mx-auto px-6">
     <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5">About Ashford Wide</h2>
     <p class="text-muted mb-10 text-[1.05rem]">Our vision is to make Ashford a thriving town centre the whole community
@@ -40,7 +40,7 @@
         <p class="mb-5">From events and promotions to safety initiatives and environmental improvements, we're here to
           make a real difference for residents and businesses alike.</p>
         <a href="/about"
-          class="mt-2 inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-[var(--color-secondary)] bg-[var(--color-secondary)] text-white hover:bg-white hover:text-[var(--color-secondary)] transition-colors leading-[1.4]">Learn
+          class="mt-2 inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">Learn
           More</a>
       </div>
       {{- $videoID := "1180234252" -}}
@@ -73,7 +73,7 @@
 {{- $upcoming := where (where .Site.RegularPages "Section" "events") ".Date" "ge" now -}}
 {{- $upcoming = $upcoming | first 3 -}}
 {{ if $upcoming }}
-<section class="py-16">
+<section class="py-8">
   <div class="max-w-container mx-auto px-6">
     <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5">Upcoming Events</h2>
     <p class="text-muted mb-10 text-[1.05rem]">Don't miss what's happening in Ashford town centre.</p>
@@ -100,7 +100,7 @@
     </div>
     <div class="mt-8">
       <a href="/events"
-        class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-[var(--color-secondary)] bg-[var(--color-secondary)] text-white hover:bg-white hover:text-[var(--color-secondary)] transition-colors leading-[1.4]">View
+        class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">View
         All Events</a>
     </div>
   </div>
