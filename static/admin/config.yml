@@ -16,6 +16,10 @@ collections:
     create: true
     path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
+    view_groups:
+      - label: Year
+        field: date
+        pattern: '^\d{4}'
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
@@ -32,6 +36,10 @@ collections:
     create: true
     path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
+    view_groups:
+      - label: Year
+        field: date
+        pattern: '^\d{4}'
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
