@@ -2,7 +2,6 @@
 
 | Item | Notes |
 |------|-------|
-| **Default OG image** | `static/images/og-default.jpg` needs creating at 1200×630px — logo on a branded background. Until it exists, pages without a specific `image:` param will have no social preview image. |
 | **Team data** | `data/team.yaml` exists but no template renders it |
 | **Business directory nav link** | Not yet in the header nav — add a link to `/business-directory/` when ready |
 | **Data-driven navigation** | Header nav is hardcoded in `header.html`; could be moved to `hugo.toml` menus |
