@@ -54,6 +54,11 @@
           {{ partial "icons/twitter.html" . }}
         </a>
         {{ end }}
+        {{ with .Site.Params.linkedin }}
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="LinkedIn" target="_blank" rel="noopener">
+          {{ partial "icons/linkedin.html" . }}
+        </a>
+        {{ end }}
       </div>
     </div>
   </div>
