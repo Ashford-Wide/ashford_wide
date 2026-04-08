@@ -6,7 +6,7 @@ Full reference: [Hugo site configuration](https://gohugo.io/configuration/all/)
 
 ```toml
 baseURL = "https://ashford-wide.pages.dev"
-languageCode = "en-gb"
+languageCode = "en-GB"
 title = "Ashford Wide"
 publishDir = "public"
 paginate = 9             # News list pages — 9 per page (fits 3-column grid evenly)
@@ -20,19 +20,29 @@ disableHugoGeneratorInject = true
   description = "Working together for a better Ashford"
   tagline = "Working together for a better Ashford"
   showRemembrance = false                    # Set true to show Remembrance link in nav
+  logo = "/images/aw-logo.png"              # Logo image path
   email = "community@ashfordwide.com"        # General contact email
   businessEmail = "business@ashfordwide.com" # Business-specific contact email
   ogImage = "/images/og-default.jpg"         # Default Open Graph image (1200×630px)
+  foundedYear = 2012                         # Used in org JSON-LD
   companyNumber = ""                         # Companies House number — omitted from JSON-LD if blank
+  activePromo = ""                           # Slug of the active promotion page, or blank if none
+  googleSiteVerification = ""               # Google Search Console verification meta tag
+  facebookDomainVerification = ""           # Facebook domain verification meta tag
   facebook = "https://www.facebook.com/AshfordWide"
   twitter = "https://twitter.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
+  linkedin = ""                              # LinkedIn page URL, or blank if not set
 
 [markup.goldmark.renderer]
   unsafe = true   # Allows raw HTML inside Markdown (used in contact form, support page)
 
 [taxonomies]
   tag = "tags"
+
+[privacy]
+  [privacy.instagram]
+    simple = true   # Use Hugo's simple Instagram shortcode (no JS embed)
 
 [permalinks]
   [permalinks.page]
