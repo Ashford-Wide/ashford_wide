@@ -34,7 +34,7 @@ The following headers are also set on all `/*` responses:
 
 ## Traffic Advice (`/.well-known/traffic-advice`)
 
-The file at `static/.well-known/traffic-advice` is served at `/.well-known/traffic-advice` and opts the site in to [Google's Private Prefetch Proxy](https://developer.chrome.com/docs/privacy-security/private-prefetch-proxy). This allows Chrome to speculatively prefetch pages on behalf of users arriving from Google Search, improving perceived load time.
+The file at `static/.well-known/traffic-advice` is served at `/.well-known/traffic-advice` and opts the site in to [Google's Private Prefetch Proxy](https://developer.chrome.com/blog/private-prefetch-proxy). This allows Chrome to speculatively prefetch pages on behalf of users arriving from Google Search, improving perceived load time.
 
 ```json
 [{
