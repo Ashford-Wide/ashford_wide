@@ -25,6 +25,7 @@ disableHugoGeneratorInject = true
   facebook = "https://www.facebook.com/AshfordWide"
   twitter = "https://twitter.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
+  linkedin = ""
 
 [markup.goldmark.renderer]
   unsafe = true
