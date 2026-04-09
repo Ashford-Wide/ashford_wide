@@ -13,7 +13,7 @@ The Remembrance Sunday road closures page at `/remembrance-day/road-closures/` e
 
 ## GeoJSON data (`static/closures.geojson`)
 
-The road geometries are stored as a GeoJSON `FeatureCollection` with one `LineString` feature per road. Each feature's `properties.name` is the road name (e.g. `"Church Road"`), sourced directly from OpenStreetMap via [Overpass Turbo](https://overpass-turbo.eu/).
+The road geometries are stored as a GeoJSON `FeatureCollection` with one `LineString` feature per road. Each feature's `properties.name` is the road name (e.g. `"Church Road"`), sourced directly from OpenStreetMap via [Overpass Turbo](https://overpass-turbo.eu/). The `closure.geojson` data can be edited with [geojson.io](https://geojson.io/next/).
 
 **Why `static/` and not `data/`?**
 
