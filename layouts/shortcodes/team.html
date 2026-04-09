@@ -1,8 +1,8 @@
 <ul>
 {{- range .Site.Data.team }}
   <li>
-    <strong>{{ .name }}</strong> &mdash; {{ .role }}
-    {{- if or .linkedin .instagram }}
+    <strong>{{ .name }}</strong>
+    {{- if or .linkedin .instagram .facebook .twitter }}
     <span class="team-socials">
       {{- if .linkedin }}
         <a href="{{ .linkedin }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on LinkedIn">
@@ -20,12 +20,13 @@
         </a>
       {{- end }}
       {{- if .twitter }}
-        <a href="{{ .twitter }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on twitter">
+        <a href="{{ .twitter }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Twitter">
           {{- partial "icons/twitter.html" . -}}
         </a>
       {{- end }}
     </span>
     {{- end }}
+    &mdash; {{ .role }}
   </li>
 {{- end }}
 </ul>
