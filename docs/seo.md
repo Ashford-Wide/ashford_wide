@@ -99,6 +99,19 @@ date: 2024-01-01
 lastmod: 2026-04-06
 ```
 
+### Team microdata
+
+The About page team list (`layouts/shortcodes/team.html`) annotates each person with HTML microdata using [Schema.org `Person`](https://schema.org/Person):
+
+| Attribute | Element | Property |
+|---|---|---|
+| `itemscope itemtype="https://schema.org/Person"` | `<li>` | declares the entity |
+| `itemprop="name"` | `<strong>` | person's name |
+| `itemprop="jobTitle"` | `<span>` | role/title |
+| `itemprop="sameAs"` | each social `<a>` | links to their identity on LinkedIn, Instagram, Facebook, Twitter |
+
+Team data is sourced from `data/team.yaml`. Social profile links are optional per person.
+
 ### SUPPORT US microdata
 
 The SUPPORT US button is annotated with HTML microdata using [Schema.org `DonateAction`](https://schema.org/DonateAction):
