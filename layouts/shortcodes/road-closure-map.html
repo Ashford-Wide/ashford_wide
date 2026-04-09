@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<div id="closure-map" style="height: 420px; margin: 1.5rem 0; border-radius: 0.5rem; overflow: hidden;"></div>
+<script>
+(function () {
+  var map = L.map('closure-map');
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+  fetch('/closures.geojson')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var layer = L.geoJSON(data, {
+        style: function () {
+          return {
+            color: '#cc0000',
+            weight: 7,
+            opacity: 0.85,
+            dashArray: '10, 10'
+          };
+        },
+        onEachFeature: function (feature, layer) {
+          if (feature.properties && feature.properties.name) {
+            layer.bindPopup('<strong>Road Closed</strong><br>' + feature.properties.name);
+          }
+        }
+      }).addTo(map);
+      map.fitBounds(layer.getBounds(), { padding: [20, 20] });
+    });
+}());
+</script>
