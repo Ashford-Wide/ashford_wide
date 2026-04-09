@@ -1,5 +1,5 @@
 <ul>
-{{- range .Site.Data.team }}
+{{- range hugo.Data.team }}
   <li itemscope itemtype="https://schema.org/Person">
     <strong itemprop="name">{{ .name }}</strong>
     {{- if or .linkedin .instagram .facebook .twitter }}
