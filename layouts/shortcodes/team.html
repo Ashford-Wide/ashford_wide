@@ -5,10 +5,19 @@
     {{- if or .linkedin .instagram }}
     <span class="team-socials">
       {{- if .linkedin }}
-        <a href="{{ .linkedin }}" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+        <a href="{{ .linkedin }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on LinkedIn">
+          {{- partial "icons/linkedin.html" . -}}
+        </a>
       {{- end }}
       {{- if .instagram }}
-        <a href="{{ .instagram }}" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="{{ .instagram }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Instagram">
+          {{- partial "icons/instagram.html" . -}}
+        </a>
+      {{- end }}
+      {{- if .facebook }}
+        <a href="{{ .facebook }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Facebook">
+          {{- partial "icons/facebook.html" . -}}
+        </a>
       {{- end }}
     </span>
     {{- end }}
