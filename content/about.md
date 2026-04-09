@@ -45,7 +45,4 @@ We would love to have your help making Ashford a better place to live, whether t
 
 Our leadership team is elected annually from our volunteers and is currently:
 
-- **Barry Muggeridge** — Chair
-- **John Smith** — Treasurer
-- **Jenny Frost** — Secretary
-- **Emma Gray** — Business Lead
+{{< team >}}
