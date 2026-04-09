@@ -1,32 +1,32 @@
 <ul>
 {{- range .Site.Data.team }}
-  <li>
-    <strong>{{ .name }}</strong>
+  <li itemscope itemtype="https://schema.org/Person">
+    <strong itemprop="name">{{ .name }}</strong>
     {{- if or .linkedin .instagram .facebook .twitter }}
     <span class="team-socials">
       {{- if .linkedin }}
-        <a href="{{ .linkedin }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on LinkedIn">
+        <a itemprop="sameAs" href="{{ .linkedin }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on LinkedIn">
           {{- partial "icons/linkedin.html" . -}}
         </a>
       {{- end }}
       {{- if .instagram }}
-        <a href="{{ .instagram }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Instagram">
+        <a itemprop="sameAs" href="{{ .instagram }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Instagram">
           {{- partial "icons/instagram.html" . -}}
         </a>
       {{- end }}
       {{- if .facebook }}
-        <a href="{{ .facebook }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Facebook">
+        <a itemprop="sameAs" href="{{ .facebook }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Facebook">
           {{- partial "icons/facebook.html" . -}}
         </a>
       {{- end }}
       {{- if .twitter }}
-        <a href="{{ .twitter }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Twitter">
+        <a itemprop="sameAs" href="{{ .twitter }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Twitter">
           {{- partial "icons/twitter.html" . -}}
         </a>
       {{- end }}
     </span>
     {{- end }}
-    &mdash; {{ .role }}
+    &mdash; <span itemprop="jobTitle">{{ .role }}</span>
   </li>
 {{- end }}
 </ul>
