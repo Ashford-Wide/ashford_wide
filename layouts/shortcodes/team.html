@@ -1,0 +1,17 @@
+<ul>
+{{- range .Site.Data.team }}
+  <li>
+    <strong>{{ .name }}</strong> &mdash; {{ .role }}
+    {{- if or .linkedin .instagram }}
+    <span class="team-socials">
+      {{- if .linkedin }}
+        <a href="{{ .linkedin }}" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+      {{- end }}
+      {{- if .instagram }}
+        <a href="{{ .instagram }}" rel="noopener noreferrer" target="_blank">Instagram</a>
+      {{- end }}
+    </span>
+    {{- end }}
+  </li>
+{{- end }}
+</ul>
