@@ -6,10 +6,10 @@
 
 - name: "Jenny Frost"
   role: "Secretary"
-  linkedin: 
-  instagram: 
-  facebook: 
-  twitter: 
+  linkedin: "https://www.linkedin.com/in/sirlewishamilton/"
+  instagram: "https://www.instagram.com/lewishamilton/"
+  facebook: "https://www.facebook.com/LewisHamilton"
+  twitter: "https://x.com/LewisHamilton"
 
 - name: "Emma Gray"
   role: "Business Lead"
