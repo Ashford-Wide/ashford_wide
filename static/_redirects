@@ -4,10 +4,6 @@
 /news-and-events/       /news/          301
 /news-and-events/*      /news/:splat    301
 
-# Remembrance (renamed)
-/remembrance/           /remembrance-day/           301
-/remembrance/*          /remembrance-day/:splat     301
-
 # WordPress common paths
 /wp-admin               /admin/         301
 /wp-admin/              /admin/         301
@@ -15,3 +11,29 @@
 /feed                   /index.xml     301
 # /?p=*                   /              301
 # /?page_id=*             /              301
+/category/*    /    301
+/author/*    /news/    301
+
+# 301 problems
+
+/elementor-15817/    /volunteer/    301
+/remembrance-day/remembrance-order-of-services/    /remembrance-day/order-of-services/    301
+/business-membership/    /membership/    301
+/christmas-market/    /events/christmas-market-2025/    301
+/events/list/    /events/    301
+/events/today/    /events/    301
+/events/month/    /events/    301
+/event/road-closures-for-remembrance-sunday/    /remembrance-day/road-closures/    301
+/jubilee-picnic-event/    /events/jubilee-picnic-park/    301
+/spring-craft-fair/    /events/spring-craft-fair-2022/    301
+/christmas-market-2023/    /events/christmas-market-2023/    301
+/3k-fun-run/    /events/3k-park-run/    301
+
+
+
+
+
+
+# 410 pages
+
+/energie-fitness/    410
