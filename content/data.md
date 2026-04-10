@@ -15,7 +15,7 @@ Cookies are small text files placed on your device to help the website function 
 
 ### How we use cookies
 
-We use a minimal number of cookies. These are categorized as follows:
+We use a minimal number of cookies. These are categorised as follows:
 
 - Strictly Necessary Cookies - These are essential for the security and performance of the website. They do not require your consent.
 
