@@ -29,7 +29,7 @@
   .article-content {
     @apply prose max-w-none
       prose-headings:text-surface
-      prose-a:text-surface prose-a:underline hover:prose-a:opacity-70
+      prose-a:text-surface prose-a:underline
       prose-strong:text-surface;
   }
 
