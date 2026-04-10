@@ -31,7 +31,8 @@
     @apply prose max-w-none
       prose-headings:text-surface
       prose-a:text-surface prose-a:underline
-      prose-strong:text-surface;
+      prose-strong:text-surface
+      prose-code:before:content-none prose-code:after:content-none;
   }
 
   .article-content .leaflet-container img {
