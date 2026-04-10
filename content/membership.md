@@ -10,6 +10,12 @@ Ashford Wide membership is open to businesses, organisations and individuals who
 
 As a member, you'll be part of a growing community of like-minded people and organisations working together to make Ashford a thriving, vibrant destination.
 
+## Community Member
+
+As part of our team you can have your say on what we do within the town. Help us develop our services and events. And continue to serve our local community. If you have some free time to volunteer we would love to have you on board.
+
+{{< join-us-button >}}
+
 ## Member Benefits
 
 * **Events & Promotions**: Priority access and discounts to Ashford Wide events and promotional campaigns.
@@ -21,5 +27,7 @@ As a member, you'll be part of a growing community of like-minded people and org
 ## How to Join
 
 To join Ashford Wide, please [contact us](/contact) with your details and we'll be in touch with information about membership options and fees.
+
+{{< join-us-button >}}
 
 For businesses looking for a more comprehensive membership package, please see our [Business Membership](/business-membership) page.
