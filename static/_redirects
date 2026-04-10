@@ -4,6 +4,10 @@
 /news-and-events/       /news/          301
 /news-and-events/*      /news/:splat    301
 
+# Events (was /event on WordPress)
+
+/event/*    /events/:splat    301
+
 # WordPress common paths
 /wp-admin               /admin/         301
 /wp-admin/              /admin/         301
@@ -28,12 +32,13 @@
 /spring-craft-fair/    /events/spring-craft-fair-2022/    301
 /christmas-market-2023/    /events/christmas-market-2023/    301
 /3k-fun-run/    /events/3k-park-run/    301
-
-
-
+/ve-day-celebrations/    /remembrance-day/    301
+/new-flags-october-2025/    /news/new-flags-for-october-2025/    301
+/individual-membership/    /membership/    301
 
 
 
 # 410 pages
 
-/energie-fitness/    410
+/energie-fitness/    /404/    410
+/merry-christmas-and-a-happy-new-year/    /404/    410
