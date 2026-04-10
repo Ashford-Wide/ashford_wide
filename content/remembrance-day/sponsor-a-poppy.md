@@ -23,4 +23,4 @@ All proceeds go towards the cost of the Remembrance display and future community
 
 ## Virtual Poppy Wall
 
-You can also add a dedication to our [Virtual Poppy Wall](/remembrance/virtual-poppy-wall) — a free online memorial where anyone can place a virtual poppy in memory of a loved one.
+You can also add a dedication to our [Virtual Poppy Wall](/remembrance-day/virtual-poppy-wall) — a free online memorial where anyone can place a virtual poppy in memory of a loved one.
