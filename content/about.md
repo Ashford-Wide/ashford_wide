@@ -18,7 +18,7 @@ Individually the groups achieved a lot & really motivated by what can be achieve
 
 This year we will be:
 
-- Putting Up Flags throughout the year to commemorate key events.
+- [Putting Up Flags](/town-flags) throughout the year to commemorate key events.
   - St George’s Flags – April 23rd
   - Union Flags Year round
   - VE & VJ day
@@ -27,7 +27,7 @@ This year we will be:
   - Remembrance Day in November
   - Christmas in November/December
 - Summer Classic Car Show and family fun day
-- Remembrance Day parade & service
+- [Remembrance Day](/remembrance-day) parade & service
 - Summer Street Markets
 - Ashford Christmas lights & Christmas tree
 - Annual Ashford Christmas Market
