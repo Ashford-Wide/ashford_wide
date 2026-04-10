@@ -3,10 +3,16 @@ title: Business Membership
 description: Grow your business with Ashford Wide business membership
 date: 2024-01-01
 lastmod: 2026-04-06
+sitemap:
+  disable: true
 ---
-## Business Membership
+## Business Member
 
-Ashford Wide business membership is designed for local businesses who want to grow their presence in Ashford town centre and benefit from the full range of services we offer.
+Are you looking for a way to promote your business and increase its visibility in the local area? Becoming an Ashford Wide Business Member is the perfect way to do this, all while supporting our work in the local community.
+
+You will get access to exclusive resources and benefits that will help your business promotion. Join today and become part of a vibrant network of businesses in the area!
+
+{{< membership-tiers >}}
 
 ## Why Join?
 

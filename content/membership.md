@@ -12,22 +12,28 @@ As a member, you'll be part of a growing community of like-minded people and org
 
 ## Community Member
 
+Join us as an individual and support our work across the local community.
+
 As part of our team you can have your say on what we do within the town. Help us develop our services and events. And continue to serve our local community. If you have some free time to volunteer we would love to have you on board.
 
 {{< join-us-button >}}
 
-## Member Benefits
+## Business Member
+
+Are you looking for a way to promote your business and increase its visibility in the local area? Becoming an Ashford Wide Business Member is the perfect way to do this, all while supporting our work in the local community.
+
+You will get access to exclusive resources and benefits that will help your business promotion. Join today and become part of a vibrant network of businesses in the area!
+
+{{< membership-tiers >}}
+
+### Member Benefits
 
 * **Events & Promotions**: Priority access and discounts to Ashford Wide events and promotional campaigns.
 * **Networking:** Connect with other local businesses, community groups and stakeholders at our regular networking events.
-* **Directory Listing:** Get your business or organisation listed on the Ashford Wide business directory, reaching thousands of visitors each month.
+* **Directory Listing:** Get your business or organisation listed on the [Ashford Wide business directory](/business-directory), reaching thousands of visitors each month.
 * **Influence:** Have your say in shaping the future of Ashford town centre through consultations, surveys and working groups.
 * **Newsletter:** Receive our regular members' newsletter with the latest news, events and opportunities.
 
 ## How to Join
 
 To join Ashford Wide, please [contact us](/contact) with your details and we'll be in touch with information about membership options and fees.
-
-{{< join-us-button >}}
-
-For businesses looking for a more comprehensive membership package, please see our [Business Membership](/business-membership) page.
