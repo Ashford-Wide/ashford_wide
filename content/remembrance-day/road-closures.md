@@ -13,7 +13,14 @@ Roads will be closed from **10.30am to 11.30am**. Please plan your journey accor
 
 ## Affected roads
 
-The map below shows the roads subject to full closure. Click on any section for more details.
+The following roads will be partially closed:
+
+- Church Road
+- Dudley Road
+- Clarendon Road
+- Fordbridge Road
+
+The map below shows the roads subject to full closure:
 
 {{< road-closure-map >}}
 
