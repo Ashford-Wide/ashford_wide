@@ -144,12 +144,12 @@
 <section class="pt-4">
   <h2 class="text-center pt-6 pb-2 text-[clamp(1.5rem,3vw,2rem)] font-bold">Our Members</h2>
   <div class="overflow-hidden bg-[#f8f9fa] py-8 group">
-    <div class="flex gap-12 w-max animate-[marquee_30s_linear_infinite] group-hover:[animation-play-state:paused]">
+    <div class="flex gap-12 w-max animate-[marquee_30s_linear_infinite] group-hover:[animation-play-state:paused] [will-change:transform]">
       {{ range $members }}
-      <span title="{{ .name }}">{{ partial "image.html" (dict "src" .logo "alt" .name "class" "h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200" "width" 300) }}</span>
+      <span title="{{ .name }}">{{ partial "image.html" (dict "src" .logo "alt" .name "class" "h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200" "width" 300 "loading" "eager") }}</span>
       {{ end }}
       {{ range $members }}
-      <span aria-hidden="true">{{ partial "image.html" (dict "src" .logo "alt" "" "class" "h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200" "width" 300) }}</span>
+      <span aria-hidden="true">{{ partial "image.html" (dict "src" .logo "alt" "" "class" "h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200" "width" 300 "loading" "eager") }}</span>
       {{ end }}
     </div>
   </div>
