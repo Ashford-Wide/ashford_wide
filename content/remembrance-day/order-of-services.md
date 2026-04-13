@@ -26,6 +26,18 @@ The service is held at the War Memorial in Ashford town centre and is led by loc
 
 ## Getting There
 
-The War Memorial is located in the town centre. Please arrive by 10:45am to ensure the service begins promptly at 11:00am.
+<p itemscope itemtype="https://schema.org/Place">
+  <span itemprop="name">The War Memorial</span> is located in the 
+  <span itemprop="address">town centre</span>. 
+  
+  <span itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+    <meta itemprop="latitude" content="51.4327291" />
+    <meta itemprop="longitude" content="-0.4620293" />
+  </span>
+
+  <link itemprop="sameAs" href="https://www.openstreetmap.org/node/158758386" />
+
+  Please arrive by 10:45am to ensure the service begins promptly at 11:00am.
+</p>
 
 For more information, please email us: [{{< param "email" >}}](mailto:{{< param "email" >}}).
