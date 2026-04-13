@@ -3,6 +3,7 @@
 {{- $class := .class | default "" -}}
 {{- $loading := .loading | default "lazy" -}}
 {{- $width := .width -}}
+{{- $quality := .quality -}}
 {{- $urlOnly := .urlOnly | default false -}}
 
 {{/* Strip leading slash — resources.Get requires paths without it */}}
@@ -10,10 +11,12 @@
 {{- $img := resources.Get $assetPath -}}
 
 {{- if $img -}}
+  {{- $qSuffix := "" -}}
+  {{- with $quality }}{{- $qSuffix = printf " q%d" . -}}{{- end -}}
   {{- if $width -}}
-    {{- $img = $img.Resize (printf "%dx webp" $width) -}}
+    {{- $img = $img.Resize (printf "%dx webp%s" $width $qSuffix) -}}
   {{- else -}}
-    {{- $img = $img.Process "webp" -}}
+    {{- $img = $img.Process (printf "webp%s" $qSuffix) -}}
   {{- end -}}
   {{- if $urlOnly -}}
     {{- $img.RelPermalink -}}
