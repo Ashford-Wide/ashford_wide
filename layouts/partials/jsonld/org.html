@@ -13,7 +13,10 @@
   "url" (.Site.BaseURL | strings.TrimRight "/")
 -}}
 {{- with .Site.Params.description }}{{- $org = merge $org (dict "description" .) -}}{{- end -}}
-{{- with .Site.Params.logo }}{{- $org = merge $org (dict "logo" (absURL .)) -}}{{- end -}}
+{{- with .Site.Params.logo -}}
+  {{- $logoUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
+  {{- $org = merge $org (dict "logo" $logoUrl) -}}
+{{- end -}}
 {{- with .Site.Params.foundingDate }}{{- $org = merge $org (dict "foundingDate" .) -}}{{- end -}}
 {{- with .Site.Params.slogan }}{{- $org = merge $org (dict "slogan" .) -}}{{- end -}}
 {{- with .Site.Params.email }}{{- $org = merge $org (dict "email" .) -}}{{- end -}}

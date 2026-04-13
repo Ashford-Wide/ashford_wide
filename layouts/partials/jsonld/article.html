@@ -22,6 +22,7 @@
   {{- $article = merge $article (dict "author" (dict "@type" "Person" "name" .)) -}}
 {{- end -}}
 {{- with .Params.image -}}
-  {{- $article = merge $article (dict "image" (absURL .)) -}}
+  {{- $imgUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
+  {{- $article = merge $article (dict "image" $imgUrl) -}}
 {{- end -}}
 <script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>

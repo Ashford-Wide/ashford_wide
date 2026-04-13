@@ -4,10 +4,10 @@
 
 {{- $image := "" -}}
 {{- with .Params.image -}}
-  {{- $image = absURL . -}}
+  {{- $image = partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
 {{- else -}}
   {{- with $.Site.Params.ogImage -}}
-    {{- $image = absURL . -}}
+    {{- $image = partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
   {{- end -}}
 {{- end -}}
 

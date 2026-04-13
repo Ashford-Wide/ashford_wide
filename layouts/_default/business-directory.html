@@ -35,7 +35,7 @@
       <div class="biz-card bg-white border border-[#e5e7eb] rounded overflow-hidden flex flex-col transition-all duration-200 hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] hover:-translate-y-[2px]" data-category="{{ .category | urlize }}">
         {{ if .logo }}
         <div class="px-5 pt-4 pb-2 bg-[#f8f9fa] border-b border-[#f0f0f0] flex items-center">
-          <img src="{{ .logo }}" alt="{{ .name }}" loading="lazy" class="h-12 w-auto object-contain">
+          {{ partial "image.html" (dict "src" .logo "alt" .name "class" "h-12 w-auto object-contain" "width" 300) }}
         </div>
         {{ end }}
         <div class="p-5 flex-1 flex flex-col gap-2">
