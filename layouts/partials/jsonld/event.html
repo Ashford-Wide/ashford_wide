@@ -34,6 +34,7 @@
   {{- $event = merge $event (dict "location" (dict "@type" "Place" "name" . "address" $address)) -}}
 {{- end -}}
 {{- with .Params.image -}}
-  {{- $event = merge $event (dict "image" (absURL .)) -}}
+  {{- $imgUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
+  {{- $event = merge $event (dict "image" $imgUrl) -}}
 {{- end -}}
 <script type="application/ld+json">{{ $event | jsonify | safeJS }}</script>

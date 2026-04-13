@@ -1,5 +1,5 @@
 <div class="not-prose grid grid-cols-3 gap-4 my-6">
-  <img src="/images/flags/england-flag.jpg" alt="England flag on the high street" class="w-full h-72 object-cover rounded">
-  <img src="/images/flags/ve-flag.jpg" alt="VE Day flag on the high street" class="w-full h-72 object-cover rounded">
-  <img src="/images/flags/pride-flag.jpg" alt="Surrey Pride flag on the high street" class="w-full h-72 object-cover rounded">
+  {{ partial "image.html" (dict "src" "/images/flags/england-flag.jpg" "alt" "England flag on the high street" "class" "w-full h-72 object-cover rounded") }}
+  {{ partial "image.html" (dict "src" "/images/flags/ve-flag.jpg" "alt" "VE Day flag on the high street" "class" "w-full h-72 object-cover rounded") }}
+  {{ partial "image.html" (dict "src" "/images/flags/pride-flag.jpg" "alt" "Surrey Pride flag on the high street" "class" "w-full h-72 object-cover rounded") }}
 </div>

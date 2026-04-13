@@ -1,9 +1,13 @@
 {{ define "main" }}
 
 {{/* ── Hero ── */}}
+{{- $heroBg := "" -}}
+{{- with .Params.hero_image -}}
+  {{- $heroBg = partial "image.html" (dict "src" . "urlOnly" true "width" 1600) | strings.TrimSpace -}}
+{{- end -}}
 <section
   class="relative min-h-[420px] md:min-h-[520px] flex items-center bg-surface bg-center bg-cover bg-no-repeat text-white after:content-[''] after:absolute after:inset-0 after:bg-black/55"
-  {{ with .Params.hero_image }}style="background-image:url('{{ . }}')" {{ end }}>
+  {{ with $heroBg }}style="background-image:url('{{ . }}')"{{ end }}>
   <div class="max-w-container mx-auto px-6 relative z-10 w-full">
     <div class="max-w-[680px]">
       <h1 class="text-[clamp(2rem,5vw,3.25rem)] font-bold leading-[1.15] mb-4">{{ .Site.Params.description }}</h1>
@@ -142,12 +146,10 @@
   <div class="overflow-hidden bg-[#f8f9fa] py-8 group">
     <div class="flex gap-12 w-max animate-[marquee_30s_linear_infinite] group-hover:[animation-play-state:paused]">
       {{ range $members }}
-      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" loading="lazy"
-        class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200">
+      <span title="{{ .name }}">{{ partial "image.html" (dict "src" .logo "alt" .name "class" "h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200" "width" 300) }}</span>
       {{ end }}
       {{ range $members }}
-      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" aria-hidden="true"
-        class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200">
+      <span aria-hidden="true">{{ partial "image.html" (dict "src" .logo "alt" "" "class" "h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-200" "width" 300) }}</span>
       {{ end }}
     </div>
   </div>

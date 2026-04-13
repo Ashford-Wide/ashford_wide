@@ -12,7 +12,7 @@
 <section class="py-16">
   <div class="max-w-[800px] mx-auto px-6">
     {{ with .Params.image }}
-    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full max-w-[800px] rounded mb-8 aspect-[16/9] object-cover">
+    {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full max-w-[800px] rounded mb-8 aspect-[16/9] object-cover" "loading" "eager" "width" 1200) }}
     {{ end }}
 
     <div class="article-content">

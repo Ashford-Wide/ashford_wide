@@ -9,7 +9,10 @@
 {{ else }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ end }}
-{{ if and .IsHome .Params.hero_image }}<link rel="preload" as="image" href="{{ .Params.hero_image }}" fetchpriority="high">{{ end }}
+{{- if and .IsHome .Params.hero_image -}}
+  {{- $preload := partial "image.html" (dict "src" .Params.hero_image "urlOnly" true "width" 1600) | strings.TrimSpace -}}
+  <link rel="preload" as="image" href="{{ $preload }}" fetchpriority="high">
+{{- end -}}
 <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="canonical" href="{{ .Permalink }}">
