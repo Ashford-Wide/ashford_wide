@@ -27,6 +27,7 @@ Three files remain in `/static/images/` and are intentionally never processed:
 | `class` | string | `""` | CSS class string |
 | `loading` | string | `"lazy"` | `"lazy"` or `"eager"` |
 | `width` | int | — | If set, resizes to this width (px) and converts to WebP. If omitted, converts to WebP at original dimensions. |
+| `quality` | int | — | WebP quality, 1–100. If omitted, uses the global default from `[imaging]` in `hugo.toml` (Hugo's built-in default is 75). |
 | `urlOnly` | bool | `false` | When `true`, returns just the URL string instead of a full `<img>` tag. Used for CSS `background-image` and meta tags. |
 
 The partial strips any leading `/` from `src` before calling `resources.Get`, so paths from front matter and YAML data files (which conventionally start with `/`) work without any normalisation at the call site.
@@ -53,6 +54,25 @@ style="background-image:url('{{ $url }}')"
 ```
 
 Use `strings.TrimSpace` when assigning the result to a variable — Hugo partials can include stray whitespace that causes issues inside HTML attributes.
+
+## Quality settings
+
+Hugo's built-in WebP quality default is **75**. You can change this at two levels:
+
+**Site-wide** — add to `hugo.toml`. This applies to every image processed on the site:
+
+```toml
+[imaging]
+  quality = 80
+```
+
+**Per-image** — pass a `quality` param to the partial. This overrides the global default for that specific call:
+
+```
+{{ partial "image.html" (dict "src" "/images/hero.jpg" "alt" "Hero" "width" 1600 "quality" 85) }}
+```
+
+Lower quality produces smaller files but more visible compression artefacts. Photos can usually tolerate 75–80; logos and graphics with flat colours may look noticeably worse below 80. The global `[imaging]` setting is sufficient for most sites — per-call overrides are only worth it if specific images need different treatment.
 
 ## Adding a new image
 
