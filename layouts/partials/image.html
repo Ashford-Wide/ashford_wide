@@ -1,0 +1,30 @@
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $width := .width -}}
+{{- $urlOnly := .urlOnly | default false -}}
+
+{{/* Strip leading slash — resources.Get requires paths without it */}}
+{{- $assetPath := $src | strings.TrimPrefix "/" -}}
+{{- $img := resources.Get $assetPath -}}
+
+{{- if $img -}}
+  {{- if $width -}}
+    {{- $img = $img.Resize (printf "%dx webp" $width) -}}
+  {{- else -}}
+    {{- $img = $img.Process "webp" -}}
+  {{- end -}}
+  {{- if $urlOnly -}}
+    {{- $img.RelPermalink -}}
+  {{- else -}}
+    <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}">
+  {{- end -}}
+{{- else -}}
+  {{/* Graceful fallback if file missing or resources.Get returns nil */}}
+  {{- if $urlOnly -}}
+    {{- $src -}}
+  {{- else -}}
+    <img src="{{ $src }}" alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}">
+  {{- end -}}
+{{- end -}}
