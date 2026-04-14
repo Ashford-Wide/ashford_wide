@@ -3,7 +3,10 @@ title: "Sponsor a Poppy"
 description: "Sponsor a poppy and help us remember those who gave their lives"
 date: 2024-01-01
 lastmod: 2026-04-06
+image: /images/poppy-sponsorship.jpg
 ---
+
+{{< image src="/images/poppy-sponsorship.jpg" alt="Poppies in Ashford town centre" >}}
 
 ## Sponsor a Poppy
 
