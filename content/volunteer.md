@@ -13,7 +13,7 @@ Ashford Wide is a volunteer-driven organisation and we couldn't do what we do wi
 
 ### Event Volunteers
 
-We need volunteers to help at our events throughout the year — from marshalling and stewarding to setting up and handing out information.
+We need volunteers to help at our events throughout the year, from marshalling and stewarding to setting up and handing out information.
 
 Together, we work to bring people together and make Ashford thrive through projects like:
 
