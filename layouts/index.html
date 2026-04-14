@@ -39,16 +39,12 @@
         <a href="/about"
           class="mt-2 inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">Learn More</a>
       </div>
-      {{- $videoID := "1180234252" -}}
+      {{- $videoID := "b-I8LyS2iQo" -}}
       {{- $videoTitle := "Ashford Wide - putting up Poppies & Flags for Remembrance" -}}
-      {{- $thumb := "" -}}
-      {{- with resources.GetRemote (printf "https://vimeo.com/api/oembed.json?url=https://vimeo.com/%s" $videoID) -}}
-      {{- with . | transform.Unmarshal -}}{{- $thumb = .thumbnail_url -}}{{- end -}}
-      {{- end -}}
       <div class="rounded overflow-hidden" style="padding:56.25% 0 0 0;position:relative;">
-        <div id="vimeo-facade" role="button" tabindex="0" aria-label="Play video: {{ $videoTitle }}"
+        <div id="youtube-facade" role="button" tabindex="0" aria-label="Play video: {{ $videoTitle }}"
           data-video-id="{{ $videoID }}"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;{{ if $thumb }}background:url('{{ $thumb }}') center/cover no-repeat #111;{{ else }}background:#111;{{ end }}">
+          style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;background:url('https://i.ytimg.com/vi/{{ $videoID }}/hqdefault.jpg') center/cover no-repeat #111;">
           <div
             style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(23,35,34,0.82);border-radius:50%;display:flex;align-items:center;justify-content:center;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
@@ -57,7 +53,7 @@
           </div>
         </div>
       </div>
-      {{- $facadeJS := resources.Get "js/vimeo-facade.js" -}}
+      {{- $facadeJS := resources.Get "js/youtube-facade.js" -}}
       {{- if hugo.IsProduction -}}{{- $facadeJS = $facadeJS | minify | fingerprint -}}{{- end -}}
       <script src="{{ $facadeJS.RelPermalink }}" {{ if hugo.IsProduction }} integrity="{{ $facadeJS.Data.Integrity }}"
         {{ end }} defer></script>
