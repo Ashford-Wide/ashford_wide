@@ -6,6 +6,11 @@ backend:
 media_folder: /assets/images
 public_folder: /images
 
+media_libraries:
+  stock_assets:
+    providers:
+      - pexels
+
 omit_empty_optional_fields: true
 
 collections:
