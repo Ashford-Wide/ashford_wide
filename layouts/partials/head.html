@@ -11,7 +11,7 @@
 {{ end }}
 {{- if and .IsHome .Params.hero_image -}}
   {{- $preload := partial "image.html" (dict "src" .Params.hero_image "urlOnly" true "width" 1600) | strings.TrimSpace -}}
-  <link rel="preload" as="image" href="{{ $preload }}" fetchpriority="high">
+  <link rel="preload" as="image" href="{{ $preload }}" fetchpriority="high" type="image/webp">
 {{- end -}}
 <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
