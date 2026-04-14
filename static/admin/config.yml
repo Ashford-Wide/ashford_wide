@@ -3,7 +3,7 @@ backend:
   repo: YOUR_GITHUB_ORG/ashford_wide
   branch: main
 
-media_folder: /static/images
+media_folder: /assets/images
 public_folder: /images
 
 omit_empty_optional_fields: true
@@ -129,6 +129,14 @@ collections:
       - label: Virtual Poppy Wall
         name: virtual-poppy-wall
         file: content/remembrance-day/virtual-poppy-wall.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+      - label: Road Closures
+        name: road-closures
+        file: content/remembrance-day/road-closures.md
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
