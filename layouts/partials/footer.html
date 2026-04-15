@@ -6,8 +6,8 @@
           <img src="/images/logo.svg" alt="Ashford Wide" class="h-10 w-auto">
           <div class="text-[1.15rem] font-bold text-surface">Ashford Wide</div>
         </div>
-        <p class="mt-2 italic text-[0.9rem] text-surface/55">{{ .Site.Params.description }}</p>
-        <p class="mt-4 text-[0.875rem] text-surface/60">
+        <p class="mt-2 italic text-[0.9rem] text-surface/75">{{ .Site.Params.description }}</p>
+        <p class="mt-4 text-[0.875rem] text-surface/70">
           We're a non-profit community group running only with volunteers.
         </p>
       </div>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="border-t border-surface/10 pt-6 flex justify-between items-center flex-wrap gap-4">
-      <p class="text-[0.8rem] text-surface/60">&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" class="text-surface/70">{{ .Site.Params.email }}</a></p>
+      <p class="text-[0.8rem] text-surface/70">&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" class="text-surface/70 underline">{{ .Site.Params.email }}</a></p>
       <div class="flex gap-[0.6rem]">
         {{ with .Site.Params.facebook }}
         <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">
