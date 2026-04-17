@@ -11,3 +11,6 @@ outputFormat:
   - json
   - html
 outputFolder: accessibility-reports
+puppeteerArgs:
+  - --no-sandbox
+  - --disable-setuid-sandbox
