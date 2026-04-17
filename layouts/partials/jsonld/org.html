@@ -2,6 +2,7 @@
 {{- with .Site.Params.facebook }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
 {{- with .Site.Params.twitter }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
 {{- with .Site.Params.instagram }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
+{{- with .Site.Params.googleBusinessProfile }}{{- $sameAs = $sameAs | append . -}}{{- end -}}
 
 {{- $org := dict
   "@context" "https://schema.org"
