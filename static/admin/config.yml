@@ -26,12 +26,12 @@ collections:
         field: date
         pattern: '^\d{4}'
     fields:
-      - { label: Title, name: title, widget: string }
+      - { label: Title, name: title, widget: string, maxlength: 60 }
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
       - { label: Start Time, name: startTime, widget: string, hint: "24hr format, e.g. 10:00", required: false }
       - { label: End Time, name: endTime, widget: string, hint: "24hr format, e.g. 14:00", required: false }
       - { label: Location, name: location, widget: string, required: false }
-      - { label: Description, name: description, widget: text, hint: "Short summary shown on event cards" }
+      - { label: Description, name: description, widget: text, hint: "Short summary shown on event cards", maxlength: 150 }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Body, name: body, widget: markdown }
 
@@ -46,10 +46,10 @@ collections:
         field: date
         pattern: '^\d{4}'
     fields:
-      - { label: Title, name: title, widget: string }
+      - { label: Title, name: title, widget: string, maxlength: 60 }
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
       - { label: Author, name: author, widget: string, default: "Ashford Wide Team", required: false }
-      - { label: Description, name: description, widget: text, hint: "Short summary shown on news cards" }
+      - { label: Description, name: description, widget: text, hint: "Short summary shown on news cards", maxlength: 150 }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Body, name: body, widget: markdown }
 
@@ -60,48 +60,48 @@ collections:
         name: about
         file: content/about.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Membership
         name: membership
         file: content/membership.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Business Membership
         name: business-membership
         file: content/business-membership.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Volunteer
         name: volunteer
         file: content/volunteer.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Support Us
         name: support
         file: content/support.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Contact
         name: contact
         file: content/contact.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
   - name: remembrance
@@ -111,40 +111,40 @@ collections:
         name: remembrance-index
         file: content/remembrance-day/_index.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Order of Services
         name: order-of-services
         file: content/remembrance-day/order-of-services.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Sponsor a Poppy
         name: sponsor-a-poppy
         file: content/remembrance-day/sponsor-a-poppy.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Virtual Poppy Wall
         name: virtual-poppy-wall
         file: content/remembrance-day/virtual-poppy-wall.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
       - label: Road Closures
         name: road-closures
         file: content/remembrance-day/road-closures.md
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Title, name: title, widget: string, maxlength: 60 }
+          - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
   - name: members
