@@ -30,11 +30,17 @@
   {{- $event = merge $event (dict "endDate" $endDate) -}}
 {{- end -}}
 {{- with .Params.location -}}
+  {{- $locationName := . -}}
   {{- $address := dict "@type" "PostalAddress" "addressLocality" "Ashford" "addressRegion" "Surrey" "addressCountry" "GB" -}}
   {{- with $.Params.address -}}
     {{- $address = merge $address (dict "streetAddress" .) -}}
   {{- end -}}
-  {{- $event = merge $event (dict "location" (dict "@type" "Place" "name" . "address" $address)) -}}
+  {{- $place := dict "@type" "Place" "name" $locationName "address" $address -}}
+  {{- with $.Params.placeId -}}
+    {{- $mapsUrl := printf "https://www.google.com/maps/search/?api=1&query=%s&query_place_id=%s" ($locationName | urlquery) . -}}
+    {{- $place = merge $place (dict "hasMap" $mapsUrl "sameAs" $mapsUrl) -}}
+  {{- end -}}
+  {{- $event = merge $event (dict "location" $place) -}}
 {{- end -}}
 {{- with .Params.image -}}
   {{- $imgUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
