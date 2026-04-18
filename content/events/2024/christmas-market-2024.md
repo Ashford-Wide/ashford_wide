@@ -4,6 +4,7 @@ date: 2024-12-04
 startTime: "17:00"
 endTime: "20:00"
 location: "Church Road, Ashford"
+placeId: "EhtDaHVyY2ggUmQsIEFzaGZvcmQgVFcxNSwgVUsiLiosChQKEgkVB5VT"
 description: "Ashford Christmas Market returns joined by Staines and Lammas brass band for our carol singing"
 ---
 
