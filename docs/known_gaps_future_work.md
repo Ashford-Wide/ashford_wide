@@ -2,7 +2,6 @@
 
 | Item | Notes |
 |------|-------|
-| **Business directory nav link** | Not yet in the header nav — add a link to `/business-directory/` when ready |
 | **Data-driven navigation** | Header nav is hardcoded in `header.html`; could be moved to `hugo.toml` menus |
 
 ## Cloudflare Features
