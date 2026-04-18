@@ -5,7 +5,8 @@ organiserUrl: "https://ashfordra.co.uk/"
 date: 2026-04-25
 startTime: "10:00"
 endTime: "12:00"
-location: "Ashford Baptist Church, Church Road, Ashford"
+location: "Ashford Baptist Church"
+placeId: "ChIJM1ghw1RxdkgRvHav7GUCS60"
 description: "Ashford Residents Association's April meeting"
 ---
 
