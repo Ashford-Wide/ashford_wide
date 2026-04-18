@@ -4,6 +4,7 @@ date: 2022-06-05
 startTime: "12:00"
 endTime: "17:00"
 location: "Ashford Recreation Ground, Clockhouse Land, Ashford"
+placeId: "ChIJW0gDfQRzdkgRDwv9vDJo0Uk"
 description: "Ashford Wide are proud to present our Picnic in the Park, to celebrate Queen Elizabeth’s Platinum Jubilee"
 ---
 
