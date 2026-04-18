@@ -31,6 +31,7 @@ collections:
       - { label: Start Time, name: startTime, widget: string, hint: "24hr format, e.g. 10:00", required: false }
       - { label: End Time, name: endTime, widget: string, hint: "24hr format, e.g. 14:00", required: false }
       - { label: Location, name: location, widget: string, required: false }
+      - { label: Google Maps Place ID, name: placeId, widget: string, hint: "Optional Place ID to link the location to Google Maps", required: false }
       - { label: Organised by, name: organiser, widget: string, hint: "Name of the organising body, if not Ashford Wide", required: false }
       - { label: Organiser URL, name: organiserUrl, widget: string, hint: "Link to the organiser's website or page", required: false }
       - { label: Description, name: description, widget: text, hint: "Short summary shown on event cards", maxlength: 150 }
