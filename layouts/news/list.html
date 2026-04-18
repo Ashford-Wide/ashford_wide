@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<section class="py-16">
+<section class="py-8">
   <div class="max-w-container mx-auto px-6">
     {{ $paginator := .Paginate (where .Site.RegularPages "Section" "news").ByDate.Reverse }}
     {{ if $paginator.Pages }}
