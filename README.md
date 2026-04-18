@@ -1,5 +1,7 @@
 # Ashford Wide
 
+[![Accessibility Tests](https://github.com/magnoliaceiling/ashford_wide/actions/workflows/a11y.yml/badge.svg)](https://github.com/magnoliaceiling/ashford_wide/actions/workflows/a11y.yml)
+
 ## Running locally
 
 You will need `npm` and Hugo installed already.
