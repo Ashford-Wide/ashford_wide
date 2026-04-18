@@ -3,6 +3,7 @@ title: Remembrance Sunday 2025
 date: 2025-11-09
 startTime: "10:45"
 location: Ashford War Memorial
+placeId: "ChIJwSZPHflzdkgR_PBe_eiIsw8"
 description: Join Ashford Wide for this years Remembrance Sunday parade and service on Sunday 9th November.
 ---
 Join Ashford Wide for this years Remembrance Sunday parade and service on **Sunday 9th November**. At Ashford’s War Memorial, service people, Guides. and Scouts will be sharing in Remembrance with Ashford Wide and the people of Ashford.
