@@ -6,6 +6,13 @@
 {{- $endDate := "" -}}
 {{- with .Params.endTime -}}{{- $endDate = printf "%sT%s" $dateOnly . -}}{{- end -}}
 
+{{- $organizer := dict "@type" "Organization" "name" .Site.Title "url" (.Site.BaseURL | strings.TrimRight "/") -}}
+{{- with .Params.organiser -}}
+  {{- $organizer = dict "@type" "Organization" "name" . -}}
+  {{- with $.Params.organiserUrl -}}
+    {{- $organizer = merge $organizer (dict "url" .) -}}
+  {{- end -}}
+{{- end -}}
 {{- $event := dict
   "@context" "https://schema.org"
   "@type" "Event"
@@ -14,11 +21,7 @@
   "eventStatus" $eventStatus
   "eventAttendanceMode" $attendanceMode
   "url" .Permalink
-  "organizer" (dict
-    "@type" "Organization"
-    "name" .Site.Title
-    "url" (.Site.BaseURL | strings.TrimRight "/")
-  )
+  "organizer" $organizer
 -}}
 {{- with .Description -}}
   {{- $event = merge $event (dict "description" .) -}}
