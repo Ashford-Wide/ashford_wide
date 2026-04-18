@@ -4,6 +4,7 @@ date: 2023-09-03
 startTime: "10:00"
 endTime: "16:00"
 location: Ashford Recreation Ground, Clockhouse Lane, Ashford, TW15 1BX
+placeId: "ChIJW0gDfQRzdkgRDwv9vDJo0Uk"
 description: Join us as we support Ashford Rotary Club at their annual Classic Vehicle Rally!
 ---
 
