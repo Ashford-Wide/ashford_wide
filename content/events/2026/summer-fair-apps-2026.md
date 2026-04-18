@@ -6,5 +6,6 @@ date: 2026-06-13
 startTime: "12:00"
 endTime: "16:00"
 location: "Ashford Park Primary School"
+placeId: "ChIJTbdyxlZxdkgRJ66kcD3vbAg"
 description: "Ashford Park Primary School's Summer Fair returns for 2026!"
 ---
