@@ -10,7 +10,7 @@
 {{- $upcoming := (where $events ".Date" "ge" now).ByDate -}}
 {{- $past := (where $events ".Date" "lt" now).ByDate.Reverse -}}
 
-<section class="py-16">
+<section class="py-8">
   <div class="max-w-container mx-auto px-6">
 
     {{ if $upcoming }}
