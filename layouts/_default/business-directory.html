@@ -8,9 +8,9 @@
   </div>
 </div>
 
-<section class="py-16 bg-[#f8f9fa]">
+<section class="py-8 bg-[#f8f9fa]">
   <div class="max-w-container mx-auto px-6">
-    {{ with .Content }}<p class="text-muted mb-8 text-base">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="text-muted mb-8 text-base">{{ . }}</div>{{ end }}
 
     {{/* ── Category filter ── */}}
     {{- $categories := slice -}}
