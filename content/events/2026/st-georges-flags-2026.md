@@ -4,6 +4,7 @@ date: 2026-04-21
 startTime: "16:00"
 endTime: "18:00"
 location: "Church Road, Ashford"
+placeId: "EhtDaHVyY2ggUmQsIEFzaGZvcmQgVFcxNSwgVUsiLiosChQKEgkVB5VT"
 description: "Putting up St George's day flags in Ashford"
 ---
 
