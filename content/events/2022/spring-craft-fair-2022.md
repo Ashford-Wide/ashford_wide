@@ -3,7 +3,7 @@ title: "Spring Craft Fair"
 date: 2022-04-02
 startTime: "11:00"
 endTime: "15:00"
-location: "Thomas Knyvett College Stanwell Road Ashford TW15 2DU"
+location: "Thomas Knyvett College"
 placeId: "ChIJVemU6VdxdkgRjXqD0NsBJV4"
 description: "It’s officially spring time in Ashford & we are proud to present the Spring Craft Fair!"
 ---

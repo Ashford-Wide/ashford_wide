@@ -3,7 +3,7 @@ title: "3K Fun Run"
 date: 2022-04-30
 startTime: "09:00"
 endTime: "12:00"
-location: "Thomas Knyvett College Stanwell Road Ashford TW15 2DU"
+location: "Thomas Knyvett College
 placeId: "ChIJVemU6VdxdkgRjXqD0NsBJV4"
 description: "Spring into action and lace up your running shoes to join the Ashford Wide 3K Fun Run!"
 ---

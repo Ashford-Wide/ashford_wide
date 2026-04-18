@@ -3,7 +3,7 @@ title: Spring Market 2024
 date: 2024-03-02
 startTime: "10:00"
 endTime: "14:00"
-location: St Matthews Church Hall, Church Road, Ashford
+location: St Matthews Church Hall, Church Road
 placeId: "ChIJGVfrf_dzdkgR5jp9XqzCMTc"
 description: Looking for gifts for Mothers Day or Easter? Join us at our Spring Fair!
 ---
