@@ -72,7 +72,10 @@ date: 2026-07-11
 startTime: "10:00"          # 24hr HH:MM — optional
 endTime: "15:00"            # 24hr HH:MM — optional
 location: "High Street, Ashford"
+placeId: "ChIJM1ghw1RxdkgRvHav7GUCS60"  # optional — Google Maps Place ID, adds a maps link icon next to location
 address: "High Street"      # Street address — optional, added to schema.org output
+organiser: "Surrey County Council"        # optional — name of organising body if not Ashford Wide
+organiserUrl: "https://example.com"       # optional — link for the organiser, shown as icon next to their name
 description: "Short summary shown on event cards and in meta tags."
 image: "/images/events/summer-market-2026.jpg"  # optional
 endDate: "2026-07-12"       # optional — only for multi-day events
@@ -80,6 +83,8 @@ eventStatus: EventCancelled # optional — overrides default EventScheduled
 attendanceMode: OnlineEventAttendanceMode  # optional — overrides default OfflineEventAttendanceMode
 ---
 ```
+
+To find a Place ID, use the official [Place ID Finder](https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder) tool — search for the venue and copy the ID from the result.
 
 The `date` field drives all event filtering. The events list template splits events into upcoming (`date >= now`) and past (`date < now`) automatically. No manual archiving is needed.
 
