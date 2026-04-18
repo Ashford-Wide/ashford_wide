@@ -4,6 +4,7 @@ date: 2025-12-03
 startTime: "17:00"
 endTime: "20:00"
 location: "Church Road, Ashford"
+placeId: "EhtDaHVyY2ggUmQsIEFzaGZvcmQgVFcxNSwgVUsiLiosChQKEgkVB5VT"
 description: "The biggest market of the year during the festive season. Stalls, live music, mulled wine and festive entertainment for all the family."
 ---
 
