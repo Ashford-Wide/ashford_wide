@@ -52,3 +52,7 @@ We collect and process personal data because [REASONS]
 ### Stallholders & suppliers
 
 If you are a stallholder or supplier for an event being run by Ashford Wide then [STUFF].
+
+---
+
+{{< last-updated >}}
