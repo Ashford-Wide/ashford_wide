@@ -1,0 +1,17 @@
+name: Daily rebuild
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  rebuild:
+    name: Trigger Cloudflare Pages build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger deploy hook
+        run: curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}"
