@@ -95,6 +95,21 @@ image: /images/events/spring-market.jpg
 
 The news and events templates (`layouts/news/single.html`, `layouts/events/single.html`, etc.) automatically process the image through the partial. The same path is used for the OG image and JSON-LD structured data — both will also point to the processed WebP.
 
+### Event image aspect ratio
+
+Event images default to a 16:9 crop. To display the image square instead, add `imageAspect: square` to the event's front matter:
+
+```yaml
+---
+title: "Reading Between the Lines"
+date: 2026-05-16
+image: /images/events/reading-between-the-lines-2026.jpg
+imageAspect: square
+---
+```
+
+Omitting `imageAspect` (or setting any other value) falls back to 16:9.
+
 ## Adding images to a new layout file
 
 Call the partial the same way as anywhere else:
