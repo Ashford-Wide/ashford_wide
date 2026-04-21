@@ -70,7 +70,7 @@
             </li>
             {{ end }}
           </ul>
-          {{ $hasSocial := or .facebook .instagram .x .twitter }}
+          {{ $hasSocial := or .facebook .instagram .x .twitter .linkedin .youtube .tiktok }}
           {{ if $hasSocial }}
           <div class="flex gap-1.5 mt-2">
             {{ with .facebook }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -79,11 +79,20 @@
             {{ with .instagram }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               {{ partial "icons/instagram.html" . }}
             </a>{{ end }}
+            {{ with .linkedin }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              {{ partial "icons/linkedin.html" . }}
+            </a>{{ end }}
             {{ with .x }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
               {{ partial "icons/twitter.html" . }}
             </a>{{ end }}
             {{ with .twitter }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               {{ partial "icons/twitter.html" . }}
+            </a>{{ end }}
+            {{ with .youtube }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              {{ partial "icons/youtube.html" . }}
+            </a>{{ end }}
+            {{ with .tiktok }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-[#e0e0e0] text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              {{ partial "icons/tiktok.html" . }}
             </a>{{ end }}
           </div>
           {{ end }}
