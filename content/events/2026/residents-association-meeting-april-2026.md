@@ -1,5 +1,5 @@
 ---
-title: "Ashford Residents Association Meeting"
+title: "Monthly Meeting"
 organiser: "Ashford Residents Association"
 organiserUrl: "https://ashfordra.co.uk/"
 date: 2026-04-25
