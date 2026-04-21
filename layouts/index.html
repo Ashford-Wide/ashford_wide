@@ -68,7 +68,7 @@
 {{/* ── Upcoming Events ── */}}
 {{- $cutoff := now.AddDate 0 0 -1 -}}
 {{- $upcoming := where (where .Site.RegularPages "Section" "events") ".Date" "gt" $cutoff -}}
-{{- $upcoming = $upcoming | last 3 -}}
+{{- $upcoming = $upcoming.ByDate | first 3 -}}
 {{ if $upcoming }}
 <section class="py-8">
   <div class="max-w-container mx-auto px-6">
