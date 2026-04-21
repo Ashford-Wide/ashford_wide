@@ -1,0 +1,131 @@
+{{ define "head_extra" }}{{ partial "jsonld/webpage.html" . }}{{ end }}
+{{ define "main" }}
+
+{{/* Hero — header image or fallback dark bar */}}
+{{ if .Params.header_image }}
+<div class="relative h-[280px] md:h-[380px] overflow-hidden">
+  {{ partial "image.html" (dict "src" .Params.header_image "alt" .Title "class" "w-full h-full object-cover" "loading" "eager" "width" 1400) }}
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+  <div class="absolute bottom-0 left-0 right-0 px-6 pb-8" style="max-width: var(--width-container); margin: 0 auto;">
+    <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-white">{{ .Title }}</h1>
+    {{ with .Description }}<p class="mt-1 text-white/80 text-[1.05rem]">{{ . }}</p>{{ end }}
+  </div>
+</div>
+{{ else }}
+<div class="bg-surface text-white py-12">
+  <div class="max-w-container mx-auto px-6">
+    <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold">{{ .Title }}</h1>
+    {{ with .Description }}<p class="mt-2 text-white/70 text-[1.05rem]">{{ . }}</p>{{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{/* Business info block — logo + contact details */}}
+<section class="py-10">
+  <div class="max-w-container mx-auto px-6">
+    <div class="flex flex-col sm:flex-row gap-8 items-start">
+
+      {{ with .Params.logo }}
+      <div class="shrink-0 flex items-center justify-center rounded p-4 w-44">
+        {{ partial "image.html" (dict "src" . "alt" (printf "%s logo" $.Title) "class" "max-w-full h-auto max-h-28 object-contain" "loading" "eager" "width" 280) }}
+      </div>
+      {{ end }}
+
+      <div class="flex-1">
+        <dl class="grid gap-y-3 text-[0.95rem]">
+          {{ with .Params.address }}
+          <div class="flex flex-wrap gap-x-3 items-baseline">
+            <dt class="font-semibold text-surface w-20 shrink-0">Address</dt>
+            <dd class="flex items-center gap-2 text-text">{{ . }}{{ with $.Params.placeId }}<a href="https://www.google.com/maps/search/?api=1&query={{ $.Params.address | urlquery }}&query_place_id={{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="View on Google Maps"><span class="[&>svg]:size-4">{{ partial "icons/pin.html" . }}</span></a>{{ end }}</dd>
+          </div>
+          {{ end }}
+          {{ with .Params.telephone }}
+          <div class="flex flex-wrap gap-x-3 items-baseline">
+            <dt class="font-semibold text-surface w-20 shrink-0">Phone</dt>
+            <dd><a href="tel:{{ . | replaceRE `\s` `` }}" class="text-secondary hover:underline">{{ . }}</a></dd>
+          </div>
+          {{ end }}
+          {{ with .Params.email }}
+          <div class="flex flex-wrap gap-x-3 items-baseline">
+            <dt class="font-semibold text-surface w-20 shrink-0">Email</dt>
+            <dd><a href="mailto:{{ . }}" class="text-secondary hover:underline">{{ . }}</a></dd>
+          </div>
+          {{ end }}
+          {{ with .Params.website }}
+          <div class="flex flex-wrap gap-x-3 items-baseline">
+            <dt class="font-semibold text-surface w-20 shrink-0">Website</dt>
+            <dd><a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline break-all">{{ . | replaceRE `^https?://` `` | strings.TrimRight "/" }}</a></dd>
+          </div>
+          {{ end }}
+        </dl>
+
+        {{/* Social links */}}
+        {{ $socials := slice
+          (dict "key" "facebook"  "label" "Facebook"  "icon" "icons/facebook.html")
+          (dict "key" "instagram" "label" "Instagram" "icon" "icons/instagram.html")
+          (dict "key" "linkedin"  "label" "LinkedIn"  "icon" "icons/linkedin.html")
+          (dict "key" "twitter"   "label" "Twitter"   "icon" "icons/twitter.html")
+          (dict "key" "youtube"   "label" "YouTube"   "icon" "icons/youtube.html")
+          (dict "key" "tiktok"    "label" "TikTok"    "icon" "icons/tiktok.html")
+        }}
+        {{ $hasAnySocial := false }}
+        {{ range $socials }}{{ with index $.Params .key }}{{ $hasAnySocial = true }}{{ end }}{{ end }}
+        {{ if $hasAnySocial }}
+        <div class="flex gap-[0.6rem] mt-5">
+          {{ range $socials }}
+          {{- $s := . -}}
+          {{ with index $.Params $s.key }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="{{ $.Title }} on {{ $s.label }}">
+            {{ partial $s.icon . }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{{/* Optional intro — markdown body content */}}
+{{ with .Content }}
+<section class="py-10">
+  <div class="max-w-[800px] mx-auto px-6">
+    <div class="article-content">{{ . }}</div>
+  </div>
+</section>
+{{ end }}
+
+{{/* Promo sections — two-column grid of image + copy cards */}}
+{{ with .Params.sections }}
+<section class="py-12 bg-[#f8f9fa]">
+  <div class="max-w-container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {{ range . }}
+      {{- $section := . -}}
+      <div class="bg-white rounded overflow-hidden" style="box-shadow: var(--shadow);">
+        {{ with $section.image }}
+        {{ partial "image.html" (dict "src" . "alt" ($section.title | default "") "class" "w-full aspect-[16/9] object-cover" "width" 800) }}
+        {{ end }}
+        <div class="p-6">
+          {{ with $section.title }}<h2 class="text-xl font-bold text-surface mb-3">{{ . }}</h2>{{ end }}
+          {{ with $section.content }}<p class="text-text leading-relaxed mb-5">{{ . }}</p>{{ end }}
+          {{ with $section.link }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 rounded text-[0.9rem] font-semibold border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">{{ $section.link_text | default "Learn More" }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<div class="py-10">
+  <div class="max-w-container mx-auto px-6">
+    <a href="/business-directory" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">&larr; Back to Business Directory</a>
+  </div>
+</div>
+
+{{ end }}
