@@ -10,7 +10,9 @@
 <section class="py-8">
   <div class="max-w-[800px] mx-auto px-6">
     {{ with .Params.image }}
-    {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full max-w-[800px] rounded mb-8 aspect-[16/9] object-cover" "loading" "eager" "width" 1200) }}
+    {{- $aspect := "aspect-[16/9]" -}}
+    {{- if eq $.Params.imageAspect "square" }}{{- $aspect = "aspect-square" -}}{{ end }}
+    {{ partial "image.html" (dict "src" . "alt" $.Title "class" (printf "w-full max-w-[800px] rounded mb-8 %s object-cover" $aspect) "loading" "eager" "width" 1200) }}
     {{ end }}
 
     <div class="flex flex-wrap items-start gap-6 my-6 p-5 bg-[#f8f9fa] rounded">
