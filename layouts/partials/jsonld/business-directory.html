@@ -1,0 +1,46 @@
+{{- $page := . -}}
+{{- $businesses := hugo.Data.businesses -}}
+{{- $sorted := sort $businesses "name" -}}
+
+{{- $orgRef := dict "@id" (print .Site.BaseURL "#organization") -}}
+
+{{- $items := slice -}}
+{{- range $i, $biz := $sorted -}}
+  {{- $item := dict "@type" "LocalBusiness" "name" $biz.name -}}
+  {{- with $biz.description -}}
+    {{- $item = merge $item (dict "description" .) -}}
+  {{- end -}}
+  {{- with $biz.logo -}}
+    {{- $imgUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
+    {{- $item = merge $item (dict "image" $imgUrl) -}}
+  {{- end -}}
+  {{- with $biz.website -}}
+    {{- $item = merge $item (dict "url" .) -}}
+  {{- end -}}
+  {{- with $biz.telephone -}}
+    {{- $item = merge $item (dict "telephone" .) -}}
+  {{- end -}}
+  {{- with $biz.address -}}
+    {{- $item = merge $item (dict "address" (dict "@type" "PostalAddress" "streetAddress" .)) -}}
+  {{- end -}}
+  {{- with $biz.placeId -}}
+    {{- $item = merge $item (dict "identifier" (dict "@type" "PropertyValue" "name" "Google Place ID" "value" .)) -}}
+    {{- $item = merge $item (dict "hasMap" (print "https://www.google.com/maps/search/?api=1&query_place_id=" .)) -}}
+  {{- end -}}
+  {{- $items = $items | append (dict "@type" "ListItem" "position" (add $i 1) "item" $item) -}}
+{{- end -}}
+
+{{- $collectionPage := dict
+  "@type" "CollectionPage"
+  "@id" (print $page.Permalink "#webpage")
+  "url" $page.Permalink
+  "name" $page.Title
+  "publisher" $orgRef
+  "mainEntity" (dict "@type" "ItemList" "numberOfItems" (len $sorted) "itemListElement" $items)
+-}}
+{{- with $page.Description -}}
+  {{- $collectionPage = merge $collectionPage (dict "description" .) -}}
+{{- end -}}
+
+{{- $graph := dict "@context" "https://schema.org" "@graph" (slice $collectionPage) -}}
+<script type="application/ld+json">{{ $graph | jsonify | safeJS }}</script>
