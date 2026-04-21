@@ -29,6 +29,7 @@ baseof.html
 | `layouts/news/single.html` | Single news article with breadcrumb |
 | `layouts/_default/single.html` | Generic single page — page header + article content |
 | `layouts/_default/business-directory.html` | Business directory — data-driven, category filter, JS filtering |
+| `layouts/business-member/single.html` | Single business member profile page — hero image, logo + contact details panel, social icons row, optional intro prose, two-column promo section grid |
 | `layouts/_default/list.html` | Default section list (fallback) |
 | `layouts/_default/taxonomy.html` | Tag/taxonomy pages |
 | `layouts/sitemap.xml` | Custom sitemap — `<loc>` and `<lastmod>` only, no priority/changefreq |
@@ -172,3 +173,72 @@ The "SUPPORT US" button links to `/support`.
 ### Remembrance nav item
 
 The Remembrance link is controlled by `showRemembrance` in `hugo.toml`. Set it to `true` to show the link in the nav, `false` to hide it. This allows the link to be enabled seasonally without a template change — just update `hugo.toml` and redeploy.
+
+## Business Member Pages
+
+Individual business member profile pages live in `content/business-member/` and use `layouts/business-member/single.html`.
+
+### Front matter fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `title` | Yes | Business name |
+| `description` | No | Short tagline shown beneath the title |
+| `header_image` | No | Path to hero banner image (see sizing below). Falls back to the standard dark surface title bar if omitted |
+| `logo` | No | Path to the business logo |
+| `address` | No | Street address displayed in the contact panel |
+| `placeId` | No | Google Maps Place ID — adds a map pin icon link next to the address |
+| `telephone` | No | Phone number — rendered as a `tel:` link |
+| `email` | No | Email address — rendered as a `mailto:` link |
+| `website` | No | Full URL — displayed without the `https://` prefix |
+| `facebook` | No | Facebook profile URL |
+| `instagram` | No | Instagram profile URL |
+| `linkedin` | No | LinkedIn profile URL |
+| `twitter` | No | Twitter/X profile URL |
+| `youtube` | No | YouTube channel URL |
+| `tiktok` | No | TikTok profile URL |
+| `sections` | No | List of promo cards rendered in a two-column grid (see below) |
+
+### Hero image
+
+The hero uses `aspect-[16/5]` (16:5). Recommended source image size: **1400 × 480px**. Hugo Pipes resizes and converts to WebP at build time. The subject should be centred vertically as `object-cover` crops equally from top and bottom on narrow viewports.
+
+If `header_image` is omitted the page falls back to the standard dark (`bg-surface`) title bar used across the rest of the site.
+
+### Promo sections
+
+`sections` is a list of cards rendered two-per-row on medium+ screens. Each item supports:
+
+| Field | Description |
+|-------|-------------|
+| `title` | Card heading |
+| `content` | Body copy paragraph |
+| `image` | Card image path — rendered at 16:9 |
+| `link` | CTA button URL |
+| `link_text` | CTA button label (defaults to `Learn More`) |
+
+Example front matter:
+
+```yaml
+sections:
+  - title: "Security"
+    content: "Tailor-made solutions to protect your business."
+    image: "/images/businesses/example/security.jpg"
+    link: "https://example.com/security"
+    link_text: "Discover More"
+  - title: "People"
+    content: "Supporting your most important asset."
+    image: "/images/businesses/example/people.jpg"
+    link: "https://example.com/people"
+    link_text: "Read More"
+```
+
+### Social icons
+
+Any social fields present in front matter are rendered as a row of circular icon buttons below the contact details, using the same hover style as the site footer. Supported: Facebook, Instagram, LinkedIn, Twitter, YouTube, TikTok. Icons live in `layouts/partials/icons/`.
+
+### Adding a new business member page
+
+1. Create `content/business-member/<slug>.md` with the relevant front matter fields above.
+2. Add images to `static/images/businesses/<slug>/` (hero at 1400 × 788px, logo at any size — it renders `max-h-28` constrained).
+3. Optionally add prose below the front matter — it renders as a centred article block between the contact panel and the promo sections.
