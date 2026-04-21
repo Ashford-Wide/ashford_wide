@@ -1,7 +1,7 @@
 - name: "Ashdown VAT Consultancy LLP"
   category: "Accountancy"
   description: "Supports accountancy firms across the UK with all things VAT. From registrations and technical advice to HMRC disputes."
-  website: "http://www.ashdownvat.co.uk/"
+  website: "https://www.ashdownvat.co.uk/"
   telephone: "01784 770486"
   facebook: "https://www.facebook.com/ashdownvat"
   email: "michael@ashdownvat.co.uk"
@@ -24,7 +24,7 @@
   telephone: "07825 566218"
   instagram: "https://www.instagram.com/ashfordtownmx"
   x: "https://x.com/ashfordtownmx"
-  address: "Parker Stadium Short Lane Stanwell Middlesex TW19 7BH"
+  address: "Parker Stadium Short Lane Stanwell TW19 7BH"
   logo: "/images/businesses/ashford-fc.png"
 
 - name: "Blackstone Printing"
