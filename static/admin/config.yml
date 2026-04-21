@@ -36,6 +36,7 @@ collections:
       - { label: Organiser URL, name: organiserUrl, widget: string, hint: "Link to the organiser's website or page", required: false }
       - { label: Description, name: description, widget: text, hint: "Short summary shown on event cards", maxlength: 150 }
       - { label: Image, name: image, widget: image, required: false }
+      - { label: Image Aspect, name: imageAspect, widget: select, options: ["square", "16:9"], required: false, hint: "Defaults to 16:9 if not set" }
       - { label: Body, name: body, widget: markdown }
 
   - name: news
