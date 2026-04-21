@@ -110,4 +110,5 @@
   {{ $js = $js | minify | fingerprint }}
 {{ end }}
 <script src="{{ $js.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
+{{ partial "jsonld/business-directory.html" . }}
 {{ end }}
