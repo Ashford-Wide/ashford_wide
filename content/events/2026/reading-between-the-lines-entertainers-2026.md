@@ -1,6 +1,6 @@
 ---
 title: "Reading Between the Lines"
-organiser: "🎭 St Hilda's Entertainers"
+organiser: "St Hilda's Entertainers"
 organiserUrl: "https://sthildasentertainers.com/"
 date: 2026-05-16
 startTime: "19:45"
