@@ -7,8 +7,9 @@
 </div>
 
 {{- $events := where .Site.RegularPages "Section" "events" -}}
-{{- $upcoming := (where $events ".Date" "ge" now).ByDate -}}
-{{- $past := (where $events ".Date" "lt" now).ByDate.Reverse -}}
+{{- $cutoff := now.AddDate 0 0 -1 -}}
+{{- $upcoming := (where $events ".Date" "gt" $cutoff).ByDate -}}
+{{- $past := (where $events ".Date" "le" $cutoff).ByDate.Reverse -}}
 
 <section class="py-8">
   <div class="max-w-container mx-auto px-6">
