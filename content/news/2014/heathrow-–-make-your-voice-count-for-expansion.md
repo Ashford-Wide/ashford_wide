@@ -10,9 +10,9 @@ The Airports Commission has launched its national consultation to seek the view
 
 Heathrow will only be recommended by the Airports Commission if it has a broad range of visible support from across different business sizes, sectors and across the UK. Heathrow’s campaign is stronger if it has others supporting its case for expansion, so ensuring supporters’ voices are heard will be crucial in this next phase of the campaign. The Airports Commission’s national consultation document that was released on 11 November says that Heathrow will deliver over £200bn to the British economy and 180,000 jobs throughout the UK. The value to the economy of choosing Heathrow over Gatwick could be as much as £97bn. Only Heathrow expansion can deliver:
 
-* 40 more long-haul flights, bringing tourists and investors to the UK and supporting our exports to make connections abroad
-* A doubling of cargo capacity. 26% of UK exports travel through Heathrow. Without expanding our biggest port how can the UK hope to reach the Government target to double British exports?
-* Connections for the whole of the UK. With space for new domestic routes and new rail services from the North, South, East and West, the UK’s hub airport will be better connected than ever before.
+- 40 more long-haul flights, bringing tourists and investors to the UK and supporting our exports to make connections abroad
+- A doubling of cargo capacity. 26% of UK exports travel through Heathrow. Without expanding our biggest port how can the UK hope to reach the Government target to double British exports?
+- Connections for the whole of the UK. With space for new domestic routes and new rail services from the North, South, East and West, the UK’s hub airport will be better connected than ever before.
 
 WLB will be making a submission to the Airports Commission’s national consultation, but I’d also encourage you, if you agree with us, to make a submission on behalf of your organisation by outlining why Heathrow is important to your organisation and how an expanded Heathrow could help your business. You can make a submission via the Airports Commission’s website: [www.gov.uk/government/consultations/increasing-the-uks-long-term-aviation-capacity](https://www.gov.uk/government/consultations/increasing-the-uks-long-term-aviation-capacity).
 
