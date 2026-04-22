@@ -14,4 +14,4 @@ They would also like to hear from you with personal descriptions of how you trav
 
 If you haven’t already given them your details, please include your home town and you will be added to their list of those already received to also use at the meeting. 
 
-[https://www.change.org/p/spelthornezone6](https://www.change.org/p/spelthornezone6?fbclid=IwAR2XiRjM-g36TyNJLX4sPMCaFoQld9vYgpY6Tqr0owuSa_3ZasRLcF7aeOI)
+[https://www.change.org/p/spelthornezone6](https://www.change.org/p/spelthornezone6)
