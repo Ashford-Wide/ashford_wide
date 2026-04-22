@@ -28,11 +28,11 @@ You will get access to exclusive resources and benefits that will help your busi
 
 ### Member Benefits
 
-* **Events & Promotions**: Priority access and discounts to Ashford Wide events and promotional campaigns.
-* **Networking:** Connect with other local businesses, community groups and stakeholders at our regular networking events.
-* **Directory Listing:** Get your business or organisation listed on the [Ashford Wide business directory](/business-directory), reaching thousands of visitors each month.
-* **Influence:** Have your say in shaping the future of Ashford town centre through consultations, surveys and working groups.
-* **Newsletter:** Receive our regular members' newsletter with the latest news, events and opportunities.
+- **Events & Promotions**: Priority access and discounts to Ashford Wide events and promotional campaigns.
+- **Networking:** Connect with other local businesses, community groups and stakeholders at our regular networking events.
+- **Directory Listing:** Get your business or organisation listed on the [Ashford Wide business directory](/business-directory), reaching thousands of visitors each month.
+- **Influence:** Have your say in shaping the future of Ashford town centre through consultations, surveys and working groups.
+- **Newsletter:** Receive our regular members' newsletter with the latest news, events and opportunities.
 
 ## How to Join
 
