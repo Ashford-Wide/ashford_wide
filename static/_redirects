@@ -13,8 +13,6 @@
 /wp-admin/    /admin/    301
 /feed/    /index.xml    301
 /feed    /index.xml    301
-# /?p=*    /    301
-# /?page_id=*    /    301
 /category/*    /    301
 /author/*    /news/    301
 
