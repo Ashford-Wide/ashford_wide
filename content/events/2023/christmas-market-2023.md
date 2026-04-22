@@ -4,7 +4,7 @@ date: 2023-12-06
 startTime: "17:00"
 endTime: "20:00"
 location: "Church Road, Ashford"
-placeId: "EhtDaHVyY2ggUmQsIEFzaGZvcmQgVFcxNSwgVUsiLiosChQKEgkVB5VT"
+placeId: "EhtDaHVyY2ggUmQsIEFzaGZvcmQgVFcxNSwgVUsiLiosChQKEgkVB5VT-XN2SBHDNnVzHMWESBIUChIJ_-U8NRV0dkgRo93ZSnMQVAk"
 description: "Ashford Christmas Market returns with Staines and Lammas Band, Santa, stalls, food, and more!"
 ---
 
