@@ -29,7 +29,7 @@
       {{ with .Params.location }}
       <div class="flex flex-col">
         <span class="text-[0.75rem] uppercase tracking-[0.06em] text-muted font-semibold">Location</span>
-        <span class="flex items-center min-h-9 gap-2 text-base font-semibold text-surface">{{ . }}{{ with $.Params.placeId }}<a href="https://www.google.com/maps/search/?api=1&query={{ $.Params.location | urlquery }}&query_place_id={{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="View on Google Maps"><span class="[&>svg]:size-4">{{ partial "icons/pin.html" . }}</span></a>{{ end }}</span>
+        <span class="flex items-center min-h-9 gap-2 text-base font-semibold text-surface">{{ . }}{{ with $.Params.placeId }}<a href="https://www.google.com/maps/search/?api=1&query={{ $.Params.location | urlquery }}&query_place_id={{ . | urlquery }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="View on Google Maps"><span class="[&>svg]:size-4">{{ partial "icons/pin.html" . }}</span></a>{{ end }}</span>
       </div>
       {{ end }}
       {{ with .Params.organiser }}
