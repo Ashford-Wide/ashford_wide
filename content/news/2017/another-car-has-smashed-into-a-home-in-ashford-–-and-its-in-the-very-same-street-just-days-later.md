@@ -1,11 +1,8 @@
 ---
-title: Another car has smashed into a home in Ashford – and it's in the very
-  same street just days later
+title: Another car has smashed into a home in Ashford – and it's in the very same street just days later
 date: 2017-04-20
 author: Ashford Wide Team
-description: The latest smash, which saw the driver hit a wall before stopping
-  in the house’s porch, comes just days after a near-identical incident in the
-  same road
+description: The latest smash, which saw the driver hit a wall before stopping in the house’s porch, comes just days after a near-identical incident in the same road
 ---
 Another car has crashed into a property in just days after a car smashed into a family home in the very same street.
 
