@@ -14,11 +14,11 @@ Police and other agencies are knocking on doors in affected areas as part of a c
 
 Keep a list of useful numbers to hand:
 
-* the emergency services – 999
-* your insurance company
-* Environment Agency Floodline – 0345 988 1188
-* Spelthorne Borough Council – 01784 451499 – 7.30am-6pm Monday to Thursday and 5pm Friday
-* Spelthorne Borough Council out of hours emergency – 01932 425060 (as we are in a partnership with Safer Runnymede) Action required
+- the emergency services – 999
+- your insurance company
+- Environment Agency Floodline – 0345 988 1188
+- Spelthorne Borough Council – 01784 451499 – 7.30am-6pm Monday to Thursday and 5pm Friday
+- Spelthorne Borough Council out of hours emergency – 01932 425060 (as we are in a partnership with Safer Runnymede) Action required
 
 If you are trapped by flood water or have an emergency **dial 999**
 
@@ -46,8 +46,8 @@ Sandbags will be of limited use and will only be distributed where the Council h
 
 They include:
 
-* elderly or those with young children
-* frail or disabled people with limited mobility or with physical or mental impairments
+- elderly or those with young children
+- frail or disabled people with limited mobility or with physical or mental impairments
 
 You can purchase sandbags from builders merchants, prices do vary so shop around if you can.
 
@@ -69,9 +69,9 @@ For further details contact Customer Services on 01784 451499 until 6pm (5pm on 
 
 ## Number of homes affected
 
-* Approximately 1,000 properties (homes and business) flooded
-* Approximately 2,000-2,500 properties affected by flooding
-* Approximately 3,000 homes visited by Police house to house teams since Sunday 9 February and given advice and reassurance
+- Approximately 1,000 properties (homes and business) flooded
+- Approximately 2,000-2,500 properties affected by flooding
+- Approximately 3,000 homes visited by Police house to house teams since Sunday 9 February and given advice and reassurance
 
 ## Who we are working with during this emergency
 
