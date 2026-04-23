@@ -138,4 +138,4 @@ All pages output [Open Graph](https://ogp.me/) and [Twitter/X Card](https://deve
 
 **`twitter:card`** is set to `summary_large_image` when an image is available, otherwise `summary`.
 
-The default OG image (`/images/og-default.jpg`) should be **1200×630px** — ideally the Ashford Wide logo on a branded background.
+The default OG image (`/images/og-default.jpg`) should be **1200×630px** and under 600KB ([Facebook: Images in Link Shares](https://developers.facebook.com/docs/sharing/webmasters/images/) & [WhatsApp: Link Previews](https://developers.facebook.com/documentation/business-messaging/whatsapp/link-previews/)).
