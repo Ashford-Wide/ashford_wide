@@ -53,8 +53,8 @@
 
   .article-content blockquote.alert-tip      { --alert-color: #287d3d; }
   .article-content blockquote.alert-important { --alert-color: #8250df; }
-  .article-content blockquote.alert-warning  { --alert-color: #9a6700; }
-  .article-content blockquote.alert-caution  { --alert-color: #cf222e; }
+  .article-content blockquote.alert-warning  { --alert-color: #E0B507; }
+  .article-content blockquote.alert-caution  { --alert-color: #A72326; }
 
   .article-content blockquote.alert p {
     @apply m-0;
