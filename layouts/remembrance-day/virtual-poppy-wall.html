@@ -8,8 +8,8 @@
 
 <div class="bg-surface text-white py-12">
   <div class="max-w-container mx-auto px-6">
-    <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold">{{ .Title }}</h1>
-    {{ with .Description }}<p class="mt-2 text-white/70 text-[1.05rem]">{{ . }}</p>{{ end }}
+    <h1 class="text-h2 font-bold">{{ .Title }}</h1>
+    {{ with .Description }}<p class="mt-2 text-white/70 text-body-md">{{ . }}</p>{{ end }}
   </div>
 </div>
 
@@ -26,7 +26,7 @@
     <h2 class="text-2xl font-bold text-surface mb-6 mt-10 first:mt-0">{{ . }}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {{- range $entries -}}
-      <div class="bg-white border border-[#e5e7eb] rounded-lg p-6 flex flex-col items-center text-center shadow-sm">
+      <div class="bg-white border border-border rounded-lg p-6 flex flex-col items-center text-center shadow-sm">
         {{ partial "image.html" (dict "src" "/images/poppy.png" "alt" "Poppy" "class" "w-28 h-auto mb-4") }}
         <p class="text-base font-bold text-surface leading-snug">{{ .name }}</p>
         {{ with .dedication }}<p class="text-sm text-text mt-2 leading-relaxed italic">{{ . }}</p>{{ end }}
