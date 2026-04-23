@@ -1,0 +1,10 @@
+{{ if .Type | eq "alert" -}}
+<blockquote class="alert alert-{{ .AlertType | lower }}">
+  <p class="alert-heading">{{ .AlertType | title }}</p>
+  {{ .Text }}
+</blockquote>
+{{- else -}}
+<blockquote>
+  {{ .Text }}
+</blockquote>
+{{- end }}
