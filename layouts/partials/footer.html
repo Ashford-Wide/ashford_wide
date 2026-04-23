@@ -4,58 +4,58 @@
       <div>
         <div class="flex items-center gap-3">
           <img src="/images/logo.svg" alt="Ashford Wide" class="h-10 w-auto">
-          <div class="text-[1.15rem] font-bold text-surface">Ashford Wide</div>
+          <div class="text-subtitle font-bold text-surface">Ashford Wide</div>
         </div>
-        <p class="mt-2 italic text-[0.9rem] text-surface/75">{{ .Site.Params.description }}</p>
-        <p class="mt-4 text-[0.875rem] text-surface/70">
+        <p class="mt-2 italic text-body-sm text-surface/75">{{ .Site.Params.description }}</p>
+        <p class="mt-4 text-sm text-surface/70">
           We're a non-profit community group running only with volunteers.
         </p>
       </div>
       <div>
-        <h3 class="text-[0.8rem] font-bold uppercase tracking-[0.07em] text-surface mb-4">About Us</h3>
+        <h3 class="text-fine font-bold uppercase tracking-[0.07em] text-surface mb-4">About Us</h3>
         <ul class="flex flex-col gap-2">
-          <li><a href="/about" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Who We Are</a></li>
-          <li><a href="/volunteer" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Volunteer</a></li>
-          <li><a href="/data" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Cookies and data collection</a></li>
+          <li><a href="/about" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">Who We Are</a></li>
+          <li><a href="/volunteer" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">Volunteer</a></li>
+          <li><a href="/data" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">Cookies and data collection</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="text-[0.8rem] font-bold uppercase tracking-[0.07em] text-surface mb-4">Quick Links</h3>
+        <h3 class="text-fine font-bold uppercase tracking-[0.07em] text-surface mb-4">Quick Links</h3>
         <ul class="flex flex-col gap-2">
-          <li><a href="/news" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">News</a></li>
-          <li><a href="/events" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Events</a></li>
-          <li><a href="/membership" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Membership</a></li>
-          <li><a href="/contact" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Contact Us</a></li>
-          <li><a href="/support" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Support Us</a></li>
-          <li><a href="/stallholders" class="text-[0.875rem] text-surface/65 hover:text-surface transition-colors duration-200">Stallholder information</a></li>
+          <li><a href="/news" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">News</a></li>
+          <li><a href="/events" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">Events</a></li>
+          <li><a href="/membership" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">Membership</a></li>
+          <li><a href="/contact" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">Contact Us</a></li>
+          <li><a href="/support" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">Support Us</a></li>
+          <li><a href="/stallholders" class="text-sm text-surface/65 hover:text-surface transition-colors duration-200">Stallholder information</a></li>
         </ul>
       </div>
     </div>
 
     <div class="border-t border-surface/10 pt-6 flex justify-between items-center flex-wrap gap-4">
-      <p class="text-[0.8rem] text-surface/70">&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" class="text-surface/70 underline">{{ .Site.Params.email }}</a></p>
+      <p class="text-fine text-surface/70">&copy; {{ now.Year }} Ashford Wide. All rights reserved. &mdash; <a href="mailto:{{ .Site.Params.email }}" class="text-surface/70 underline">{{ .Site.Params.email }}</a></p>
       <div class="flex gap-[0.6rem]">
         {{ with .Site.Params.facebook }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-lift transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">
           {{ partial "icons/facebook.html" . }}
         </a>
         {{ end }}
         {{ with .Site.Params.instagram }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-lift transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">
           {{ partial "icons/instagram.html" . }}
         </a>
         {{ end }}
         {{ with .Site.Params.twitter }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-lift transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">
           {{ partial "icons/twitter.html" . }}
         </a>
         {{ end }}
         {{ with .Site.Params.linkedin }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-lift transition-all duration-200" aria-label="LinkedIn" target="_blank" rel="noopener">
           {{ partial "icons/linkedin.html" . }}
         </a>
         {{ end }}
-        <a href="/index.xml" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-[3px] transition-all duration-200" aria-label="RSS feed">
+        <a href="/index.xml" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-lift transition-all duration-200" aria-label="RSS feed">
           {{ partial "icons/rss.html" . }}
         </a>
       </div>
