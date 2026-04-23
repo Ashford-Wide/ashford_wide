@@ -6,12 +6,35 @@
   --color-secondary: #287d3d;
   --color-text: #333;
   --color-muted: #666e76;
-  
+  --color-ui-light: #f8f9fa;
+  --color-ui-subtle: #f0f0f0;
+  --color-border: #e5e7eb;
+  --color-border-mid: #e0e0e0;
+  --color-border-strong: #d0d0d0;
+  --color-image-bg: #333;
+
+  --text-badge: 0.78rem;
+  --text-fine: 0.8rem;
+  --text-caption: 0.825rem;
+  --text-body-sm: 0.9rem;
+  --text-body: 0.95rem;
+  --text-body-md: 1.05rem;
+  --text-body-lg: 1.2rem;
+  --text-subtitle: 1.15rem;
+  --text-display-sm: 1.75rem;
+  --text-display-lg: 4rem;
+  --text-h1: clamp(2rem,5vw,3.25rem);
+  --text-h2: clamp(1.75rem,4vw,2.5rem);
+  --text-h3: clamp(1.5rem,3vw,2rem);
+
   --radius: 5px;
-  
+
   --shadow: 0 2px 8px rgba(0,0,0,.1);
   --shadow-lg: 0 .5rem 1.5rem rgba(0,0,0,.2);
-  
+
+  --translate-lift: 3px;
+  --translate-lift-sm: 2px;
+
   --spacing-header: 72px;
   --width-container: 1200px;
   --breakpoint-md: 1140px;
