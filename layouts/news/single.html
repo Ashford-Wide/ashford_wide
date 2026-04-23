@@ -3,8 +3,8 @@
 {{ define "main" }}
 <div class="bg-surface text-white py-12">
   <div class="max-w-container mx-auto px-6">
-<h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold">{{ .Title }}</h1>
-    <p class="mt-2 text-white/70 text-[1.05rem]">{{ .Date.Format "2 January 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}</p>
+<h1 class="text-h2 font-bold">{{ .Title }}</h1>
+    <p class="mt-2 text-white/70 text-body-md">{{ .Date.Format "2 January 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}</p>
   </div>
 </div>
 
@@ -19,7 +19,7 @@
     </div>
 
     <div class="mt-10">
-      <a href="/news" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">&larr; Back to News</a>
+      <a href="/news" class="inline-block px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">&larr; Back to News</a>
     </div>
   </div>
 </section>
