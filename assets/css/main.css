@@ -38,4 +38,30 @@
   .article-content .leaflet-container img {
     @apply m-0 max-w-none;
   }
+
+  .article-content blockquote.alert p::before,
+  .article-content blockquote.alert p::after {
+    content: none;
+  }
+
+  .article-content blockquote.alert {
+    --alert-color: #0969da;
+    @apply not-italic border-l-4 rounded-r px-4 py-3 my-4;
+    border-color: var(--alert-color);
+    background-color: color-mix(in srgb, var(--alert-color) 10%, transparent);
+  }
+
+  .article-content blockquote.alert-tip      { --alert-color: #287d3d; }
+  .article-content blockquote.alert-important { --alert-color: #8250df; }
+  .article-content blockquote.alert-warning  { --alert-color: #9a6700; }
+  .article-content blockquote.alert-caution  { --alert-color: #cf222e; }
+
+  .article-content blockquote.alert p {
+    @apply m-0;
+  }
+
+  .article-content blockquote.alert p.alert-heading {
+    @apply font-semibold text-sm uppercase tracking-wide mb-1;
+    color: var(--alert-color);
+  }
 }
