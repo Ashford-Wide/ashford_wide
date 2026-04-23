@@ -1,8 +1,8 @@
 {{ define "main" }}
 <div class="bg-surface text-white py-12">
   <div class="max-w-container mx-auto px-6">
-    <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold">Events</h1>
-    <p class="mt-2 text-white/70 text-[1.05rem]">See what's on in Ashford</p>
+    <h1 class="text-h2 font-bold">Events</h1>
+    <p class="mt-2 text-white/70 text-body-md">See what's on in Ashford</p>
   </div>
 </div>
 
@@ -15,19 +15,19 @@
   <div class="max-w-container mx-auto px-6">
 
     {{ if $upcoming }}
-    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5">Upcoming Events</h2>
-    <p class="text-muted mb-10 text-[1.05rem]">Events coming up in Ashford</p>
+    <h2 class="text-h3 font-bold mb-1.5">Upcoming Events</h2>
+    <p class="text-muted mb-10 text-body-md">Events coming up in Ashford</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {{ range $upcoming }}
-      <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] transition-all duration-250 hover:-translate-y-[3px] flex flex-col group">
+      <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow hover:shadow-lg transition-all duration-250 hover:-translate-y-lift flex flex-col group">
         {{- $aspect := "aspect-[16/9]" -}}
         {{- if eq .Params.imageAspect "square" }}{{- $aspect = "aspect-square" -}}{{ end }}
-        {{ with .Params.image }}<div class="{{ $aspect }} overflow-hidden bg-[#333] shrink-0">{{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250") }}</div>{{ end }}
+        {{ with .Params.image }}<div class="{{ $aspect }} overflow-hidden bg-image-bg shrink-0">{{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-250") }}</div>{{ end }}
         <div class="p-5 flex-1 flex flex-col">
-          <div class="text-[0.78rem] text-white/55 mb-1.5">{{ .Date.Format "Monday 2 January 2006" }}{{ if .Params.startTime }} &middot; {{ partial "event-time.html" . }}{{ end }}</div>
-          <div class="text-[1.1rem] font-semibold mb-2 leading-[1.3]">{{ with .Params.organiser }}{{ . }} &ndash; {{ end }}{{ .Title }}</div>
-          {{ with .Params.location }}<div class="text-[0.875rem] text-white/75 line-clamp-3 overflow-hidden">{{ . }}</div>{{ end }}
-          <span class="mt-auto pt-4 text-[0.825rem] font-semibold text-white/85 border-b border-white/30 inline-block self-start">Find out more &rarr;</span>
+          <div class="text-badge text-white/55 mb-1.5">{{ .Date.Format "Monday 2 January 2006" }}{{ if .Params.startTime }} &middot; {{ partial "event-time.html" . }}{{ end }}</div>
+          <div class="text-body-lg font-semibold mb-2 leading-[1.3]">{{ with .Params.organiser }}{{ . }} &ndash; {{ end }}{{ .Title }}</div>
+          {{ with .Params.location }}<div class="text-sm text-white/75 line-clamp-3 overflow-hidden">{{ . }}</div>{{ end }}
+          <span class="mt-auto pt-4 text-caption font-semibold text-white/85 border-b border-white/30 inline-block self-start">Find out more &rarr;</span>
         </div>
       </a>
       {{ end }}
@@ -37,15 +37,15 @@
     {{ end }}
 
     {{ if $past }}
-    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-1.5 mt-8">Past Events</h2>
-    <p class="text-muted mb-10 text-[1.05rem]">Events that have already taken place</p>
+    <h2 class="text-h3 font-bold mb-1.5 mt-8">Past Events</h2>
+    <p class="text-muted mb-10 text-body-md">Events that have already taken place</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-70">
       {{ range $past | first 3 }}
-      <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:shadow-[0_0.5rem_1.5rem_rgba(0,0,0,0.2)] transition-all duration-250 hover:-translate-y-[3px] flex flex-col group">
+      <a href="{{ .Permalink }}" class="bg-surface text-white rounded overflow-hidden shadow hover:shadow-lg transition-all duration-250 hover:-translate-y-lift flex flex-col group">
         <div class="p-5 flex-1 flex flex-col">
-          <div class="text-[0.78rem] text-white/55 mb-1.5">{{ .Date.Format "Monday 2 January 2006" }}</div>
-          <div class="text-[1.1rem] font-semibold mb-2 leading-[1.3]">{{ with .Params.organiser }}{{ . }} &ndash; {{ end }}{{ .Title }}</div>
-          {{ with .Params.location }}<div class="text-[0.875rem] text-white/75 line-clamp-3 overflow-hidden">{{ . }}</div>{{ end }}
+          <div class="text-badge text-white/55 mb-1.5">{{ .Date.Format "Monday 2 January 2006" }}</div>
+          <div class="text-body-lg font-semibold mb-2 leading-[1.3]">{{ with .Params.organiser }}{{ . }} &ndash; {{ end }}{{ .Title }}</div>
+          {{ with .Params.location }}<div class="text-sm text-white/75 line-clamp-3 overflow-hidden">{{ . }}</div>{{ end }}
         </div>
       </a>
       {{ end }}
@@ -54,7 +54,7 @@
 
     {{ if $past }}
     <div class="mt-8">
-      <a href="/events/past/" class="inline-block px-6 py-[0.6rem] rounded text-[0.9rem] font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">View all past events &rarr;</a>
+      <a href="/events/past/" class="inline-block px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">View all past events &rarr;</a>
     </div>
     {{ end }}
 
