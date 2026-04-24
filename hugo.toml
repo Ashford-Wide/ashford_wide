@@ -20,10 +20,8 @@ disableHugoGeneratorInject = true
   foundedYear = 2012
   companyNumber = ""
   activePromo = ""
-  # 1180234252
-  featuredVideoID = ""
-  # "Ashford Wide - putting up Poppies & Flags for Remembrance"
-  featuredVideoTitle = ""
+  featuredVideoID = "1180234252"
+  featuredVideoTitle = "Ashford Wide - putting up Poppies & Flags for Remembrance"
   googleSiteVerification = "GOOGLE_CODE"
   facebookDomainVerification = "FACEBOOK_CODE"
   bingDomainVerification = "BING_CODE"
