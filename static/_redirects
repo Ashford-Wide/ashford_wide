@@ -1,23 +1,15 @@
-# WordPress → Hugo redirects
+# Static redirects (exact paths first, above wildcards)
 
-# News (was /news-and-events/ on WordPress)
+# News
 /news-and-events/    /news/    301
-/news-and-events/*    /news/:splat    301
-
-# Events (was /event on WordPress)
-
-/event/*    /events/:splat    301
 
 # WordPress common paths
 /wp-admin    /admin/    301
 /wp-admin/    /admin/    301
 /feed/    /index.xml    301
 /feed    /index.xml    301
-/category/*    /    301
-/author/*    /news/    301
 
-# 301 problems
-
+# Moved pages
 /elementor-15817/    /volunteer/    301
 /remembrance-day/remembrance-order-of-services/    /remembrance-day/order-of-services/    301
 /business-membership/    /membership/    301
@@ -25,9 +17,6 @@
 /events/list/    /events/    301
 /events/today/    /events/    301
 /events/month/    /events/    301
-/events/category/*    /events/    301
-/events/tag/*    /events/    301
-/category/news/*    /news/    301
 /event/road-closures-for-remembrance-sunday/    /remembrance-day/road-closures/    301
 /jubilee-picnic-event/    /events/jubilee-picnic-park/    301
 /spring-craft-fair/    /events/spring-craft-fair-2022/    301
@@ -50,117 +39,11 @@
 /welcome-to-ashford-wide/    /about/    301
 /timeless-ims/    /business-member/timeless-ims/    301
 
-# 410 pages
-
-/1969/    /404/    301
-/2256-2/    /404/    301
-/4099-2/    /404/    301
-/a-good-sized-company-is-looking-for-premises-possibly-ashford/    /404/    301
-/a-petition-to-surrey-county-council-to-stop-abellio-surrey-cuts-and-service-withdrawals/    /404/    301
-/a-symbol-of-hope/    /404/    301
-/air-training-corps/    /404/    301
-/alfie-needs-antibody-therapy-to-get-him-the-life-that-he-deserves/    /404/    301
-/another-car-has-smashed-into-a-home-in-ashford-and-its-in-the-very-same-street-just-days-later/    /404/    301
-/anyone-for-coffee/    /404/    301
-/appeal-for-witnesses-following-robbery-and-assault-in-ashford/    /404/    301
-/ashford-and-st-peters-hospital-launches-new-virtual-fracture-clinic-to-help-reduce-patient-numbers/    /404/    301
-/ashford-and-surrounding-area-clubs-listing-2016/    /404/    301
-/ashford-chamber-curry-night-monday-19th-may-7pm/    /404/    301
-/ashford-from-spelthorne-county-council/    /404/    301
-/ashford-history/    /404/    301
-/ashford-hospital/    /404/    301
-/ashford-is-open-again/    /404/    301
-/ashford-middlesex-a-bit-of-history/    /404/    301
-/ashford-nail-bar-could-face-20000-fine-for-employing-illegal-worker-after-immigration-raid/    /404/    301
-/ashford-office-project/    /404/    301
-/ashford-on-the-map-2014/    /404/    301
-/ashford-on-the-map-christmas-market-fast-approaching/    /404/    301
-/ashford-pride-craft-fayre-26th-april-2014/    /404/    301
-/ashford-pride-key-dates-for-2015/    /404/    301
-/ashford-pride-video/    /404/    301
-/ashford-tennis-club/    /404/    301
-/ashford-town-christmas-project-2016/    /404/    301
-/ashford-town-football-club/    /404/    301
-/ashford-youth-centre/    /404/    301
-/aspects-of-ashford/    /404/    301
-/back-heathrow-september-2016-news/    /404/    301
-/bp-sells-sunbury-business-centre-to-spelthorne-borough-council-for-360m/    /404/    301
-/brookland-college-employers-big-breakfast-meeting/    /404/    301
-/brooklands-college-land-up-to-sale/    /404/    301
-/brooklands-college-site-update/    /404/    301
-/business-needs-seminar-held-in-the-council-chamber-at-spelthorne-council/    /404/    301
-/carehome/    /404/    301
-/charity-showcase-charity-at-home-spelthorne-mental-health-association/    /404/    301
-/christmas-market-update-2018/    /404/    301
-/classic-car-rally/    /404/    301
-/coming-soon-to-a-retailer-near-you/    /404/    301
-/diddo-you-live-in-staines-ashford-or-sunbury/    /404/    301
-/digital-high-st-skills-training/    /404/    301
-/duke-of-kent-officially-opens-new-ashford-campus-of-brooklands-college/    /404/    301
-/easter-chemists/    /404/    301
-/energie-fitness/    /404/    301
-/event/ve-day-80/    /404/    301
-/former-brooklands-college-church-road-ashford-tw15-2xd-latest-news-september-2016/    /404/    301
-/forums/    /404/    301
-/free-health-check-for-your-finances/    /404/    301
-/happy-birthday-to-you/    /404/    301
-/happy-easter/    /404/    301
-/happy-new-year/    /404/    301
-/heathrow-ceo-connecting-uk-to-growth-quicker-and-cheaper/    /404/    301
-/heathrow-expansion-instant-impact-on-jobs/    /404/    301
-/heathrow-pick-grimshaw-for-expansion/    /404/    301
-/heathrow-special-needs-centre-saturday-superstars/    /404/    301
-/heathrow-to-fund-pro-expansion-campaign-group/    /404/    301
-/heathrows-shareholders-have-confirmed-plans-to-invest-an-additional-650-million-into-the-airport/    /404/    301
-/hello-world/    /404/    301
-/improvements-to-ashford-railway-station-jan-march-2015/    /404/    301
-/in-spelthorne-this-week-on-work-it/    /404/    301
-/indian-ocean-shooting-stars/    /404/    301
-/london-heathrow-the-full-five-pledges-announced-are/    /404/    301
-/mcdonalds-outlet-on-the-outskirts-of-ashford-good-or-bad-news/    /404/    301
-/merry-christmas-and-a-happy-new-year/    /404/    301
-/ms-denies-purchase-of-multi-stroy-carpark/    /404/    301
-/need-a-job-in-ashford/    /404/    301
-/new-business-start-ups-in-spelthorne/    /404/    301
-/new-hq-for-8th-ashford-scouts-group/    /404/    301
-/no-strings-badminton-spelthorne-2/    /404/    301
-/no-strings-badminton-spelthorne/    /404/    301
-/parcel-post-box-in-ashford/    /404/    301
-/payg-rail-consultation/    /404/    301
-/putting-the-life-back-into-our-towns-and-cities/    /404/    301
-/recent-flooding-assistance/    /404/    301
-/remembrance-day-2012/    /404/    301
-/ring-offer-landlords-free-property-management-for-1-year-homenewssurrey-newsm3-m3-crash-chaos-as-emergency-services-attend-three-serious-smashes-in-just-two-days/    /404/    301
-/sea-cadet-corps/    /404/    301
-/severe-flood-action/    /404/    301
-/south-west-trains-announce-plans-class-707-units-for-services-between-london-waterloo-and-windsor-eton-riverside/    /404/    301
-/spare-change-wanted/    /404/    301
-/spelthorne-borough-council-step-up-to-the-challenge/    /404/    301
-/spelthorne-gymnastics-club/    /404/    301
-/spelthorne-in-bloom-2019/    /404/    301
-/spelthorne-skills-and-careers-fair/    /404/    301
-/spelthorne-skills-careers-fair/    /404/    301
-/staines-upon-thames-development-london-square-sep-2016/    /404/    301
-/sunbury-youth-centre/    /404/    301
-/surrey-demands-meeting-over-refusal-to-hold-heathrow-expansion-events-in-two-boroughs/    /404/    301
-/tag/*    /404/    301
-/tfl2020/    /404/    301
-/the-duck-races/    /404/    301
-/the-flags-are-flying/    /404/    301
-/the-government-gives-the-green-light-to-heathrow/    /404/    301
-/the-great-wall-of-ashford/    /404/    301
-/the-lampost-banners-are-up-in-ashford-town-centre/    /404/    301
-/the-museum-shop/    /404/    301
-/the-spelthorne-app-to-report-information/    /404/    301
-/the-staines-upon-thames-santa-fun-run-2016/    /404/    301
-/timeless-it/    /404/    301
-/toofia-newsletter-hits-the-town/    /404/    301
-/turn-back-time/    /404/    301
-/tw15-public-houses/    /404/    301
-/unemployment-information-for-spelthorne-by-age-and-duration/    /404/    301
-/ve-day-75/    /404/    301
-/walton-centre-for-retired-people/    /404/    301
-/were-not-flagging/    /404/    301
-/why-not-treat-yourself/    /404/    301
-/your-local-rehearsal-space/    /404/    301
-/your-views-on-brooklands-college-ashford-new-campus/    /404/    301
+# Wildcard redirects
+/news-and-events/*    /news/:splat    301
+/event/*    /events/:splat    301
+/category/*    /    301
+/author/*    /news/    301
+/events/category/*    /events/    301
+/events/tag/*    /events/    301
+/category/news/*    /news/    301
