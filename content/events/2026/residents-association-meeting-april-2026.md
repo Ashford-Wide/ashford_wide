@@ -12,7 +12,7 @@ description: "Ashford Residents Association's April meeting"
 
 ## What's happening
 
-Ashford Residents Association will be holding their next meeting on Saturday 24 April at 10am, at Ashford Baptist Church.
+Ashford Residents Association will be holding their next meeting on Saturday 25 April from 10am, at Ashford Baptist Church.
 
 More information about Ashford Residents Association and how you get join in with their work can be found [on their website](https://ashfordra.co.uk/).
 
