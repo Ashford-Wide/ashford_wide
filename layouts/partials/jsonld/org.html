@@ -41,7 +41,7 @@
   
   "areaServed" (slice
     (dict "@type" "City" "name" "Ashford" "sameAs" "https://www.wikidata.org/wiki/Q725270")
-    (dict "@type" "GeoShape" "polygon" .Site.Data.ashford_geo.areaServed.polygon)
+    (dict "@type" "GeoShape" "polygon" ((resources.Get "geo/ashford_geo.json" | transform.Unmarshal).polygon))
   )
 ) -}}
 
