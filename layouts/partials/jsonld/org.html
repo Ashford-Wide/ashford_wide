@@ -33,15 +33,23 @@
   {{- $org = merge $org (dict "identifier" $identifier) -}}
 {{- end -}}
 
-{{- $org = merge $org (dict 
-  "knowsAbout" (slice 
-    
+{{- $geojson := "assets/geo/ashford.geojson" | os.ReadFile | transform.Unmarshal -}}
+{{- $ring := index (index (index $geojson.features 0).geometry.coordinates 0) 0 -}}
+{{- $pairs := slice -}}
+{{- range $ring -}}
+  {{- $pairs = $pairs | append (printf "%g %g" (index . 1) (index . 0)) -}}
+{{- end -}}
+{{- $polygon := delimit $pairs " " -}}
+
+{{- $org = merge $org (dict
+  "knowsAbout" (slice
+
     (dict "@type" "Thing" "name" "Community Development" "sameAs" "https://www.wikidata.org/wiki/Q5154974")
   )
-  
+
   "areaServed" (slice
     (dict "@type" "City" "name" "Ashford" "sameAs" "https://www.wikidata.org/wiki/Q725270")
-    (dict "@type" "GeoShape" "polygon" ((resources.Get "geo/ashford_geo.json" | transform.Unmarshal).polygon))
+    (dict "@type" "GeoShape" "polygon" $polygon)
   )
 ) -}}
 
