@@ -44,6 +44,10 @@ disableHugoGeneratorInject = true
   [privacy.youTube]
     disable = true
     privacyEnhanced = true
+  [privacy.vimeo]
+    disable = false
+    enableDNT = true
+    simple = false
 
 [permalinks]
   [permalinks.page]
