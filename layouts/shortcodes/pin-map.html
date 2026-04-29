@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div style="position: relative; z-index: 0; margin: 1.5rem 0; border-radius: 0.5rem; overflow: hidden;">
+  <div id="closure-map" style="height: 420px;"></div>
+</div>
+<script>
+(function () {
+  var map = L.map('closure-map');
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+  fetch('/poppies-2026.geojson')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var layer = L.geoJSON(data, {
+        style: function () {
+          return {
+            color: '#A72326',
+            weight: 7,
+            opacity: 0.85,
+            dashArray: '10, 10'
+          };
+        },
+        onEachFeature: function (feature, layer) {
+          if (feature.properties && feature.properties.label) {
+            layer.bindPopup(feature.properties.label);
+          }
+        }
+      }).addTo(map);
+      map.fitBounds(layer.getBounds(), { padding: [20, 20] });
+    });
+}());
+</script>
