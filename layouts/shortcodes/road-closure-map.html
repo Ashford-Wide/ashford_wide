@@ -10,7 +10,7 @@
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 19
   }).addTo(map);
-  fetch('/closures.geojson')
+  fetch('/geojson/closures.geojson')
     .then(function (r) { return r.json(); })
     .then(function (data) {
       var layer = L.geoJSON(data, {
