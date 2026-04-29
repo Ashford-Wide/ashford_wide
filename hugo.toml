@@ -39,7 +39,11 @@ disableHugoGeneratorInject = true
 
 [privacy]
   [privacy.instagram]
+    disable = false
     simple = true
+  [privacy.youTube]
+    disable = true
+    privacyEnhanced = true
 
 [permalinks]
   [permalinks.page]
