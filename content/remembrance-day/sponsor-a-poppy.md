@@ -14,6 +14,8 @@ Each year, Ashford Wide places thousands of poppies across the town centre in th
 
 You can sponsor a poppy to be displayed in the town centre as part of our annual Remembrance display. Your sponsored poppy can carry a personal dedication in memory of a loved one.
 
+{{< pin-map >}}
+
 ## How to Sponsor
 
 Sponsorships are available from £5. To sponsor a poppy, please [contact us](/contact) with:
