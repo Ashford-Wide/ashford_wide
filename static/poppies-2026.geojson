@@ -1,0 +1,509 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Little legs",
+                "w3w": "///zealous.dreams.police"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46775,
+                    51.43581667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "County carpet",
+                "w3w": "///spoke.studio.wires"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4675333333,
+                    51.43581667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "County carpet",
+                "w3w": "///nodded.poems.exists"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4616,
+                    51.43263333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Owen jones",
+                "w3w": "///calculating.atomic.wing"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4665333333,
+                    51.43568333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///crisis.green.shall"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4672333333,
+                    51.43585
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///oiled.glove.mess"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4659666667,
+                    51.43515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///kinds.energetic.they"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4653666667,
+                    51.43425
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///nurses.skill.nerve"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46515,
+                    51.43401667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///shirts.bank.pest"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4642,
+                    51.43346667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///baking.smashes.slows"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4617666667,
+                    51.43285
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///ranked.lamps.print"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4618666667,
+                    51.43275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///relate.cages.stick"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4613,
+                    51.43258333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///defend.rope.glitz"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4607833333,
+                    51.43246667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wotws",
+                "w3w": "///riding.gently.song"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4598333333,
+                    51.43228333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Simon Janes",
+                "w3w": "///rush.ticket.leader"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4662333333,
+                    51.43538333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ned ruffle",
+                "w3w": "///gains.nods.bucket"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4658833333,
+                    51.43506667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Guardian bagels",
+                "w3w": "///sums.land.feast"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4606,
+                    51.43255
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Chris derby",
+                "w3w": "///spine.family.vague"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46385,
+                    51.43346667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "FM",
+                "w3w": "///punt.noble.silent"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4653666667,
+                    51.43421667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "MSK",
+                "w3w": "///digit.ladder.surely"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4656166667,
+                    51.4346
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "We will remember them",
+                "w3w": "///spider.shade.locker"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4622,
+                    51.43276667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "For all those loved and lost",
+                "w3w": "///plan.pill.clean"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4618166667,
+                    51.43275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Karen",
+                "w3w": "///hits.pirate.worked"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4598333333,
+                    51.4324
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Boyce",
+                "w3w": "///milk.rarely.slug"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4613333333,
+                    51.43271667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Csj",
+                "w3w": "///pile.zeal.frogs"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4649333333,
+                    51.43403333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Norma Brown",
+                "w3w": "///tune.awake.shut"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4653666667,
+                    51.43411667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///loose.life.punk"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4651833333,
+                    51.43403333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "The Ash Women\u2019s Club",
+                "w3w": "///spin.appear.apple"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4642333333,
+                    51.43341667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Doug Brown",
+                "w3w": "///matter.smiles.humid"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4639,
+                    51.43336667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///logo.gossip.arts"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46385,
+                    51.43336667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///images.looked.also"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4634166667,
+                    51.43325
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///racing.entertainer.events"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46255,
+                    51.43296667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///petal.oath.traded"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4621166667,
+                    51.4328
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "The shutter designer",
+                "w3w": "///pages.gums.natively"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4618666667,
+                    51.43266667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ashdown",
+                "w3w": "///plan.pill.clean"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4618166667,
+                    51.43275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "The shutter designer",
+                "w3w": "///fines.offer.parent"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4619833333,
+                    51.4328
+                ]
+            }
+        }
+    ]
+}
