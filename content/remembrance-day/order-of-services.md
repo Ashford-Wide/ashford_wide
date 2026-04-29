@@ -28,7 +28,7 @@ The service is held at the War Memorial in Ashford town centre and is led by loc
 
 <p itemscope itemtype="https://schema.org/Place">
   <span itemprop="name">The War Memorial</span> is located in the 
-  <span itemprop="address">town centre</span>. 
+  <span itemprop="address">centre of town, at the junction of Church Road and Fordbridge Road</span>. 
   
   <span itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
     <meta itemprop="latitude" content="51.4327291" />
