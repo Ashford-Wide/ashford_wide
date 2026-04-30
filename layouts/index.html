@@ -83,7 +83,7 @@
         {{- $aspect := "aspect-[16/9]" -}}
         {{- if eq .Params.imageAspect "square" }}{{- $aspect = "aspect-square" -}}{{ end }}
         {{ with .Params.image }}
-        <div class="{{ $aspect }} overflow-hidden bg-image-bg shrink-0">{{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-full object-cover opacity-70" "loading" "lazy" "width" 800) }}</div>
+        <div class="{{ $aspect }} overflow-hidden bg-image-bg shrink-0">{{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-full h-full object-cover" "loading" "lazy" "width" 800) }}</div>
         {{ end }}
         <div class="p-5 flex-1 flex flex-col">
           <div class="text-badge text-white/55 mb-1.5">{{ .Date.Format "2 January 2006" }}{{ with .Params.location
