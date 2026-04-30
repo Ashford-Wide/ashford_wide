@@ -27,17 +27,17 @@
     {{ if gt $paginator.TotalPages 1 }}
     <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
       {{ if $paginator.HasPrev }}
-      <a href="{{ $paginator.Prev.URL }}" class="px-4 py-2 rounded bg-surface text-white/80 hover:text-white hover:opacity-80 transition-all text-sm font-medium">&larr; Newer</a>
+      <a href="{{ $paginator.Prev.URL }}" class="px-6 py-[0.6rem] rounded bg-surface text-white/80 hover:text-white transition-all text-body-sm font-semibold">&larr; Newer</a>
       {{ else }}
-      <span class="px-4 py-2 rounded bg-surface text-white/30 text-sm font-medium cursor-not-allowed">&larr; Newer</span>
+      <span class="px-6 py-[0.6rem] rounded bg-surface text-white/30 text-body-sm font-semibold cursor-not-allowed">&larr; Newer</span>
       {{ end }}
 
       <span class="px-4 py-2 text-muted text-sm">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
 
       {{ if $paginator.HasNext }}
-      <a href="{{ $paginator.Next.URL }}" class="px-4 py-2 rounded bg-surface text-white/80 hover:text-white hover:opacity-80 transition-all text-sm font-medium">Older &rarr;</a>
+      <a href="{{ $paginator.Next.URL }}" class="px-6 py-[0.6rem] rounded bg-surface text-white/80 hover:text-white transition-all text-body-sm font-semibold">Older &rarr;</a>
       {{ else }}
-      <span class="px-4 py-2 rounded bg-surface text-white/30 text-sm font-medium cursor-not-allowed">Older &rarr;</span>
+      <span class="px-6 py-[0.6rem] rounded bg-surface text-white/30 text-body-sm font-semibold cursor-not-allowed">Older &rarr;</span>
       {{ end }}
     </nav>
     {{ end }}
