@@ -22,15 +22,15 @@
     {{- $categories = $categories | uniq | sort -}}
     {{ if gt (len $categories) 1 }}
     <div class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter by category">
-      <button class="biz-filter px-3.5 py-1.5 border rounded-[2rem] text-fine font-semibold cursor-pointer transition-colors duration-150 bg-surface text-white border-surface" data-filter="all">All</button>
+      <button class="biz-filter px-3.5 py-1.5 border rounded text-fine font-semibold cursor-pointer transition-colors duration-150 bg-surface text-white border-surface" data-filter="all">All</button>
       {{ range $categories }}
-      <button class="biz-filter px-3.5 py-1.5 border border-border-strong rounded-[2rem] bg-white text-text text-fine font-semibold cursor-pointer transition-colors duration-150 hover:border-surface" data-filter="{{ . | urlize }}">{{ . }}</button>
+      <button class="biz-filter px-3.5 py-1.5 border border-border-strong rounded bg-white text-text text-fine font-semibold cursor-pointer transition-colors duration-150 hover:border-surface" data-filter="{{ . | urlize }}">{{ . }}</button>
       {{ end }}
     </div>
     {{ end }}
 
     {{/* ── Directory grid ── */}}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="biz-grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="biz-grid">
       {{- range (sort $businesses "name") -}}
       <div class="biz-card bg-white border border-border rounded overflow-hidden flex flex-col transition-all duration-200 hover:shadow-lg" data-category="{{ .category | urlize }}">
         {{ if .logo }}
@@ -46,7 +46,7 @@
               {{ else }}
               <span class="text-base font-bold text-surface leading-[1.3]">{{ .name }}</span>
               {{ end }}
-              {{ with .category }}<span class="inline-block text-xs font-bold uppercase tracking-[0.05em] text-muted bg-ui-subtle py-[0.15rem] px-2 rounded-[2rem] w-fit">{{ . }}</span>{{ end }}
+              {{ with .category }}<span class="inline-block text-xs font-bold uppercase tracking-[0.05em] text-muted bg-ui-subtle py-[0.15rem] px-2 rounded w-fit">{{ . }}</span>{{ end }}
             </div>
           </div>
           {{ with .description }}<p class="text-sm text-text leading-[1.5] flex-1">{{ . }}</p>{{ end }}
