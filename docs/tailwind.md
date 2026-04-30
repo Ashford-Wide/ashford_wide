@@ -31,7 +31,7 @@ All design values are defined as CSS custom properties in the `@theme` block in 
 
 ### Typography
 
-Custom font sizes beyond Tailwind's built-in scale. For sizes that match Tailwind defaults, use those directly (`text-xs`, `text-sm`, `text-base`, `text-lg`, `text-xl`, `text-2xl`, etc.).
+Custom font sizes beyond Tailwind's built-in scale. Always prefer these tokens over raw Tailwind size classes. Use `text-sm` for small UI text that doesn't warrant a named token (e.g. pagination labels, stat sublabels). Avoid `text-xs`, `text-lg`, `text-xl`, `text-2xl` — use the nearest token instead.
 
 | Token | Value | Utility | Usage |
 |---|---|---|---|
@@ -69,8 +69,8 @@ Custom font sizes beyond Tailwind's built-in scale. For sizes that match Tailwin
 
 | Token | Value | Utility | Usage |
 |---|---|---|---|
-| `--translate-lift` | `3px` | `-translate-y-lift` | Card hover lift (standard) |
-| `--translate-lift-sm` | `2px` | `-translate-y-lift-sm` | Card hover lift (smaller, e.g. business directory) |
+| `--translate-lift` | `3px` | `-translate-y-lift` | Card hover lift — defined but not currently applied |
+| `--translate-lift-sm` | `2px` | `-translate-y-lift-sm` | Card hover lift — defined but not currently applied |
 
 ### Animations
 
