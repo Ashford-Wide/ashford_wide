@@ -11,7 +11,7 @@
   <div class="max-w-container mx-auto px-6 relative z-10 w-full">
     <div class="max-w-[680px]">
       <h1 class="text-h1 font-bold leading-[1.15] mb-4">{{ .Site.Params.description }}</h1>
-      <p class="text-lg mb-7 opacity-90 max-w-[520px]">Supporting our town with events, promoting local business, and building community spirit.</p>
+      <p class="text-body-lg mb-7 max-w-[520px]">Supporting our town with events, promoting local business, and building community spirit.</p>
       <div class="flex gap-3 flex-wrap">
         <a href="/events"
           class="inline-block px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">Upcoming Events</a>
@@ -28,7 +28,7 @@
 {{- end -}}
 
 {{/* ── About ── */}}
-<section class="py-4 bg-ui-light">
+<section class="py-8 bg-ui-light">
   <div class="max-w-container mx-auto px-6">
     <h2 class="text-h3 font-bold mb-1.5">About Ashford Wide</h2>
     <p class="text-muted mb-10 text-body-md">Our vision is to make Ashford a thriving town centre the whole community is proud of.</p>
@@ -49,9 +49,9 @@
       <div class="rounded overflow-hidden" style="padding:56.25% 0 0 0;position:relative;">
         <div id="vimeo-facade" role="button" tabindex="0" aria-label="Play video: {{ $videoTitle }}"
           data-video-id="{{ $videoID }}"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;{{ if $thumb }}background:url('{{ $thumb }}') center/cover no-repeat #111;{{ else }}background:#111;{{ end }}">
+          style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;{{ if $thumb }}background:url('{{ $thumb }}') center/cover no-repeat #212529;{{ else }}background:#212529;{{ end }}">
           <div
-            style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(23,35,34,0.82);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(33,37,41,0.82);border-radius:50%;display:flex;align-items:center;justify-content:center;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
               <polygon points="6,3 20,12 6,21" />
             </svg>
