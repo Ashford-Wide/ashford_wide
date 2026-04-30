@@ -36,7 +36,7 @@
           {{ with .Params.address }}
           <div class="flex flex-wrap gap-x-3 items-baseline">
             <dt class="font-semibold text-surface w-20 shrink-0">Address</dt>
-            <dd class="flex items-center gap-2 text-text">{{ . }}{{ with $.Params.placeId }}<a href="https://www.google.com/maps/search/?api=1&query={{ $.Params.address | urlquery }}&query_place_id={{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-lift transition-all duration-200" aria-label="View on Google Maps"><span class="[&>svg]:size-4">{{ partial "icons/pin.html" . }}</span></a>{{ end }}</dd>
+            <dd class="flex items-center gap-2 text-text">{{ . }}{{ with $.Params.placeId }}<a href="https://www.google.com/maps/search/?api=1&query={{ $.Params.address | urlquery }}&query_place_id={{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" aria-label="View on Google Maps"><span class="[&>svg]:size-4">{{ partial "icons/pin.html" . }}</span></a>{{ end }}</dd>
           </div>
           {{ end }}
           {{ with .Params.telephone }}
@@ -75,7 +75,7 @@
           {{ range $socials }}
           {{- $s := . -}}
           {{ with index $.Params $s.key }}
-          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white hover:-translate-y-lift transition-all duration-200" aria-label="{{ $.Title }} on {{ $s.label }}">
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" aria-label="{{ $.Title }} on {{ $s.label }}">
             {{ partial $s.icon . }}
           </a>
           {{ end }}
