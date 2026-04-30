@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<section class="pt-8 pb-16">
+<section class="py-12">
   <div class="max-w-container mx-auto px-6">
     {{ with .Content }}
     <div class="article-content max-w-[800px] mx-auto mb-12">
@@ -23,14 +23,14 @@
 
     {{- range $allYears -}}
     {{- $entries := index hugo.Data.poppies . -}}
-    <h2 class="text-2xl font-bold text-surface mb-6 mt-10 first:mt-0">{{ . }}</h2>
+    <h2 class="text-display-sm font-bold text-surface mb-6 mt-10 first:mt-0">{{ . }}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {{- range $entries -}}
-      <div class="bg-white border border-border rounded-lg p-6 flex flex-col items-center text-center shadow-sm">
+      <div class="bg-white border border-border rounded p-6 flex flex-col items-center text-center shadow">
         {{ partial "image.html" (dict "src" "/images/poppy.png" "alt" "Poppy" "class" "w-28 h-auto mb-4") }}
         <p class="text-base font-bold text-surface leading-snug">{{ .name }}</p>
         {{ with .dedication }}<p class="text-sm text-text mt-2 leading-relaxed italic">{{ . }}</p>{{ end }}
-        {{ with .from }}<p class="text-xs text-muted mt-3">&mdash; {{ . }}</p>{{ end }}
+        {{ with .from }}<p class="text-fine text-muted mt-3">&mdash; {{ . }}</p>{{ end }}
       </div>
       {{- end -}}
     </div>
