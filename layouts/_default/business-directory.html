@@ -32,7 +32,7 @@
     {{/* ── Directory grid ── */}}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="biz-grid">
       {{- range (sort $businesses "name") -}}
-      <div class="biz-card bg-white border border-border rounded overflow-hidden flex flex-col transition-all duration-200 hover:shadow-lg hover:-translate-y-lift-sm" data-category="{{ .category | urlize }}">
+      <div class="biz-card bg-white border border-border rounded overflow-hidden flex flex-col transition-all duration-200 hover:shadow-lg" data-category="{{ .category | urlize }}">
         {{ if .logo }}
         <div class="px-5 pt-4 pb-2 bg-ui-light border-b border-ui-subtle flex items-center">
           {{ partial "image.html" (dict "src" .logo "alt" .name "class" "h-12 w-auto object-contain" "width" 300) }}
