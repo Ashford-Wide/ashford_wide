@@ -79,7 +79,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{ range $upcoming }}
       <a href="{{ .Permalink }}"
-        class="bg-surface text-white rounded overflow-hidden shadow hover:shadow-lg transition-all duration-250 hover:-translate-y-lift flex flex-col group">
+        class="bg-surface text-white rounded overflow-hidden shadow hover:shadow-lg transition-all duration-250 flex flex-col group">
         {{- $aspect := "aspect-[16/9]" -}}
         {{- if eq .Params.imageAspect "square" }}{{- $aspect = "aspect-square" -}}{{ end }}
         {{ with .Params.image }}
