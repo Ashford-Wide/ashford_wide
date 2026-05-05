@@ -1,8 +1,8 @@
 ---
 title: "Volunteer"
-description: "Help make Ashford a better place — volunteer with Ashford Wide"
+description: "Make a difference in Ashford: volunteer with Ashford Wide"
 date: 2024-01-01
-lastmod: 2026-04-06
+lastmod: 2026-05-05
 ---
 
 ## Volunteer with Ashford Wide
@@ -18,9 +18,9 @@ We need volunteers to help at our events throughout the year, from marshalling a
 Together, we work to bring people together and make Ashford thrive through projects like:
 
 - Classic car show
-- Rememberance Day
+- [Rememberance Day](/remembrance-day/)
 - Christmas Market
-- Town flags
+- [Town flags](/town-flags)
 - and much more!
 
 ## Get Involved
@@ -31,4 +31,4 @@ We are committed to providing a safe and supportive environment for everyone inv
 
 All volunteers may be required to complete basic safeguarding training and, where appropriate, an enhanced DBS check before starting their role.
 
-If you have any concerns about safeguarding, please speak to a member of our team or contact our Designated Safeguarding Lead at [TBA].
+If you have any concerns about safeguarding, please [speak to a member of our team](/contact) or contact our Designated Safeguarding Lead at [TBA].
