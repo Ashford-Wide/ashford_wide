@@ -2,7 +2,7 @@
 title: Business Membership
 description: Grow your business with Ashford Wide business membership
 date: 2024-01-01
-lastmod: 2026-04-06
+lastmod: 2026-05-05
 sitemap:
   disable: true
 ---
