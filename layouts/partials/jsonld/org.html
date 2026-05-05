@@ -20,7 +20,6 @@
 {{- end -}}
 {{- with .Site.Params.foundingDate }}{{- $org = merge $org (dict "foundingDate" .) -}}{{- end -}}
 {{- with .Site.Params.email }}{{- $org = merge $org (dict "email" .) -}}{{- end -}}
-{{- with .Site.Params.phone }}{{- $org = merge $org (dict "telephone" .) -}}{{- end -}}
 
 {{- with .Site.Params.companyNumber -}}
   {{- $identifier := dict 
