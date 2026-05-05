@@ -13,7 +13,7 @@ Throughout the year, we proudly raise two special flags to commemorate key event
 
 By displaying these flags, we not only pay tribute to these occasions but also add a vibrant, unified spirit to our town. The colourful displays bring life and character to our streets, reminding everyone—residents and visitors alike—of the pride we share in our community.
 
-This initiative is run entirely by volunteers who are passionate about celebrating and preserving our local heritage. We are always looking for new people to join in, lend a hand, and help us continue this meaningful tradition. Every contribution, big or small, makes a real difference. Email us at [{{< param "email" >}}](mailto:{{< param "email" >}}) or see the volunteers page.
+This initiative is run entirely by volunteers who are passionate about celebrating and preserving our local heritage. We are always looking for new people to join in, lend a hand, and help us continue this meaningful tradition. Every contribution, big or small, makes a real difference. Email us at [{{< param "email" >}}](mailto:{{< param "email" >}}) or see [the volunteers page](/volunteer/).
 
 These events include:
 - April – St George’s Day 
