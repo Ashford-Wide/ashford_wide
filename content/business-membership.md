@@ -31,8 +31,5 @@ You can still support our work even if membership is not for you.
 
 - [Donate to us directly or via Paypal](/support)
 - [Sponsor a Remembrance Day Poppy](/remembrance-day/sponsor-a-poppy/)
+- [Volunteering at our events](/volunteer/)
 - Support us as you shop (in-store and online)
-
-## How to Join
-
-Ready to become an Ashford Wide business member? [Get in touch](/contact) with us today and one of our team will be in touch to discuss your membership options.
