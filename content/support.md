@@ -47,4 +47,4 @@ Support us at the Co-op in Ashford and when shopping online
 
 ## Become an Ashford Wide Member
 
-There are two sides to our membership: as an individual, or as a business. Click on either option to find out more about each type of membership.
+There are two sides to our membership: as an individual, or as a business. Find [how you can become a member](/membership) and support the work of Ashford Wide.
