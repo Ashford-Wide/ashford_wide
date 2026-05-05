@@ -2,13 +2,13 @@
 title: About Ashford Wide
 description: Working together for a better Ashford
 date: 2024-01-01
-lastmod: 2026-04-06
+lastmod: 2026-05-05
 ---
 ## Who We Are
 
 Ashford Wide is Ashford’s main community organisation. We’re a non-profit community group running only with volunteers. We bring together Residents, Businesses, Community Groups and Town Events in Ashford, Surrey.
 
-## Working together for a better Ashford.
+## Working together for a better Ashford
 
 In the past there were several local groups working independently, all with different objectives, but all with the same goal.
 
