@@ -1,4 +1,4 @@
-{{- $title := cond .IsHome (printf "%s — %s" .Site.Title .Site.Params.tagline) (printf "%s | %s" .Title .Site.Title) -}}
+{{- $title := cond .IsHome (printf "%s — %s" .Site.Title .Site.Params.description) (printf "%s | %s" .Title .Site.Title) -}}
 {{- $description := or .Description .Site.Params.description -}}
 {{- $url := .Permalink -}}
 
