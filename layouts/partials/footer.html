@@ -2,11 +2,10 @@
   <div class="max-w-container mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-10">
       <div>
-        <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-3">
           <img src="/images/logo.svg" alt="Ashford Wide" class="h-10 w-auto">
-          <div class="text-subtitle font-bold text-surface">Ashford Wide</div>
-        </div>
-        <p class="mt-2 italic text-body-sm text-surface/75">{{ .Site.Params.description }}</p>
+          <span class="text-body-lg font-bold text-surface leading-[1.2]">Ashford Wide<span class="block text-fine font-normal text-muted">{{ .Site.Params.description }}</span></span>
+        </a>
         <p class="mt-4 text-sm text-surface/70">
           We're a non-profit community group running only with volunteers.
         </p>
