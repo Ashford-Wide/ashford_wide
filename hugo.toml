@@ -1,5 +1,5 @@
 baseURL = "https://ashford-wide.pages.dev"
-languageCode = "en-GB"
+locale = "en-GB"
 title = "Ashford Wide"
 publishDir = "public"
 paginate = 9
@@ -29,6 +29,11 @@ disableHugoGeneratorInject = true
   instagram = "https://www.instagram.com/ashfordwide"
   linkedin = ""
   googleBusinessProfile = ""
+
+[security]
+  [security.node]
+    [security.node.permissions]
+      disable = true
 
 [markup.goldmark.renderer]
   unsafe = true
