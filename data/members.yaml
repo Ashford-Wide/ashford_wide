@@ -1,8 +1,9 @@
-- name: "Timeless IMS"
-  logo: "/images/members/timeless-ims.png"
-
-- name: "Spelthorne Borough Council"
-  logo: "/images/members/spelthorne-borough-council.png"
-
-- name: "Surrey County Council"
-  logo: "/images/members/surrey-county-council.png"
+members:
+  - name: "Timeless IMS"
+    logo: "/images/members/timeless-ims.png"
+  
+  - name: "Spelthorne Borough Council"
+    logo: "/images/members/spelthorne-borough-council.png"
+  
+  - name: "Surrey County Council"
+    logo: "/images/members/surrey-county-council.png"
