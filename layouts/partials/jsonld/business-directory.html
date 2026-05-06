@@ -1,5 +1,5 @@
 {{- $page := . -}}
-{{- $businesses := hugo.Data.businesses -}}
+{{- $businesses := hugo.Data.businesses.businesses -}}
 {{- $sorted := sort $businesses "name" -}}
 
 {{- $orgRef := dict "@id" (print .Site.BaseURL "#organization") -}}
