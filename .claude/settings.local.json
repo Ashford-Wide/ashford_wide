@@ -14,7 +14,22 @@
       "Bash(gh pr:*)",
       "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(json.dumps\\(i, indent=2\\)\\) for i in data['results'] if i['level'] == 'violation']\")",
       "Bash(python3 -c ':*)",
-      "WebFetch(domain:decapbridge.com)"
+      "WebFetch(domain:decapbridge.com)",
+      "Bash(otool -L /Users/alasdair/Developer/ashford_wide/node_modules/@tailwindcss/node/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node)",
+      "Bash(hugo --minify)",
+      "Bash(node -e ' *)",
+      "Bash(/Users/alasdair/Developer/ashford_wide/node_modules/.bin/postcss --version)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('type:', d.get\\('type'\\)\\); print\\('exports keys:', list\\(d.get\\('exports', {}\\).keys\\(\\)\\)[:10]\\); print\\('main:', d.get\\('main'\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('exports'\\), indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('type:', d.get\\('type'\\)\\); e=d.get\\('exports',{}\\); import json; print\\(json.dumps\\(e, indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('type:', d.get\\('type'\\)\\); print\\(json.dumps\\(d.get\\('exports',{}\\), indent=2\\)\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e \"console.log\\('Node ABI:', process.versions.modules, 'NAPI:', process.versions.napi\\)\")",
+      "Bash(npm view *)",
+      "Bash(hugo --logLevel debug --minify)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('version:', d.get\\('version'\\)\\); print\\('type:', d.get\\('type'\\)\\); print\\('main:', d.get\\('main','none'\\)\\); print\\('bin:', d.get\\('bin',{}\\)\\)\")",
+      "Bash(node /Users/alasdair/Developer/ashford_wide/node_modules/postcss-cli/index.js --version)",
+      "Bash(node /Users/alasdair/Developer/ashford_wide/node_modules/postcss-cli/index.js --config /Users/alasdair/Developer/ashford_wide/postcss.config.js)"
     ]
   }
 }
