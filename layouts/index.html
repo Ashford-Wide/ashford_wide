@@ -143,7 +143,7 @@
 </section>
 
 {{/* ── Member Logos marquee ── */}}
-{{- $members := where hugo.Data.businesses "logo" "!=" nil -}}
+{{- $members := where hugo.Data.businesses.businesses "logo" "!=" nil -}}
 {{ if $members }}
 <section class="pt-4">
   <h2 class="text-center pt-6 pb-2 text-h3 font-bold">Our Business Members</h2>
