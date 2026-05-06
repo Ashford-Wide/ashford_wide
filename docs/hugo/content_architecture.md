@@ -116,10 +116,12 @@ layout: "business-directory"  # optional — overrides the default template
 ---
 ```
 
-## RSS Feeds
+## Atom Feeds
 
-The site has three RSS feeds which are built automatically and can be used to pass data onto other systems:
+The site has three Atom 1.0 feeds built automatically at the same URLs previously used for RSS:
 
-- `/index.xml` - Site wide feed
-- `/events/index.xml` - Event specific feed
-- `/news/index.xml` - News specific feed
+- `/index.xml` - Site-wide feed
+- `/events/index.xml` - Events feed
+- `/news/index.xml` - News feed
+
+Hugo's RSS output format is used internally (keeping URLs as `index.xml`), but the template at `layouts/_default/rss.xml` outputs valid Atom 1.0 XML. The autodiscovery `<link>` in `head.html` uses `type="application/atom+xml"`.
