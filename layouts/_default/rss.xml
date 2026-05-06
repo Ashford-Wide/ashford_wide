@@ -1,0 +1,35 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+    {{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+    {{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+    {{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ .Site.LanguageCode }}">
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <link rel="self" type="application/atom+xml" href="{{ .Permalink }}index.xml"/>
+  <link rel="alternate" type="text/html" href="{{ .Permalink }}"/>
+  <updated>{{ now.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+  <id>{{ .Permalink }}</id>
+  <author>
+    <name>{{ .Site.Title }}</name>
+  </author>
+  {{- range $pages }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link rel="alternate" type="text/html" href="{{ .Permalink }}"/>
+    <id>{{ .Permalink }}</id>
+    <published>{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</published>
+    <updated>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+    {{- with .Summary }}
+    <summary type="text">{{ . | plainify | htmlUnescape }}</summary>
+    {{- end }}
+  </entry>
+  {{- end }}
+</feed>
