@@ -188,3 +188,21 @@ collections:
               - { label: Instagram, name: instagram, widget: string, required: false }
               - { label: X (Twitter), name: x, widget: string, required: false }
               - { label: Logo, name: logo, widget: image, required: false }
+
+  - name: team
+    label: Team
+    files:
+      - label: Team Members
+        name: team
+        file: data/team.yaml
+        fields:
+          - label: Team Members
+            name: team
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: role, widget: string }
+              - { label: LinkedIn, name: linkedin, widget: string, required: false }
+              - { label: Instagram, name: instagram, widget: string, required: false }
+              - { label: Facebook, name: facebook, widget: string, required: false }
+              - { label: Twitter / X, name: twitter, widget: string, required: false }
