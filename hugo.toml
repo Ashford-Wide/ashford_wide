@@ -33,7 +33,9 @@ disableHugoGeneratorInject = true
 [security]
   [security.node]
     [security.node.permissions]
-      disable = true
+      allowAddons = ["tailwindcss", "postcss"]
+      allowWorker = ["tailwindcss", "postcss"]
+      allowChildProcess = ["tailwindcss", "postcss"]
 
 [markup.goldmark.renderer]
   unsafe = true
