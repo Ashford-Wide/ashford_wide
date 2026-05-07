@@ -34,6 +34,13 @@ disableHugoGeneratorInject = true
   instagram = "https://www.instagram.com/ashfordwide"
   linkedin = ""                              # LinkedIn page URL, or blank if not set
 
+[security]
+  [security.node]
+    [security.node.permissions]
+      allowAddons        = ["tailwindcss", "postcss"]  # lightningcss is a native addon used by @tailwindcss/postcss
+      allowWorker        = ["tailwindcss", "postcss"]  # Tailwind uses worker threads during CSS processing
+      allowChildProcess  = ["tailwindcss", "postcss"]  # detect-libc spawns getconf on some Linux setups
+
 [markup.goldmark.renderer]
   unsafe = true   # Allows raw HTML inside Markdown (used in contact form, support page)
 
@@ -51,5 +58,7 @@ disableHugoGeneratorInject = true
 ```
 
 [`buildFuture = true`](https://gohugo.io/configuration/build/) is essential — without it Hugo will not render pages for future-dated events.
+
+The `[security.node.permissions]` block is required because this project processes CSS via Hugo's `postCSS` pipe with `@tailwindcss/postcss`. Hugo's Node permission model defaults only cover a process named `tailwindcss` (used by the native `css.TailwindCSS` pipe); since this project invokes PostCSS as a separate process, `postcss` must be added explicitly. All three permissions are needed: `lightningcss` is a native addon, Tailwind uses worker threads, and `detect-libc` (a Tailwind dependency) spawns `getconf` as a child process on some Linux environments. The `tailwindcss` entries preserve the defaults so they are not silently dropped.
 
 The [`permalinks`](https://gohugo.io/configuration/permalinks/) rules use `:contentbasename` (filename only, no directory) so that news and events can be organised into year subdirectories without the year appearing in the URL. For example, `content/events/2026/summer-market-2026.md` resolves to `/events/summer-market-2026/`.
