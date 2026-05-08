@@ -18,11 +18,18 @@ You can sponsor a poppy to be displayed in the town centre as part of our annual
 
 ## How to Sponsor
 
-Sponsorships are available from £5. To sponsor a poppy, please [contact us](/contact) with:
+Sponsorships are available from £5. You can sponsor a Poppy using the PayPal button below. For more information, or for other ways to pay, please email [{{< param "email" >}}](mailto:{{< param "email" >}}).
 
-- Your name and contact details
-- The name of the person you'd like to dedicate your poppy to (optional)
-- A brief message (optional, max 50 characters)
+Please include:
+
+- Individuals:
+  - Name
+  - Email
+  - Who you wish to remember
+- Businesses:
+  - Business name
+  - Logo
+  - Email
 
 All proceeds go towards the cost of the Remembrance display and future community events.
 
