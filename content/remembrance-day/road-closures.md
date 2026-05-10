@@ -20,7 +20,7 @@ The following roads will be partially closed:
 - Clarendon Road
 - Fordbridge Road
 
-The map below shows the roads subject to full closure:
+The map below shows the roads and where they will be  closed:
 
 {{< road-closure-map >}}
 
