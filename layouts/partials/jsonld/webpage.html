@@ -4,6 +4,11 @@
   "url" (.Site.BaseURL | strings.TrimRight "/")
 -}}
 
+{{- $copyrightHolder := dict
+  "@type" "Organization"
+  "name" .Site.Params.legalName
+-}}
+
 {{- $page := dict
   "@context" "https://schema.org"
   "@type" "WebPage"
@@ -12,6 +17,7 @@
   "inLanguage" .Site.Language.Locale
   "wordCount" .WordCount
   "publisher" $org
+  "copyrightHolder" $copyrightHolder
 -}}
 {{- with .Description -}}
   {{- $page = merge $page (dict "description" .) -}}
