@@ -11,7 +11,7 @@ Join us for classic cars and bikes and a family fun area with rides,stalls, food
 
 There will be:
 
-* Classic cars
-* Entertainment
-* Food & drink
-* Live music
+- Classic cars
+- Entertainment
+- Food & drink
+- Live music
