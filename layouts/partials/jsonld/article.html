@@ -19,7 +19,7 @@
   {{- $article = merge $article (dict "description" .) -}}
 {{- end -}}
 {{- with .Params.author -}}
-  {{- $article = merge $article (dict "author" (dict "@type" "Person" "name" .)) -}}
+  {{- $article = merge $article (dict "author" (dict "@type" "Organization" "name" .)) -}}
 {{- end -}}
 {{- with .Params.image -}}
   {{- $imgUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
