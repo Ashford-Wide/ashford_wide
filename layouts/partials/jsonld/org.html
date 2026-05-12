@@ -22,13 +22,16 @@
 {{- with .Site.Params.email }}{{- $org = merge $org (dict "email" .) -}}{{- end -}}
 
 {{- with .Site.Params.companyNumber -}}
-  {{- $identifier := dict 
-      "@type" "PropertyValue" 
-      "name" "Companies House Number" 
-      "value" . 
-      "url" (print "https://find-and-update.company-information.service.gov.uk/company/" .)
+  {{- $chUrl := print "https://find-and-update.company-information.service.gov.uk/company/" . -}}
+  {{- $identifier := dict
+      "@type" "PropertyValue"
+      "name" "Companies House Number"
+      "value" .
+      "url" $chUrl
   -}}
   {{- $org = merge $org (dict "identifier" $identifier) -}}
+  {{- $org = merge $org (dict "companyRegistration" .) -}}
+  {{- $sameAs = $sameAs | append $chUrl -}}
 {{- end -}}
 
 {{- $geojson := "assets/geo/ashford.geojson" | os.ReadFile | transform.Unmarshal -}}
