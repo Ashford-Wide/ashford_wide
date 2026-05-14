@@ -24,7 +24,7 @@ The service is held at the War Memorial in Ashford town centre and is led by loc
 9. National Anthem
 10. March past
 
-{{< button href="/documents/2025-OoS.pdf" text="Download Order of Service (PDF)" >}}
+{{< doc-button href="/documents/2025-OoS.pdf" text="Download Order of Service (PDF)" >}}
 
 ## Getting There
 
