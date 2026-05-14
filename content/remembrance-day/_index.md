@@ -10,7 +10,7 @@ Each year Ashford Wide is proud to support and coordinate the town's Remembrance
 
 Our Remembrance programme includes town flags, the poppy appeal, the Remembrance Sunday parade and service, and our Virtual Poppy Wall where residents can dedicate a poppy in memory of a loved one.
 
-- [Order of Services](/remembrance-day/order-of-services)
+- [Order of Service](/remembrance-day/order-of-service)
 - [Road closures](/remembrance-day/road-closures)
 - [Sponsor a Poppy](/remembrance-day/sponsor-a-poppy)
 - [Virtual Poppy Wall](/remembrance-day/virtual-poppy-wall)
