@@ -1,0 +1,5 @@
+<a href="{{ .Get "href" }}"
+  class="inline-flex items-center gap-2 no-underline px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">
+  {{- partial "icons/document.html" . -}}
+  {{- .Get "text" -}}
+</a>
