@@ -17,7 +17,7 @@ The road geometries are stored as a GeoJSON `FeatureCollection` with one `LineSt
 
 **Why `static/` and not `data/`?**
 
-Hugo's `data/` directory only supports YAML, TOML, JSON, and CSV. Files with a `.geojson` extension are not recognised — placing one there causes Hugo to fail loading the entire data directory, breaking unrelated pages (e.g. the business directory). Placing the file in `static/` means Hugo serves it as a plain file at `/closures.geojson`, which the shortcode fetches at runtime.
+Hugo's `data/` directory only supports YAML, TOML, JSON, and CSV. Files with a `.geojson` extension are not recognised — placing one there causes Hugo to fail loading the entire data directory, breaking unrelated pages (e.g. the business directory). Placing the file in `static/geojson` means Hugo serves it as a plain file at `/closures.geojson`, which the shortcode fetches at runtime.
 
 ### Updating the road data
 
