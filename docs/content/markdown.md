@@ -31,21 +31,42 @@ Each line of the alert must start with `> `. Multi-line alerts are supported:
 
 ### Examples
 
+> [!NOTE]
+> Entry is free and open to everyone.
+
 ```markdown
 > [!NOTE]
 > Entry is free and open to everyone.
+```
 
 > [!TIP]
 > Arrive early to get the best choice of outside stalls.
 
+```markdown
+> [!TIP]
+> Arrive early to get the best choice of outside stalls.
+```
+
 > [!IMPORTANT]
 > You must register in advance — walk-ins cannot be accommodated.
 
+```markdown
+> [!IMPORTANT]
+> You must register in advance — walk-ins cannot be accommodated.
+```
+
 > [!WARNING]
-> This is an outdoor event. It will go ahead in light rain, but check the
-> Facebook page on the morning for any last-minute cancellations.
+> This is an outdoor event. It will go ahead in light rain, but check the Facebook page on the morning for any last-minute cancellations.
+
+```markdown
+> [!WARNING]
+> This is an outdoor event. It will go ahead in light rain, but check the Facebook page on the morning for any last-minute cancellations.
+```
 
 > [!CAUTION]
-> The venue is not wheelchair accessible via the main entrance. Please use
-> the side gate on Park Lane.
+> The venue is not wheelchair accessible via the main entrance. Please use the side gate on Park Lane.
+
+```markdown
+> [!CAUTION]
+> The venue is not wheelchair accessible via the main entrance. Please use the side gate on Park Lane.
 ```
