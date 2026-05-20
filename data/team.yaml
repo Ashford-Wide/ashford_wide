@@ -1,16 +1,25 @@
 team:
-  - name: "Barry Muggeridge"
-    role: "Chair"
-  
-  - name: "John Dickens"
-    role: "Treasurer"
-  
-  - name: "Jenny Frost"
-    role: "Secretary"
-    linkedin: "https://www.linkedin.com/in/sirlewishamilton/"
-    instagram: "https://www.instagram.com/lewishamilton/"
-    facebook: "https://www.facebook.com/LewisHamilton"
-    twitter: "https://x.com/LewisHamilton"
-  
-  - name: "Emma Gray"
-    role: "Business Lead"
+  - name: Barry Muggeridge
+    role: Chair
+    linkedin: ''
+    instagram: ''
+    facebook: ''
+    twitter: ''
+  - name: John Dickens
+    role: Treasurer
+    linkedin: ''
+    instagram: ''
+    facebook: ''
+    twitter: ''
+  - name: Jenny Frost
+    role: Secretary
+    linkedin: ''
+    instagram: ''
+    facebook: ''
+    twitter: ''
+  - name: Emma Gray
+    role: Business Lead
+    linkedin: ''
+    instagram: ''
+    facebook: ''
+    twitter: ''
