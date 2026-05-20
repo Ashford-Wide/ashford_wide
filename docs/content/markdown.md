@@ -64,9 +64,9 @@ Each line of the alert must start with `> `. Multi-line alerts are supported:
 ```
 
 > [!CAUTION]
-> The venue is not wheelchair accessible via the main entrance. Please use the side gate on Park Lane.
+> The venue is not wheelchair accessible via the main entrance. Please use the side gate on Clockhouse Lane.
 
 ```markdown
 > [!CAUTION]
-> The venue is not wheelchair accessible via the main entrance. Please use the side gate on Park Lane.
+> The venue is not wheelchair accessible via the main entrance. Please use the side gate on Clockhouse Lane.
 ```
