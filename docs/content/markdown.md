@@ -2,7 +2,7 @@
 
 ## Alerts
 
-Alerts (also called admonitions or callouts) are highlighted banners used to draw attention to important information. They are written as blockquotes with a special tag on the first line.
+Alerts (also called callouts) are highlighted banners used to draw attention to important information. They are written as blockquotes with a special tag on the first line.
 
 Five types are available:
 
