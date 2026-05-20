@@ -2,3 +2,12 @@
 *.md linguist-generated=false
 *.md linguist-documentation=false
 *.md linguist-detectable=true
+
+*.geojson linguist-type=programming
+
+*.yml   linguist-language=YAML
+*.yaml  linguist-language=YAML
+*.yml   linguist-generated=false
+*.yaml  linguist-generated=false
+*.yml   linguist-detectable=true
+*.yaml  linguist-detectable=true
