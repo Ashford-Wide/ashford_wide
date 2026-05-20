@@ -10,7 +10,7 @@
 
 <section class="py-8 bg-ui-light">
   <div class="max-w-container mx-auto px-6">
-    {{ with .Content }}<div class="text-muted mb-8 text-base">{{ . }}</div>{{ end }}
+    {{ with .Content }}<div class="text-muted mb-8 text-body-md">{{ . }}</div>{{ end }}
 
     {{/* ── Category filter ── */}}
     {{- $categories := slice -}}
@@ -42,14 +42,14 @@
           <div class="flex flex-col gap-1.5">
             <div>
               {{ if .website }}
-              <a href="{{ .website }}" class="text-base font-bold text-surface leading-[1.3] hover:underline" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+              <a href="{{ .website }}" class="text-body-md font-bold text-surface leading-[1.3] hover:underline" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
               {{ else }}
-              <span class="text-base font-bold text-surface leading-[1.3]">{{ .name }}</span>
+              <span class="text-body-md font-bold text-surface leading-[1.3]">{{ .name }}</span>
               {{ end }}
-              {{ with .category }}<span class="inline-block text-xs font-bold uppercase tracking-[0.05em] text-muted bg-ui-subtle py-[0.15rem] px-2 rounded w-fit">{{ . }}</span>{{ end }}
+              {{ with .category }}<span class="inline-block text-badge font-bold uppercase tracking-wider text-muted bg-ui-subtle py-[0.15rem] px-2 rounded w-fit">{{ . }}</span>{{ end }}
             </div>
           </div>
-          {{ with .description }}<p class="text-sm text-text leading-[1.5] flex-1">{{ . }}</p>{{ end }}
+          {{ with .description }}<p class="text-sm text-text leading-normal flex-1">{{ . }}</p>{{ end }}
           <ul class="flex flex-col gap-1 mt-1 p-0 list-none">
             {{ with .address }}<li class="flex items-start gap-1.5 text-fine text-muted">
               <svg class="shrink-0 mt-[0.1em]" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
@@ -101,7 +101,7 @@
       {{- end -}}
     </div>
 
-    <p class="text-center p-12 text-muted text-base" id="biz-empty" style="display:none;">No businesses found in this category.</p>
+    <p class="text-center p-12 text-muted text-body-md" id="biz-empty" style="display:none;">No businesses found in this category.</p>
   </div>
 </section>
 
