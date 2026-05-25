@@ -7,7 +7,7 @@ location: "Elle & Fee, Woodthorpe Road, Ashford"
 placeId: "ChIJ0eqMDzZzdkgREbSYkYXOg4Q"
 description: "Let’s connect – Discover and connect with the incredible  range of businesses that make up our vibrant Ashford community."
 image: "/images/business-network-event.PNG"
-imageAdpect: square
+imageAspect: square
 ---
 
 Let’s connect – Discover and connect with the incredible  range of businesses that make up our vibrant Ashford community.
