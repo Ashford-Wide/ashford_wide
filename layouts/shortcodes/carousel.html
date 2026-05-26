@@ -39,7 +39,7 @@
   el.querySelectorAll('button[data-target]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var target = document.getElementById(btn.dataset.target);
-      if (target) el.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+      if (target) el.scrollTo({ left: target.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft, behavior: 'smooth' });
     });
   });
 }());
