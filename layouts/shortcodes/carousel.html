@@ -10,26 +10,38 @@
 
 {{- if gt (len $images) 0 -}}
 <div class="not-prose my-6">
-  <div class="carousel w-full rounded overflow-hidden shadow">
+  <div id="{{ $id }}" class="carousel w-full rounded overflow-hidden shadow">
     {{- range $idx, $img := $images -}}
     {{- $total := len $images -}}
     {{- $slideNum := add $idx 1 -}}
     {{- $prevNum := cond (eq $idx 0) $total $idx -}}
     {{- $nextNum := cond (eq $idx (sub $total 1)) 1 (add $idx 2) -}}
-    <div id="{{ $id }}-slide{{ $slideNum }}" class="carousel-item relative w-full">
-      {{ partial "image.html" (dict "src" $img.src "alt" $img.alt "class" "w-full object-cover max-h-[480px]") }}
+    <div id="{{ $id }}-slide{{ $slideNum }}" class="carousel-item relative w-full aspect-[3/4]">
+      {{ partial "image.html" (dict "src" $img.src "alt" $img.alt "class" "absolute inset-0 w-full h-full object-cover") }}
       {{- if gt $total 1 -}}
       <div class="absolute inset-x-3 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-        <a href="#{{ $id }}-slide{{ $prevNum }}"
-           class="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-           aria-label="Previous image">&#10094;</a>
-        <a href="#{{ $id }}-slide{{ $nextNum }}"
-           class="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-           aria-label="Next image">&#10095;</a>
+        <button data-target="{{ $id }}-slide{{ $prevNum }}"
+                class="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                aria-label="Previous image">&#10094;</button>
+        <button data-target="{{ $id }}-slide{{ $nextNum }}"
+                class="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                aria-label="Next image">&#10095;</button>
       </div>
       {{- end -}}
     </div>
     {{- end -}}
   </div>
 </div>
+<script>
+(function () {
+  var el = document.getElementById('{{ $id }}');
+  if (!el) return;
+  el.querySelectorAll('button[data-target]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.dataset.target);
+      if (target) el.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    });
+  });
+}());
+</script>
 {{- end -}}
