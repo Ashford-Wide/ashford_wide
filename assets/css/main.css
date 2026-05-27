@@ -59,6 +59,7 @@
       prose-a:text-surface prose-a:underline
       prose-strong:text-surface
       prose-code:before:content-none prose-code:after:content-none;
+    color: var(--color-text);
   }
 
   .article-content .leaflet-container img {
