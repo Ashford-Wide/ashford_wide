@@ -30,7 +30,11 @@
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('version:', d.get\\('version'\\)\\); print\\('type:', d.get\\('type'\\)\\); print\\('main:', d.get\\('main','none'\\)\\); print\\('bin:', d.get\\('bin',{}\\)\\)\")",
       "Bash(node /Users/alasdair/Developer/ashford_wide/node_modules/postcss-cli/index.js --version)",
       "Bash(node /Users/alasdair/Developer/ashford_wide/node_modules/postcss-cli/index.js --config /Users/alasdair/Developer/ashford_wide/postcss.config.js)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(xargs file)",
+      "Bash(xargs -I{} cat \"{}\")",
+      "Bash(git -C /Users/alasdair/Developer/ashford_wide log --oneline -10)",
+      "Bash(git -C /Users/alasdair/Developer/ashford_wide status --short)"
     ]
   }
 }
