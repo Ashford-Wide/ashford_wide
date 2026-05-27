@@ -5,6 +5,7 @@
 {{- $width := .width -}}
 {{- $quality := .quality -}}
 {{- $urlOnly := .urlOnly | default false -}}
+{{- $format := .format | default "avif" -}}
 
 {{/* Strip leading slash — resources.Get requires paths without it */}}
 {{- $assetPath := $src | strings.TrimPrefix "/" -}}
@@ -14,9 +15,9 @@
   {{- $qSuffix := "" -}}
   {{- with $quality }}{{- $qSuffix = printf " q%d" . -}}{{- end -}}
   {{- if $width -}}
-    {{- $img = $img.Resize (printf "%dx webp%s" $width $qSuffix) -}}
+    {{- $img = $img.Resize (printf "%dx %s%s" $width $format $qSuffix) -}}
   {{- else -}}
-    {{- $img = $img.Process (printf "webp%s" $qSuffix) -}}
+    {{- $img = $img.Process (printf "%s%s" $format $qSuffix) -}}
   {{- end -}}
   {{- if $urlOnly -}}
     {{- $img.RelPermalink -}}
