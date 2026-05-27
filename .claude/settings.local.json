@@ -34,7 +34,11 @@
       "Bash(xargs file)",
       "Bash(xargs -I{} cat \"{}\")",
       "Bash(git -C /Users/alasdair/Developer/ashford_wide log --oneline -10)",
-      "Bash(git -C /Users/alasdair/Developer/ashford_wide status --short)"
+      "Bash(git -C /Users/alasdair/Developer/ashford_wide status --short)",
+      "Bash(curl -s http://localhost:1313/events/summer-fayre-apps-2026/)",
+      "Bash(git -C /Users/alasdair/Developer/ashford_wide log --oneline -10 -- assets/css/main.css layouts/_markup/render-blockquote.html)",
+      "Bash(curl -s http://localhost:1313/css/main.css)",
+      "Bash(grep -oP '--color-base-\\\\w+:\\\\s*[^;]+')"
     ]
   }
 }
