@@ -13,8 +13,6 @@ lastmod: 2026-05-05
     src5="/images/volunteer-quote-3.png"
 >}}
 
-## Volunteer with Ashford Wide
-
 Ashford Wide is a volunteer-driven organisation and we couldn't do what we do without the support of our incredible volunteers. Whether you can spare a few hours at an event or want to get more deeply involved in shaping the future of Ashford, we'd love to hear from you.
 
 ## How You Can Help
