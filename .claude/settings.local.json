@@ -38,7 +38,15 @@
       "Bash(curl -s http://localhost:1313/events/summer-fayre-apps-2026/)",
       "Bash(git -C /Users/alasdair/Developer/ashford_wide log --oneline -10 -- assets/css/main.css layouts/_markup/render-blockquote.html)",
       "Bash(curl -s http://localhost:1313/css/main.css)",
-      "Bash(grep -oP '--color-base-\\\\w+:\\\\s*[^;]+')"
+      "Bash(grep -oP '--color-base-\\\\w+:\\\\s*[^;]+')",
+      "WebFetch(domain:github.blog)",
+      "Bash(npm --version)",
+      "Bash(npm help *)",
+      "Bash(npm approve-scripts *)",
+      "Bash(echo \"EXIT CODE: $?\")",
+      "Bash(cp package.json /tmp/package.json.bak)",
+      "Bash(cp /tmp/package.json.bak package.json)",
+      "Bash(rm /tmp/package.json.bak)"
     ]
   }
 }
