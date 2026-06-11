@@ -28,6 +28,15 @@ jobs:
       - name: Upgrade packages 🔀
         run: npm update
 
+      - name: Check for new install scripts 🔍
+        run: |
+          output=$(npm approve-scripts --allow-scripts-pending)
+          echo "$output"
+          if [[ "$output" != "No packages with unreviewed install scripts." ]]; then
+            echo "::error::npm update introduced a package with an unreviewed install script. Run 'npm update' locally, review the script with 'npm approve-scripts --allow-scripts-pending', then approve ('npm approve-scripts <pkg>') or deny ('npm deny-scripts <pkg>') it before this workflow can proceed."
+            exit 1
+          fi
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
