@@ -30,5 +30,11 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "daisyui": "^5.5.20"
+  },
+  "allowScripts": {
+    "accessibility-checker@4.0.26": true,
+    "chromedriver@148.0.1": true,
+    "fsevents@2.3.3": true,
+    "puppeteer@25.1.0": true
   }
 }
