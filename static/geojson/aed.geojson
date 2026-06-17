@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@osm_type": "node",
+        "@osm_id": 13945559614,
+        "@osm_version:": 1,
+        "access": "yes",
+        "indoor": "no",
+        "emergency": "defibrillator",
+        "defibrillator:location": "Brownrigg Road - attached to The Wardle Dental Clinc"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4614239,
+          51.4328009
+        ]
+      }
+    }
+  ]
+}
