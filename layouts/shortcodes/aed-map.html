@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div style="position: relative; z-index: 0; margin: 1.5rem 0; border-radius: 0.5rem; overflow: hidden;">
+  <div id="aed-map" style="height: 420px;"></div>
+</div>
+<script>
+(function () {
+  var map = L.map('aed-map');
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+  fetch('/geojson/aed.geojson')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var aedIcon = L.divIcon({
+        html: '<span style="font-size:32px;line-height:1;display:block;">🫀</span>',
+        className: '',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      });
+      var layer = L.geoJSON(data, {
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, { icon: aedIcon });
+        },
+        onEachFeature: function (feature, layer) {
+          var p = feature.properties;
+          var label = p['defibrillator:location'] || p.label || p.name;
+          if (label) {
+            layer.bindPopup(label);
+          }
+        }
+      }).addTo(map);
+      map.fitBounds(layer.getBounds(), { padding: [40, 40] });
+    });
+}());
+</script>
