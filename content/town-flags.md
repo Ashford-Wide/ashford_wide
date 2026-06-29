@@ -17,8 +17,7 @@ This initiative is run entirely by volunteers who are passionate about celebrati
 
 These events include:
 - April – St George’s Day 
-- May – VE DAY or VJ Day
-- June – Armed Forces Day
-- September – Surrey Pride
+- May – Middlesex Day
+- June – Pride & Armed Forces Day
 - October/November – Remembrance Day
 - December – Christmas
