@@ -14,3 +14,4 @@ You will need `npm` and Hugo installed already.
 
 - [Heroicons](https://heroicons.com/)
 - [Tailwind CSS](https://tailwindcss.com/docs/)
+- [daisyUI](https://daisyui.com/?lang=en)
