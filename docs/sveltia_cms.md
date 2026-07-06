@@ -91,7 +91,7 @@ Full reference: [Sveltia CMS collections](https://sveltiacms.app/en/docs/collect
 |-----------|------|---------|
 | `events` | folder | `content/events/{year}/*.md` — path template `{{year}}/{{slug}}` |
 | `news` | folder | `content/news/{year}/*.md` — path template `{{year}}/{{slug}}` |
-| `pages` | files | about, membership, business-membership, volunteer, support, contact |
+| `pages` | folder, `create: true`, `delete: false` | Every top-level `.md` file directly in `content/` (non-recursive, so `events/`, `news/`, `remembrance-day/`, `business-member/` are untouched) — editors can create new top-level pages here |
 | `remembrance` | files | All 4 remembrance pages |
 | `members` | files | `data/members.yaml` |
 | `businesses` | files | `data/businesses.yaml` |

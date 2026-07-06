@@ -10,7 +10,7 @@
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 19
   }).addTo(map);
-  fetch('/geojson/poppies-2026.geojson')
+  fetch('/geojson/poppies-2025.geojson')
     .then(function (r) { return r.json(); })
     .then(function (data) {
       var poppyIcon = L.divIcon({

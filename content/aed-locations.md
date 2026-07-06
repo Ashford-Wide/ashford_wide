@@ -3,6 +3,7 @@ title: "AED Locations"
 description: "Locatations of Automated External Defibrillators (AED) in Ashford"
 date: 2026-06-17
 lastmod: 2026-06-17
+draft: true
 ---
 
 There are three Automated Automated External Defibrillators (AED) in Ashford designed to help in the event of someone having a cardiac arrest.
