@@ -59,54 +59,16 @@ collections:
 
   - name: pages
     label: Pages
-    files:
-      - label: About
-        name: about
-        file: content/about.md
-        fields:
-          - { label: Title, name: title, widget: string, maxlength: 60 }
-          - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
-
-      - label: Membership
-        name: membership
-        file: content/membership.md
-        fields:
-          - { label: Title, name: title, widget: string, maxlength: 60 }
-          - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
-
-      - label: Business Membership
-        name: business-membership
-        file: content/business-membership.md
-        fields:
-          - { label: Title, name: title, widget: string, maxlength: 60 }
-          - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
-
-      - label: Volunteer
-        name: volunteer
-        file: content/volunteer.md
-        fields:
-          - { label: Title, name: title, widget: string, maxlength: 60 }
-          - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
-
-      - label: Support Us
-        name: support
-        file: content/support.md
-        fields:
-          - { label: Title, name: title, widget: string, maxlength: 60 }
-          - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
-
-      - label: Contact
-        name: contact
-        file: content/contact.md
-        fields:
-          - { label: Title, name: title, widget: string, maxlength: 60 }
-          - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
+    folder: content
+    create: true
+    delete: false
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string, maxlength: 60 }
+      - { label: Description, name: description, widget: string, maxlength: 150 }
+      - { label: Hero Image, name: hero_image, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
 
   - name: remembrance
     label: Remembrance
@@ -121,7 +83,7 @@ collections:
 
       - label: Order of Services
         name: order-of-services
-        file: content/remembrance-day/order-of-services.md
+        file: content/remembrance-day/order-of-service.md
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
