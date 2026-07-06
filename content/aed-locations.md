@@ -3,19 +3,23 @@ title: "AED Locations"
 description: "Locatations of Automated External Defibrillators (AED) in Ashford"
 date: 2026-06-17
 lastmod: 2026-06-17
-draft: true
 ---
 
-There are three Automated Automated External Defibrillators (AED) in Ashford designed to help in the event of someone having a cardiac arrest.
+> [!CAUTION]
+> If you witness a cardiac arrest, you should **call 999 immediately** and the ambulance service can provide you with assistance.
+
+There are several Automated Automated External Defibrillators (AED) in Ashford designed to help in the event of someone having a cardiac arrest.
 
 They can be found at:
 
 - Brownrigg Road - On the wall of The Wardle Dental Clinic {{< location-pin name="The Wardle Dental Clinic, Brownrigg Road, Ashford" placeId="ChIJ9xPMAflzdkgRYWc7PniDDJo" >}}
-- 
+- Together Dental - Church Road {{< location-pin name="Together Dental, Church Road, Ashford" placeId="ChIJay5oJPlzdkgRGd-b6_M9qWE" >}}
+- Tesco Express - Church Road {{< location-pin name="Tesco Express, Church Road Ashford" placeId="ChIJld9Tzv5zdkgRinNCo8gwQso" >}}
 
 ## Resources
 
 - St John Ambulance: [How to use a defibrillator (AED)](https://www.sja.org.uk/first-aid-advice/how-to-use-a-defibrillator/)
+- British Heart Foundation: [DefibFinder](https://www.defibfinder.uk/)
 
 ## Map
 
