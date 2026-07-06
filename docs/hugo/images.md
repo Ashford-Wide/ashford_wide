@@ -1,12 +1,12 @@
 # Image handling
 
-Images on this site are converted to WebP at build time by Hugo's asset pipeline. This keeps the source files as familiar JPG/PNG while serving a modern, efficient format to browsers.
+Images on this site are converted to AVIF at build time by Hugo's asset pipeline. This keeps the source files as familiar JPG/PNG while serving a modern, efficient format to browsers.
 
 ## How it works
 
 Hugo can only process images that live in the `/assets/` directory. Images in `/static/` are copied to the output unchanged — Hugo never touches them. All raster images therefore live in `/assets/images/`.
 
-At build time, the `layouts/partials/image.html` partial looks up each image via `resources.Get`, converts it to WebP (optionally resizing it too), and outputs the processed file's URL. Hugo caches the result in `/resources/_gen/images/`, so repeat builds are fast.
+At build time, the `layouts/partials/image.html` partial looks up each image via `resources.Get`, converts it to AVIF (optionally resizing it too), and outputs the processed file's URL. Hugo caches the result in `/resources/_gen/images/`, so repeat builds are fast.
 
 Three files remain in `/static/images/` and are intentionally never processed:
 
@@ -26,9 +26,10 @@ Three files remain in `/static/images/` and are intentionally never processed:
 | `alt` | string | `""` | Alt text for the `<img>` tag |
 | `class` | string | `""` | CSS class string |
 | `loading` | string | `"lazy"` | `"lazy"` or `"eager"` |
-| `width` | int | — | If set, resizes to this width (px) and converts to WebP. If omitted, converts to WebP at original dimensions. |
-| `quality` | int | — | WebP quality, 1–100. If omitted, uses the global default from `[imaging]` in `hugo.toml` (Hugo's built-in default is 75). |
+| `width` | int | — | If set, resizes to this width (px) and converts to AVIF. If omitted, converts to AVIF at original dimensions. |
+| `quality` | int | — | Output quality, 1–100. If omitted, uses the global default from `[imaging]` in `hugo.toml` (Hugo's built-in default is 75). |
 | `urlOnly` | bool | `false` | When `true`, returns just the URL string instead of a full `<img>` tag. Used for CSS `background-image` and meta tags. |
+| `format` | string | `"avif"` | Output image format/codec passed to Hugo's image processing (e.g. `"avif"`, `"webp"`). Override only if a specific image needs a different format. |
 
 The partial strips any leading `/` from `src` before calling `resources.Get`, so paths from front matter and YAML data files (which conventionally start with `/`) work without any normalisation at the call site.
 
@@ -57,7 +58,7 @@ Use `strings.TrimSpace` when assigning the result to a variable — Hugo partial
 
 ## Quality settings
 
-Hugo's built-in WebP quality default is **75**. You can change this at two levels:
+Hugo's built-in quality default is **75**. You can change this at two levels:
 
 **Site-wide** — add to `hugo.toml`. This applies to every image processed on the site:
 
@@ -93,7 +94,7 @@ image: /images/events/spring-market.jpg
 ---
 ```
 
-The news and events templates (`layouts/news/single.html`, `layouts/events/single.html`, etc.) automatically process the image through the partial. The same path is used for the OG image and JSON-LD structured data — both will also point to the processed WebP.
+The news and events templates (`layouts/news/single.html`, `layouts/events/single.html`, etc.) automatically process the image through the partial. The same path is used for the OG image and JSON-LD structured data — both will also point to the processed AVIF.
 
 ### Event image aspect ratio
 
@@ -128,7 +129,7 @@ For data-driven images where the path comes from a YAML field (like business log
 
 ## Choosing a width
 
-Specifying `width` resizes the image to that pixel width (maintaining aspect ratio) in addition to converting to WebP. This is worth doing for large images — it prevents a 4000px source being served at display widths of 400px.
+Specifying `width` resizes the image to that pixel width (maintaining aspect ratio) in addition to converting to AVIF. This is worth doing for large images — it prevents a 4000px source being served at display widths of 400px.
 
 Rough guidelines used on this site:
 
@@ -145,7 +146,7 @@ For the hero `background-image` and its `<link rel="preload">`, both must use th
 
 ## Build cache
 
-Hugo saves processed images to `/resources/_gen/images/`. This directory is committed to the repository so that Cloudflare Pages doesn't need to re-process every image on each deploy. If you add or replace source images, the new WebP variants will be generated on the next build and should be committed alongside the source files.
+Hugo saves processed images to `/resources/_gen/images/`. This directory is committed to the repository so that Cloudflare Pages doesn't need to re-process every image on each deploy. If you add or replace source images, the new AVIF variants will be generated on the next build and should be committed alongside the source files.
 
 To clear the cache and force a full rebuild of all images:
 
