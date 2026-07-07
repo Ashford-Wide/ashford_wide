@@ -28,8 +28,6 @@ This site is hosted by Cloudflare. Their platform may set a small number of cook
 
 These cookies help identify malicious traffic and protect the site from bot attacks. They do not store any personally identifiable information.
 
-Duration: Session to 30 days.
-
 #### Third-Party Features
 
 We use external services to provide specific functionality. These services may set their own cookies or process your IP address when you interact with them.
