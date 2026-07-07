@@ -5,24 +5,16 @@
     {{- if or .linkedin .instagram .facebook .twitter }}
     <span class="team-socials">
       {{- if .linkedin }}
-        <a itemprop="sameAs" href="{{ .linkedin }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on LinkedIn">
-          {{- partial "icons/linkedin.html" . -}}
-        </a>
+        {{- partial "external-link.html" (dict "href" .linkedin "itemprop" "sameAs" "ariaLabel" (printf "%s on LinkedIn" .name) "icon" "icons/linkedin.html" "context" .) -}}
       {{- end }}
       {{- if .instagram }}
-        <a itemprop="sameAs" href="{{ .instagram }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Instagram">
-          {{- partial "icons/instagram.html" . -}}
-        </a>
+        {{- partial "external-link.html" (dict "href" .instagram "itemprop" "sameAs" "ariaLabel" (printf "%s on Instagram" .name) "icon" "icons/instagram.html" "context" .) -}}
       {{- end }}
       {{- if .facebook }}
-        <a itemprop="sameAs" href="{{ .facebook }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Facebook">
-          {{- partial "icons/facebook.html" . -}}
-        </a>
+        {{- partial "external-link.html" (dict "href" .facebook "itemprop" "sameAs" "ariaLabel" (printf "%s on Facebook" .name) "icon" "icons/facebook.html" "context" .) -}}
       {{- end }}
       {{- if .twitter }}
-        <a itemprop="sameAs" href="{{ .twitter }}" rel="noopener noreferrer" target="_blank" aria-label="{{ .name }} on Twitter">
-          {{- partial "icons/twitter.html" . -}}
-        </a>
+        {{- partial "external-link.html" (dict "href" .twitter "itemprop" "sameAs" "ariaLabel" (printf "%s on Twitter" .name) "icon" "icons/twitter.html" "context" .) -}}
       {{- end }}
     </span>
     {{- end }}
