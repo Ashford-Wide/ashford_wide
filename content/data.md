@@ -7,17 +7,13 @@ lastmod: 2026-07-07
 
 ## Cookies
 
-This site only uses essential cookies to function, we don't collect information on who you are or how you use our website.
-
 ### What are cookies?
 
 Cookies are small text files placed on your device to help the website function properly or to provide features from third-party services.
 
 ### How we use cookies
 
-We use a minimal number of cookies. These are categorised as follows:
-
-- Strictly Necessary Cookies - These are essential for the security and performance of the website. They do not require your consent.
+This site only uses essential cookies to function, we don't collect information on who you are or how you use our website. These are essential for the security and performance of the website and they do not require consent.
 
 #### Cloudflare
 
