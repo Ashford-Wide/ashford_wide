@@ -33,25 +33,18 @@
     <div class="border-t border-surface/10 pt-6 flex justify-between items-center flex-wrap gap-4">
       <p class="text-fine text-surface/70">&copy; {{ now.Year }} Ashford Wide. All rights reserved.</p>
       <div class="flex gap-[0.6rem]">
+        {{ $socialBtnClass := "flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" }}
         {{ with .Site.Params.facebook }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" aria-label="Facebook" target="_blank" rel="noopener">
-          {{ partial "icons/facebook.html" . }}
-        </a>
+        {{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Facebook" "icon" "icons/facebook.html" "context" $) }}
         {{ end }}
         {{ with .Site.Params.instagram }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" aria-label="Instagram" target="_blank" rel="noopener">
-          {{ partial "icons/instagram.html" . }}
-        </a>
+        {{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Instagram" "icon" "icons/instagram.html" "context" $) }}
         {{ end }}
         {{ with .Site.Params.twitter }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" aria-label="Twitter" target="_blank" rel="noopener">
-          {{ partial "icons/twitter.html" . }}
-        </a>
+        {{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Twitter" "icon" "icons/twitter.html" "context" $) }}
         {{ end }}
         {{ with .Site.Params.linkedin }}
-        <a href="{{ . }}" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" aria-label="LinkedIn" target="_blank" rel="noopener">
-          {{ partial "icons/linkedin.html" . }}
-        </a>
+        {{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "LinkedIn" "icon" "icons/linkedin.html" "context" $) }}
         {{ end }}
         <a href="/index.xml" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" aria-label="Atom feed">
           {{ partial "icons/rss.html" . }}
