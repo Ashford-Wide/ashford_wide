@@ -21,3 +21,11 @@ These events include:
 - June – Pride & Armed Forces Day
 - October/November – Remembrance Day
 - December – Christmas
+
+## Support us
+
+Donate to Ashford Wide today through PayPal to keep flags flying in Ashford town centre.
+
+{{< paypal-flags >}}
+
+For more information or other ways to pay please email [{{< param "email" >}}](mailto:{{< param "email" >}}).
