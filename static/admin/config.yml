@@ -35,7 +35,7 @@ collections:
       - { label: Organised by, name: organiser, widget: string, hint: "Name of the organising body, if not Ashford Wide", required: false }
       - { label: Organiser URL, name: organiserUrl, widget: string, hint: "Link to the organiser's website or page", required: false }
       - { label: Description, name: description, widget: text, hint: "Short summary shown on event cards", maxlength: 150 }
-      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image, name: image, widget: image, required: false, media_folder: "/assets/images/events", public_folder: "/images/events" }
       - { label: Image Aspect, name: imageAspect, widget: select, options: ["square", "16:9"], required: false, hint: "Defaults to 16:9 if not set" }
       - { label: Body, name: body, widget: markdown }
 
@@ -54,7 +54,7 @@ collections:
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
       - { label: Author, name: author, widget: string, default: "Ashford Wide Team", required: false }
       - { label: Description, name: description, widget: text, hint: "Short summary shown on news cards", maxlength: 150 }
-      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image, name: image, widget: image, required: false, media_folder: "/assets/images/news", public_folder: "/images/news" }
       - { label: Body, name: body, widget: markdown }
 
   - name: pages
