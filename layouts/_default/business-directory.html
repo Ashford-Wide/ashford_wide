@@ -42,7 +42,7 @@
           <div class="flex flex-col gap-1.5">
             <div>
               {{ if .website }}
-              <a href="{{ .website }}" class="text-body-md font-bold text-surface leading-[1.3] hover:underline" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+              {{ partial "external-link.html" (dict "href" .website "class" "text-body-md font-bold text-surface leading-[1.3] hover:underline" "text" .name) }}
               {{ else }}
               <span class="text-body-md font-bold text-surface leading-[1.3]">{{ .name }}</span>
               {{ end }}
@@ -73,27 +73,14 @@
           {{ $hasSocial := or .facebook .instagram .x .twitter .linkedin .youtube .tiktok }}
           {{ if $hasSocial }}
           <div class="flex gap-1.5 mt-2">
-            {{ with .facebook }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              {{ partial "icons/facebook.html" . }}
-            </a>{{ end }}
-            {{ with .instagram }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              {{ partial "icons/instagram.html" . }}
-            </a>{{ end }}
-            {{ with .linkedin }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              {{ partial "icons/linkedin.html" . }}
-            </a>{{ end }}
-            {{ with .x }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-              {{ partial "icons/twitter.html" . }}
-            </a>{{ end }}
-            {{ with .twitter }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              {{ partial "icons/twitter.html" . }}
-            </a>{{ end }}
-            {{ with .youtube }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              {{ partial "icons/youtube.html" . }}
-            </a>{{ end }}
-            {{ with .tiktok }}<a href="{{ . }}" class="flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-              {{ partial "icons/tiktok.html" . }}
-            </a>{{ end }}
+            {{ $socialBtnClass := "flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" }}
+            {{ with .facebook }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Facebook" "icon" "icons/facebook.html" "context" $) }}{{ end }}
+            {{ with .instagram }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Instagram" "icon" "icons/instagram.html" "context" $) }}{{ end }}
+            {{ with .linkedin }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "LinkedIn" "icon" "icons/linkedin.html" "context" $) }}{{ end }}
+            {{ with .x }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "X (Twitter)" "icon" "icons/twitter.html" "context" $) }}{{ end }}
+            {{ with .twitter }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Twitter" "icon" "icons/twitter.html" "context" $) }}{{ end }}
+            {{ with .youtube }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "YouTube" "icon" "icons/youtube.html" "context" $) }}{{ end }}
+            {{ with .tiktok }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "TikTok" "icon" "icons/tiktok.html" "context" $) }}{{ end }}
           </div>
           {{ end }}
         </div>
