@@ -9,7 +9,7 @@ lastmod: 2026-04-10
 
 ## Honouring Our Heritage with Pride
 
-Throughout the year, we proudly raise two special flags to commemorate key events that hold deep meaning for our community. Each flag represents an important moment in our shared history and reflects the values that bring us together.
+Throughout the year, we proudly raise flags to commemorate key events that hold deep meaning for our community. Each flag represents an important moment in our shared history and reflects the values that bring us together.
 
 By displaying these flags, we not only pay tribute to these occasions but also add a vibrant, unified spirit to our town. The colourful displays bring life and character to our streets, reminding everyone—residents and visitors alike—of the pride we share in our community.
 
