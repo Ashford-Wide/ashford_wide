@@ -6,6 +6,7 @@ endTime: "15:00"
 location: "Church Road, Ashford"
 placeId: "EhtDaHVyY2ggUmQsIEFzaGZvcmQgVFcxNSwgVUsiLiosChQKEgkVB5VT-XN2SBHDNnVzHMWESBIUChIJ_-U8NRV0dkgRo93ZSnMQVAk"
 description: "A celebration of local produce, artisan goods and community spirit on Ashford High Street."
+draft: true
 ---
 
 Our popular summer market returns to Ashford High Street, showcasing the best of local food, crafts and community spirit.
