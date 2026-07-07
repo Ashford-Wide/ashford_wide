@@ -21,12 +21,18 @@ collections:
     create: true
     path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
+    summary: "{{title}} {{draft | ternary('(draft)', '')}}"
     view_groups:
       - label: Year
         field: date
         pattern: '^\d{4}'
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: "true"
     fields:
       - { label: Title, name: title, widget: string, maxlength: 60 }
+      - { label: Draft, name: draft, widget: boolean, default: false, required: false }
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
       - { label: Start Time, name: startTime, widget: string, hint: "24hr format, e.g. 10:00", required: false }
       - { label: End Time, name: endTime, widget: string, hint: "24hr format, e.g. 14:00", required: false }
@@ -45,12 +51,18 @@ collections:
     create: true
     path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
+    summary: "{{title}} {{draft | ternary('(draft)', '')}}"
     view_groups:
       - label: Year
         field: date
         pattern: '^\d{4}'
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: "true"
     fields:
       - { label: Title, name: title, widget: string, maxlength: 60 }
+      - { label: Draft, name: draft, widget: boolean, default: false, required: false }
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
       - { label: Author, name: author, widget: string, default: "Ashford Wide Team", required: false }
       - { label: Description, name: description, widget: text, hint: "Short summary shown on news cards", maxlength: 150 }
