@@ -19,6 +19,44 @@
           51.4328009
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@osm_type": "node",
+        "@osm_id": 3403716526,
+        "@osm_version:": 1,
+        "access": "yes",
+        "indoor": "yes",
+        "emergency": "defibrillator",
+        "defibrillator:location": "Tesco Express - Church Road"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4652745,
+          51.4349339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@osm_id": 154514669,
+        "@osm_type": "node",
+        "@osm_version:": 1,
+        "access": "yes",
+        "indoor": "yes",
+        "emergency": "defibrillator",
+        "defibrillator:location": "The Salvation Army - Woodthorpe Road"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4752692,
+          51.4340236
+        ]
+      }
     }
   ]
 }
