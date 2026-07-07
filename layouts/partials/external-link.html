@@ -1,0 +1,2 @@
+{{- $ctx := .context | default . -}}
+<a href="{{ .href }}" target="_blank" rel="noopener noreferrer"{{ with .class }} class="{{ . }}"{{ end }}{{ with .ariaLabel }} aria-label="{{ . }}"{{ end }}{{ with .itemprop }} itemprop="{{ . }}"{{ end }}>{{ if .icon }}{{ if .iconWrapClass }}<span class="{{ .iconWrapClass }}">{{ partial .icon $ctx }}</span>{{ else }}{{ partial .icon $ctx }}{{ end }}{{ end }}{{ .text }}</a>
