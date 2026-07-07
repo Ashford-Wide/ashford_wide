@@ -7,7 +7,7 @@ description: "We're delighted to launch our brand new website, making it easier 
 
 We're delighted to welcome you to the new Ashford Wide website.
 
-Our new site has been built from the ground up to be faster, easier to use, and more accessible for everyone. Whether you're a business member, a volunteer, or simply someone who wants to know what's happening in Ashford town centre, you'll find everything you need here.
+Our new site has been built from the ground up to be faster, easier to use, and more accessible for everyone. Whether you're a business member, a volunteer, or simply someone who wants to know what's happening in Ashford, you'll find everything you need here.
 
 ## What's New
 
@@ -21,5 +21,3 @@ Our new site has been built from the ground up to be faster, easier to use, and 
 If you're interested in getting involved with Ashford Wide — whether as a business member, a volunteer, or simply someone who wants to help make Ashford a better place — we'd love to hear from you.
 
 [Contact us](/contact) to find out more, or explore our [membership options](/membership).
-
-Thank you for visiting, and we hope you enjoy the new site.
