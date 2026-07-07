@@ -62,3 +62,30 @@ disableHugoGeneratorInject = true
 The `[security.node.permissions]` block is required because this project processes CSS via Hugo's `postCSS` pipe with `@tailwindcss/postcss`. Hugo's Node permission model defaults only cover a process named `tailwindcss` (used by the native `css.TailwindCSS` pipe); since this project invokes PostCSS as a separate process, `postcss` must be added explicitly. All three permissions are needed: `lightningcss` is a native addon, Tailwind uses worker threads, and `detect-libc` (a Tailwind dependency) spawns `getconf` as a child process on some Linux environments. The `tailwindcss` entries preserve the defaults so they are not silently dropped.
 
 The [`permalinks`](https://gohugo.io/configuration/permalinks/) rules use `:contentbasename` (filename only, no directory) so that news and events can be organised into year subdirectories without the year appearing in the URL. For example, `content/events/2026/summer-market-2026.md` resolves to `/events/summer-market-2026/`.
+
+## External link handling
+
+Every external link on the site gets `target="_blank" rel="noopener noreferrer"` — this isn't a Hugo/goldmark default, it's handled by two mechanisms depending on where the link comes from.
+
+**Template-rendered links** (team socials, business directory, business member pages, event location/organiser links, footer socials) go through a shared partial, `layouts/partials/external-link.html`. It's called with a `dict` of parameters:
+
+| param | purpose |
+|---|---|
+| `href` | link destination (required) |
+| `class` | full class string, passed through verbatim |
+| `ariaLabel` | optional `aria-label` |
+| `icon` | optional icon partial path, e.g. `"icons/facebook.html"` |
+| `iconWrapClass` | optional wrapper `<span>` class for the icon |
+| `text` | optional visible link text |
+| `itemprop` | optional, e.g. `"sameAs"` for schema.org markup on `team.html` |
+| `context` | `.` to forward into the icon partial call |
+
+Example call (from `layouts/partials/footer.html`):
+
+```go-html-template
+{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Facebook" "icon" "icons/facebook.html" "context" $) }}
+```
+
+Centralizing this means the `rel`/`target` attributes can't drift out of sync between templates — previously the footer's social links were missing `noreferrer` while every other template had it.
+
+**Markdown body links** (e.g. a link an editor pastes into a news post or event description in Sveltia CMS) are handled by a [render hook](https://gohugo.io/render-hooks/links/) at `layouts/_default/_markup/render-link.html`. Hugo invokes this automatically for every `[text](url)` link during Markdown rendering, so it applies to all content — existing and future — with no CMS field or editor workflow changes. It only adds `target="_blank" rel="noopener noreferrer"` when the link's host differs from the site's own (`site.BaseURL`, i.e. `ashford-wide.pages.dev`) — internal links, `#anchors`, `mailto:`, and `tel:` links are left untouched.
