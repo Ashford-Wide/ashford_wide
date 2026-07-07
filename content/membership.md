@@ -34,4 +34,3 @@ You can still support our work even if membership is not for you.
 - [Donate to us directly or via Paypal](/support)
 - [Sponsor a Remembrance Day Poppy](/remembrance-day/sponsor-a-poppy/)
 - [Volunteering at our events](/volunteer/)
-- Support us as you shop (in-store and online)
