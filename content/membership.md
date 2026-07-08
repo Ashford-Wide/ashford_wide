@@ -1,7 +1,6 @@
 ---
 title: Membership
 description: Join Ashford Wide and help shape the future of Ashford town centre
-hero_image: /images/become_business_member.png
 image: /images/become_business_member.png
 date: 2024-01-01
 lastmod: 2026-05-05
