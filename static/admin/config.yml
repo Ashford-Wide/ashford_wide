@@ -152,7 +152,7 @@ collections:
             fields:
               - { label: Name, name: name, widget: string }
               - { label: Category, name: category, widget: string }
-              - { label: Description, name: description, widget: text }
+              - { label: Description, name: description, widget: text, required: false }
               - { label: Website, name: website, widget: string, required: false }
               - { label: Telephone, name: telephone, widget: string, required: false }
               - { label: Mobile, name: mobile, widget: string, required: false }
@@ -163,6 +163,21 @@ collections:
               - { label: Instagram, name: instagram, widget: string, required: false }
               - { label: X (Twitter), name: x, widget: string, required: false }
               - { label: Logo, name: logo, widget: image, required: false }
+              - label: "Co-located businesses"
+                name: businesses
+                widget: list
+                required: false
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Description, name: description, widget: text, required: false }
+                  - { label: Website, name: website, widget: string, required: false }
+                  - { label: Telephone, name: telephone, widget: string, required: false }
+                  - { label: Mobile, name: mobile, widget: string, required: false }
+                  - { label: Email, name: email, widget: string, required: false }
+                  - { label: Facebook, name: facebook, widget: string, required: false }
+                  - { label: Instagram, name: instagram, widget: string, required: false }
+                  - { label: X (Twitter), name: x, widget: string, required: false }
+                  - { label: Logo, name: logo, widget: image, required: false }
 
   - name: team
     label: Team
