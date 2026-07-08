@@ -79,7 +79,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string, maxlength: 60 }
       - { label: Description, name: description, widget: string, maxlength: 150 }
-      - { label: Hero Image, name: hero_image, widget: image, required: false }
+      - { label: Image, name: image, widget: image, required: false }
       - { label: Body, name: body, widget: markdown, required: false }
 
   - name: remembrance
