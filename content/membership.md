@@ -1,12 +1,15 @@
 ---
 title: Membership
 description: Join Ashford Wide and help shape the future of Ashford town centre
+hero_image: /images/become_business_member.png
+image: /images/become_business_member.png
 date: 2024-01-01
 lastmod: 2026-05-05
 ---
+
 ## Join Ashford Wide
 
-Ashford Wide membership is open to businesses, organisations, and individuals who share our vision for a better Ashford town centre.
+Ashford Wide membership is open to businesses, organisations, and individuals who share our vision for a better Ashford.
 
 As a member, you'll be part of a growing community of like-minded people and organisations working together to make Ashford a thriving, vibrant town.
 
