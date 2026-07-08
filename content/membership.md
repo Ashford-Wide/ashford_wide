@@ -6,7 +6,7 @@ lastmod: 2026-05-05
 ---
 ## Join Ashford Wide
 
-Ashford Wide membership is open to businesses, organisations, and individuals who share our vision for a better Ashford town centre.
+Ashford Wide membership is open to businesses and organisations who share our vision for a better Ashford town centre.
 
 As a member, you'll be part of a growing community of like-minded people and organisations working together to make Ashford a thriving, vibrant town.
 
