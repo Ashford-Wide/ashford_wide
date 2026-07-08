@@ -32,57 +32,36 @@
     {{/* ── Directory grid ── */}}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="biz-grid">
       {{- range (sort $businesses "name") -}}
+      {{- $items := .businesses -}}
+      {{- if not $items -}}{{- $items = slice . -}}{{- end -}}
+      {{- $isGroup := gt (len $items) 1 -}}
       <div class="biz-card bg-white border border-border rounded overflow-hidden flex flex-col transition-all duration-200 hover:shadow-lg" data-category="{{ .category | urlize }}">
+        {{ if $isGroup }}
+        <div class="px-5 pt-4 pb-2 bg-ui-light border-b border-ui-subtle flex items-center gap-4">
+          {{ range $items }}
+          {{ if .logo }}{{ partial "image.html" (dict "src" .logo "alt" .name "class" "h-12 w-auto object-contain" "width" 300) }}{{ end }}
+          {{ end }}
+        </div>
+        {{ else }}
         {{ if .logo }}
         <div class="px-5 pt-4 pb-2 bg-ui-light border-b border-ui-subtle flex items-center">
           {{ partial "image.html" (dict "src" .logo "alt" .name "class" "h-12 w-auto object-contain" "width" 300) }}
         </div>
         {{ end }}
+        {{ end }}
         <div class="p-5 flex-1 flex flex-col gap-2">
-          <div class="flex flex-col gap-1.5">
-            <div>
-              {{ if .website }}
-              {{ partial "external-link.html" (dict "href" .website "class" "text-body-md font-bold text-surface leading-[1.3] hover:underline" "text" .name) }}
-              {{ else }}
-              <span class="text-body-md font-bold text-surface leading-[1.3]">{{ .name }}</span>
-              {{ end }}
-              {{ with .category }}<span class="inline-block text-badge font-bold uppercase tracking-wider text-muted bg-ui-subtle py-[0.15rem] px-2 rounded w-fit">{{ . }}</span>{{ end }}
-            </div>
+          {{ with .category }}<span class="inline-block text-badge font-bold uppercase tracking-wider text-muted bg-ui-subtle py-[0.15rem] px-2 rounded w-fit">{{ . }}</span>{{ end }}
+          <div class="flex-1 flex flex-col gap-2">
+            {{ range $i, $biz := $items }}
+            {{ if gt $i 0 }}<hr class="my-2 border-ui-subtle">{{ end }}
+            {{ partial "business-directory-item.html" $biz }}
+            {{ end }}
           </div>
-          {{ with .description }}<p class="text-sm text-text leading-normal flex-1">{{ . }}</p>{{ end }}
           <ul class="flex flex-col gap-1 mt-1 p-0 list-none">
             {{ with .address }}<li class="flex items-start gap-1.5 text-fine text-muted">
               <svg class="shrink-0 mt-[0.1em]" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
               {{ . }}</li>{{ end }}
-            {{ with .telephone }}<li class="flex items-center gap-1.5 text-fine text-muted hover:text-surface transition-colors duration-150">
-              <svg class="shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
-              <a href="tel:{{ . | replaceRE `\s` `` }}">{{ . }}</a></li>{{ end }}
-            {{ with .mobile }}<li class="flex items-center gap-1.5 text-fine text-muted hover:text-surface transition-colors duration-150">
-              <svg class="shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
-              <a href="tel:{{ . | replaceRE `\s` `` }}">{{ . }} (mobile)</a></li>{{ end }}
-            {{ with .email }}<li class="flex items-center gap-1.5 text-fine text-muted hover:text-surface transition-colors duration-150">
-              <svg class="shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-              <a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
-            {{ with .website }}
-            <li class="flex items-center gap-1.5 break-all text-fine text-muted hover:text-surface transition-colors duration-150">
-              <svg class="shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg>
-              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ . | replaceRE `^https?://` `` | strings.TrimRight "/" }}</a>
-            </li>
-            {{ end }}
           </ul>
-          {{ $hasSocial := or .facebook .instagram .x .twitter .linkedin .youtube .tiktok }}
-          {{ if $hasSocial }}
-          <div class="flex gap-1.5 mt-2">
-            {{ $socialBtnClass := "flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" }}
-            {{ with .facebook }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Facebook" "icon" "icons/facebook.html" "context" $) }}{{ end }}
-            {{ with .instagram }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Instagram" "icon" "icons/instagram.html" "context" $) }}{{ end }}
-            {{ with .linkedin }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "LinkedIn" "icon" "icons/linkedin.html" "context" $) }}{{ end }}
-            {{ with .x }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "X (Twitter)" "icon" "icons/twitter.html" "context" $) }}{{ end }}
-            {{ with .twitter }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Twitter" "icon" "icons/twitter.html" "context" $) }}{{ end }}
-            {{ with .youtube }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "YouTube" "icon" "icons/youtube.html" "context" $) }}{{ end }}
-            {{ with .tiktok }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "TikTok" "icon" "icons/tiktok.html" "context" $) }}{{ end }}
-          </div>
-          {{ end }}
         </div>
       </div>
       {{- end -}}
