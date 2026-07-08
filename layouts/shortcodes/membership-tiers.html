@@ -31,14 +31,13 @@
         },
         createSubscription: function(data, actions) {
           return actions.subscription.create({
-            /* Creates the subscription */
             plan_id: 'P-15K08486V0565723JMCSNK4I'
           });
         },
         onApprove: function(data, actions) {
-          alert(data.subscriptionID); // You can add optional success message for the subscriber here
+          alert(data.subscriptionID);
         }
-      }).render('#paypal-button-container-P-15K08486V0565723JMCSNK4I'); // Renders the PayPal button
+      }).render('#paypal-button-container-P-15K08486V0565723JMCSNK4I');
 
       paypal.Buttons({
         style: {
@@ -49,14 +48,13 @@
         },
         createSubscription: function(data, actions) {
           return actions.subscription.create({
-            /* Creates the subscription */
             plan_id: 'P-1DM5937452873231TNJGVPTA'
           });
         },
         onApprove: function(data, actions) {
-          alert(data.subscriptionID); // You can add optional success message for the subscriber here
+          alert(data.subscriptionID);
         }
-      }).render('#paypal-button-container-P-1DM5937452873231TNJGVPTA'); // Renders the PayPal button
+      }).render('#paypal-button-container-P-1DM5937452873231TNJGVPTA');
     </script>
   </div>
 
