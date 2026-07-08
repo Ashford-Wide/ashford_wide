@@ -23,7 +23,7 @@ Drives the `/business-directory/` page. Fields:
 
 ## `data/members.yaml`
 
-Drives the homepage member logo marquee. Fields: `name`, `logo` (image path).
+Editable via the Sveltia CMS ("Member Logos" collection), but not currently read by any template. The homepage member logo marquee actually reads from `data/businesses.yaml` (see above), filtered to entries with a `logo` set. Fields: `name`, `logo` (image path).
 
 ## `data/team.yaml`
 
