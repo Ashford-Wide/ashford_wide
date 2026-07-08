@@ -84,8 +84,9 @@ By default this calls Instagram's oEmbed API. To avoid needing an access token, 
 **Accessing data files** — use `site.Data` ([data templates reference](https://gohugo.io/functions/hugo/data/)):
 ```go
 {{ $businesses := site.Data.businesses }}
-{{ $members := site.Data.members }}
 ```
+
+Note: the homepage member logo marquee (`layouts/index.html`) is driven by `site.Data.businesses` filtered to entries with a `logo` set, not by `data/members.yaml` — the latter is unused by any template despite having a CMS collection.
 
 **Event date filtering:**
 ```go
