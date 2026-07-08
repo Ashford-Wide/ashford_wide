@@ -13,7 +13,7 @@ Ashford Wide is Ashford’s main community organisation. We’re a non-profit co
 
 In the past there were several local groups working independently, all with different objectives, but all with the same goal.
 
->"To bring something positive to Ashford whether that be in business, through community groups, or local events." These groups unanimously decided that working together, with one vision would achieve  greater results for the town & community. Ashford Chamber of Commerce, Ashford Pride and Ashford Events joined forces with the current Ashford Wide group, creating a new expanded group.
+>To bring something positive to Ashford whether that be in business, through community groups, or local events." These groups unanimously decided that working together, with one vision would achieve  greater results for the town & community. Ashford Chamber of Commerce, Ashford Pride and Ashford Events joined forces with the current Ashford Wide group, creating a new expanded group.
 
 This year we will be:
 
