@@ -4,8 +4,20 @@
 
 {{- $orgRef := dict "@id" (print .Site.BaseURL "#organization") -}}
 
+{{- $flattened := slice -}}
+{{- range $sorted -}}
+  {{- if .businesses -}}
+    {{- $parent := . -}}
+    {{- range .businesses -}}
+      {{- $flattened = $flattened | append (merge (dict "address" $parent.address "placeId" $parent.placeId) .) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $flattened = $flattened | append . -}}
+  {{- end -}}
+{{- end -}}
+
 {{- $items := slice -}}
-{{- range $i, $biz := $sorted -}}
+{{- range $i, $biz := $flattened -}}
   {{- $item := dict "@type" "LocalBusiness" "name" $biz.name -}}
   {{- with $biz.description -}}
     {{- $item = merge $item (dict "description" .) -}}
@@ -36,7 +48,7 @@
   "url" $page.Permalink
   "name" $page.Title
   "publisher" $orgRef
-  "mainEntity" (dict "@type" "ItemList" "numberOfItems" (len $sorted) "itemListElement" $items)
+  "mainEntity" (dict "@type" "ItemList" "numberOfItems" (len $flattened) "itemListElement" $items)
 -}}
 {{- with $page.Description -}}
   {{- $collectionPage = merge $collectionPage (dict "description" .) -}}
