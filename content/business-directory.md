@@ -1,7 +1,9 @@
 ---
-title: "Business Directory"
-description: "Find local businesses, services and organisations in Ashford town centre"
-layout: "business-directory"
+title: Business Directory
+description: Find local businesses, services and organisations in Ashford town centre
+layout: business-directory
 ---
 
 Browse our directory of local businesses and organisations. All listings are Ashford Wide members and community partners.
+
+If you'd like to join our business directory, see our [membership](/membership) page for more information on how to join our business network.
