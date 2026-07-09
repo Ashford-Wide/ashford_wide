@@ -1,5 +1,5 @@
 ---
-title: Cookies and data
+title: Cookies and data collection
 description: What data we collect and how we use it
 date: 2024-01-01
 lastmod: 2026-07-07
