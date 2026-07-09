@@ -37,4 +37,4 @@ We are committed to providing a safe and supportive environment for everyone inv
 
 All volunteers may be required to complete basic safeguarding training and, where appropriate, an enhanced DBS check before starting their role.
 
-If you have any concerns about safeguarding, please [speak to a member of our team](/contact) or contact our Designated Safeguarding Lead at [safeguarding@ashfordwide.com](mailto:safeguarding@ashfordwide.com).
+If you have any concerns about safeguarding, please [speak to a member of our team](/contact) or contact our Designated Safeguarding Lead at <a href="mailto:{{< param "safeguardingEmail" >}}">{{< param "safeguardingEmail" >}}</a>.

@@ -8,6 +8,11 @@
 </div>
 <section class="py-4">
   <div class="max-w-[800px] mx-auto px-6">
+    {{ with .Params.image }}
+    <div class="rounded mb-8 overflow-hidden bg-image-bg flex justify-center">
+      {{ partial "image.html" (dict "src" . "alt" $.Title "class" "max-w-full h-auto max-h-[600px]" "width" 1200) }}
+    </div>
+    {{ end }}
     <div class="article-content">
       {{ .Content }}
     </div>

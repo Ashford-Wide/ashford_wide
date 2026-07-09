@@ -2,7 +2,7 @@
 
 {{/* ── Hero ── */}}
 {{- $heroBg := "" -}}
-{{- with .Params.hero_image -}}
+{{- with .Params.image -}}
   {{- $heroBg = partial "image.html" (dict "src" . "urlOnly" true "width" 1600) | strings.TrimSpace -}}
 {{- end -}}
 <section
