@@ -15,6 +15,7 @@ disableHugoGeneratorInject = true
   logo = "/images/aw-logo.png"
   email = "community@ashfordwide.com"
   businessEmail = "business@ashfordwide.com"
+  safeguardingEmail = "safeguarding@ashfordwide.com"
   ogImage = "/images/home-primary-image.jpg"
   foundingDate = 2012
   companyNumber = ""
