@@ -6,8 +6,6 @@ lastmod: 2026-04-06
 image: /images/poppy-sponsorship.jpg
 ---
 
-{{< image src="/images/poppy-sponsorship.jpg" alt="Poppies in Ashford town centre" >}}
-
 ## Sponsor a Poppy
 
 Each year, Ashford Wide places thousands of poppies across the town centre in the lead-up to Remembrance Sunday, creating a stunning visual tribute to those who gave their lives in service of their country.
