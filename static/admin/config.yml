@@ -125,20 +125,6 @@ collections:
           - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Body, name: body, widget: markdown }
 
-  - name: members
-    label: Member Logos
-    files:
-      - label: Members
-        name: members
-        file: data/members.yaml
-        fields:
-          - label: Members
-            name: members
-            widget: list
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Logo, name: logo, widget: image }
-
   - name: businesses
     label: Business Directory
     files:
