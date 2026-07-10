@@ -5,11 +5,6 @@
     <h3 class="text-h3 font-bold text-surface mt-0">Business Member</h3>
     <div class="text-display-sm font-bold text-secondary mb-0.5">£15 <span class="text-body-md font-normal text-muted">/month</span></div>
     <div class="text-fine text-muted mb-4">or £150/year</div>
-    <ul class="text-body-sm space-y-2 mb-6 flex-1 list-none pl-0 text-left mx-auto max-w-fit">
-      <li class="flex gap-2"><span class="text-secondary font-bold shrink-0">✓</span> Link on the Ashford Wide directory</li>
-      <li class="flex gap-2"><span class="text-secondary font-bold shrink-0">✓</span> A vote at general meetings</li>
-      <li class="flex gap-2"><span class="text-secondary font-bold shrink-0">✓</span> Attendance and opportunity to host networking events</li>
-    </ul>
     <div class="w-full space-y-4">
       <div>
         <div class="text-body-sm font-semibold text-surface mb-2">Pay monthly</div>
@@ -31,14 +26,13 @@
         },
         createSubscription: function(data, actions) {
           return actions.subscription.create({
-            /* Creates the subscription */
             plan_id: 'P-15K08486V0565723JMCSNK4I'
           });
         },
         onApprove: function(data, actions) {
-          alert(data.subscriptionID); // You can add optional success message for the subscriber here
+          alert(data.subscriptionID);
         }
-      }).render('#paypal-button-container-P-15K08486V0565723JMCSNK4I'); // Renders the PayPal button
+      }).render('#paypal-button-container-P-15K08486V0565723JMCSNK4I');
 
       paypal.Buttons({
         style: {
@@ -49,14 +43,13 @@
         },
         createSubscription: function(data, actions) {
           return actions.subscription.create({
-            /* Creates the subscription */
             plan_id: 'P-1DM5937452873231TNJGVPTA'
           });
         },
         onApprove: function(data, actions) {
-          alert(data.subscriptionID); // You can add optional success message for the subscriber here
+          alert(data.subscriptionID);
         }
-      }).render('#paypal-button-container-P-1DM5937452873231TNJGVPTA'); // Renders the PayPal button
+      }).render('#paypal-button-container-P-1DM5937452873231TNJGVPTA');
     </script>
   </div>
 
