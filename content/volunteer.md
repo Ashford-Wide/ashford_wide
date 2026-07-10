@@ -2,7 +2,7 @@
 title: Volunteer
 description: 'Make a difference in Ashford: volunteer with Ashford Wide'
 date: 2024-01-01
-lastmod: 2026-05-05
+lastmod: 2026-07-10
 ---
 
 {{< carousel 
