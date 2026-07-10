@@ -2,7 +2,7 @@
 title: "Town Flags"
 description: "Throughout the year we put up flags down the high street to commemorate key events"
 date: 2024-01-01
-lastmod: 2026-04-10
+lastmod: 2026-07-10
 ---
 
 {{< flag-grid >}}
