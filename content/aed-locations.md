@@ -3,6 +3,7 @@ title: AED Locations
 description: Locatations of Automated External Defibrillators (AED) in Ashford
 date: 2026-06-17
 lastmod: 2026-06-17
+draft: true
 ---
 
 > [!CAUTION]
@@ -15,7 +16,7 @@ They can be found at:
 - Brownrigg Road - On the wall of The Wardle Dental Clinic {{< location-pin name="The Wardle Dental Clinic, Brownrigg Road, Ashford" placeId="ChIJ9xPMAflzdkgRYWc7PniDDJo" >}}
 - Together Dental - Church Road {{< location-pin name="Together Dental, Church Road, Ashford" placeId="ChIJay5oJPlzdkgRGd-b6_M9qWE" >}}
 - Tesco Express - Church Road {{< location-pin name="Tesco Express, Church Road Ashford" placeId="ChIJld9Tzv5zdkgRinNCo8gwQso" >}}
-- St Hilda's Church - Next to the hall main entrance
+- St Hilda's Church - Next to the hall main entrance {{< location-pin name="St Hilda's Church" placeId="ChIJITGPxVVxdkgRbQ1zOlaxA3U">}}
 - The Well - 
 
 ## Resources
