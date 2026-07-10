@@ -43,3 +43,9 @@ We would love to have your help making Ashford a better place to live, whether t
 Our leadership team is elected annually from our volunteers and is currently:
 
 {{< team >}}
+
+## Friends of Ashford Wide
+
+- [Ashford Residents Association](https://ashfordra.co.uk/)
+- [Ashford Revive](https://www.ashfordrevive.org/)
+- [Spelthorne Youth Club](https://spelthorneyouthclub.com/)
