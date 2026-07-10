@@ -1,6 +1,6 @@
 ---
-title: "Road Closures"
-description: "Road closures in Ashford town centre for Remembrance Sunday"
+title: Road Closures
+description: Road closures in Ashford town centre for Remembrance Sunday
 date: 2025-11-09
 lastmod: 2026-04-06
 ---
@@ -23,5 +23,7 @@ The following roads will be partially closed:
 The map below shows the roads and where they will be  closed:
 
 {{< road-closure-map >}}
+
+An alternate traffic route is suggested below:
 
 If you have any questions about the road closures, please contact us at [{{< param "email" >}}](mailto:{{< param "email" >}}).

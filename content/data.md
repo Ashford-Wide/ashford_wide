@@ -1,5 +1,5 @@
 ---
-title: Cookies and data collection
+title: Cookies, privacy, and data collection
 description: What data we collect and how we use it
 date: 2024-01-01
 lastmod: 2026-07-10
@@ -29,21 +29,22 @@ These cookies help identify malicious traffic and protect the site from bot atta
 We use external services to provide specific functionality. These services may set their own cookies or process your IP address when you interact with them.
 
 - PayPal (Donations)
-  - If you use the PayPal donation button, PayPal may set cookies to manage the transaction, prevent fraud, and remember your session.
-  - Why: To process your donation securely.
-  - Data processed: Transaction details, device info, and IP address.
-  - Privacy Policy: [PayPal Privacy Statement](https://www.paypal.com/uk/legalhub/paypal/privacy-full)
+    - If you use the PayPal donation button, PayPal may set cookies to manage the transaction, prevent fraud, and remember your session.
+    - Why: To process your donation securely.
+    - Data processed: Transaction details, device info, and IP address.
+    - Privacy Policy: [PayPal Privacy Statement](https://www.paypal.com/uk/legalhub/paypal/privacy-full)
 - OpenStreetMap (Maps)
-  - We use OpenStreetMap (OSM) to show maps on our site.
-  - Why: To provide geographic context and directions.
-  - How it works: When you view a page with a map, your browser connects directly to OpenStreetMap servers. Your IP address is shared with them to deliver the map tiles to your screen.
-  - Privacy Policy: [OpenStreetMap Foundation Privacy Policy](https://osmfoundation.org/wiki/Privacy_Policy)
+    - We use OpenStreetMap (OSM) to show maps on our site.
+    - Why: To provide geographic context and directions.
+    - How it works: When you view a page with a map, your browser connects directly to OpenStreetMap servers. Your IP address is shared with them to deliver the map tiles to your screen.
+    - Privacy Policy: [OpenStreetMap Foundation Privacy Policy](https://osmfoundation.org/wiki/Privacy_Policy)
 
 ## Personal data
 
 ### Information we collect
 
 We may collect and store the following types of information:
+
 - Contact details – name, address, phone number, email.
 - Event participation – details of events you’ve showed interest in, attended, worked at or volunteered for.
 - Payments/donations – records of any payments or donations you make to us.
@@ -132,7 +133,6 @@ If you’re not satisfied, you can complain to the Information Commissioner’s 
 
 - Website: [www.ico.org.uk](https://ico.org.uk/)
 - Phone: [0303 123 1113](tel:03031231113)
-
----
+  ---
 
 {{< last-updated >}}

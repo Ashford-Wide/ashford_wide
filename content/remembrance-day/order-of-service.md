@@ -1,6 +1,6 @@
 ---
-title: "Order of Service"
-description: "Details of the Remembrance Day order of service in Ashford"
+title: Order of Service
+description: Details of the Remembrance Day order of service in Ashford
 date: 2024-01-01
 lastmod: 2026-04-06
 ---
@@ -31,7 +31,7 @@ The service is held at the War Memorial in Ashford town centre and is led by loc
 <p itemscope itemtype="https://schema.org/Place">
   <span itemprop="name">The War Memorial</span> is located in the 
   <span itemprop="address">centre of town, at the junction of Church Road and Fordbridge Road</span>. 
-  
+
   <span itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
     <meta itemprop="latitude" content="51.4327291" />
     <meta itemprop="longitude" content="-0.4620293" />
@@ -39,7 +39,7 @@ The service is held at the War Memorial in Ashford town centre and is led by loc
 
   <link itemprop="sameAs" href="https://www.openstreetmap.org/node/158758386" />
 
-  Please arrive by 10:45am to ensure the service begins promptly at 11:00am.
+  Please arrive by 10:45am to ensure the service begins promptly at 11:00am. The parade begins at approximately 10:45am.
 </p>
 
 For more information, please email us: [{{< param "email" >}}](mailto:{{< param "email" >}}).

@@ -1,9 +1,9 @@
 ---
 title: AED Locations
-description: Locatations of Automated External Defibrillators (AED) in Ashford
+description: Locations of Automated External Defibrillators (AED) in Ashford
+draft: true
 date: 2026-06-17
 lastmod: 2026-07-10
-draft: true
 ---
 
 > [!CAUTION]

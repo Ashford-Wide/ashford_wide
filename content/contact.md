@@ -9,8 +9,8 @@ lastmod: 2026-07-10
 
 We'd love to hear from you. Whether you have a question about membership, want to discuss an event, or simply want to know more about what we do, please get in touch.
 
-- Community email: contact us at [{{< param "email" >}}](mailto:{{< param "email" >}})
-- Business membership email: [{{< param "businessEmail" >}}](mailto:{{< param "businessEmail" >}})
+- Community and events email: [{{< param "email" >}}](mailto:{{< param "email" >}})
+- Business Membership email: [{{< param "businessEmail" >}}](mailto:{{< param "businessEmail" >}})
 - Safeguarding email:
 - Finance email:
 - Social media: find us on [Facebook]({{< param "facebook" >}}) and [Instagram]({{< param "instagram" >}}) for the latest news and updates.

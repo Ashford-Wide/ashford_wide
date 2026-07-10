@@ -1,14 +1,14 @@
 ---
-title: "Sponsor a Poppy"
-description: "Sponsor a poppy and help us remember those who gave their lives"
+title: Sponsor a Poppy
+description: Sponsor a poppy and help us remember those who gave their lives
+image: /images/poppy-sponsorship.jpg
 date: 2024-01-01
 lastmod: 2026-04-06
-image: /images/poppy-sponsorship.jpg
 ---
 
 ## Sponsor a Poppy
 
-Each year, Ashford Wide places thousands of poppies across the town centre in the lead-up to Remembrance Sunday, creating a stunning visual tribute to those who gave their lives in service of their country.
+Each year, Ashford Wide places tens of poppies across the town centre in the lead-up to Remembrance Sunday, creating a stunning visual tribute to those who gave their lives in service of their country.
 
 You can sponsor a poppy to be displayed in the town centre as part of our annual Remembrance display. Your sponsored poppy can carry a personal dedication in memory of a loved one.
 
@@ -16,20 +16,20 @@ You can sponsor a poppy to be displayed in the town centre as part of our annual
 
 ## How to Sponsor
 
-Sponsorships are available from £5. You can sponsor a Poppy using the PayPal button below. For more information, or for other ways to pay, please email [{{< param "email" >}}](mailto:{{< param "email" >}}).
+Sponsorships are available from £10. You can sponsor a Poppy using the PayPal button below. For more information, or for other ways to pay, please email [{{< param "email" >}}](mailto:{{< param "email" >}}).
 
 Please include:
 
 - Individuals:
-  - Name
-  - Email
-  - Who you wish to remember
+    - Name
+    - Email
+    - Who you wish to remember/tribute words
 - Businesses:
-  - Business name
-  - Logo
-  - Email
+    - Business name
+    - Logo
+    - Email
 
-All proceeds go towards the cost of the Remembrance display and future community events.
+All proceeds go towards the cost of the Remembrance display and Remembrance Sunday costs.
 
 {{< paypal-poppy >}}
 
