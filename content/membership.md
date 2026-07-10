@@ -4,7 +4,7 @@ description: Join Ashford Wide and help shape the future of Ashford town centre
 image: ''
 hero_image: ''
 date: 2024-01-01
-lastmod: 2026-05-05
+lastmod: 2026-07-10
 ---
 
 ## Join Ashford Wide
