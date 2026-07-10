@@ -92,10 +92,41 @@
       "Bash(sed 's/^ld+json\">//; s/<\\\\/script>$//')",
       "Bash(python3 -)",
       "Bash(curl -s http://localhost:1313/business-directory/)",
-      "Bash(grep -i \"hugo server\\\\|hugo -w\\\\|hugo$\")"
+      "Bash(grep -i \"hugo server\\\\|hugo -w\\\\|hugo$\")",
+      "Bash(gh repo *)",
+      "Bash(xxd layouts/shortcodes/param.html)",
+      "Bash(hugo --version)",
+      "Bash(hugo --minify -d /tmp/hugo_out_test)",
+      "Bash(grep -o '.\\\\{80\\\\}safeguarding@ashfordwide.com.\\\\{80\\\\}' /tmp/hugo_out_test/volunteer/index.html)",
+      "Read(//private/tmp/hugo_out_test/volunteer/**)",
+      "Bash(grep -n \"safeguarding\\\\|Designated\" /tmp/hugo_out_test/volunteer/index.html)",
+      "Bash(rm -rf /tmp/hugo_out_test2)",
+      "Bash(hugo -d /tmp/hugo_out_test2)",
+      "Read(//tmp/hugo_out_test2/volunteer/**)",
+      "Bash(cp content/volunteer.md /tmp/volunteer.md.bak)",
+      "Bash(rm -rf /tmp/hugo_out_test3)",
+      "Bash(hugo -d /tmp/hugo_out_test3)",
+      "Read(//tmp/hugo_out_test3/volunteer/**)",
+      "Bash(cp /tmp/volunteer.md.bak content/volunteer.md)",
+      "Bash(awk 'NR==40{print length\\($0\\)}' /Users/alasdair/Developer/ashford_wide/content/volunteer.md)",
+      "Bash(cp /tmp/test_line2.md content/test-line2.md)",
+      "Bash(rm -rf /tmp/hugo_out_test5)",
+      "Bash(hugo -d /tmp/hugo_out_test5)",
+      "Read(//tmp/hugo_out_test5/test-line2/**)",
+      "Bash(grep -rn '</a>$' /tmp/hugo_out_test2/**/*.html 2>/dev/null | head -20)",
+      "Read(//private/tmp/hugo_out_test2/**)",
+      "Bash(cp /tmp/test_line3.md content/test-line3.md)",
+      "Bash(rm -rf /tmp/hugo_out_test6)",
+      "Bash(hugo -d /tmp/hugo_out_test6)",
+      "Read(//tmp/hugo_out_test6/test-line3/**)",
+      "Bash(rm -rf /tmp/hugo_out_test /tmp/hugo_out_test2 /tmp/hugo_out_test3 /tmp/hugo_out_test4 /tmp/hugo_out_test5 /tmp/hugo_out_test6 /tmp/test_line.md /tmp/test_line2.md /tmp/test_line3.md /tmp/volunteer.md.bak *)",
+      "Bash(rm -rf /tmp/hugo_verify)",
+      "Bash(hugo -d /tmp/hugo_verify)",
+      "Read(//tmp/hugo_verify/volunteer/**)"
     ],
     "additionalDirectories": [
-      "/private/tmp/hugo-before"
+      "/private/tmp/hugo-before",
+      "/private/tmp/hugo_out_test"
     ]
   }
 }
