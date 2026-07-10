@@ -2,7 +2,7 @@
 title: About Ashford Wide
 description: Working together for a better Ashford
 date: 2024-01-01
-lastmod: 2026-05-05
+lastmod: 2026-07-10
 ---
 
 ## Who We Are
