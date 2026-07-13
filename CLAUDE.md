@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Ashford Wide is a Hugo-based static site for a community organization. Content is managed via Sveltia CMS and deployed to Cloudflare Pages. CSS uses Tailwind v4 via PostCSS; JavaScript is vanilla (no framework).
+Ashford Wide is a Hugo-based static site for Ashford Wide, a community organization in Ashford, Surrey. Content is managed via Sveltia CMS and deployed to Cloudflare Pages (auto-built from `main`). CSS uses Tailwind v4 via PostCSS; JavaScript is vanilla (no framework).
 
 ## Commands
 
@@ -21,16 +21,16 @@ No separate lint command — Hugo build validates templates; Tailwind errors sur
 
 ### Content & Data
 
-- `content/` — Markdown pages. Events and news are organized into subdirectories by year (`content/events/2025/`, `content/news/2025/`).
-- `data/` — YAML data files: `businesses.yaml`, `members.yaml`, `team.yaml`, `poppies/2025.yaml`.
+- `content/` — Markdown pages. Events and news are organized into subdirectories by year (`content/events/<year>/`, `content/news/<year>/`); also standalone pages (`about.md`, `business-directory.md`, `aed-locations.md`, `town-flags.md`, etc.) and a `content/remembrance-day/` section (e.g. `road-closures.md`).
+- `data/` — YAML data files: `businesses.yaml`, `team.yaml`, `poppies/<year>.yaml`.
 - Front matter is YAML. Events require `date`, `startTime` (24hr string), `endTime`, `location`; they also carry `eventStatus` and `attendanceMode` for Schema.org output.
 - Permalinks strip the year from public URLs (configured in `hugo.toml`).
 
 ### Templates
 
 - `layouts/_default/baseof.html` — single base template; all pages extend it via Hugo blocks.
-- `layouts/partials/` — reusable components (`head.html`, `header.html`, `footer.html`, SEO/schema partials).
-- `layouts/shortcodes/` — 10 custom shortcodes including `paypal-donate`, `param` (reads site config values), and team/flag/image cards.
+- `layouts/partials/` — reusable components (`head.html`, `header.html`, `footer.html`, `opengraph.html`), plus subdirectories `jsonld/` (Schema.org partials), `icons/` (inline SVG icon partials), and `homepage/` (homepage-specific sections).
+- `layouts/shortcodes/` — ~20 custom shortcodes including `paypal-donate` (and related `paypal-*` variants), `param` (reads site config values), `team`, `flag-grid`, `image`, `carousel`, `aed-map`, `pin-map`, `road-closure-map`, and `membership-tiers`.
 - Event templates auto-split upcoming vs. past events by comparing dates at build time.
 - Seasonal promo blocks are toggled via params in `hugo.toml`.
 
@@ -64,10 +64,14 @@ Detailed docs covering specific subsystems live in `docs/`:
 
 | File | Topic |
 |---|---|
+| `docs/background.md` | Project overview, stack, live domain |
 | `docs/hugo/` | Build pipeline, config, content & template architecture |
 | `docs/tailwind.md` | Custom Tailwind setup and token reference |
 | `docs/javascript.md` | Script inventory and Hugo Pipes usage |
 | `docs/accessibility_testing.md` | a11y workflow and tooling |
 | `docs/sveltia_cms.md` | CMS setup, auth, collections, local dev |
 | `docs/seo.md` | SEO and structured data approach |
+| `docs/security.md` | CSP headers (`static/_headers`) and other security notes |
+| `docs/deployment.md` | Cloudflare Pages build settings, daily rebuild workflow |
+| `docs/content/` | Content-authoring notes (business detail pages, markdown, remembrance) |
 | `docs/known_gaps_future_work.md` | Backlog and known limitations |
