@@ -10,9 +10,13 @@ Promote your business with high street lamppost banners in Ashford town centre. 
 - High Visibility: reach thousands of local shoppers with hyper-local advertising 
 - Affordable: proffessional print, install, and maintence included
 - Support local: supporting local events in our community
-- Join our membership: Business Network membership included with an array of perks. For more information on Business Network membership click this link.
+- Join our membership: Business Network membership included with an array of perks. Find out more information on our [Business Network membership](/membership).
 
-Please email business@ashfordwide.com for more information, for an invoice, or other ways to pay.
+Buy a business banner through PayPal. Includes printing, maintainence, and installation for one year.
+
+{{< paypal-banner >}}
+
+Or please email business@ashfordwide.com for more information, for an invoice, or other ways to pay.
 
 ## Other ways to support us
 
