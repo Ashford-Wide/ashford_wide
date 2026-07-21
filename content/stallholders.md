@@ -1,9 +1,10 @@
 ---
 title: Stallholder Information
-description: Guidance for stallholders at Ashford Wide events
+description: Guidance and information for stallholders at Ashford Wide events
+image: /images/stalls.png
+draft: true
 date: 2024-01-01
 lastmod: 2026-07-10
-draft: true
 ---
 
 ## Thinking of running a stall at an Ashford Wide event?
@@ -19,6 +20,7 @@ If you're considering holding a stall at one of our events there are specific pi
 - Food Standards Agency rating (for example: [Costa Coffee's](https://ratings.food.gov.uk/business/277624/costa-coffee-church-road))
 - Gas safety inspection certificates
 - Electrical safety inspection certificates
+- Risk assessment/fire risk assessment
 
 ### Why do we need this?
 
