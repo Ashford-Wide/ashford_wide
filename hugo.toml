@@ -1,4 +1,4 @@
-baseURL = "https://ashford-wide.pages.dev"
+baseURL = "https://www.ashfordwide.com"
 locale = "en-GB"
 title = "Ashford Wide"
 publishDir = "public"
