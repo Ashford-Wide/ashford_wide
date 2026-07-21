@@ -12,5 +12,5 @@ We'd love to hear from you. Whether you have a question about membership, want t
 - Community and events email: [{{< param "email" >}}](mailto:{{< param "email" >}})
 - Business Membership email: [{{< param "businessEmail" >}}](mailto:{{< param "businessEmail" >}})
 - Safeguarding email: [{{< param "safeguardingEmail" >}}](mailto:{{< param "safeguardingEmail" >}})
-- Finance email:
+- Finance email: [{{< param "financeEmail" >}}](mailto:{{< param "financeEmail" >}})
 - Social media: find us on [Facebook]({{< param "facebook" >}}) and [Instagram]({{< param "instagram" >}}) for the latest news and updates.
