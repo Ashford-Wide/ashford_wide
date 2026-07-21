@@ -18,6 +18,6 @@ Our new site has been built from the ground up to be faster, easier to use, and 
 
 ## Get Involved
 
-If you're interested in getting involved with Ashford Wide—whether as a business member, a volunteer, or simply someone who wants to help make Ashford a better place—we'd love to hear from you.
+If you're interested in getting involved with Ashford Wide, whether as a business member, a volunteer, or simply someone who wants to help make Ashford a better place, we'd love to hear from you.
 
 [Contact us](/contact) to find out more, or explore our [membership options](/membership).
