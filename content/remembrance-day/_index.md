@@ -2,6 +2,8 @@
 title: Remembrance
 description: Honouring those who gave their lives in service
 layout: single
+videoID: "1180234252"
+videoTitle: Ashford Wide - putting up Poppies & Flags for Remembrance
 ---
 
 ## Remembrance in Ashford
