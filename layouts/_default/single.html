@@ -13,6 +13,11 @@
       {{ partial "image.html" (dict "src" . "alt" $.Title "class" "max-w-full h-auto max-h-[600px]" "width" 1200) }}
     </div>
     {{ end }}
+    {{ with .Params.videoID }}
+    <div class="mb-8">
+      {{ partial "featured-video.html" (dict "videoID" . "videoTitle" $.Params.videoTitle) }}
+    </div>
+    {{ end }}
     <div class="article-content">
       {{ .Content }}
     </div>
