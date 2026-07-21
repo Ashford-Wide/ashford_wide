@@ -1,7 +1,6 @@
 ---
 title: AED Locations
 description: Locations of Automated External Defibrillators (AED) in Ashford
-draft: true
 date: 2026-06-17
 lastmod: 2026-07-10
 ---
@@ -17,12 +16,15 @@ They can be found at:
 - Together Dental - Church Road {{< location-pin name="Together Dental, Church Road, Ashford" placeId="ChIJay5oJPlzdkgRGd-b6_M9qWE" >}}
 - Tesco Express - Church Road {{< location-pin name="Tesco Express, Church Road Ashford" placeId="ChIJld9Tzv5zdkgRinNCo8gwQso" >}}
 - St Hilda's Church - Next to the hall main entrance {{< location-pin name="St Hilda's Church" placeId="ChIJITGPxVVxdkgRbQ1zOlaxA3U">}}
-- The Well - 
 
 ## Resources
 
 - St John Ambulance: [How to use a defibrillator (AED)](https://www.sja.org.uk/first-aid-advice/how-to-use-a-defibrillator/)
 - British Heart Foundation: [DefibFinder](https://www.defibfinder.uk/)
+
+## Sponsor our defibrillators
+
+Ashford Wide is responsible for the defibrillator on Brownrigg Road. It's used around five times a year, and each time it's used part need to be replaced to make it ready for the next person in need. Help us to keep this vital community resource available for everyone by [supporting us](/support).
 
 ## Map
 
