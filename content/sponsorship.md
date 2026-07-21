@@ -22,7 +22,7 @@ It's a great way to show your commitment to Ashford, connect with local people, 
 ## Sponsorship Opportunites
 
 - [Summer Fair NEW!](/events/summer-fair)
-- Support Remembrance Sunday parade and service.
+- Support [Remembrance Sunday](/remembrance-day) parade and service.
 - [Lamppost remembrance poppies](/remembrance-day/sponsor-a-poppy) and [virtual poppy wall](/remembrance-day/virtual-poppy-wall).
 - Christmas tree - 2 months of brand recognition in photos and at the switch-on.
 - Christmas lights - step up and be seen where the council have let Ashford down.
