@@ -133,6 +133,7 @@ If you’re not satisfied, you can complain to the Information Commissioner’s 
 
 - Website: [www.ico.org.uk](https://ico.org.uk/)
 - Phone: [0303 123 1113](tel:03031231113)
+
   ---
 
 {{< last-updated >}}
