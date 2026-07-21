@@ -1,6 +1,6 @@
 ---
 title: "Welcome to the New Ashford Wide Website"
-date: 2026-03-01
+date: 2026-07-21
 author: "Ashford Wide Team"
 description: "We're delighted to launch our brand new website, making it easier than ever to find information about events, membership and everything we do."
 ---
