@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_ORG/ashford_wide
+  repo: Ashford-Wide/ashford_wide
   branch: main
 
 media_folder: /assets/images
