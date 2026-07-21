@@ -11,7 +11,7 @@ disableHugoGeneratorInject = true
 [params]
   legalName = "Ashford Wide"
   description = "Working together for a better Ashford"
-  showRemembrance = true
+  showRemembrance = false
   logo = "/images/aw-logo.png"
   email = "community@ashfordwide.com"
   businessEmail = "business@ashfordwide.com"
@@ -22,7 +22,6 @@ disableHugoGeneratorInject = true
   activePromo = ""
   featuredVideoID = "1180234252"
   featuredVideoTitle = "Ashford Wide - putting up Poppies & Flags for Remembrance"
-  googleSiteVerification = "GOOGLE_CODE"
   facebookDomainVerification = "FACEBOOK_CODE"
   bingDomainVerification = "98F441D5DBDE4586ADBED0D83AEF5AAA"
   facebook = "https://www.facebook.com/AshfordWide"
