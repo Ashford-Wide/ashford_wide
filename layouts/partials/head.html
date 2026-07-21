@@ -17,7 +17,6 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" type="application/atom+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
-{{ with .Site.Params.googleSiteVerification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
 {{ with .Site.Params.facebookDomainVerification }}<meta name="facebook-domain-verification" content="{{ . }}">{{ end }}
 {{ with .Site.Params.bingDomainVerification }} <meta name="msvalidate.01" content="{{ . }}">{{ end }}
 {{ partial "opengraph.html" . }}
