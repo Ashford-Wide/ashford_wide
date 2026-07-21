@@ -6,7 +6,7 @@ image: /images/community-sponsor.png
 
 ### Sponsor the Ashford Wide Summer Fair!
 
-The Ashford Wide [Summer Summer Fair](ashfordwide.com/events/summer-fair/) takes place on Bank Holiday Monday, 31st August 2026. This is set to be a fun, free way for the community to get toghether with storytelling sessions read by our local MP and councillors, and even a free reptile show. 
+The Ashford Wide [Summer Summer Fair](/events/summer-fair) takes place on Bank Holiday Monday, 31st August 2026. This is set to be a fun, free way for the community to get toghether with storytelling sessions read by our local MP and councillors, and even a free reptile show. 
 
 We have Gold, Silver, and Bronze level sponsorship opportunities remaining to sponsor this event in a way that works for your brand.
 
