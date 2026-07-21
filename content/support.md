@@ -20,6 +20,7 @@ Your support helps us to:
 - Support local businesses and help them thrive
 - Deliver safety and environmental improvement projects
 - Keep Ashford a welcoming destination for residents and visitors
+- Maintain the AED on Brownrigg Road
 
 ## Make a Donation
 
@@ -27,16 +28,14 @@ You can support us through a one-off or regular donation via PayPal:
 
 {{< paypal-donate >}}
 
-## Sponsor a Remembrance Day Poppy
-
-Post your name and message of remembrance on one of our poppies around town
-
-- Sponsor as an individual or a business
-- Add your message of remembrance
-- Add your message on our wall of virtual poppies
-
-Find out more about how to [sponsor a poppy](/remembrance-day/sponsor-a-poppy/)
-
 ## Become an Ashford Wide Member
 
-There are two sides to our membership: as an individual, or as a business. Find [how you can become a member](/membership) and support the work of Ashford Wide.
+Find [how you can become a member](/membership) and support the work of Ashford Wide.
+
+## Sponsorship
+
+Support events in the heart of Ashford and have your brand seen by hundreds of local residents by [sponsoring](/sponsorship) a local event.
+
+## Banners
+
+Learn about about our hyper-local marketing in the heart of Ashford with [a lamppost banner](/business-lamppost-banners).
