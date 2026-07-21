@@ -37,14 +37,6 @@ Post your name and message of remembrance on one of our poppies around town
 
 Find out more about how to [sponsor a poppy](/remembrance-day/sponsor-a-poppy/)
 
-## Donate to us as you shop
-
-Support us at the Co-op in Ashford and when shopping online
-
-- Donate every time you spend in the Ashford Co-op
-- Sign up with the Co-op and add us as your local cause
-- Support us when you spend at other online stores
-
 ## Become an Ashford Wide Member
 
 There are two sides to our membership: as an individual, or as a business. Find [how you can become a member](/membership) and support the work of Ashford Wide.
