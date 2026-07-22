@@ -6,28 +6,28 @@
 content/
 ├── _index.md
 ├── about.md
+├── aed-locations.md                 # Defibrillator locations — uses the aed-map shortcode
 ├── business-directory.md            # Uses layout: "business-directory"
-├── business-membership.md
-├── contact.md                       # Contains raw HTML Formspree form
+├── business-lamppost-banners.md
+├── contact.md
+├── current-sponsorship-opportunities.md
+├── data.md                          # Cookies / privacy policy page
 ├── membership.md
-├── support.md                       # Contains raw HTML PayPal donation embed
+├── sponsorship.md
+├── stallholders.md                  # draft: true — not published
+├── support.md                       # Uses the paypal-donate shortcode
+├── town-flags.md                    # Uses the flag-grid shortcode
 ├── volunteer.md
 ├── events/
 │   ├── _index.md
 │   ├── past.md                      # Renders /events/past/ archive page; excluded from page lists
 │   ├── 2022/
-│   │   └── jubilee-picnic-park.md
+│   ├── 2023/
+│   ├── 2024/
 │   ├── 2025/
-│   │   ├── christmas-market-2025.md
-│   │   ├── classic-car-show-2025.md
-│   │   └── remberance-sunday-2025.md
-│   └── 2026/
-│       ├── ritual-sacrifice.md
-│       ├── spring-festival-2026.md
-│       └── summer-market-2026.md
+│   └── 2026/                        # Each year folder holds that year's event pages
 ├── news/
 │   ├── _index.md
-│   ├── welcome-to-ashford-wide.md
 │   ├── 2014/
 │   ├── 2015/
 │   ├── 2016/
@@ -36,12 +36,19 @@ content/
 │   ├── 2022/
 │   ├── 2025/
 │   └── 2026/
-└── remembrance/
+└── remembrance-day/
     ├── _index.md                        # Uses layout: single — suppresses default child-page card grid
-    ├── order-of-services.md
+    ├── order-of-service.md
+    ├── road-closures.md                 # Uses the road-closure-map shortcode — see docs/content/remembrance/map.md
     ├── sponsor-a-poppy.md
     └── virtual-poppy-wall.md
 ```
+
+> [!NOTE]
+> This tree lists real top-level pages and folders as of writing. Exact filenames inside `events/<year>/` and `news/<year>/` change often as new content is added — check the folder directly rather than relying on a filename list here.
+
+> [!CAUTION]
+> `content/business-member/` is referenced by `layouts/business-member/single.html` and by [docs/content/business-detail-pages.md](../content/business-detail-pages.md), but the folder currently contains no pages — no business has a dedicated profile page today. The business directory (`content/business-directory.md`, driven by `data/businesses.yaml`) is the only business listing currently live on the site.
 
 ## Year Subdirectory Organisation
 
@@ -118,10 +125,12 @@ layout: "business-directory"  # optional — overrides the default template
 
 ## Atom Feeds
 
-The site has three Atom 1.0 feeds built automatically at the same URLs previously used for RSS:
+The site has Atom 1.0 feeds built automatically at the same URLs previously used for RSS, one per section plus the site-wide feed:
 
 - `/index.xml` - Site-wide feed
 - `/events/index.xml` - Events feed
 - `/news/index.xml` - News feed
+- `/tags/index.xml` - Tags taxonomy feed
+- `/remembrance-day/index.xml` - Remembrance Day section feed
 
 Hugo's RSS output format is used internally (keeping URLs as `index.xml`), but the template at `layouts/_default/rss.xml` outputs valid Atom 1.0 XML. The autodiscovery `<link>` in `head.html` uses `type="application/atom+xml"`.
