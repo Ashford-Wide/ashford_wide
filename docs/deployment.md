@@ -52,7 +52,17 @@ backend:
 
 In local development the CMS uses the File System Access API (Chrome/Edge only) to edit files directly without committing to GitHub.
 
-Editor sign-in (production only, via GitHub OAuth) is handled by a separate Cloudflare Worker, [`Ashford-Wide/aw-auth`](https://github.com/Ashford-Wide/aw-auth) — it has its own deploy lifecycle independent of this repo's Pages build. See [`docs/sveltia_cms.md`](sveltia_cms.md) for full setup details.
+Editor sign-in (production only, via GitHub OAuth) is handled by a separate Cloudflare Worker, [`Ashford-Wide/aw-auth`](https://github.com/Ashford-Wide/aw-auth) — it has its own deploy lifecycle independent of this repo's Pages build. The connection is wired up by a `base_url` line in the same `static/admin/config.yml` file shown above:
+
+```yaml
+backend:
+  name: github
+  repo: Ashford-Wide/ashford_wide
+  branch: main
+  base_url: https://aw-auth.ashford-wide.workers.dev/
+```
+
+See [`docs/sveltia_cms.md`](sveltia_cms.md) for full setup details.
 
 ## Resources cache
 
