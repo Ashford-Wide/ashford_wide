@@ -28,7 +28,7 @@
   {{ end }}
 </ul>
 {{ end }}
-{{ $hasSocial := or $biz.facebook $biz.instagram $biz.x $biz.twitter $biz.linkedin $biz.youtube $biz.tiktok }}
+{{ $hasSocial := or $biz.facebook $biz.instagram $biz.x $biz.twitter $biz.linkedin $biz.youtube $biz.tiktok $biz.whatsapp }}
 {{ if $hasSocial }}
 <div class="flex gap-1.5 mt-2">
   {{ $socialBtnClass := "flex items-center justify-center w-7 h-7 rounded-full border border-border-mid text-muted transition-all duration-150 hover:bg-surface hover:text-white hover:border-surface" }}
@@ -39,5 +39,6 @@
   {{ with $biz.twitter }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Twitter" "icon" "icons/twitter.html" "context" $) }}{{ end }}
   {{ with $biz.youtube }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "YouTube" "icon" "icons/youtube.html" "context" $) }}{{ end }}
   {{ with $biz.tiktok }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "TikTok" "icon" "icons/tiktok.html" "context" $) }}{{ end }}
+  {{ with $biz.whatsapp }}{{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "WhatsApp" "icon" "icons/whatsapp.html" "context" $) }}{{ end }}
 </div>
 {{ end }}
