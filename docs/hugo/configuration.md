@@ -5,8 +5,8 @@
 Full reference: [Hugo site configuration](https://gohugo.io/configuration/all/)
 
 ```toml
-baseURL = "https://ashford-wide.pages.dev"
-languageCode = "en-GB"
+baseURL = "https://www.ashfordwide.com"
+locale = "en-GB"
 title = "Ashford Wide"
 publishDir = "public"
 paginate = 9             # News list pages — 9 per page (fits 3-column grid evenly)
@@ -18,21 +18,23 @@ disableHugoGeneratorInject = true
 [params]
   legalName = "Ashford Wide"                 # Legal registered name — used in org JSON-LD
   description = "Working together for a better Ashford"
-  tagline = "Working together for a better Ashford"
   showRemembrance = false                    # Set true to show Remembrance link in nav
   logo = "/images/aw-logo.png"              # Logo image path
   email = "community@ashfordwide.com"        # General contact email
   businessEmail = "business@ashfordwide.com" # Business-specific contact email
-  ogImage = "/images/og-default.jpg"         # Default Open Graph image (1200×630px)
-  foundedYear = 2012                         # Used in org JSON-LD
+  safeguardingEmail = "safeguarding@ashfordwide.com"  # Used in content/contact.md via the param shortcode
+  financeEmail = "finance@ashfordwide.com"   # Used in content/contact.md via the param shortcode
+  ogImage = "/images/home-primary-image.jpg" # Default Open Graph image (1200×630px)
+  foundingDate = 2012                        # Used in org JSON-LD
   companyNumber = ""                         # Companies House number — omitted from JSON-LD if blank
   activePromo = ""                           # Slug of the active promotion page, or blank if none
-  googleSiteVerification = ""               # Google Search Console verification meta tag
-  facebookDomainVerification = ""           # Facebook domain verification meta tag
+  facebookDomainVerification = "FACEBOOK_CODE"  # Facebook domain verification meta tag
+  bingDomainVerification = "98F441D5DBDE4586ADBED0D83AEF5AAA"  # Bing Webmaster Tools verification meta tag
   facebook = "https://www.facebook.com/AshfordWide"
-  twitter = "https://twitter.com/AshfordWide"
+  twitter = "https://x.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
   linkedin = ""                              # LinkedIn page URL, or blank if not set
+  googleBusinessProfile = ""                 # Google Business Profile URL — added to org JSON-LD `sameAs` if set
 
 [security]
   [security.node]
@@ -42,14 +44,22 @@ disableHugoGeneratorInject = true
       allowChildProcess  = ["tailwindcss", "postcss"]  # detect-libc spawns getconf on some Linux setups
 
 [markup.goldmark.renderer]
-  unsafe = true   # Allows raw HTML inside Markdown (used in contact form, support page)
+  unsafe = true   # Allows raw HTML inside Markdown
 
 [taxonomies]
   tag = "tags"
 
 [privacy]
   [privacy.instagram]
-    simple = true   # Use Hugo's simple Instagram shortcode (no JS embed)
+    disable = false
+    simple = true   # Use Hugo's simple Instagram shortcode (no JS embed) — see docs/hugo/template_architecture.md
+  [privacy.youTube]
+    disable = true            # Hugo's built-in YouTube shortcode is not used on this site
+    privacyEnhanced = true
+  [privacy.vimeo]
+    disable = false
+    enableDNT = true
+    simple = false
 
 [permalinks]
   [permalinks.page]
@@ -88,4 +98,4 @@ Example call (from `layouts/partials/footer.html`):
 
 Centralizing this means the `rel`/`target` attributes can't drift out of sync between templates — previously the footer's social links were missing `noreferrer` while every other template had it.
 
-**Markdown body links** (e.g. a link an editor pastes into a news post or event description in Sveltia CMS) are handled by a [render hook](https://gohugo.io/render-hooks/links/) at `layouts/_default/_markup/render-link.html`. Hugo invokes this automatically for every `[text](url)` link during Markdown rendering, so it applies to all content — existing and future — with no CMS field or editor workflow changes. It only adds `target="_blank" rel="noopener noreferrer"` when the link's host differs from the site's own (`site.BaseURL`, i.e. `ashford-wide.pages.dev`) — internal links, `#anchors`, `mailto:`, and `tel:` links are left untouched.
+**Markdown body links** (e.g. a link an editor pastes into a news post or event description in Sveltia CMS) are handled by a [render hook](https://gohugo.io/render-hooks/links/) at `layouts/_default/_markup/render-link.html`. Hugo invokes this automatically for every `[text](url)` link during Markdown rendering, so it applies to all content — existing and future — with no CMS field or editor workflow changes. It only adds `target="_blank" rel="noopener noreferrer"` when the link's host differs from the site's own (`site.BaseURL`, i.e. `www.ashfordwide.com`) — internal links, `#anchors`, `mailto:`, and `tel:` links are left untouched.
