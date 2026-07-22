@@ -9,7 +9,11 @@ Two or three JSON-LD blocks are output per page:
 | `partials/jsonld/org.html` | Every page (via `head.html`) | [`Organization`](https://schema.org/Organization) |
 | `partials/jsonld/article.html` | News single pages (via `head_extra` in `news/single.html`) | [`NewsArticle`](https://schema.org/NewsArticle) |
 | `partials/jsonld/event.html` | Event single pages (via `head_extra`) | [`Event`](https://schema.org/Event) |
-| `partials/jsonld/webpage.html` | Default single pages (via `head_extra` in `_default/single.html`) | [`WebPage`](https://schema.org/WebPage) |
+| `partials/jsonld/webpage.html` | Default single pages, business member pages, and the virtual poppy wall (via `head_extra`) | [`WebPage`](https://schema.org/WebPage) |
+| `partials/jsonld/business-directory.html` | The business directory page | [`CollectionPage`](https://schema.org/CollectionPage) / [`ItemList`](https://schema.org/ItemList) of [`LocalBusiness`](https://schema.org/LocalBusiness) |
+
+> [!NOTE]
+> A fifth file, `partials/jsonld/closures.html`, exists in the repo but isn't called from any template — it's dead code from an earlier version of the road closures page. See [docs/known_gaps_future_work.md](known_gaps_future_work.md).
 
 ### Organisation JSON-LD fields
 
@@ -17,25 +21,25 @@ Output on every page via `partials/jsonld/org.html`.
 
 | Field | Source | Notes |
 |-------|--------|-------|
-| `@id` | `baseURL` | `https://ashfordwide.com/#organization` — stable graph node identifier |
+| `@id` | `baseURL` | `#organization` appended to the site's base URL — stable graph node identifier |
 | `@type` | hardcoded | `Organization` |
 | `additionalType` | hardcoded | [Wikidata Q5154974](https://www.wikidata.org/wiki/Q5154974) — community interest company |
 | `name` | `site.Title` | |
 | `legalName` | `params.legalName` | |
 | `url` | `baseURL` | Trailing slash stripped |
 | `description` | `params.description` | Omitted if blank |
-| `logo` | `params.logo` | Absolute URL — omitted if blank |
+| `logo` | `params.logo` | Absolute URL, processed through the image pipeline — omitted if blank |
 | `foundingDate` | `params.foundingDate` | Omitted if blank |
-| `slogan` | `params.slogan` | Omitted if blank |
 | `email` | `params.email` | Omitted if blank |
-| `telephone` | `params.phone` | Omitted if blank |
-| `identifier` | `params.companyNumber` | `PropertyValue` with Companies House URL — entire block omitted if blank |
-| `address` | `params.address.*` + hardcoded | `PostalAddress` — locality Ashford, region Surrey, country GB |
+| `identifier` | `params.companyNumber` | `PropertyValue` with a Companies House URL — entire block omitted if blank |
+| `companyRegistration` | `params.companyNumber` | Same value as `identifier.value`, set alongside it — omitted if blank |
 | `knowsAbout` | hardcoded | Community Development ([Wikidata Q5154974](https://www.wikidata.org/wiki/Q5154974)) |
-| `areaServed` | hardcoded | City: Ashford ([Wikidata Q725270](https://www.wikidata.org/wiki/Q725270)); DefinedRegion: TW15 |
-| `sameAs` | `params.facebook`, `.twitter`, `.instagram` | Omitted entirely if none are set |
+| `areaServed` | hardcoded + generated | A `City` node (Ashford, [Wikidata Q725270](https://www.wikidata.org/wiki/Q725270)) plus a `GeoShape` polygon computed at build time from `assets/geo/ashford.geojson` |
+| `sameAs` | `params.facebook`, `.twitter`, `.instagram`, `.googleBusinessProfile`, plus the Companies House URL if `companyNumber` is set | Omitted entirely if none are present |
 | `contactPoint` | `params.email` | `ContactPoint` with `contactType: "Contact email"` — omitted if `email` is blank |
 | `potentialAction` | hardcoded + `baseURL` | `DonateAction` with `recipient` set to the org and `target` pointing to `/support/` |
+
+There is no `slogan`, `telephone`, or `address` field in the Organization JSON-LD, and no matching `slogan`/`phone`/`address.*` params exist in `hugo.toml` — the organisation's postal address is not currently exposed as structured data anywhere on the site.
 
 ### NewsArticle JSON-LD fields
 
@@ -52,7 +56,7 @@ Output on news single pages via `partials/jsonld/article.html`, included through
 | `url` | `.Permalink` | |
 | `wordCount` | `.WordCount` | Computed by Hugo |
 | `publisher` | Site config | `Organization` with name and URL from `hugo.toml` |
-| `author` | `author` param or site config | Defaults to the site `Organization`; if `author` front matter is set, outputs a `Person` node with that name instead |
+| `author` | `author` param or site config | Defaults to the site `Organization`; if `author` front matter is set, outputs an `Organization` node with that name instead (not a `Person` — the field is used for things like "Ashford Wide Team", not individual bylines) |
 | `description` | `.Description` | Omitted if blank |
 | `image` | `image` param | Absolute URL — omitted if not set |
 
@@ -69,28 +73,32 @@ Full reference: [Schema.org/Event](https://schema.org/Event)
 | `eventAttendanceMode` | `attendanceMode` param | Defaults to `OfflineEventAttendanceMode` — see [EventAttendanceModeEnumeration](https://schema.org/EventAttendanceModeEnumeration) |
 | `location.name` | `location` param | |
 | `location.address` | Always set | Locality/region hardcoded to Ashford, Surrey, GB; `streetAddress` from `address` param if set |
+| `location.hasMap` / `location.sameAs` | `placeId` param | Google Maps search URL built from `location` + `placeId` — omitted if `placeId` not set |
 | `description` | `.Description` | |
 | `image` | `image` param | Absolute URL |
 | `url` | `.Permalink` | |
-| `organizer` | Site config | Name and URL from `hugo.toml` |
+| `organizer` | `organiser`/`organiserUrl` params, else site config | If `organiser` front matter is set, outputs that name (with `organiserUrl` as its `url` if also set) instead of the default Ashford Wide `Organization` |
 
 ### WebPage JSON-LD fields
 
 Full reference: [Schema.org/WebPage](https://schema.org/WebPage)
 
-Output on default single pages (about, support, volunteer, membership, etc.) via `partials/jsonld/webpage.html`. Pages under `news/` and `events/` use their own specific types and are unaffected.
+Output on default single pages (about, support, volunteer, membership, etc.), business member pages, and the virtual poppy wall via `partials/jsonld/webpage.html`. Pages under `news/` and `events/` use their own specific types and are unaffected.
 
 | Field | Source | Notes |
 |-------|--------|-------|
 | `@type` | hardcoded | `WebPage` |
 | `name` | `.Title` | |
 | `url` | `.Permalink` | |
-| `inLanguage` | `.Site.LanguageCode` | `en-GB` |
+| `inLanguage` | `.Site.Language.Locale` | `en-GB`, from the `locale` key in `hugo.toml` |
+| `wordCount` | `.WordCount` | Computed by Hugo |
 | `publisher` | Site config | Name and URL from `hugo.toml` |
+| `copyrightHolder` | `params.legalName` | `Organization` node |
 | `description` | `.Description` | Omitted if blank |
 | `datePublished` | `date` front matter | ISO-8601 — omitted if not set |
 | `dateModified` | `lastmod` front matter | ISO-8601 — omitted if not set |
 | `lastReviewed` | `lastmod` front matter | Date only (`YYYY-MM-DD`) — omitted if `lastmod` not set |
+| `image` | `image` param | Absolute URL, processed through the image pipeline — omitted if not set |
 
 To enable date fields on a page, add `date` and `lastmod` to its front matter:
 
@@ -117,8 +125,8 @@ Team data is sourced from `data/team.yaml`. Social profile links are optional pe
 The SUPPORT US button is annotated with HTML microdata using [Schema.org `DonateAction`](https://schema.org/DonateAction):
 
 ```html
-<div itemprop="potentialAction" itemscope itemurl="https://schema.org/DonateAction">
-  <a itemprop="target" href="/support" ...>SUPPORT US</a>
+<div itemprop="potentialAction" itemscope itemtype="https://schema.org/DonateAction">
+  <a itemprop="url" href="/support" ...>SUPPORT US</a>
 </div>
 ```
 
