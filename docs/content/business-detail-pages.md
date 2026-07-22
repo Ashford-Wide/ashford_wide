@@ -1,8 +1,18 @@
 # Business member detail pages
 
-Individual business member profile pages — e.g. [content/business-member/timeless-ims.md](../../content/business-member/timeless-ims.md) — live in `content/business-member/` and render with `layouts/business-member/single.html`. Hugo picks this template automatically because the section name (`business-member`, the top-level folder under `content/`) matches the layout directory name — no `layout:` front matter override is needed.
+> [!CAUTION]
+> `content/business-member/` currently contains no pages. The one example page that used to live here (`timeless-ims.md`) was created and then deleted, and no business currently has a dedicated profile page. Everything below describes a working template with no live content — treat it as "how to add one," not "how the existing ones work." See [docs/known_gaps_future_work.md](../known_gaps_future_work.md).
 
-These are separate from the `data/businesses.yaml`-driven listing at `/business-directory` ([layouts/_default/business-directory.html](../../layouts/_default/business-directory.html)): the directory is a flat data grid with no detail links, while pages here are full standalone profile pages reached directly by URL. There's no automatic cross-linking between the two — a business needs an entry in `businesses.yaml` to appear in the directory grid, and/or a page in `content/business-member/` for a dedicated profile page; keeping both in sync (name, logo, contact details) is a manual step.
+Individual business member profile pages would live in `content/business-member/` and render with `layouts/business-member/single.html`. Hugo picks this template automatically because the section name (`business-member`, the top-level folder under `content/`) matches the layout directory name — no `layout:` front matter override is needed.
+
+These are separate from the `data/businesses.yaml`-driven listing at `/business-directory` ([layouts/_default/business-directory.html](../../layouts/_default/business-directory.html)), which is the only business listing actually live on the site today. There's no automatic cross-linking between the two — a business needs an entry in `businesses.yaml` to appear in the directory grid, and/or a page in `content/business-member/` for a dedicated profile page; keeping both in sync (name, logo, contact details) would be a manual step.
+
+## Co-located businesses in the directory
+
+The directory (`data/businesses.yaml`) supports grouping multiple businesses that share one address under a single card, via a nested `businesses` list on an entry — e.g. "Viva Namaste" and "7th Heaven" share a card because they trade from the same premises. Sveltia CMS labels this "Co-located businesses" when editing an entry. See [docs/hugo/data_files.md](../hugo/data_files.md) for the field reference.
+
+> [!NOTE]
+> The directory's field name for Twitter/X is `x`, while the business-member template (below) uses `twitter`. If you're keeping a directory entry and a profile page in sync for the same business, don't assume the field names match.
 
 ## Front matter fields
 
