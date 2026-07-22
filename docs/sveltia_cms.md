@@ -76,6 +76,7 @@ backend:
 | `style-src` | `https://fonts.googleapis.com` | Sveltia's Google Fonts stylesheet |
 | `font-src` | `'self' https://fonts.gstatic.com` | Not set previously, so it fell back to `default-src 'self'` and blocked the font files |
 | `img-src` | `blob:` | Sveltia's local image previews (e.g. before an upload is committed) |
+| `manifest-src` | `'self' blob:` | Sveltia dynamically generates a web app manifest as a `blob:` URL |
 
 See [`docs/security.md`](security.md) for the full current policy.
 
