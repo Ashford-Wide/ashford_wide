@@ -1,6 +1,7 @@
 ---
 title: "Ashford Horticultural Plant Swap"
 organiser: "Ashford Horticultural"
+organiserUrl: "https://ashfordgardeningclub.wordpress.com/"
 date: 2026-07-04
 startTime: "10:30"
 endTime: "12:00"
