@@ -1,129 +1,218 @@
 businesses:
-  - name: "Ashdown VAT Consultancy LLP"
-    category: "Accountancy"
-    description: "Supports accountancy firms across the UK with all things VAT. From registrations and technical advice to HMRC disputes."
-    website: "https://www.ashdownvat.co.uk/"
-    telephone: "01784 770486"
-    facebook: "https://www.facebook.com/ashdownvat"
-    email: "michael@ashdownvat.co.uk"
-    logo: "/images/businesses/ashdown.jpg"
-  
-  - name: "Ashford Town (Middlesex) FC"
-    category: "Sports club"
-    description: "Support the Tangerines! Our local football team."
-    website: "https://www.ashfordtownmiddlesexfc.com/"
-    telephone: "07825 566218"
-    instagram: "https://www.instagram.com/ashfordtownmx"
-    x: "https://x.com/ashfordtownmx"
-    address: "Parker Stadium Short Lane Stanwell TW19 7BH"
-    placeId: "ChIJYRAIid1zdkgRoETFo2ArBg4"
-    logo: "/images/businesses/ashford-fc.png"
-  
-  - name: "Blackstone Printing"
-    category: "Printing"
-    description: "You think it, we print it! Your one stop shop for all printing and signs, from the sign on your shop to the sign-writing on your van, to the uniform on your back and business cards in your pocket."
-    website: "https://www.blackstoneprinting.com/"
-    telephone: "01784 770 374"
-    instagram: "https://www.instagram.com/blackstoneprinting/"
-    facebook: "https://www.facebook.com/blackstoneprint/"
-    tiktok: "https://www.tiktok.com/@blackstoneprinting"
-    logo: "/images/businesses/blackstone-printing.png"
-  
-  - name: "Boyce Care Ashford"
-    description: "Providing quality support for adults with Health and Social Care needs"
-    category: "Health and Social Care"
-    website: "https://www.boycecare.co.uk/"
-    telephone: "01784 245817"
-    address: "172 Feltham Hill Rd, Ashford TW15 1LF"
-    placeId: "ChIJCQIpUKV2dkgRZEJR"
-    logo: "/images/businesses/boyce-care.png"
-  
-  - name: "CSJ Steel Fabrications"
-    category: "Building"
-    website: "https://csjsteelfabrication.co.uk/"
-    address: "56 Cravan Ave, Feltham TW13 4ED"
-    placeId: "ChIJ7YcQ03BzdkgRFLwFnpA3aRw"
-    telephone: "020 8797 1791"
-    logo: "/images/businesses/csj.png"
-  
-  - name: "Elevated Online"
-    category: "Web Design"
-    website: "https://elevatedonline.uk/"
-    telephone: "020 3370 6007"
-    logo: "/images/businesses/elevated-online.png"
-  
-  - name: "Elle & Fee"
-    category: "Food and drink"
-    website: "https://www.elleandfee.co.uk/"
-    address: "16 Woodthorpe Rd, Ashford TW15 2RY"
-    placeId: "ChIJ0eqMDzZzdkgREbSYkYXOg4Q"
-    telephone: "01784 257861"
-    logo: "/images/businesses/elle-fee.png"
-  
-  - name: "Holmes & Daughters"
-    category: "Funeral Directors"
-    website: "https://fordmears.uk/funeral-directors/holmes-daughters-ashford"
-    address: "3 Church Rd, Ashford TW15 2UG"
-    placeId: "ChIJc89oJ_xzdkgRbf9lhK534vA"
-    telephone: "01784 421015"
-    logo: "/images/businesses/holmes-and-daughters.jpg"
-  
-  - name: "LFG Exterior Cleaning"
-    category: "Cleaning"
-    instagram: "https://www.instagram.com/lfg.exterior.cleaning/"
-    telephone: "07462 304689"
-    logo: "/images/businesses/lfc-cleaning.jpg"
-  
-  - name: "Surrey Scaffolding"
-    category: "Building"
-    website: "https://www.surrey-scaffolding.co.uk/"
-    telephone: "07733 392992"
-    logo: "/images/businesses/surrey-scaffolding.png"
-  
-  - name: "T.H. Sanders"
-    category: "Funeral Directors"
-    website: "https://www.thsanders.co.uk/locations/ashford"
-    address: "76 Church Rd, Ashford TW15 2TW"
-    placeId: "ChIJ6VHSVPhzdkgRBZtmT6SyyQw"
-    telephone: "01784 614 535"
-    logo: "/images/businesses/th-sanders.jpg"
-  
-  - name: "Wake Up Your Wealth"
-    category: "Finance"
-    website: "https://www.wakeupyourwealth.com/"
-    address: "21 Woodthorpe Rd, Ashford TW15 2RP"
-    placeId: "ChIJkab7vgJzdkgROoc_KJWWE2s"
-    telephone: "0203 893 7540"
-    logo: "/images/businesses/wuyw.png"
-  
-  - name: "Watmore & Co Accounting"
-    category: "Accountancy"
-    website: "https://www.watmoreandco.com/"
-    placeId: "ChIJzcV7ezBxdkgR2A7fcvBDLCk"
-    telephone: "01784 542247"
-    logo: "/images/businesses/watmore.png"
-
-  - name: "In Construction"
-    category: "Building"
-    website: "https://www.in-construction.co.uk/"
-    telephone: "01784 542265"
-    facebook: "https://www.facebook.com/INConstructionLTD"
-    instagram: "https://www.instagram.com/inconstructionltd"
-    tiktok: "https://www.tiktok.com/@inconstructionltd"
-    logo: "/images/businesses/in-construction.png"
-
-  - name: "7th Heaven & Viva Namaste"
-    category: "Food and drink"
-    address: "16-18 Church Road, Ashford TW15 2UY"
-    placeId: "ChIJqWuffxZzdkgRpNjziUaFxk4"
+  - name: Ashdown VAT Consultancy LLP
+    category: Accountancy
+    description: Supports accountancy firms across the UK with all things VAT. From registrations and technical advice to HMRC disputes.
+    website: https://www.ashdownvat.co.uk/
+    telephone: 01784 770486
+    mobile: ''
+    email: michael@ashdownvat.co.uk
+    address: ''
+    placeId: ''
+    facebook: https://www.facebook.com/ashdownvat
+    instagram: ''
+    x: ''
+    logo: /images/businesses/ashdown.jpg
+  - name: Ashford Town (Middlesex) FC
+    category: Sports club
+    description: Support the Tangerines! Our local football team.
+    website: https://www.ashfordtownmiddlesexfc.com/
+    telephone: 07825 566218
+    mobile: ''
+    email: ''
+    address: Parker Stadium Short Lane Stanwell TW19 7BH
+    placeId: ChIJYRAIid1zdkgRoETFo2ArBg4
+    facebook: ''
+    instagram: https://www.instagram.com/ashfordtownmx
+    x: https://x.com/ashfordtownmx
+    logo: /images/businesses/ashford-fc.png
+  - name: Blackstone Printing
+    category: Printing
+    description: You think it, we print it! Your one stop shop for all printing and signs, from the sign on your shop to the sign-writing on your van, to the uniform on your back and business cards in your pocket.
+    website: https://www.blackstoneprinting.com/
+    telephone: 01784 770 374
+    mobile: ''
+    email: ''
+    address: ''
+    placeId: ''
+    facebook: https://www.facebook.com/blackstoneprint/
+    instagram: https://www.instagram.com/blackstoneprinting/
+    x: ''
+    logo: /images/businesses/blackstone-printing.png
+    tiktok: https://www.tiktok.com/@blackstoneprinting
+  - name: Boyce Care Ashford
+    category: Health and Social Care
+    description: Providing quality support for adults with Health and Social Care needs
+    website: https://www.boycecare.co.uk/
+    telephone: 01784 245817
+    mobile: ''
+    email: ''
+    address: 172 Feltham Hill Rd, Ashford TW15 1LF
+    placeId: ChIJCQIpUKV2dkgRZEJR
+    facebook: ''
+    instagram: ''
+    x: ''
+    logo: /images/businesses/boyce-care.png
+  - name: CSJ Steel Fabrications
+    category: Building
+    description: ''
+    website: https://csjsteelfabrication.co.uk/
+    telephone: 020 8797 1791
+    mobile: ''
+    email: ''
+    address: 56 Cravan Ave, Feltham TW13 4ED
+    placeId: ChIJ7YcQ03BzdkgRFLwFnpA3aRw
+    facebook: ''
+    instagram: ''
+    x: ''
+    logo: /images/businesses/csj.png
+  - name: Elevated Online
+    category: Web Design
+    description: ''
+    website: https://elevatedonline.uk/
+    telephone: 020 3370 6007
+    mobile: ''
+    email: ''
+    address: ''
+    placeId: ''
+    facebook: ''
+    instagram: ''
+    x: ''
+    logo: /images/businesses/elevated-online.png
+  - name: Elle & Fee
+    category: Food and drink
+    description: ''
+    website: https://www.elleandfee.co.uk/
+    telephone: 01784 257861
+    mobile: ''
+    email: ''
+    address: 16 Woodthorpe Rd, Ashford TW15 2RY
+    placeId: ChIJ0eqMDzZzdkgREbSYkYXOg4Q
+    facebook: ''
+    instagram: ''
+    x: ''
+    logo: /images/businesses/elle-fee.png
+  - name: Holmes & Daughters
+    category: Funeral Directors
+    description: ''
+    website: https://fordmears.uk/funeral-directors/holmes-daughters-ashford
+    telephone: 01784 421015
+    mobile: ''
+    email: ''
+    address: 3 Church Rd, Ashford TW15 2UG
+    placeId: ChIJc89oJ_xzdkgRbf9lhK534vA
+    facebook: ''
+    instagram: ''
+    x: ''
+    logo: /images/businesses/holmes-and-daughters.jpg
+  - name: LFG Exterior Cleaning
+    category: Cleaning
+    description: ''
+    website: ''
+    telephone: 07462 304689
+    mobile: ''
+    email: ''
+    address: ''
+    placeId: ''
+    facebook: ''
+    instagram: https://www.instagram.com/lfg.exterior.cleaning/
+    x: ''
+    logo: /images/businesses/lfc-cleaning.jpg
+  - name: Surrey Scaffolding
+    category: Building
+    description: ''
+    website: https://www.surrey-scaffolding.co.uk/
+    telephone: 07733 392992
+    mobile: ''
+    email: ''
+    address: ''
+    placeId: ''
+    facebook: ''
+    instagram: ''
+    x: ''
+    logo: /images/businesses/surrey-scaffolding.png
+  - name: T.H. Sanders
+    category: Funeral Directors
+    description: ''
+    website: https://www.thsanders.co.uk/locations/ashford
+    telephone: 01784 614 535
+    mobile: ''
+    email: ''
+    address: 76 Church Rd, Ashford TW15 2TW
+    placeId: ChIJ6VHSVPhzdkgRBZtmT6SyyQw
+    facebook: ''
+    instagram: ''
+    x: ''
+    logo: /images/businesses/th-sanders.jpg
+  - name: Wake Up Your Wealth
+    category: Finance
+    description: ''
+    website: https://www.wakeupyourwealth.com/
+    telephone: 0203 893 7540
+    mobile: ''
+    email: ''
+    address: 21 Woodthorpe Rd, Ashford TW15 2RP
+    placeId: ChIJkab7vgJzdkgROoc_KJWWE2s
+    facebook: ''
+    instagram: ''
+    x: ''
+    logo: /images/businesses/wuyw.png
+  - name: Watmore & Co Accounting
+    category: Accountancy
+    description: Watmore & Co Accounting are an accessible and inclusive accountancy firm. Supporting limited companies and sole traders throughout the UK remotely. Specialised in jargon and judgement free bookkeeping and accounting services.
+    website: https://www.watmoreandco.com/
+    telephone: 01784 542 247
+    mobile: ''
+    email: contact@watmoreandco.com
+    address: ''
+    placeId: ChIJzcV7ezBxdkgR2A7fcvBDLCk
+    facebook: https://www.facebook.com/watmoreandco/
+    instagram: ''
+    x: ''
+    logo: /images/WMC Logo Standard.png
+  - name: In Construction
+    category: Building
+    description: ''
+    website: https://www.in-construction.co.uk/
+    telephone: 01784 542265
+    mobile: ''
+    email: ''
+    address: ''
+    placeId: ''
+    facebook: https://www.facebook.com/INConstructionLTD
+    instagram: https://www.instagram.com/inconstructionltd
+    x: ''
+    logo: /images/businesses/in-construction.png
+    tiktok: https://www.tiktok.com/@inconstructionltd
+  - name: 7th Heaven & Viva Namaste
+    category: Food and drink
+    description: ''
+    website: ''
+    telephone: ''
+    mobile: ''
+    email: ''
+    address: 16-18 Church Road, Ashford TW15 2UY
+    placeId: ChIJqWuffxZzdkgRpNjziUaFxk4
+    facebook: ''
+    instagram: ''
+    x: ''
     businesses:
-      - name: "Viva Namaste"
-        website: "https://www.vivanamaste.com/"
-        telephone: "01784 279261"
-        instagram: "https://www.instagram.com/viva.namaste/"
-        logo: "/images/businesses/viva-namaste.png"
-      - name: "7th Heaven"
-        instagram: "https://www.instagram.com/7thheavenashford"
-        logo: "/images/businesses/7th-heaven.avif"
-        website: "https://www.7thheavenuk.com/"
-        telephone: "07359778589"
+      - name: Viva Namaste
+        description: ''
+        website: https://www.vivanamaste.com/
+        telephone: 01784 279261
+        mobile: ''
+        email: ''
+        facebook: ''
+        instagram: https://www.instagram.com/viva.namaste/
+        x: ''
+        logo: /images/businesses/viva-namaste.png
+      - name: 7th Heaven
+        description: ''
+        website: https://www.7thheavenuk.com/
+        telephone: '07359778589'
+        mobile: ''
+        email: ''
+        facebook: ''
+        instagram: https://www.instagram.com/7thheavenashford
+        x: ''
+        logo: /images/businesses/7th-heaven.avif
