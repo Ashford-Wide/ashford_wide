@@ -7,7 +7,7 @@ endTime: 15:00
 location: Ashford Library - New Town Square
 placeId: ChIJP0CgpP5zdkgRybRtKsPLEQA
 organiser: Ashford Wide
-organiserUrl: 'https://www.ashfordwide.com/'
+organiserUrl: https://www.ashfordwide.com/
 description: Join us for our first Summer Fair around the National Year of Reading with our sponsors Boyce Care!
 image: /images/events/summer-fair-2026.png
 imageAspect: ''
@@ -17,7 +17,9 @@ Join Ashford Wide, Boyce Care, Walk on the Wildside, Lincoln Jopp MP, Cllr Harry
 
 We're sure to have a great day with free storytelling sessions, free reptile shows, with stalls, and food to round the day off.
 
-Timings (subject to change):
+## Timings
+
+Times are subject to change:
 
 📚 First storytelling session  (ages 2-5): 11.30am
 
