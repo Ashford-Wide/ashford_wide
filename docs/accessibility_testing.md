@@ -6,10 +6,10 @@ Automated accessibility scanning is provided by [`accessibility-checker`](https:
 
 | Script | Command | Purpose |
 |--------|---------|---------|
-| `npm run test:a11y` | `hugo && node scripts/a11y-test.js` | Builds the site then scans all HTML output files |
+| `npm run test:a11y` | `hugo && node scripts/a11y-test.mjs` | Builds the site then scans all HTML output files |
 | `npm run test:a11y:report` | `open accessibility-reports/` | Opens the report folder in Finder after a scan |
 
-## Scan Script (`scripts/a11y-test.js`)
+## Scan Script (`scripts/a11y-test.mjs`)
 
 Scanning is handled via a Node.js script using achecker's programmatic API rather than the CLI. This is necessary because the CLI only processes one file per invocation. The script:
 
@@ -34,7 +34,12 @@ outputFormat:
   - json
   - html
 outputFolder: accessibility-reports
+puppeteerArgs:
+  - --no-sandbox
+  - --disable-setuid-sandbox
 ```
+
+`puppeteerArgs` disables Chrome's sandbox for the headless browser achecker drives — needed to run in sandboxed CI environments (e.g. GitHub Actions).
 
 ## Reports
 
