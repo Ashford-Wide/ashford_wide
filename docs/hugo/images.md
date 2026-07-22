@@ -121,6 +121,12 @@ Call the partial the same way as anywhere else:
 
 No imports or setup needed — Hugo partials are globally available.
 
+**From Markdown content** — use the `{{< image >}}` shortcode instead, a thin wrapper around the same partial:
+
+```markdown
+{{< image src="/images/foo.jpg" alt="Description" class="w-full rounded" >}}
+```
+
 For data-driven images where the path comes from a YAML field (like business logos), pass the field value directly:
 
 ```
