@@ -150,6 +150,7 @@ collections:
               - { label: Place ID, name: placeId, widget: string, required: false}
               - { label: Facebook, name: facebook, widget: string, required: false }
               - { label: Instagram, name: instagram, widget: string, required: false }
+              - { label: LinkedIn, name: linkedin, widget: string, required: false }
               - { label: X (Twitter), name: x, widget: string, required: false }
               - { label: Logo, name: logo, widget: image, required: false }
               - label: "Co-located businesses"
@@ -165,6 +166,7 @@ collections:
                   - { label: Email, name: email, widget: string, required: false }
                   - { label: Facebook, name: facebook, widget: string, required: false }
                   - { label: Instagram, name: instagram, widget: string, required: false }
+                  - { label: LinkedIn, name: linkedin, widget: string, required: false }
                   - { label: X (Twitter), name: x, widget: string, required: false }
                   - { label: Logo, name: logo, widget: image, required: false }
 
