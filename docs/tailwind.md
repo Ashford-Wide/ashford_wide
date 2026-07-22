@@ -4,7 +4,8 @@ Full reference: [Tailwind CSS docs](https://tailwindcss.com/docs/)
 
 ## Setup & Workflow
 
-- **Dependencies**: Tailwind CSS is built via PostCSS and `postcss-cli` using Hugo Pipes. `@tailwindcss/typography` is also installed for markdown prose styling. An `npm install` is required after cloning the repo.
+- **Dependencies**: Tailwind CSS is built via PostCSS and `postcss-cli` using Hugo Pipes. `@tailwindcss/typography` is also installed for markdown prose styling (as a runtime `dependency`, not a devDependency, unlike `tailwindcss`/`@tailwindcss/postcss`/`postcss`/`postcss-cli`). An `npm install` is required after cloning the repo.
+- **daisyui**: also installed and loaded in `main.css` via `@plugin "daisyui" { themes: false; }`. Only its `carousel`/`carousel-item` component classes are actually used, in `layouts/shortcodes/carousel.html` — no other daisyui classes (`btn-`, `card-`, etc.) appear anywhere else in `layouts/`.
 - **Entry point**: `assets/css/main.css` — contains all `@theme` tokens, `@keyframes`, and `@layer components` classes.
 - **Hugo integration**: Included in `layouts/partials/head.html` via `resources.PostCSS`.
 
@@ -90,14 +91,18 @@ Applied by `nav.js` to the mobile navigation `<ul>` when the hamburger is toggle
 
 Applied to the `<div>` wrapping `{{ .Content }}` on single pages and news/event detail views. Applies `@tailwindcss/typography` prose styles with surface-colour overrides for headings, links, and strong text.
 
-**Alert callouts** (rendered from `> [!NOTE]`-style blockquotes in markdown) are styled within `.article-content`:
+**Alert callouts** (rendered from `> [!NOTE]`-style blockquotes in markdown, see [docs/content/markdown.md](content/markdown.md)) are styled within `.article-content`:
 
 | Class | Accent colour |
 |---|---|
-| `.alert` (default/note) | `#0969da` (blue) |
-| `.alert-tip` | `#287d3d` (green, matches `--color-secondary`) |
-| `.alert-important` | `#8250df` (purple) |
-| `.alert-warning` | `#E0B507` (amber) |
-| `.alert-caution` | `#A72326` (red) |
+| `.md-alert` (default/note) | `#0969da` (blue) |
+| `.md-alert-tip` | `#287d3d` (green, matches `--color-secondary`) |
+| `.md-alert-important` | `#8250df` (purple) |
+| `.md-alert-warning` | `#E0B507` (amber) |
+| `.md-alert-caution` | `#A72326` (red) |
 
 Alert background is generated with `color-mix(in srgb, <color> 10%, transparent)` so it automatically adapts to the accent colour.
+
+### `.article-content .leaflet-container img`
+
+Resets `@tailwindcss/typography`'s default image margins and `max-width: 100%` constraint for images inside a Leaflet map embedded within `.article-content` — Leaflet renders its map tiles as `<img>` tags, and without this override the `prose` styles push tiles out of alignment. See [docs/content/remembrance/map.md](content/remembrance/map.md#tailwind-prose-fix) for the full explanation.
