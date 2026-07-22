@@ -46,11 +46,17 @@ Full reference: [Hugo partials](https://gohugo.io/templates/types/#partial)
 | `partials/footer.html` | 3-column footer (light theme), logo, social links, nav JS |
 | `partials/opengraph.html` | Open Graph + Twitter Card meta tags — used on all pages |
 | `partials/event-time.html` | Formats `startTime`/`endTime` frontmatter into a display range (e.g. `10am–3pm`) |
+| `partials/business-directory-item.html` | Renders one card in the business directory grid — contact details and social icons |
+| `partials/featured-video.html` | Click-to-load Vimeo embed wrapper (works with `assets/js/vimeo-facade.js`) |
 | `partials/homepage/*.html` | Seasonal/campaign promo blocks — one loaded on the homepage when `activePromo` is set in `hugo.toml` (see [Homepage Promotions](#homepage-promotions)) |
 | `partials/jsonld/org.html` | Schema.org `Organization` JSON-LD — output on every page |
 | `partials/jsonld/article.html` | Schema.org `NewsArticle` JSON-LD — output on news single pages via `head_extra` |
 | `partials/jsonld/event.html` | Schema.org `Event` JSON-LD — output on event single pages via `head_extra` |
 | `partials/jsonld/webpage.html` | Schema.org `WebPage` JSON-LD — output on default single pages via `head_extra` |
+| `partials/jsonld/business-directory.html` | Schema.org `CollectionPage`/`ItemList` of `LocalBusiness` entries — output on the business directory page |
+
+> [!NOTE]
+> `partials/jsonld/closures.html` also exists in the repo but is not called from any template — it's dead code left over from an earlier version of the road closures page. See [docs/known_gaps_future_work.md](../known_gaps_future_work.md).
 
 ## Shortcodes
 
@@ -59,7 +65,28 @@ Full reference: [Hugo shortcodes](https://gohugo.io/shortcodes/) · [Custom shor
 | File | Purpose |
 |------|---------|
 | `shortcodes/param.html` | Outputs a site param by name — use in Markdown content to reference `hugo.toml` values without hardcoding them |
-| `shortcodes/paypal-donate.html` | PayPal donation embed — used on the support page |
+| `shortcodes/image.html` | Wraps `partials/image.html` for use directly in Markdown content — see [docs/hugo/images.md](images.md) |
+| `shortcodes/paypal-donate.html` | General PayPal donation embed — used on the support page |
+| `shortcodes/paypal-banner.html` | Donation banner variant |
+| `shortcodes/paypal-business-annual.html` | PayPal business membership button — annual billing |
+| `shortcodes/paypal-business-monthly.html` | PayPal business membership button — monthly billing |
+| `shortcodes/paypal-flags.html` | PayPal button for sponsoring a St George's flag |
+| `shortcodes/paypal-poppy.html` | PayPal button for sponsoring a Remembrance poppy |
+| `shortcodes/paypal-rememberance.html` | PayPal donation button for Remembrance Day |
+| `shortcodes/team.html` | Renders the About page team list from `data/team.yaml` with Schema.org `Person` microdata |
+| `shortcodes/carousel.html` | Image carousel/slider |
+| `shortcodes/flag-grid.html` | Grid of sponsored St George's flags (town-flags page) |
+| `shortcodes/aed-map.html` | Leaflet map of defibrillator locations, reads `static/geojson/aed.geojson` |
+| `shortcodes/pin-map.html` | Leaflet pin/marker map (used for the virtual poppy wall, reads `static/geojson/poppies-2025.geojson`) |
+| `shortcodes/road-closure-map.html` | Leaflet map of Remembrance Sunday road closures — see [docs/content/remembrance/map.md](../content/remembrance/map.md) |
+| `shortcodes/location-pin.html` | Small inline map-pin icon linking to a Google Maps Place ID |
+| `shortcodes/membership-tiers.html` | Membership tier comparison cards |
+| `shortcodes/sponsor-a-poppy.html` | Sponsor-a-poppy call-to-action block |
+| `shortcodes/join-us-button.html` | Standard "Join Us" CTA button |
+| `shortcodes/support-us-button.html` | Standard "Support Us" CTA button |
+| `shortcodes/doc-button.html` | Button linking to a downloadable document |
+| `shortcodes/last-updated.html` | Outputs a page's last-modified date |
+| `shortcodes/instagram-embed.html` | Custom Instagram embed (loads Instagram's own `embed.js`) — see note below |
 
 **`param` shortcode usage** — reference any `[params]` key from `hugo.toml` inside content Markdown:
 ```markdown
@@ -68,16 +95,11 @@ Full reference: [Hugo shortcodes](https://gohugo.io/shortcodes/) · [Custom shor
 ```
 This keeps email addresses and social URLs in sync with `hugo.toml` across all content files.
 
-**Instagram shortcode** — Hugo has a [built-in instagram shortcode](https://gohugo.io/shortcodes/instagram/):
+**Instagram embeds** — Hugo has a [built-in instagram shortcode](https://gohugo.io/shortcodes/instagram/) and `hugo.toml` enables [simple mode](https://gohugo.io/shortcodes/instagram/#privacy) for it (`[privacy.instagram] simple = true`, avoiding the need for an oEmbed access token):
 ```markdown
 {{</* instagram POST_ID */>}}
 ```
-By default this calls Instagram's oEmbed API. To avoid needing an access token, enable [simple mode](https://gohugo.io/shortcodes/instagram/#privacy) in `hugo.toml`, which generates a static image card instead:
-```toml
-[privacy]
-  [privacy.instagram]
-    simple = true
-```
+However, no content currently uses the built-in shortcode. Instead the site has a separate custom shortcode, `shortcodes/instagram-embed.html`, which loads Instagram's own `embed.js` script directly (bypassing simple mode). If you need to embed an Instagram post, check which of the two is actually wired up where you're adding it — don't assume the `[privacy.instagram]` config applies, since it only affects the built-in shortcode.
 
 ## Key Template Patterns
 
@@ -86,7 +108,7 @@ By default this calls Instagram's oEmbed API. To avoid needing an access token, 
 {{ $businesses := site.Data.businesses }}
 ```
 
-Note: the homepage member logo marquee (`layouts/index.html`) is driven by `site.Data.businesses` filtered to entries with a `logo` set, not by `data/members.yaml` — the latter is unused by any template despite having a CMS collection.
+Note: the homepage member logo marquee (`layouts/index.html`) is driven by `site.Data.businesses` filtered to entries with a `logo` set. There is no `data/members.yaml` file or CMS collection — see [docs/hugo/data_files.md](data_files.md).
 
 **Event date filtering:**
 ```go
