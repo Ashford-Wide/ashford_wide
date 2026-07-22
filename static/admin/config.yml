@@ -2,6 +2,7 @@ backend:
   name: github
   repo: Ashford-Wide/ashford_wide
   branch: main
+  base_url: https://aw-auth.ashford-wide.workers.dev/
 
 media_folder: /assets/images
 public_folder: /images
@@ -91,6 +92,8 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
+          - { label: Vimeo Video ID, name: videoID, widget: string, required: false, hint: "e.g. 1180234252 (from the Vimeo video URL)" }
+          - { label: Video Title, name: videoTitle, widget: string, required: false }
           - { label: Body, name: body, widget: markdown }
 
       - label: Order of Services

@@ -1,6 +1,6 @@
 # Deployment
 
-This site is hosted on **Cloudflare Pages**, built automatically from the `main` branch of the GitHub repository at `magnoliaceiling/ashford_wide`.
+This site is hosted on **Cloudflare Pages**, built automatically from the `main` branch of the GitHub repository at `Ashford-Wide/ashford_wide`.
 
 ## How deployment works
 
@@ -46,11 +46,13 @@ The CMS backend is configured in [`static/admin/config.yml`](../static/admin/con
 ```yaml
 backend:
   name: github
-  repo: magnoliaceiling/ashford_wide
+  repo: Ashford-Wide/ashford_wide
   branch: main
 ```
 
-In local development the CMS uses the File System Access API (Chrome/Edge only) to edit files directly without committing to GitHub. See [`docs/sveltia_cms.md`](sveltia_cms.md) for setup details.
+In local development the CMS uses the File System Access API (Chrome/Edge only) to edit files directly without committing to GitHub.
+
+Editor sign-in (production only, via GitHub OAuth) is handled by a separate Cloudflare Worker, [`Ashford-Wide/aw-auth`](https://github.com/Ashford-Wide/aw-auth) — it has its own deploy lifecycle independent of this repo's Pages build. See [`docs/sveltia_cms.md`](sveltia_cms.md) for full setup details.
 
 ## Resources cache
 

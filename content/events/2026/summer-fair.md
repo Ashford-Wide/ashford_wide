@@ -7,7 +7,7 @@ endTime: 15:00
 location: Ashford Library - New Town Square
 placeId: ChIJP0CgpP5zdkgRybRtKsPLEQA
 organiser: Ashford Wide
-organiserUrl: ''
+organiserUrl: 'https://www.ashfordwide.com/'
 description: Join us for our first Summer Fair around the National Year of Reading with our sponsors Boyce Care!
 image: /images/events/summer-fair-2026.png
 imageAspect: ''
