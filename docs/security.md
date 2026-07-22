@@ -48,3 +48,7 @@ The file at `static/.well-known/traffic-advice` is served at `/.well-known/traff
 `fraction` is a value between `0.0` and `1.0` controlling what proportion of prefetch requests are allowed. `1.0` permits all of them. This is appropriate for a fully public static site with no personalised or gated content.
 
 The file is served with `Content-Type: application/trafficadvice+json`, set via the `/.well-known/traffic-advice` rule in `static/_headers`.
+
+## Caching (not security-related)
+
+`static/_headers` also sets long-lived `Cache-Control: public, max-age=31536000, immutable` rules for `/css/*`, `/js/*`, and `/images/*.webp` — these are performance rules, not security headers, but they live in the same file. This works safely because Hugo Pipes fingerprints these assets (the filename changes whenever the content does), so an "immutable" cache never serves stale content.
