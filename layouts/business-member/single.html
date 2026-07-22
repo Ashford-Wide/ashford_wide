@@ -67,6 +67,7 @@
           (dict "key" "twitter"   "label" "Twitter"   "icon" "icons/twitter.html")
           (dict "key" "youtube"   "label" "YouTube"   "icon" "icons/youtube.html")
           (dict "key" "tiktok"    "label" "TikTok"    "icon" "icons/tiktok.html")
+          (dict "key" "whatsapp"  "label" "WhatsApp"  "icon" "icons/whatsapp.html")
         }}
         {{ $hasAnySocial := false }}
         {{ range $socials }}{{ with index $.Params .key }}{{ $hasAnySocial = true }}{{ end }}{{ end }}
