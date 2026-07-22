@@ -29,7 +29,7 @@ sequenceDiagram
     CMS->>Editor: CMS loads, editor can create/edit content
 ```
 
-Unlike the earlier design (Pages Functions in this repo), collaborator access is not checked by the Worker itself — the GitHub token it returns is scoped to whatever access the authenticating user already has on the repo. A non-collaborator can complete the OAuth flow but their subsequent GitHub API calls (reading/writing content) will fail with permission errors.
+Collaborator access is not checked by the Worker itself — the GitHub token it returns is scoped to whatever access the authenticating user already has on the repo. A non-collaborator can complete the OAuth flow but their subsequent GitHub API calls (reading/writing content) will fail with permission errors.
 
 ### GitHub OAuth App
 
@@ -59,7 +59,7 @@ backend:
   name: github
   repo: Ashford-Wide/ashford_wide
   branch: main
-  base_url: https://aw-auth.ashford-wide.workers.dev
+  base_url: https://aw-auth.ashford-wide.workers.dev/
 ```
 
 `auth_endpoint` is left at its default (`/auth`), matching the route the Worker exposes.
@@ -86,7 +86,7 @@ Access is controlled by [GitHub repository collaborators](https://docs.github.co
 
 - GitHub repo → Settings → Collaborators → Add people → enter their GitHub username
 
-The Pages Function checks collaborator status at login time — non-collaborators are blocked before the CMS loads with a clear error message identifying their GitHub username.
+As noted above, access isn't gated at login — a non-collaborator can still open `/admin/` and sign in with GitHub, but every subsequent read/write to content will fail with a GitHub permission error because their token has no access to the repo. So in practice, adding or removing someone as a GitHub collaborator is the only access control that matters.
 
 To revoke access, remove them as a collaborator on GitHub.
 
@@ -111,13 +111,19 @@ Full reference: [Sveltia CMS collections](https://sveltiacms.app/en/docs/collect
 | `events` | folder | `content/events/{year}/*.md` — path template `{{year}}/{{slug}}` |
 | `news` | folder | `content/news/{year}/*.md` — path template `{{year}}/{{slug}}` |
 | `pages` | folder, `create: true`, `delete: false` | Every top-level `.md` file directly in `content/` (non-recursive, so `events/`, `news/`, `remembrance-day/`, `business-member/` are untouched) — editors can create new top-level pages here |
-| `remembrance` | files | All 4 remembrance pages |
-| `members` | files | `data/members.yaml` |
-| `businesses` | files | `data/businesses.yaml` |
+| `remembrance` | files | All 4 remembrance-day pages |
+| `businesses` | files | `data/businesses.yaml` (including co-located businesses groupings) |
+| `team` | files | `data/team.yaml` — name, role, and social links for each About page team member |
+
+There is no `members` collection and no `data/members.yaml` file — the homepage member logo marquee is driven by `data/businesses.yaml` (see [docs/hugo/data_files.md](hugo/data_files.md) and [docs/hugo/template_architecture.md](hugo/template_architecture.md)).
 
 Events and news use a `path: "{{year}}/{{slug}}"` template to preserve the year-subfolder structure in the repo (keeping Hugo's `permalinks` config working). Editors see a flat list in the CMS rather than a year tree — Sveltia's nested collection support is planned for v2.0 (mid-2026). `content/events/past.md` sits outside the year folder structure and is not managed by the CMS.
 
 `omit_empty_optional_fields: true` is set globally so optional fields are not written to front matter when left blank.
+
+### Stock photo search
+
+`media_libraries.stock_assets.providers` in `config.yml` enables a Pexels stock photo search inside the CMS's media picker — when uploading an image, editors can search Pexels directly rather than needing to source a photo elsewhere first.
 
 ## Markdown Widget — Supported Formatting
 
