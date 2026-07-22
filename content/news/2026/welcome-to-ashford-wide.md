@@ -1,8 +1,8 @@
 ---
-title: "Welcome to the New Ashford Wide Website"
+title: Welcome to the New Ashford Wide Website
 date: 2026-07-21
-author: "Ashford Wide Team"
-description: "We're delighted to launch our brand new website, making it easier than ever to find information about events, membership and everything we do."
+author: Ashford Wide Team
+description: We're delighted to launch our brand new website, making it easier than ever to find information about events, membership and everything we do.
 ---
 
 We're delighted to welcome you to the new Ashford Wide website.
@@ -20,4 +20,4 @@ Our new site has been built from the ground up to be faster, easier to use, and 
 
 If you're interested in getting involved with Ashford Wide, whether as a business member, a volunteer, or simply someone who wants to help make Ashford a better place, we'd love to hear from you.
 
-[Contact us](/contact) to find out more, or explore our [membership options](/membership).
+[Contact us](/contact) to find out more, or find out more about our [membership options](/membership).
