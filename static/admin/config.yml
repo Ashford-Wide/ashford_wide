@@ -2,6 +2,7 @@ backend:
   name: github
   repo: Ashford-Wide/ashford_wide
   branch: main
+  base_url: https://aw-auth.ashford-wide.workers.dev/
 
 media_folder: /assets/images
 public_folder: /images
