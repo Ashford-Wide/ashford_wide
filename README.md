@@ -15,3 +15,8 @@ You will need `npm` and Hugo installed already.
 - [Heroicons](https://heroicons.com/)
 - [Tailwind CSS](https://tailwindcss.com/docs/)
 - [daisyUI](https://daisyui.com/?lang=en)
+
+## License
+
+- **Source Code**: [MIT License](LICENSE)
+- **Content**: All text, images, and branding in the `/content` and `/static` folders are Copyright © Ashford Wide. All Rights Reserved. You may not copy, distribute, or reuse these assets without explicit permission.
