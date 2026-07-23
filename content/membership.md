@@ -6,6 +6,8 @@ hero_image: ''
 date: 2024-01-01
 lastmod: 2026-07-10
 ---
+> [!NOTE]
+> [Learn about our high street business banners.](/business-lamppost-banners)
 
 ## Join Ashford Wide
 
