@@ -1,0 +1,29 @@
+items:
+  - name: "About Us"
+    url: "/about"
+    weight: 10
+  - name: "Events"
+    url: "/events"
+    weight: 20
+  - name: "Remembrance"
+    url: "/remembrance-day"
+    weight: 25
+    showIf: "showRemembrance"
+  - name: "News"
+    url: "/news"
+    weight: 30
+  - name: "Business Directory"
+    url: "/business-directory"
+    weight: 40
+  - name: "Membership"
+    url: "/membership"
+    weight: 50
+  - name: "Sponsorship"
+    url: "/sponsorship"
+    weight: 60
+  - name: "Business banners"
+    url: "/business-lamppost-banners"
+    weight: 70
+  - name: "Contact Us"
+    url: "/contact"
+    weight: 80
