@@ -8,15 +8,11 @@
 
       <nav>
         <ul class="hidden md:flex items-center gap-5" id="main-nav">
-          <li class="relative group"><a href="/about" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">About Us</a></li>
-          <li class="relative group"><a href="/events" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">Events</a></li>
-          {{ if .Site.Params.showRemembrance }}<li class="relative group"><a href="/remembrance-day" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">Remembrance</a></li>{{ end }}
-          <li class="relative group"><a href="/news" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">News</a></li>
-          <li class="relative group"><a href="/business-directory" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">Business Directory</a></li>
-          <li class="relative group"><a href="/membership" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">Membership</a></li>
-          <li class="relative group"><a href="/sponsorship" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">Sponsorship</a></li>
-          <li class="relative group"><a href="/business-lamppost-banners" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">Business banners</a></li>
-          <li class="relative group"><a href="/contact" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">Contact Us</a></li>
+          {{ range sort hugo.Data.nav.items "weight" }}
+            {{ if or (not .showIf) (index $.Site.Params .showIf) }}
+              <li class="relative group"><a href="{{ .url }}" class="text-sm font-semibold text-surface py-1 border-b-2 border-transparent hover:border-surface whitespace-nowrap transition-colors duration-200">{{ .name }}</a></li>
+            {{ end }}
+          {{ end }}
           <li class="md:hidden mt-2 w-2/3">
             <a href="/support" class="inline-block w-full text-center bg-secondary text-white px-[1.1rem] py-[0.45rem] rounded text-caption font-bold tracking-[0.03em] hover:opacity-80 transition-opacity">SUPPORT US</a>
           </li>
