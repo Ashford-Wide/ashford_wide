@@ -212,7 +212,7 @@ businesses:
     x: ''
     businesses:
       - name: Viva Namaste
-        description: ''
+        description: Wholesome, home-style Indian food in Ashford, cooked fresh with bold spices, authentic recipes, and honest flavours. Enjoy North Indian curries, biryanis, wraps, and Indian street food made with love.
         website: https://www.vivanamaste.com/
         telephone: 01784 279261
         mobile: ''
@@ -223,7 +223,7 @@ businesses:
         x: ''
         logo: /images/businesses/viva-namaste.png
       - name: 7th Heaven
-        description: ''
+        description: Cakes, Desserts and more. Come and enjoy freshly baked joy.
         website: https://www.7thheavenuk.com/
         telephone: '07359778589'
         mobile: ''
