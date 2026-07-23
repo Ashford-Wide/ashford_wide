@@ -233,6 +233,18 @@ businesses:
         linkedin: ''
         x: ''
         logo: /images/businesses/7th-heaven.avif
+  - name: "Timeless IMS"
+    category: "Digital Security"
+    website: "https://www.timelessims.co.uk/"
+    address: "33 Hanworth Rd, Sunbury-on-Thames TW16 5DA"
+    placeId: "ChIJhdt8yf5zdkgRd6CGfy-uFCs"
+    telephone: "0800 328 2852"
+    facebook: "https://www.facebook.com/TimelessIMS/"
+    instagram: "https://www.instagram.com/timelessims"
+    youtube: "https://www.youtube.com/channel/UCNddE2YzMcTKHDvOmZAPcow"
+    linkedin: "https://www.linkedin.com/company/timelessims/"
+    tiktok: "https://www.tiktok.com/@timelessims"
+    logo: "/images/businesses/timeless-ims.png"
   - name: Marina Marketing
     category: Marketing
     description: If you are looking for a vibrant and engaging marketing campaign for your business - then you have come to the right place!
