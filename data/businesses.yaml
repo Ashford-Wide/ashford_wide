@@ -14,7 +14,7 @@ businesses:
     x: ''
     logo: /images/businesses/ashdown.jpg
   - name: Ashford Town (Middlesex) FC
-    category: Sports club
+    category: Sports Club
     description: Support the Tangerines! Our local football team.
     website: https://www.ashfordtownmiddlesexfc.com/
     telephone: 07825 566218
@@ -247,4 +247,31 @@ businesses:
     linkedin: ''
     x: https://x.com/MarinaMarketin
     logo: /images/pasted-image-1784825538235.png
-    businesses: []
+  - name: Jenny Frost Data Science
+    category: Data Science
+    description: Helping business and organisations turn complex data into actionable insights and supporting research inititatives in the scienctific sector.
+    website: 
+    telephone: ''
+    mobile: ''
+    email: jenny@lomas.uk
+    address: ''
+    placeId: ''
+    facebook: ''
+    instagram: 
+    linkedin: https://www.linkedin.com/in/jenny-frost-datasci
+    x: 
+    logo: 
+  - name: Jenny Prints
+    category: Art & design
+    description: 
+    website: 
+    telephone: ''
+    mobile: ''
+    email: jenny@lomas.uk
+    address: ''
+    placeId: ''
+    facebook: ''
+    instagram: 
+    linkedin: https://www.linkedin.com/in/jenny-frost-datasci
+    x: 
+    logo: 
