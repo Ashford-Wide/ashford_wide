@@ -26,7 +26,6 @@ Together, we work to bring people together and make Ashford thrive through proje
 - [Summer Fair](/events/summer-fair/)
 - [Remembrance Day](/remembrance-day/)
 - Christmas Market
-- Christmas tree install and cut-down
 - [Town flags](/town-flags)
 - and much more!
 
