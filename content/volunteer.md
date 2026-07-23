@@ -24,7 +24,7 @@ We need volunteers to help at our events throughout the year, from marshalling a
 Together, we work to bring people together and make Ashford thrive through projects like:
 
 - [Summer Fair](/events/summer-fair/)
-- [Rememberance Day](/remembrance-day/)
+- [Remembrance Day](/remembrance-day/)
 - Christmas Market
 - [Town flags](/town-flags)
 - and much more!
