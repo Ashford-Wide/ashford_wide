@@ -28,3 +28,5 @@ Times are subject to change:
 🦎 Second reptile show (max 30 people): 1.10 pm - 1.30pm
 
 📚 Second storytelling session (ages 6-11): 2pm
+
+{{< image src="/images/events/summer-fair-sponsor-banner.jpg" >}}
