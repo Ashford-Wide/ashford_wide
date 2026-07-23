@@ -58,11 +58,11 @@ businesses:
     logo: /images/businesses/boyce-care.png
   - name: CSJ Steel Fabrications
     category: Building
-    description: ''
+    description: Crafting quality steel products for residential and commercial purposes.
     website: https://csjsteelfabrication.co.uk/
     telephone: 020 8797 1791
-    mobile: ''
-    email: ''
+    mobile: 07951 536785 / 07841 446941
+    email: csjsteel@blueyonder.co.uk
     address: 56 Cravan Ave, Feltham TW13 4ED
     placeId: ChIJ7YcQ03BzdkgRFLwFnpA3aRw
     facebook: ''
@@ -72,7 +72,7 @@ businesses:
     logo: /images/businesses/csj.png
   - name: Elevated Online
     category: Web Design
-    description: ''
+    description: Content creation - social media - web design. Let’s showcase your business in a whole new light.
     website: https://elevatedonline.uk/
     telephone: 020 3370 6007
     mobile: ''
@@ -86,21 +86,21 @@ businesses:
     logo: /images/businesses/elevated-online.png
   - name: Elle & Fee
     category: Food and drink
-    description: ''
+    description: Elle & Fee is an independent, family-run café and cocktail bar.
     website: https://www.elleandfee.co.uk/
     telephone: 01784 257861
     mobile: ''
     email: ''
     address: 16 Woodthorpe Rd, Ashford TW15 2RY
     placeId: ChIJ0eqMDzZzdkgREbSYkYXOg4Q
-    facebook: ''
-    instagram: ''
+    facebook: https://www.facebook.com/profile.php?id=100087466880005
+    instagram: https://www.instagram.com/elleandfee
     linkedin: ''
     x: ''
     logo: /images/businesses/elle-fee.png
   - name: Holmes & Daughters
     category: Funeral Directors
-    description: ''
+    description: As a member of the Ford Mears group, Holmes & Daughters has seen continued investment in our facilities and our fleet of funeral vehicles. This partnership allows us to offer a more extensive range of service options and specialised transport while remaining committed to the personal, independent values upon which the Holmes brothers built the firm. We are experienced in conducting services at South West Middlesex and Woking Crematoria, which are our nearest local facilities.
     website: https://fordmears.uk/funeral-directors/holmes-daughters-ashford
     telephone: 01784 421015
     mobile: ''
