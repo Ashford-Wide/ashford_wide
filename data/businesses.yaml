@@ -233,17 +233,6 @@ businesses:
         linkedin: ''
         x: ''
         logo: /images/businesses/7th-heaven.avif
-      - name: Timeless IMS
-        description: Security First Managed Service Provider. Timeless IMS is managed service provider specialising in protecting business from cyber attacks.
-        website: https://www.timelessims.co.uk/
-        telephone: 01784 421 713
-        mobile: ''
-        email: sales@timelessims.co.uk
-        facebook: https://www.facebook.com/TimelessIMS
-        instagram: https://www.instagram.com/timelessims/
-        linkedin: https://uk.linkedin.com/company/timelessims
-        x: ''
-        logo: /images/timelessims_logo.jpeg
   - name: Marina Marketing
     category: Marketing
     description: If you are looking for a vibrant and engaging marketing campaign for your business - then you have come to the right place!
