@@ -29,7 +29,7 @@ You will get access to exclusive resources and benefits that will help your busi
 
 As an Ashford Wide business member, you'll benefit from:
 
-- **Business Directory:** A prominent listing on our website [business directory](/business-directory], complete with your logo, description, socials & website link.
+- **Business Directory:** A prominent listing on our website [business directory](/business-directory), complete with your logo, description, socials & website link.
 - **Marketing & Promotion:** Your business promoted through our social media channels (approximately every 2 months).
 - **Dynamic Promotion:** Email or message us on social media to share your current promotions.
 - **Print marketing:** Preferential rates for adverts on printed marketing and event brochures.
