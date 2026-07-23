@@ -25,6 +25,18 @@ businesses:
     instagram: https://www.instagram.com/ashfordtownmx
     x: https://x.com/ashfordtownmx
     logo: /images/businesses/ashford-fc.png
+  - name: "Timeless IMS"
+    category: "Digital Security"
+    website: "https://www.timelessims.co.uk/"
+    address: "33 Hanworth Rd, Sunbury-on-Thames TW16 5DA"
+    placeId: "ChIJhdt8yf5zdkgRd6CGfy-uFCs"
+    telephone: "01784 421 713"
+    facebook: "https://www.facebook.com/TimelessIMS/"
+    instagram: "https://www.instagram.com/timelessims"
+    youtube: "https://www.youtube.com/channel/UCNddE2YzMcTKHDvOmZAPcow"
+    linkedin: "https://www.linkedin.com/company/timelessims/"
+    tiktok: "https://www.tiktok.com/@timelessims"
+    logo: "/images/businesses/timeless-ims.png"
   - name: Blackstone Printing
     category: Printing
     description: You think it, we print it! Your one stop shop for all printing and signs, from the sign on your shop to the sign-writing on your van, to the uniform on your back and business cards in your pocket.
