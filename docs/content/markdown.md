@@ -8,19 +8,19 @@ Shortcodes are special tags that insert dynamic content into an otherwise-plain 
 
 | Shortcode | Use |
 |---|---|
-| `{{</* param "email" */>}}` | Outputs a site-wide value from `hugo.toml` (e.g. an email address) — keeps content in sync with config instead of hardcoding. See [docs/hugo/configuration.md](../hugo/configuration.md) for available param names. |
-| `{{</* image src="/images/foo.jpg" alt="..." */>}}` | Inserts an image, processed through the site's image pipeline. See [docs/hugo/images.md](../hugo/images.md). |
-| `{{</* location-pin placeId="..." */>}}` | Small map-pin icon linking to a Google Maps place |
-| `{{</* pin-map */>}}` | Embeds a Leaflet pin/marker map |
-| `{{</* road-closure-map */>}}` | Embeds the Remembrance Sunday road closures map — see [docs/content/remembrance/map.md](remembrance/map.md) |
-| `{{</* team */>}}` | Renders the team list from `data/team.yaml` (used on the About page) |
-| `{{</* carousel */>}}` | Image carousel/slider |
-| `{{</* flag-grid */>}}` | Grid of sponsored St George's flags |
-| `{{</* doc-button */>}}` | Button linking to a downloadable document |
-| `{{</* last-updated */>}}` | Outputs the page's last-modified date |
-| `{{</* membership-tiers */>}}` | Membership tier comparison cards |
-| `{{</* paypal-donate */>}}`, `paypal-banner`, `paypal-flags`, `paypal-poppy`, `paypal-rememberance`, `paypal-business-annual`, `paypal-business-monthly` | PayPal payment buttons for different purposes — see [docs/hugo/template_architecture.md](../hugo/template_architecture.md) for the full list |
-| `{{</* join-us-button */>}}` / `{{</* support-us-button */>}}` | Standard call-to-action buttons |
+| `{{< param "email" >}}` | Outputs a site-wide value from `hugo.toml` (e.g. an email address) — keeps content in sync with config instead of hardcoding. See [docs/hugo/configuration.md](../hugo/configuration.md) for available param names. |
+| `{{< image src="/images/foo.jpg" alt="..." >}}` | Inserts an image, processed through the site's image pipeline. See [docs/hugo/images.md](../hugo/images.md). |
+| `{{< location-pin placeId="..." >}}` | Small map-pin icon linking to a Google Maps place |
+| `{{< pin-map >}}` | Embeds a Leaflet pin/marker map |
+| `{{< road-closure-map >}}` | Embeds the Remembrance Sunday road closures map — see [docs/content/remembrance/map.md](remembrance/map.md) |
+| `{{< team >}}` | Renders the team list from `data/team.yaml` (used on the About page) |
+| `{{< carousel >}}` | Image carousel/slider |
+| `{{< flag-grid >}}` | Grid of sponsored St George's flags |
+| `{{< doc-button >}}` | Button linking to a downloadable document |
+| `{{< last-updated >}}` | Outputs the page's last-modified date |
+| `{{< membership-tiers >}}` | Membership tier comparison cards |
+| `{{< paypal-donate >}}`, `paypal-banner`, `paypal-flags`, `paypal-poppy`, `paypal-rememberance`, `paypal-business-annual`, `paypal-business-monthly` | PayPal payment buttons for different purposes — see [docs/hugo/template_architecture.md](../hugo/template_architecture.md) for the full list |
+| `{{< join-us-button >}}` / `{{< support-us-button >}}` | Standard call-to-action buttons |
 
 Full shortcode reference (every file, what it renders, where it's implemented): [docs/hugo/template_architecture.md](../hugo/template_architecture.md#shortcodes).
 
