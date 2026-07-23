@@ -170,6 +170,22 @@ collections:
                   - { label: X (Twitter), name: x, widget: string, required: false }
                   - { label: Logo, name: logo, widget: image, required: false }
 
+  - name: nav
+    label: Header Navigation
+    files:
+      - label: Navigation Items
+        name: nav
+        file: data/nav.yaml
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - { label: Label, name: name, widget: string }
+              - { label: URL, name: url, widget: string, hint: "Site-relative path, e.g. /about" }
+              - { label: Order, name: weight, widget: number, value_type: int }
+              - { label: "Show only if site param is true (optional)", name: showIf, widget: string, required: false, hint: "e.g. showRemembrance" }
+
   - name: team
     label: Team
     files:
