@@ -35,7 +35,7 @@ As an Ashford Wide business member, you'll benefit from:
 - **Print marketing:** Preferential rates for adverts on printed marketing and event brochures.
 - **Video Marketing:** 1 promotional video filmed by Ashford Wide
 - **Networking Events:** Exclusive access to Business Networking events, and opportunity to host future meetings
-- **[(Optional) banner advertising space](/business-lamppost-banners):** Put your business front-and-centre with hyper-local marketing in the heart of Ashford by having your banner on a lamppost. (Print, intall, maintence for the first year is £650, with £200 yearly renewal)
+- **[(Optional) banner advertising space](/business-lamppost-banners):** Put your business front-and-centre with hyper-local marketing in the heart of Ashford by having your banner on a lamppost. (Print, intall, maintenance for the first year is £650, with £200 yearly renewal)
 - **Priority Access:** Be a priority to Ashford Wide with quick turn around response from our team of dedicated and skilled volunteers, knowledgable in all things Ashford. Beat the crowd with first choice access to Ashford Wide events & project [sponsorship packages](/sponsorship).
 - **Supporting the community:** All funds go towards supporting Ashford Wide's non-profit mission to make Ashford a better place to live and work.
 
@@ -44,5 +44,6 @@ As an Ashford Wide business member, you'll benefit from:
 You can still support our work even if membership is not for you.
 
 - [Donate to us directly or via Paypal](/support)
-- [Sponsor a Remembrance Day Poppy](/remembrance-day/sponsor-a-poppy/)
+- [Learn about our high street business banners](/business-lamppost-banners)
+- [Sponsor a Remembrance Day Poppy or donate to Remembrance Sunday](/remembrance-day/sponsor-a-poppy/)
 - [Volunteering at our events](/volunteer/)
