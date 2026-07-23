@@ -100,7 +100,7 @@ businesses:
     logo: /images/businesses/elle-fee.png
   - name: Holmes & Daughters
     category: Funeral Directors
-    description: As a member of the Ford Mears group, Holmes & Daughters has seen continued investment in our facilities and our fleet of funeral vehicles. This partnership allows us to offer a more extensive range of service options and specialised transport while remaining committed to the personal, independent values upon which the Holmes brothers built the firm. We are experienced in conducting services at South West Middlesex and Woking Crematoria, which are our nearest local facilities.
+    description: Holmes & Daughters has an extensive range of service options and specialised transport while remaining committed to the personal, independent values upon which the Holmes brothers built the firm.
     website: https://fordmears.uk/funeral-directors/holmes-daughters-ashford
     telephone: 01784 421015
     mobile: ''
@@ -114,8 +114,8 @@ businesses:
     logo: /images/businesses/holmes-and-daughters.jpg
   - name: LFG Exterior Cleaning
     category: Cleaning
-    description: ''
-    website: ''
+    description: Windows, roofs, driveways & patios, gutters, fascia & soffits, conservatories, Surrey/Middlesex & surrounding areas.
+    website: https://www.checkatrade.com/trades/lfgexteriorcleaningspecialists
     telephone: 07462 304689
     mobile: ''
     email: ''
@@ -184,7 +184,7 @@ businesses:
     logo: /images/WMC Logo Standard.png
   - name: In Construction
     category: Building
-    description: ''
+    description: House Extension & Full Home Renovation Specialists in Surrey.
     website: https://www.in-construction.co.uk/
     telephone: 01784 542265
     mobile: ''
