@@ -181,7 +181,7 @@ businesses:
     instagram: ''
     linkedin: https://www.linkedin.com/company/watmore-and-co-accounting/
     x: ''
-    logo: /images/WMC Logo Standard.png
+    logo: /images/businesses/wmc-logo-standard.png
   - name: In Construction
     category: Building
     description: House Extension & Full Home Renovation Specialists in Surrey.
@@ -247,7 +247,7 @@ businesses:
     linkedin: ''
     x: https://x.com/MarinaMarketin
     logo: /images/pasted-image-1784825538235.png
-  - name: Jenny Frost Data Science
+  - name: Blue Sky Data Science
     category: Data Science
     description: Helping business and organisations turn complex data into actionable insights and supporting research inititatives in the scienctific sector.
     website: 
@@ -267,11 +267,11 @@ businesses:
     website: 
     telephone: ''
     mobile: ''
-    email: jenny@lomas.uk
+    email: jenny@jennyprints.uk
     address: ''
     placeId: ''
     facebook: ''
     instagram: 
-    linkedin: https://www.linkedin.com/in/jenny-frost-datasci
+    linkedin: 
     x: 
-    logo: 
+    logo: /images/businesses/jenny-prints-logo.PNG
