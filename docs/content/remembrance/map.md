@@ -50,7 +50,7 @@ Key implementation details:
 The shortcode is embedded in the page with:
 
 ```
-{{</* road-closure-map */>}}
+{{< road-closure-map >}}
 ```
 
 ## CSP compatibility
