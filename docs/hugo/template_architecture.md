@@ -90,14 +90,14 @@ Full reference: [Hugo shortcodes](https://gohugo.io/shortcodes/) · [Custom shor
 
 **`param` shortcode usage** — reference any `[params]` key from `hugo.toml` inside content Markdown:
 ```markdown
-[{{</* param "email" */>}}](mailto:{{</* param "email" */>}})
-[Facebook]({{</* param "facebook" */>}})
+[{{< param "email" >}}](mailto:{{< param "email" >}})
+[Facebook]({{< param "facebook" >}})
 ```
 This keeps email addresses and social URLs in sync with `hugo.toml` across all content files.
 
 **Instagram embeds** — Hugo has a [built-in instagram shortcode](https://gohugo.io/shortcodes/instagram/) and `hugo.toml` enables [simple mode](https://gohugo.io/shortcodes/instagram/#privacy) for it (`[privacy.instagram] simple = true`, avoiding the need for an oEmbed access token):
 ```markdown
-{{</* instagram POST_ID */>}}
+{{< instagram POST_ID >}}
 ```
 However, no content currently uses the built-in shortcode. Instead the site has a separate custom shortcode, `shortcodes/instagram-embed.html`, which loads Instagram's own `embed.js` script directly (bypassing simple mode). If you need to embed an Instagram post, check which of the two is actually wired up where you're adding it — don't assume the `[privacy.instagram]` config applies, since it only affects the built-in shortcode.
 
