@@ -13,6 +13,7 @@ content/
 ├── current-sponsorship-opportunities.md
 ├── data.md                          # Cookies / privacy policy page
 ├── membership.md
+├── safeguarding.md                  # Uses `param "safeguardingEmail"` for the DSL contact address
 ├── sponsorship.md
 ├── stallholders.md                  # draft: true — not published
 ├── support.md                       # Uses the paypal-donate shortcode
