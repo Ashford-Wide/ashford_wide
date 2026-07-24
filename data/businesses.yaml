@@ -175,7 +175,7 @@ businesses:
     telephone: 01784 542 247
     mobile: ''
     email: contact@watmoreandco.com
-    address: 77 Kenilworth Road, Ashford, Surrey, TW15 3EN
+    address: ''
     placeId: ChIJzcV7ezBxdkgR2A7fcvBDLCk
     facebook: https://www.facebook.com/watmoreandco/
     instagram: ''
@@ -233,18 +233,22 @@ businesses:
         linkedin: ''
         x: ''
         logo: /images/businesses/7th-heaven.avif
-  - name: "Timeless IMS"
-    category: "Digital Security"
-    website: "https://www.timelessims.co.uk/"
-    address: "33 Hanworth Rd, Sunbury-on-Thames TW16 5DA"
-    placeId: "ChIJhdt8yf5zdkgRd6CGfy-uFCs"
-    telephone: "0800 328 2852"
-    facebook: "https://www.facebook.com/TimelessIMS/"
-    instagram: "https://www.instagram.com/timelessims"
-    youtube: "https://www.youtube.com/channel/UCNddE2YzMcTKHDvOmZAPcow"
-    linkedin: "https://www.linkedin.com/company/timelessims/"
-    tiktok: "https://www.tiktok.com/@timelessims"
-    logo: "/images/businesses/timeless-ims.png"
+  - name: Timeless IMS
+    category: Digital Security
+    description: ''
+    website: https://www.timelessims.co.uk/
+    telephone: 0800 328 2852
+    mobile: ''
+    email: ''
+    address: 33 Hanworth Rd, Sunbury-on-Thames TW16 5DA
+    placeId: ChIJhdt8yf5zdkgRd6CGfy-uFCs
+    facebook: https://www.facebook.com/TimelessIMS/
+    instagram: https://www.instagram.com/timelessims
+    linkedin: https://www.linkedin.com/company/timelessims/
+    x: ''
+    logo: /images/businesses/timeless-ims.png
+    tiktok: https://www.tiktok.com/@timelessims
+    youtube: https://www.youtube.com/channel/UCNddE2YzMcTKHDvOmZAPcow
   - name: Marina Marketing
     category: Marketing
     description: If you are looking for a vibrant and engaging marketing campaign for your business - then you have come to the right place!
@@ -270,6 +274,6 @@ businesses:
     placeId: ''
     facebook: ''
     instagram: https://www.instagram.com/jennyprintsuk/
-    linkedin: 
-    x: 
+    linkedin: ''
+    x: ''
     logo: /images/businesses/jenny-prints-logo.PNG
