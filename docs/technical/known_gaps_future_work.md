@@ -2,7 +2,6 @@
 
 | Item | Notes |
 |------|-------|
-| **Data-driven navigation** | Header nav is hardcoded in `header.html`; could be moved to `hugo.toml` menus |
 | **Empty `content/business-member/` folder** | `layouts/business-member/single.html` and its docs describe a working business profile-page template, but no page currently exists in `content/business-member/` — the one example page that used to live there was created and deleted. The template is currently dead code from a content perspective. |
 | **Dead partial: `layouts/partials/jsonld/closures.html`** | Hand-written `Event`/`Place` JSON-LD for the road closures page — not called by any template. Either wire it up or delete it. |
 | **Stale script: `scripts/a11y-test.js`** | A CommonJS duplicate of the live `scripts/a11y-test.mjs` (the one `package.json` actually runs). Safe to delete once confirmed nothing else references it. |
