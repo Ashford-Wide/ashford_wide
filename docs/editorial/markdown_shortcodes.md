@@ -1,6 +1,10 @@
 # Markdown authoring guide
 
-This page covers formatting that goes beyond standard Markdown (headings, bold/italic, links, lists) — alerts, the shortcodes editors are most likely to use, and the front matter fields each content type expects. Standard Markdown works as usual and isn't documented here.
+Content on the site is written into markdown files (`.md`) before being converted into HTML automatically to be displayed in a browser. Markdown is a markup language, a way to add specific characters around text that denote if it's bold, a heading, a list, etc.
+
+This page covers formatting that goes beyond standard Markdown like alerts, the shortcodes editors are most likely to use, and the front matter fields each content type expects.
+
+Standard Markdown works as usual and there's already a full guide available: [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
 ## Shortcodes
 
