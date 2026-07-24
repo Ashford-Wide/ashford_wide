@@ -60,18 +60,30 @@ No separate lint command — Hugo build validates templates; Tailwind errors sur
 
 ## Internal Documentation
 
-Detailed docs covering specific subsystems live in `docs/`:
+Detailed docs covering specific subsystems live in `docs/`, split by audience: `docs/technical/` (build, deploy, and implementation reference) and `docs/editorial/` (how content editors use Sveltia CMS and shortcodes to produce content).
+
+### Technical docs
 
 | File | Topic |
 |---|---|
-| `docs/background.md` | Project overview, stack, live domain |
-| `docs/hugo/` | Build pipeline, config, content & template architecture |
-| `docs/tailwind.md` | Custom Tailwind setup and token reference |
-| `docs/javascript.md` | Script inventory and Hugo Pipes usage |
-| `docs/accessibility_testing.md` | a11y workflow and tooling |
-| `docs/sveltia_cms.md` | CMS setup, auth, collections, local dev |
-| `docs/seo.md` | SEO and structured data approach |
-| `docs/security.md` | CSP headers (`static/_headers`) and other security notes |
-| `docs/deployment.md` | Cloudflare Pages build settings, daily rebuild workflow |
-| `docs/content/` | Content-authoring notes (business detail pages, markdown, remembrance) |
-| `docs/known_gaps_future_work.md` | Backlog and known limitations |
+| `docs/technical/background.md` | Project overview, stack, live domain |
+| `docs/technical/hugo/` | Build pipeline, config, content & template architecture |
+| `docs/technical/tailwind.md` | Custom Tailwind setup and token reference |
+| `docs/technical/javascript.md` | Script inventory and Hugo Pipes usage |
+| `docs/technical/accessibility_testing.md` | a11y workflow and tooling |
+| `docs/technical/cms_infra.md` | CMS auth (GitHub OAuth, aw-auth Worker), config.yml, local dev |
+| `docs/technical/seo.md` | SEO and structured data approach |
+| `docs/technical/security.md` | CSP headers (`static/_headers`) and other security notes |
+| `docs/technical/deployment.md` | Cloudflare Pages build settings, daily rebuild workflow |
+| `docs/technical/remembrance_map.md` | Road closures map shortcode, GeoJSON data, CSP compatibility |
+| `docs/technical/known_gaps_future_work.md` | Backlog and known limitations |
+
+### Editorial (CMS) docs
+
+| File | Topic |
+|---|---|
+| `docs/editorial/markdown_shortcodes.md` | Shortcode quick reference, alerts/callouts syntax |
+| `docs/editorial/front_matter_reference.md` | Front matter fields for events, news, and standard pages |
+| `docs/editorial/images.md` | Adding images to content, the `{{< image >}}` shortcode |
+| `docs/editorial/business_pages.md` | Business member profile pages — fields and how to add one |
+| `docs/editorial/cms_collections.md` | What each Sveltia CMS collection manages, Markdown widget support |
