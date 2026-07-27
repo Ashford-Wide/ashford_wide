@@ -35,7 +35,8 @@
 {{- end -}}
 
 {{- $geojson := "assets/geo/ashford.geojson" | os.ReadFile | transform.Unmarshal -}}
-{{- $ring := index (index (index $geojson.features 0).geometry.coordinates 0) 0 -}}
+{{- $geometry := (index $geojson.features 0).geometry -}}
+{{- $ring := cond (eq $geometry.type "Polygon") (index $geometry.coordinates 0) (index (index $geometry.coordinates 0) 0) -}}
 {{- $pairs := slice -}}
 {{- range $ring -}}
   {{- $pairs = $pairs | append (printf "%g %g" (index . 1) (index . 0)) -}}
