@@ -27,7 +27,7 @@ disableHugoGeneratorInject = true
   twitter = "https://x.com/AshfordWide"
   instagram = "https://www.instagram.com/ashfordwide"
   linkedin = ""
-  googleBusinessProfile = ""
+  googleBusinessProfile = "https://www.google.com/maps?cid=13625238142268584475"
 
 [security]
   [security.node]
