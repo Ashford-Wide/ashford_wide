@@ -32,7 +32,7 @@ Full shortcode reference (every file, what it renders, where it's implemented): 
 
 Every content type has its own required/optional front matter fields, set in Sveltia CMS or directly in the Markdown file's `---` block.
 
-**Events** (`content/events/<year>/*.md`): `title`, `date`, `startTime`, `endTime`, `location`, `placeId`, `address`, `organiser`, `organiserUrl`, `description`, `image`, `imageAspect`, `endDate`, `eventStatus`, `attendanceMode`. Full reference: [docs/editorial/front_matter_reference.md](front_matter_reference.md#event-front-matter).
+**Events** (`content/events/<year>/*.md`): `title`, `date`, `startTime`, `endTime`, `location`, `placeId`, `address`, `organiser`, `organiserUrl`, `description`, `image`, `imageAspect`, `endDate`, `cancelled`, `eventStatus`, `attendanceMode`. Full reference: [docs/editorial/front_matter_reference.md](front_matter_reference.md#event-front-matter).
 
 **News** (`content/news/<year>/*.md`): `title`, `date`, `author`, `description`, `image`. Full reference: [docs/editorial/front_matter_reference.md](front_matter_reference.md#news-front-matter).
 
