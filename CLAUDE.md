@@ -23,7 +23,7 @@ No separate lint command — Hugo build validates templates; Tailwind errors sur
 
 - `content/` — Markdown pages. Events and news are organized into subdirectories by year (`content/events/<year>/`, `content/news/<year>/`); also standalone pages (`about.md`, `business-directory.md`, `aed-locations.md`, `town-flags.md`, etc.) and a `content/remembrance-day/` section (e.g. `road-closures.md`).
 - `data/` — YAML data files: `businesses.yaml`, `team.yaml`, `poppies/<year>.yaml`.
-- Front matter is YAML. Events require `date`, `startTime` (24hr string), `endTime`, `location`; they also carry `eventStatus` and `attendanceMode` for Schema.org output.
+- Front matter is YAML. Events require `date`, `startTime` (24hr string), `endTime`, `location`; they also carry `cancelled`, `eventStatus`, and `attendanceMode` for Schema.org output.
 - Permalinks strip the year from public URLs (configured in `hugo.toml`).
 
 ### Templates
