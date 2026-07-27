@@ -11,6 +11,7 @@ organiserUrl: https://ashfordrotary.org.uk/
 description: Join Ashford Wide and Mr Bubbles are fundraising for Ashford's Christmas Lights 🎄
 image: /images/events/classic-cars.jpg
 imageAspect: 16:9
+cancelled: false
 ---
 
 Join Ashford Wide and Mr Bubbles at our game stall at Ashford Rotary's Classic Car Show - the bubbles are free fun for all, but we are fundraising for Ashford's Christmas Lights 🎄
