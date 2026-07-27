@@ -1,4 +1,7 @@
 {{- $eventStatus := printf "https://schema.org/%s" (or .Params.eventStatus "EventScheduled") -}}
+{{- if .Params.cancelled -}}
+  {{- $eventStatus = "https://schema.org/EventCancelled" -}}
+{{- end -}}
 {{- $attendanceMode := printf "https://schema.org/%s" (or .Params.attendanceMode "OfflineEventAttendanceMode") -}}
 {{- $dateOnly := .Date.Format "2006-01-02" -}}
 {{- $startDate := $dateOnly -}}
