@@ -15,10 +15,10 @@
 -}}
 {{- with .Site.Params.description }}{{- $org = merge $org (dict "description" .) -}}{{- end -}}
 {{- with .Site.Params.logo -}}
-  {{- $logoUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
+  {{- $logoUrl := partial "image.html" (dict "src" . "urlOnly" true "format" "png") | strings.TrimSpace | absURL -}}
   {{- $org = merge $org (dict "logo" $logoUrl) -}}
 {{- end -}}
-{{- with .Site.Params.foundingDate }}{{- $org = merge $org (dict "foundingDate" .) -}}{{- end -}}
+{{- with .Site.Params.foundingDate }}{{- $org = merge $org (dict "foundingDate" (printf "%v" .)) -}}{{- end -}}
 {{- with .Site.Params.email }}{{- $org = merge $org (dict "email" .) -}}{{- end -}}
 
 {{- with .Site.Params.companyNumber -}}
@@ -51,7 +51,7 @@
 
   "areaServed" (slice
     (dict "@type" "City" "name" "Ashford" "sameAs" "https://www.wikidata.org/wiki/Q725270")
-    (dict "@type" "GeoShape" "polygon" $polygon)
+    (dict "@type" "Place" "geo" (dict "@type" "GeoShape" "polygon" $polygon))
   )
 ) -}}
 
@@ -63,14 +63,14 @@
   {{- $contactPoint := dict
     "@type" "ContactPoint"
     "email" .
-    "contactType" "Contact email"
+    "contactType" "customer service"
   -}}
   {{- $org = merge $org (dict "contactPoint" $contactPoint) -}}
 {{- end -}}
 
 {{- $donateAction := dict
   "@type" "DonateAction"
-  "recipient" (dict "@type" "Organization" "name" .Site.Title)
+  "recipient" (dict "@id" (print .Site.BaseURL "#organization"))
   "target" (print (.Site.BaseURL | strings.TrimRight "/") "/support/")
 -}}
 {{- $org = merge $org (dict "potentialAction" $donateAction) -}}
