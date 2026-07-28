@@ -24,6 +24,4 @@ The map below shows the roads and where they will be  closed:
 
 {{< road-closure-map >}}
 
-An alternate traffic route is suggested below:
-
 If you have any questions about the road closures, please contact us at [{{< param "email" >}}](mailto:{{< param "email" >}}).
