@@ -34,9 +34,9 @@ Output on every page via `partials/jsonld/org.html`.
 | `identifier` | `params.companyNumber` | `PropertyValue` with a Companies House URL — entire block omitted if blank |
 | `companyRegistration` | `params.companyNumber` | Same value as `identifier.value`, set alongside it — omitted if blank |
 | `knowsAbout` | hardcoded | Community Development ([Wikidata Q5154974](https://www.wikidata.org/wiki/Q5154974)) |
-| `areaServed` | hardcoded + generated | A `City` node (Ashford, [Wikidata Q725270](https://www.wikidata.org/wiki/Q725270)) plus a `GeoShape` polygon computed at build time from `assets/geo/ashford.geojson` |
+| `areaServed` | hardcoded + generated | A `City` node (Ashford, [Wikidata Q725270](https://www.wikidata.org/wiki/Q725270)) plus a `Place` node whose `geo` is a `GeoShape` polygon computed at build time from `assets/geo/ashford.geojson` |
 | `sameAs` | `params.facebook`, `.twitter`, `.instagram`, `.googleBusinessProfile`, plus the Companies House URL if `companyNumber` is set | Omitted entirely if none are present |
-| `contactPoint` | `params.email` | `ContactPoint` with `contactType: "Contact email"` — omitted if `email` is blank |
+| `contactPoint` | `params.email` | `ContactPoint` with `contactType: "customer service"` — omitted if `email` is blank |
 | `potentialAction` | hardcoded + `baseURL` | `DonateAction` with `recipient` set to the org and `target` pointing to `/support/` |
 
 There is no `slogan`, `telephone`, or `address` field in the Organization JSON-LD, and no matching `slogan`/`phone`/`address.*` params exist in `hugo.toml` — the organisation's postal address is not currently exposed as structured data anywhere on the site.
