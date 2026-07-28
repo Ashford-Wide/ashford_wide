@@ -7,7 +7,7 @@ Two or three JSON-LD blocks are output per page:
 | Partial | Output on | Type |
 |---------|-----------|------|
 | `partials/jsonld/org.html` | Every page (via `head.html`) | [`Organization`](https://schema.org/Organization) |
-| `partials/jsonld/article.html` | News single pages (via `head_extra` in `news/single.html`) | [`NewsArticle`](https://schema.org/NewsArticle) |
+| `partials/jsonld/article.html` | News single pages (via `head_extra` in `news/single.html`) | [`Article`](https://schema.org/Article) |
 | `partials/jsonld/event.html` | Event single pages (via `head_extra`) | [`Event`](https://schema.org/Event) |
 | `partials/jsonld/webpage.html` | Default single pages, business member pages, and the virtual poppy wall (via `head_extra`) | [`WebPage`](https://schema.org/WebPage) |
 | `partials/jsonld/business-directory.html` | The business directory page | [`CollectionPage`](https://schema.org/CollectionPage) / [`ItemList`](https://schema.org/ItemList) of [`LocalBusiness`](https://schema.org/LocalBusiness) |
@@ -41,24 +41,25 @@ Output on every page via `partials/jsonld/org.html`.
 
 There is no `slogan`, `telephone`, or `address` field in the Organization JSON-LD, and no matching `slogan`/`phone`/`address.*` params exist in `hugo.toml` — the organisation's postal address is not currently exposed as structured data anywhere on the site.
 
-### NewsArticle JSON-LD fields
+### Article JSON-LD fields
 
-Full reference: [Schema.org/NewsArticle](https://schema.org/NewsArticle)
+Full reference: [Schema.org/Article](https://schema.org/Article)
 
-Output on news single pages via `partials/jsonld/article.html`, included through `head_extra` in `layouts/news/single.html`.
+Output on news single pages via `partials/jsonld/article.html`, included through `head_extra` in `layouts/news/single.html`. Uses `Article` rather than `NewsArticle` — Google reserves top `NewsArticle` rich-result features for verified Google News publishers, and `Article` triggers the same Search Console enhancement reports without that requirement.
 
 | Field | Source | Notes |
 |-------|--------|-------|
-| `@type` | hardcoded | `NewsArticle` |
+| `@type` | hardcoded | `Article` |
 | `headline` | `.Title` | |
 | `datePublished` | `.Date` | ISO-8601 datetime |
 | `dateModified` | `.Lastmod` | ISO-8601 datetime — falls back to `.Date` if `lastmod` not set in front matter |
 | `url` | `.Permalink` | |
+| `mainEntityOfPage` | `.Permalink` | `WebPage` node with `@id` set to the page's permalink |
 | `wordCount` | `.WordCount` | Computed by Hugo |
-| `publisher` | Site config | `Organization` with name and URL from `hugo.toml` |
+| `publisher` | Site config | `Organization` with name, URL, and `logo` (`ImageObject`, PNG) from `hugo.toml` |
 | `author` | `author` param or site config | Defaults to the site `Organization`; if `author` front matter is set, outputs an `Organization` node with that name instead (not a `Person` — the field is used for things like "Ashford Wide Team", not individual bylines) |
 | `description` | `.Description` | Omitted if blank |
-| `image` | `image` param | Absolute URL — omitted if not set |
+| `image` | `image` param | Absolute URL — falls back to `params.ogImage` (the site-wide default) if not set, so `image` is always present |
 
 ### Event JSON-LD fields
 
