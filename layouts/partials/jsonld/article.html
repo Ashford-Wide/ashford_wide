@@ -1,16 +1,19 @@
+{{- $logoUrl := partial "image.html" (dict "src" .Site.Params.logo "urlOnly" true "format" "png") | strings.TrimSpace | absURL -}}
 {{- $org := dict
   "@type" "Organization"
   "name" .Site.Title
   "url" (.Site.BaseURL | strings.TrimRight "/")
+  "logo" (dict "@type" "ImageObject" "url" $logoUrl)
 -}}
 
 {{- $article := dict
   "@context" "https://schema.org"
-  "@type" "NewsArticle"
+  "@type" "Article"
   "headline" .Title
   "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
   "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
   "url" .Permalink
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
   "wordCount" .WordCount
   "publisher" $org
   "author" $org
@@ -21,8 +24,9 @@
 {{- with .Params.author -}}
   {{- $article = merge $article (dict "author" (dict "@type" "Organization" "name" .)) -}}
 {{- end -}}
-{{- with .Params.image -}}
-  {{- $imgUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
+{{- $imageSrc := .Params.image | default .Site.Params.ogImage -}}
+{{- with $imageSrc -}}
+  {{- $imgUrl := partial "image.html" (dict "src" . "urlOnly" true "format" "jpeg") | strings.TrimSpace | absURL -}}
   {{- $article = merge $article (dict "image" $imgUrl) -}}
 {{- end -}}
 <script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
