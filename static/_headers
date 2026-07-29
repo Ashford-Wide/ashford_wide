@@ -10,6 +10,9 @@
 /images/*.webp
   Cache-Control: public, max-age=31536000, immutable
 
+/images/*.avif
+  Cache-Control: public, max-age=31536000, immutable
+
 /*
   Content-Security-Policy: script-src 'self' 'unsafe-inline' https://unpkg.com https://www.youtube.com https://www.instagram.com https://www.paypal.com https://www.paypalobjects.com; style-src 'self' 'unsafe-inline' https://unpkg.com; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' https: data: blob:; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com https://www.paypal.com; default-src 'self'; manifest-src 'self' blob:; connect-src 'self' data: https://unpkg.com https://api.github.com https://www.paypal.com https://aw-auth.ashford-wide.workers.dev https://www.githubstatus.com; object-src 'none'; base-uri 'self'; form-action 'self' https://www.paypal.com; frame-ancestors 'none';
   X-Frame-Options: DENY
