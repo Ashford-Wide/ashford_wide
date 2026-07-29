@@ -22,7 +22,7 @@
   {{- if $urlOnly -}}
     {{- $img.RelPermalink -}}
   {{- else -}}
-    <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}">
+    <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}">
   {{- end -}}
 {{- else -}}
   {{/* Graceful fallback if file missing or resources.Get returns nil */}}
