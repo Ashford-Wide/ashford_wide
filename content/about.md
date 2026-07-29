@@ -27,7 +27,7 @@ This year we will be:
     - Pride - June
     - Remembrance Day - November
     - Christmas - November/December
-- Having our **Summer Fair** on Bank Holiday Monday **August 31st**
+- Having our [Summer Fair](/events/summer-fair) on Bank Holiday **Monday August 31st**
 - Having a bubble blowing stall at the Ashford Rotary Classic Car Show with Mr Bubbles on Sunday **6th September**
 - [Remembrance Day](/remembrance-day) parade & service on **Sunday 8th November**
 - Ashford Christmas lights & Christmas tree
