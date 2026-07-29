@@ -8,9 +8,11 @@
       filters.forEach(function (b) {
         b.classList.remove('bg-surface', 'text-white', 'border-surface');
         b.classList.add('bg-white', 'text-text');
+        b.setAttribute('aria-pressed', 'false');
       });
       this.classList.remove('bg-white', 'text-text');
       this.classList.add('bg-surface', 'text-white', 'border-surface');
+      this.setAttribute('aria-pressed', 'true');
       var visible = 0;
       cards.forEach(function (card) {
         var show = filter === 'all' || card.dataset.category === filter;
