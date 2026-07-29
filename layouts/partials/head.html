@@ -20,4 +20,4 @@
 {{ with .Site.Params.facebookDomainVerification }}<meta name="facebook-domain-verification" content="{{ . }}">{{ end }}
 {{ with .Site.Params.bingDomainVerification }} <meta name="msvalidate.01" content="{{ . }}">{{ end }}
 {{ partial "opengraph.html" . }}
-{{ partial "jsonld/org.html" . }}
+{{ if .IsHome }}{{ partial "jsonld/org.html" . }}{{ end }}
