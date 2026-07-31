@@ -27,20 +27,6 @@
   {{- partial (printf "homepage/%s.html" .) $ -}}
 {{- end -}}
 
-{{/* ── About ── */}}
-<section class="py-8 bg-ui-light">
-  <div class="max-w-container mx-auto px-6">
-    <h2 class="text-h3 font-bold mb-1.5">About Ashford Wide</h2>
-    <p class="text-muted mb-10 text-body-md">Our vision is to make Ashford a thriving town centre the whole community is proud of</p>
-    <div class="max-w-[800px]">
-      <p class="mb-5">Ashford Wide is Ashford's main community organisation. We're a non-profit community group running only with volunteers. We bring together Residents, Businesses, Community Groups and Town Events in Ashford, Surrey.</p>
-      <p class="mb-5">From events and promotions to safety initiatives and environmental improvements, we're here to make a real difference for residents and businesses alike.</p>
-      <a href="/about" aria-label="Learn more about the work of Ashford Wide"
-        class="mt-2 inline-block px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">Learn More</a>
-    </div>
-  </div>
-</section>
-
 {{/* ── Upcoming Events ── */}}
 {{- $cutoff := now.AddDate 0 0 -1 -}}
 {{- $upcoming := where (where .Site.RegularPages "Section" "events") ".Date" "gt" $cutoff -}}
@@ -79,6 +65,20 @@
   </div>
 </section>
 {{ end }}
+
+{{/* ── About ── */}}
+<section class="py-8 bg-ui-light">
+  <div class="max-w-container mx-auto px-6">
+    <h2 class="text-h3 font-bold mb-1.5">About Ashford Wide</h2>
+    <p class="text-muted mb-10 text-body-md">Our vision is to make Ashford a thriving town centre the whole community is proud of</p>
+    <div class="max-w-[800px]">
+      <p class="mb-5">Ashford Wide is Ashford's main community organisation. We're a non-profit community group running only with volunteers. We bring together Residents, Businesses, Community Groups and Town Events in Ashford, Surrey.</p>
+      <p class="mb-5">From events and promotions to safety initiatives and environmental improvements, we're here to make a real difference for residents and businesses alike.</p>
+      <a href="/about" aria-label="Learn more about the work of Ashford Wide"
+        class="mt-2 inline-block px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">Learn More</a>
+    </div>
+  </div>
+</section>
 
 {{/* ── Business Membership CTA ── */}}
 <section class="py-16 bg-surface text-white">
