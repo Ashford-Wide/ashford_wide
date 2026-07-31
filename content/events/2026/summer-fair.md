@@ -13,7 +13,7 @@ image: /images/events/summer-fair-2026.png
 imageAspect: ''
 ---
 
-Join Ashford Wide, Boyce Care, Walk on the Wildside, Lincoln Jopp MP, Cllr Harry Boparai, and other community friends for the Ashford Summer Fair.
+Join Ashford Wide, Boyce Care, [Walk on the Wildside](https://walkonthewildsidelb.co.uk/), Lincoln Jopp MP, Cllr Harry Boparai, and other community friends for the Ashford Summer Fair.
 
 We're sure to have a great day with free storytelling sessions, free reptile shows, with stalls, and food to round the day off.
 
