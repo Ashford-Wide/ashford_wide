@@ -25,6 +25,12 @@ You will get access to exclusive resources and benefits that will help your busi
 
 {{< membership-tiers >}}
 
+## Free Business Network sign Up
+
+Not ready for our paid Business Membership? Why not join our free Business Network and hear about what's going on in Ashford, and get invitations to our free business networking events to meet other businesses in Ashford.
+
+{{< ms-form >}}
+
 ## Why Join?
 
 As an Ashford Wide business member, you'll benefit from:

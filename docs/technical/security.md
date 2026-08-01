@@ -12,7 +12,7 @@ Current policy summary:
 | `style-src` | `'self' 'unsafe-inline' https://unpkg.com` | `style="..."` attributes in templates; Sveltia styles from unpkg |
 | `font-src` | `'self' https://cdn.jsdelivr.net` | Sveltia CMS's fonts (Merriweather Sans, Noto Sans Mono, Material Symbols), served via Fontsource/jsDelivr since v0.174.0 (replaced Google Fonts for GDPR compliance) |
 | `img-src` | `'self' https: data: blob:` | Business directory logos link to arbitrary external domains; `blob:` for Sveltia CMS's local image previews |
-| `frame-src` | `https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com https://www.paypal.com` | Vimeo, YouTube, Instagram, and PayPal embeds |
+| `frame-src` | `https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com https://www.paypal.com https://forms.cloud.microsoft` | Vimeo, YouTube, Instagram, PayPal, and Microsoft Forms embeds |
 | `default-src` | `'self'` | Everything else self-hosted |
 | `manifest-src` | `'self' blob:` | Sveltia CMS dynamically generates a web app manifest as a `blob:` URL |
 | `connect-src` | `'self' data: https://unpkg.com https://api.github.com https://www.paypal.com https://aw-auth.ashford-wide.workers.dev https://www.githubstatus.com` | Sveltia CMS communicates with the GitHub API and the [aw-auth](https://github.com/Ashford-Wide/aw-auth) OAuth Worker (see [`docs/technical/cms_infra.md`](cms_infra.md)); `data:` for its branding logo; `githubstatus.com` for its backend-status indicator |
