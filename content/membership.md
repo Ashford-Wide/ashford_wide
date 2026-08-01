@@ -25,6 +25,10 @@ You will get access to exclusive resources and benefits that will help your busi
 
 {{< membership-tiers >}}
 
+## Sign Up
+
+{{< ms-form >}}
+
 ## Why Join?
 
 As an Ashford Wide business member, you'll benefit from:
