@@ -38,6 +38,7 @@
 /spelthorne-in-the-zone-oyster-for-spelthorne/    /news/spelthorne-in-the-zone--oyster-for-spelthorne/    301
 /welcome-to-ashford-wide/    /about/    301
 /timeless-ims/    /business-member/timeless-ims/    301
+/energie-fitness/    /business-directory/    301
 
 # Wildcard redirects
 /news-and-events/*    /news/:splat    301
