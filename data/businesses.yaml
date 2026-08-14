@@ -13,20 +13,6 @@ businesses:
     linkedin: ''
     x: ''
     logo: /images/businesses/ashdown.jpg
-  - name: Ashford Town (Middlesex) FC
-    category: Sports Club
-    description: Support the Tangerines! Our local football team.
-    website: https://www.ashfordtownmiddlesexfc.com/
-    telephone: 07825 566218
-    mobile: ''
-    email: ''
-    address: Parker Stadium Short Lane Stanwell TW19 7BH
-    placeId: ChIJYRAIid1zdkgRoETFo2ArBg4
-    facebook: ''
-    instagram: https://www.instagram.com/ashfordtownmx
-    linkedin: ''
-    x: https://x.com/ashfordtownmx
-    logo: /images/businesses/ashford-fc.png
   - name: Blackstone Printing
     category: Printing
     description: You think it, we print it! Your one stop shop for all printing and signs, from the sign on your shop to the sign-writing on your van, to the uniform on your back and business cards in your pocket.
@@ -70,20 +56,7 @@ businesses:
     linkedin: ''
     x: ''
     logo: /images/businesses/csj.png
-  - name: Elevated Online
-    category: Web Design
-    description: Content creation - social media - web design. Let's showcase your business in a whole new light.
-    website: https://elevatedonline.uk/
-    telephone: 020 3370 6007
-    mobile: ''
-    email: ''
-    address: ''
-    placeId: ''
-    facebook: ''
-    instagram: ''
-    linkedin: ''
-    x: ''
-    logo: /images/businesses/elevated-online.png
+
   - name: Elle & Fee
     category: Food and drink
     description: Elle & Fee is an independent, family-run café and cocktail bar.
