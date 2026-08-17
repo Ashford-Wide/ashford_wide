@@ -42,8 +42,3 @@ The Ashford Wide team are always keen to hear from you, the local community.
 
 We would love to have your help making Ashford a better place to live, whether through donations or volunteering, every little helps.
 
-## The Team
-
-Our leadership team is elected annually from our volunteers and is currently:
-
-{{< team >}}
