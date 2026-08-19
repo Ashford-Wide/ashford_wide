@@ -7,6 +7,11 @@ backend:
 media_folder: /assets/images
 public_folder: /images
 
+app_title: 'Ashford Wide Admin'
+
+logo:
+  src: /images/logo.png
+
 media_libraries:
   stock_assets:
     providers:
