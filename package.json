@@ -22,14 +22,14 @@
   "homepage": "https://github.com/magnoliaceiling/ashford_wide#readme",
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
-    "accessibility-checker": "^4.0.30",
+    "accessibility-checker": "^4.0.31",
     "postcss": "^8.5.26",
     "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.3.3"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.20",
-    "daisyui": "^5.7.18"
+    "daisyui": "^5.7.20"
   },
   "allowScripts": {
     "accessibility-checker": true,
