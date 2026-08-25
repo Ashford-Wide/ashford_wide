@@ -250,3 +250,16 @@ businesses:
     linkedin: ''
     x: ''
     logo: /images/businesses/jenny-prints-logo.PNG
+  - name: The Uniform Guy
+    category: Uniforms
+    description: The Uniform Guy is dedicated to providing high-quality, professional uniforms designed to elevate the image of businesses and the people who represent them.
+    website: https://theuniformguy.co.uk
+    telephone: ''
+    mobile: ''
+    email: ''
+    placeId: ''
+    facebook: ''
+    instagram: 
+    linkedin: ''
+    x: ''
+    logo: /images/businesses/the_uniform_guy.png
