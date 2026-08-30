@@ -17,7 +17,8 @@ media_libraries:
     providers:
       - pexels
 
-omit_empty_optional_fields: true
+output:
+  omit_empty_optional_fields: true
 
 collections:
 
