@@ -74,6 +74,7 @@ collections:
       - { label: Author, name: author, widget: string, default: "Ashford Wide Team", required: false }
       - { label: Description, name: description, widget: text, hint: "Short summary shown on news cards", maxlength: 150 }
       - { label: Image, name: image, widget: image, required: false, media_folder: "/assets/images/news", public_folder: "/images/news" }
+      - { label: "Hide image on page", name: hideImage, widget: boolean, default: false, required: false, hint: "Still used for the news card and social share preview; hides just the hero photo on the article page itself" }
       - { label: Body, name: body, widget: markdown }
 
   - name: pages
