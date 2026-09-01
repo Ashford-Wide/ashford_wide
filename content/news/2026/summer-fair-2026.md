@@ -15,14 +15,6 @@ hideImage: true
     src5="/images/news/summer-fair-2026/summer-fair-volunteers.jpeg"
 >}}
 
-## Help us to keep our events free
-
-You can help us to keep future events like this one free by donating and supporting Ashford Wide's work:
-
-{{< paypal-donate >}}
-
-## 
-
 On Bank Holiday Monday Ashford Wide held our first ever Summer Fair. Thank you to everyone who came along and support the event, with particular thanks to:
 
 - Ashford Library
@@ -37,3 +29,9 @@ On Bank Holiday Monday Ashford Wide held our first ever Summer Fair. Thank you t
 A very big thank you to our sponsors who made sure we could make this event free for everyone: Boyce Care and [Ashford Kitchens & Interiors](https://www.ashfordkitchensandinteriors.co.uk/).
 
 And finally our Ashford Wide and Ashford Youth Club volunteers who worked tirelessly and gave hundreds of hours of their time before and on the day of the event.
+
+## Help us to keep our events free
+
+You can help us to keep future events like this one free by donating and supporting Ashford Wide's work:
+
+{{< paypal-donate >}}
