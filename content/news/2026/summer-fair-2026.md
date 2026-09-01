@@ -15,7 +15,7 @@ hideImage: true
     src5="/images/news/summer-fair-2026/summer-fair-volunteers.jpeg"
 >}}
 
-On Bank Holiday Monday Ashford Wide held our first ever Summer Fair. Thank you to everyone who came along and support the event, with particular thanks to:
+On Bank Holiday Monday Ashford Wide held our first ever Summer Fair. Thank you to everyone who came along and supported the event, with particular thanks to:
 
 - Ashford Library
 - [Walk on the Wild Side](https://walkonthewildsidelb.co.uk/)
