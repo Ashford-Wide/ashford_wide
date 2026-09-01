@@ -23,6 +23,9 @@ endDate: "2026-07-12"       # optional — only for multi-day events
 cancelled: true             # optional — defaults to false; marks the event as cancelled
 eventStatus: EventCancelled # optional — overrides default EventScheduled
 attendanceMode: OnlineEventAttendanceMode  # optional — overrides default OfflineEventAttendanceMode
+freeEvent: true              # optional — defaults to false; marks the event as free in the schema.org output
+publishDate: 2026-06-01      # optional — used as offers.validFrom when freeEvent is true; defaults to `date` if omitted
+performer: true              # optional — defaults to false; adds a `performer` to the schema.org output, same value as `organizer`
 ---
 ```
 
@@ -37,6 +40,12 @@ The `date` field drives all event filtering. The events list template splits eve
 `eventStatus` accepts values defined by [Schema.org/EventStatusType](https://schema.org/EventStatusType) (e.g. `EventScheduled`, `EventCancelled`, `EventPostponed`, `EventRescheduled`).
 
 `attendanceMode` accepts values defined by [Schema.org/EventAttendanceModeEnumeration](https://schema.org/EventAttendanceModeEnumeration) (e.g. `OfflineEventAttendanceMode`, `OnlineEventAttendanceMode`, `MixedEventAttendanceMode`).
+
+`freeEvent: true` adds an `offers` object to the schema.org output with `price: "0"`, `priceCurrency: "GBP"`, and `availability: https://schema.org/InStock` — use it for events that are free to attend and require no ticketing. Not yet exposed as a field in the Sveltia CMS editor; add it directly in the Markdown front matter.
+
+`offers.validFrom` is set from Hugo's standard `publishDate` field — set `publishDate` to the date the event was announced/published if you want this accurate; if omitted, it falls back to `date` (the event date itself).
+
+`performer: true` adds a `performer` object to the schema.org output, set to the same value as `organizer` (i.e. `organiser`/`organiserUrl` if set, otherwise Ashford Wide). Not yet exposed as a field in the Sveltia CMS editor; add it directly in the Markdown front matter.
 
 ## News Front Matter
 
