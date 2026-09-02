@@ -1,1 +1,4 @@
-<iframe src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=NEgu08n0fUW8ZxkXU5yN_ZeoR_TFYslLk399YP0cxRBUM1dDVEJUVUlNVTMyWUFCUk1WR1pJMFJORi4u&embed=true" class="w-full max-w-full" style="height: 480px; border: none;" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen loading="lazy" title="Ashford Wide membership form"></iframe>
+{{- $id := .Get "id" | default "NEgu08n0fUW8ZxkXU5yN_ZeoR_TFYslLk399YP0cxRBUM1dDVEJUVUlNVTMyWUFCUk1WR1pJMFJORi4u" -}}
+{{- $title := .Get "title" | default "Ashford Wide membership form" -}}
+{{- $height := .Get "height" | default "480" -}}
+<iframe src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id={{ $id }}&embed=true" class="w-full max-w-full" style="height: {{ $height }}px; border: none;" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen loading="lazy" title="{{ $title }}"></iframe>
