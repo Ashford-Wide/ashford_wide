@@ -49,4 +49,18 @@
   {{- $imgUrl := partial "image.html" (dict "src" . "urlOnly" true) | strings.TrimSpace | absURL -}}
   {{- $event = merge $event (dict "image" $imgUrl) -}}
 {{- end -}}
+{{- if .Params.performer -}}
+  {{- $event = merge $event (dict "performer" $organizer) -}}
+{{- end -}}
+{{- if .Params.freeEvent -}}
+  {{- $offer := dict
+    "@type" "Offer"
+    "price" "0"
+    "priceCurrency" "GBP"
+    "availability" "https://schema.org/InStock"
+    "validFrom" (.PublishDate.Format "2006-01-02")
+    "url" .Permalink
+  -}}
+  {{- $event = merge $event (dict "offers" $offer) -}}
+{{- end -}}
 <script type="application/ld+json">{{ $event | jsonify | safeJS }}</script>

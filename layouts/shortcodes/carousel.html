@@ -8,6 +8,9 @@
   {{- end -}}
 {{- end -}}
 
+{{- $orientation := $.Get "orientation" | default "portrait" -}}
+{{- $aspect := cond (eq $orientation "horizontal") "aspect-video" "aspect-[3/4]" -}}
+
 {{- if gt (len $images) 0 -}}
 <div class="not-prose my-6">
   <div id="{{ $id }}" class="carousel w-full rounded overflow-hidden shadow">
@@ -16,7 +19,7 @@
     {{- $slideNum := add $idx 1 -}}
     {{- $prevNum := cond (eq $idx 0) $total $idx -}}
     {{- $nextNum := cond (eq $idx (sub $total 1)) 1 (add $idx 2) -}}
-    <div id="{{ $id }}-slide{{ $slideNum }}" class="carousel-item relative w-full aspect-[3/4]">
+    <div id="{{ $id }}-slide{{ $slideNum }}" class="carousel-item relative w-full {{ $aspect }}">
       {{ partial "image.html" (dict "src" $img.src "alt" $img.alt "class" "absolute inset-0 w-full h-full object-cover") }}
       {{- if gt $total 1 -}}
       <div class="absolute inset-x-3 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
