@@ -30,6 +30,12 @@ A very big thank you to our sponsors who made sure we could make this event free
 
 And finally our Ashford Wide and Ashford Youth Club volunteers who worked tirelessly and gave hundreds of hours of their time before and on the day of the event.
 
+## Tell us what you thought
+
+We'd love to hear your feedback on the Summer Fair to help us plan future events.
+
+{{< ms-form id="NEgu08n0fUW8ZxkXU5yN_ZeoR_TFYslLk399YP0cxRBUQTM3UkZHNDVGNUtZNFA0Wk1HNDNPTDc2SS4u" title="Ashford Wide Summer Fair feedback form" >}}
+
 ## Help us to keep our events free
 
 You can help us to keep future events like this one free by donating and supporting Ashford Wide's work:
