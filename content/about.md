@@ -7,7 +7,7 @@ lastmod: 2026-07-10
 
 ## Who We Are
 
-Ashford Wide is Ashford’s main community organisation. We’re a non-profit community group running only with volunteers. We bring together residents, businesses, community groups and town events in Ashford, West Surrey (Middlesex). 
+Ashford Wide is Ashford’s main community organisation. We’re a non-profit community group bringing together residents, businesses, community groups and town events in Ashford, West Surrey (Middlesex). 
 
 ## Working together for a better Ashford
 
@@ -17,7 +17,7 @@ In the past there were several local groups working independently, all with diff
 
 These groups unanimously decided that working together, with one vision would achieve greater results for the town and community. Ashford Chamber of Commerce, Ashford Pride and Ashford Events joined forces with the current Ashford Wide group, creating a new expanded Ashford Wide.
 
-We run entirely with donations and grants, as well as with the dedication and skill of our knowledgable and passionate volunteers.
+We run entirely with donations and grants, as well as with the dedication and skill of our knowledgable and passionate members.
 
 This year we will be:
 
