@@ -1,5 +1,6 @@
 .DS_Store
 /resources/_gen/assets/css
+/resources/_gen/images
 /public
 *.icloud
 *.swp
