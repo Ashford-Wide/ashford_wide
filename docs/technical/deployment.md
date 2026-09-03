@@ -4,7 +4,7 @@ This site is hosted on **Cloudflare Pages**, built automatically from the `main`
 
 ## How deployment works
 
-Cloudflare Pages watches the `main` branch. Every push to `main` triggers a new build and deployment automatically — no manual steps needed. The build command is `hugo --minify` and the output directory is `public`.
+Cloudflare Pages watches the `main` branch. Every push to `main` triggers a new build and deployment automatically — no manual steps needed. The build command is `hugo --minify --cacheDir=$PWD/.cache` and the output directory is `public`.
 
 Cloudflare Pages runs the Hugo build itself, so there is no build step in GitHub Actions for production deploys.
 
@@ -13,11 +13,14 @@ Cloudflare Pages runs the Hugo build itself, so there is no build step in GitHub
 | Setting | Value |
 |---|---|
 | Framework preset | Hugo |
-| Build command | `hugo --minify` |
+| Build command | `hugo --minify --cacheDir=$PWD/.cache` |
 | Build output directory | `public` |
 | Root directory | *(leave blank)* |
+| Build cache | Enabled (**Settings → Build → Build cache**) |
 
 Hugo version is not pinned in Cloudflare Pages config — if a specific version is ever required, set the `HUGO_VERSION` environment variable in the Cloudflare Pages dashboard.
+
+The `--cacheDir` flag plus the dashboard's Build cache setting let Cloudflare persist Hugo's `.cache` directory between builds, so image processing isn't repeated from scratch on every deploy. Hugo is auto-detected via `hugo.toml` at the repo root; see [Cloudflare's Hugo build caching docs](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks). Cache is purged 7 days after its last read, so an idle repo could see one slower "cold" build — the [daily rebuild](#daily-rebuild) below incidentally keeps the cache warm by triggering a build every day regardless of content changes.
 
 ## Daily rebuild
 
@@ -66,4 +69,4 @@ See [`docs/technical/cms_infra.md`](cms_infra.md) for full setup details.
 
 ## Resources cache
 
-Hugo saves processed images to `/resources/_gen/images/`. This directory is committed to the repository so Cloudflare Pages does not re-process images on every deploy. After adding or replacing source images, commit the updated cache alongside the source files.
+Hugo saves processed images to `/resources/_gen/images/`. This directory was historically committed to the repository so Cloudflare Pages wouldn't re-process images on every deploy — that's no longer necessary now that Cloudflare's Build cache (see above) persists Hugo's own cache between builds instead. This was verified across a full day boundary via the daily rebuild (cache restored successfully on a zero-content-change build the following morning), so `resources/_gen/images/` has been removed from git and added to `.gitignore`. Don't commit it going forward — it's regenerated from the persisted build cache on each deploy.
