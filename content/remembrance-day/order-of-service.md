@@ -26,6 +26,8 @@ The service is held at the War Memorial in Ashford town centre and is led by loc
 
 {{< doc-button href="/documents/2025-OoS.pdf" text="Download Order of Service (PDF)" >}}
 
+Prefer to read it online? [Read the full order of service online](/remembrance-day/order-of-service-full/).
+
 ## Getting There
 
 <p itemscope itemtype="https://schema.org/Place">
