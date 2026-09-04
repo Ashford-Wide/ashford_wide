@@ -8,7 +8,7 @@ lastmod: 2026-09-04
 
 <section>
 
-## Words of Welcome
+<h2 class="liturgy-heading-lede">Words of Welcome</h2>
 
 <p class="liturgy-speaker">Douglas, Ashford Wide.</p>
 
@@ -103,7 +103,7 @@ lastmod: 2026-09-04
 
 <section>
 
-<p class="liturgy-line">Bible Reading: Micah 6.6-8</p>
+<p class="liturgy-plain">Bible Reading: Micah 6.6-8</p>
 
 <p class="liturgy-speaker">Minister</p>
 
