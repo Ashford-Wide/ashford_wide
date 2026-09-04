@@ -1,0 +1,27 @@
+{{ define "head_extra" }}{{ partial "jsonld/webpage.html" . }}{{ end }}
+{{ define "main" }}
+<div class="bg-surface text-white py-12">
+  <div class="max-w-container mx-auto px-6">
+    <h1 class="text-h2 font-bold">{{ .Title }}</h1>
+
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <a href="/documents/2025-OoS.pdf"
+        class="inline-flex items-center gap-2 no-underline px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">
+        {{- partial "icons/document.html" . -}}
+        Download PDF
+      </a>
+      <a href="/remembrance-day/order-of-service/" class="text-white/80 underline hover:text-white text-body-sm">
+        Back to Order of Service overview
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="py-12">
+  <div class="max-w-[720px] mx-auto px-6">
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}
