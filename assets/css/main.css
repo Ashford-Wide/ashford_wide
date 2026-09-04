@@ -91,4 +91,40 @@
     @apply font-semibold text-sm uppercase tracking-wide mb-1;
     color: var(--alert-color);
   }
+
+  .liturgy-speaker {
+    @apply italic text-muted mt-6 mb-1;
+  }
+
+  .liturgy-line {
+    @apply mb-3 last:mb-0 ml-4;
+  }
+
+  .liturgy-plain {
+    @apply mb-3 last:mb-0 ml-0;
+  }
+
+  .liturgy-response {
+    @apply mb-3 flex gap-3;
+  }
+
+  .liturgy-response-label {
+    @apply font-bold text-red-700 shrink-0;
+  }
+
+  .liturgy-rubric {
+    @apply text-right text-body-sm text-muted my-4;
+  }
+
+  .liturgy-hymn {
+    @apply text-center my-6 space-y-4;
+  }
+
+  .liturgy-hymn p {
+    @apply leading-relaxed;
+  }
+
+  .liturgy-prayer {
+    @apply text-center font-bold my-6 space-y-2;
+  }
 }
