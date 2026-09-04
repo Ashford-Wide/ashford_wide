@@ -18,3 +18,21 @@ Our Remembrance programme includes town flags, the Remembrance Sunday parade and
 - [Virtual Poppy Wall](/remembrance-day/virtual-poppy-wall)
 
 Did you know it costs Ashford Wide around **£750** to run Remembrance Sunday in Ashford? Please help us meet the costs of this important town event by donating to our non-profit fund today.
+
+## Getting There
+
+<p itemscope itemtype="https://schema.org/Place">
+  <span itemprop="name">The War Memorial</span> is located in the 
+  <span itemprop="address">centre of town, at the junction of Church Road and Fordbridge Road</span>. 
+
+  <span itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+    <meta itemprop="latitude" content="51.4327291" />
+    <meta itemprop="longitude" content="-0.4620293" />
+  </span>
+
+  <link itemprop="sameAs" href="https://www.openstreetmap.org/node/158758386" />
+
+  Please arrive by 10:45am to ensure the service begins promptly at 11:00am. The parade begins at approximately 10:45am.
+</p>
+
+For more information, please email us: [{{< param "email" >}}](mailto:{{< param "email" >}}).
