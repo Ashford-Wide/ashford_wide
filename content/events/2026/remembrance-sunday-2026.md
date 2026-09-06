@@ -6,7 +6,7 @@ endTime: "11:30"
 location: Ashford War Memorial
 placeId: "ChIJwSZPHflzdkgR_PBe_eiIsw8"
 description: Join Ashford Wide for this years Remembrance Sunday parade and service on Sunday 8th November.
-draft: true
+draft: false
 image: /images/poppy-sponsorship.jpg
 ---
 
