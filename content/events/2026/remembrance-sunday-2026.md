@@ -1,0 +1,27 @@
+---
+title: Remembrance Sunday 2026
+date: 2026-11-08
+startTime: "10:45"
+endTime: "11:30"
+location: Ashford War Memorial
+placeId: "ChIJwSZPHflzdkgR_PBe_eiIsw8"
+description: Join Ashford Wide for this years Remembrance Sunday parade and service on Sunday 8th November.
+draft: true
+image: /images/poppy-sponsorship.jpg
+---
+
+Join Ashford Wide for this years Remembrance Sunday parade and service on **Sunday 8th November**. At Ashford’s War Memorial, service people, Guides. and Scouts will be sharing in Remembrance with Ashford Wide and the people of Ashford.
+
+The **parade begins at 10.45am** with the service culminating at the **11th hour**.
+
+Please donate generously to our Remembrance Day fund, or why not sponsor a poppy in remembrance of loved one, or with your business name or logo? All donations go to running Ashford’s Remembrance day events.
+
+## Would you want to lay a wreath at the service?
+
+Please email [{{< param "email" >}}](mailto:{{< param "email" >}}) if you wish to purchase a £25 wreath and wish to lay it at our Ashford service.
+
+Service people and dignitaries are welcome to join Ashford Wide for tea at the Fordbridge Centre on Clarendon Road after the ceremony.
+
+## More information
+
+For more information on Remembrance Sunday including the Order of Service, information on road closures, our virtual poppy wall, and poppies around Ashford, please see our dedicated [Remembrance day pages](/remembrance-day/).
