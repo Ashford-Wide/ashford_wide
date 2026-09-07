@@ -29,7 +29,7 @@ Please include:
     - Logo
     - Email
 
-All proceeds go towards the cost of the Remembrance display and Remembrance Sunday costs.
+All proceeds go towards the cost of the Remembrance display and Remembrance Sunday costs. If you sponsor a poppy, please allow us two weeks to place your sponsored and/or virtual poppy.
 
 {{< paypal-poppy >}}
 

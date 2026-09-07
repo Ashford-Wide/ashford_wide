@@ -1,0 +1,15 @@
+<section class="py-8 bg-ui-light">
+  <div class="max-w-container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+      <div>
+        <h2 class="text-h3 font-bold mb-3">Remembrance Sunday</h2>
+        <p class="text-muted text-body-md mb-6">Find out about Remembrance Sunday in Ashford including how to sponsor a poppy and timings for the morning</p>
+        <a href="/remembrance-day/"
+          class="inline-block px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-secondary bg-secondary text-white hover:bg-white hover:text-secondary transition-colors leading-[1.4]">More information</a>
+      </div>
+      <div>
+        {{ partial "image.html" (dict "src" "/images/poppy-sponsorship.jpg" "alt" "Remembrance popppy in front of Ashford War Memorial" "class" "w-full h-auto rounded" "width" 900) }}
+      </div>
+    </div>
+  </div>
+</section>

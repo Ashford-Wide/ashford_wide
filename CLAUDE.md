@@ -87,3 +87,4 @@ Detailed docs covering specific subsystems live in `docs/`, split by audience: `
 | `docs/editorial/images.md` | Adding images to content, the `{{< image >}}` shortcode |
 | `docs/editorial/business_pages.md` | Business member profile pages — fields and how to add one |
 | `docs/editorial/cms_collections.md` | What each Sveltia CMS collection manages, Markdown widget support |
+| `docs/editorial/order-service.md` | Remembrance Day order of service pages — overview vs. full-text HTML liturgy, editing conventions |

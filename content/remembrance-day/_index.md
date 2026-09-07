@@ -2,8 +2,6 @@
 title: Remembrance
 description: Honouring those who gave their lives in service
 layout: single
-videoID: "1180234252"
-videoTitle: Ashford Wide - putting up Poppies & Flags for Remembrance
 ---
 
 ## Remembrance in Ashford
@@ -18,3 +16,4 @@ Our Remembrance programme includes town flags, the Remembrance Sunday parade and
 - [Virtual Poppy Wall](/remembrance-day/virtual-poppy-wall)
 
 Did you know it costs Ashford Wide around **£750** to run Remembrance Sunday in Ashford? Please help us meet the costs of this important town event by donating to our non-profit fund today.
+
