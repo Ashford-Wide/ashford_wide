@@ -10,11 +10,13 @@ draft: false
 image: /images/poppy-sponsorship.jpg
 ---
 
-Join Ashford Wide for this years Remembrance Sunday parade and service on **Sunday 8th November**. At Ashford’s War Memorial, service people, Guides. and Scouts will be sharing in Remembrance with Ashford Wide and the people of Ashford.
+Join Ashford Wide for this years Remembrance Sunday parade and service on **Sunday 8th November**. At Ashford’s War Memorial. Service people, Guides, Scouts, local community groups, and businesses will be sharing in Remembrance with Ashford Wide and the people of Ashford.
 
 The **parade begins at 10.45am** with the service culminating at the **11th hour**.
 
 Please be prepared for the potential of bad weather as this is an outdoor event, and bring any mobility or rest aids with you.
+
+During the parade and the service, please remain behind the barriers and on the pavements at all time.
 
 Please donate generously to our Remembrance Day fund, or why not sponsor a poppy in remembrance of loved one, or with your business name or logo? All donations go to running Ashford’s Remembrance day events.
 
