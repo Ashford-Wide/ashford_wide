@@ -14,11 +14,15 @@ Join Ashford Wide for this years Remembrance Sunday parade and service on **Sun
 
 The **parade begins at 10.45am** with the service culminating at the **11th hour**.
 
+Please be prepared for the potential of bad weather as this is an outdoor event, and bring any mobility or rest aids with you.
+
 Please donate generously to our Remembrance Day fund, or why not sponsor a poppy in remembrance of loved one, or with your business name or logo? All donations go to running Ashford’s Remembrance day events.
 
 ## Would you want to lay a wreath at the service?
 
-Please email [{{< param "email" >}}](mailto:{{< param "email" >}}) if you wish to purchase a £25 wreath and wish to lay it at our Ashford service.
+Please email [{{< param "email" >}}](mailto:{{< param "email" >}}) if you wish to purchase a medium sized wreath, with space for a you to attach your logo, through Ashford Wide. The cost of this is £32, which includes the wreath and postage. The wreath will be available to collect on the morning of the service at the War Memorial. The cut-off for ordering a wreath is **Friday 23 October**.
+
+## After the service
 
 Service people and dignitaries are welcome to join Ashford Wide for tea at the Fordbridge Centre on Clarendon Road after the ceremony.
 
