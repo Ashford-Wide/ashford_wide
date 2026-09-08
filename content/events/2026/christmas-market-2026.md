@@ -11,7 +11,7 @@ performer: true
 draft: false
 ---
 
-Get ready to step into the festive spirit at the Ashford Wide Christmas Market! Join us on Wednesday, 2nd December 2026 at 5pm - 8pm, for an evening full of holiday cheer, local stalls, delicious treats, and joyful entertainment.
+Get ready to step into the festive spirit at the Ashford Wide Christmas Market! Join us on Wednesday, 2nd December 2026 at 5pm–8pm, for an evening full of holiday cheer, local stalls, delicious treats, and joyful entertainment.
 
 ## What to Expect
 
