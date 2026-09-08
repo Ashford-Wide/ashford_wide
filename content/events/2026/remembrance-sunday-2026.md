@@ -8,6 +8,8 @@ placeId: "ChIJwSZPHflzdkgR_PBe_eiIsw8"
 description: Join Ashford Wide for this years Remembrance Sunday parade and service on Sunday 8th November.
 draft: false
 image: /images/poppy-sponsorship.jpg
+freeEvent: true
+performer: true
 ---
 
 Join Ashford Wide for this year's Remembrance Sunday parade and service on **Sunday 8th November**. At Ashford’s War Memorial. Service people, local community groups including Guides and Scouts, and businesses will be sharing in Remembrance with Ashford Wide and the people of Ashford.
