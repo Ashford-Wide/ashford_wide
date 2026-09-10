@@ -26,13 +26,12 @@ collections:
     label: Events
     folder: content/events
     create: true
+    nested:
+      depth: 2
+      subfolders: false
     path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
     summary: "{{title}} {{draft | ternary('(draft)', '')}}"
-    view_groups:
-      - label: Year
-        field: date
-        pattern: '^\d{4}'
     view_filters:
       - label: Drafts
         field: draft
@@ -56,13 +55,12 @@ collections:
     label: News
     folder: content/news
     create: true
+    nested:
+      depth: 2
+      subfolders: false
     path: "{{year}}/{{slug}}"
     slug: "{{slug}}"
     summary: "{{title}} {{draft | ternary('(draft)', '')}}"
-    view_groups:
-      - label: Year
-        field: date
-        pattern: '^\d{4}'
     view_filters:
       - label: Drafts
         field: draft
