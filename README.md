@@ -19,4 +19,5 @@ You will need `npm` and Hugo installed already.
 ## License
 
 - **Source Code**: [MIT License](LICENSE)
+- **Font**: [OFL](https://github.com/IBM/plex/blob/master/packages/plex-sans-variable/fonts/complete/woff2/license.txt)
 - **Content**: All text, images, and branding in the `/content` and `/static` folders are Copyright © Ashford Wide. All Rights Reserved. You may not copy, distribute, or reuse these assets without explicit permission.
