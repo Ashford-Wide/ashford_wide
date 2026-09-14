@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.20",
-    "daisyui": "^5.7.32"
+    "daisyui": "^5.7.37"
   },
   "allowScripts": {
     "accessibility-checker": true,
