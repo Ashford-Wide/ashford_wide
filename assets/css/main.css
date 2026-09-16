@@ -42,6 +42,15 @@
   --width-container: 1200px;
   --breakpoint-md: 1140px;
 
+  --z-nav-overlay: 99;
+  --z-header: 400;
+
+  --color-alert-info: #0969da;
+  --color-alert-tip: var(--color-secondary);
+  --color-alert-important: #8250df;
+  --color-alert-warning: #E0B507;
+  --color-alert-caution: #A72326;
+
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -50,7 +59,7 @@
 
 @layer components {
   .nav-open {
-    @apply !flex flex-col items-start fixed top-header left-0 right-0 bg-white p-6 shadow-lg z-[99];
+    @apply !flex flex-col items-start fixed top-header left-0 right-0 bg-white p-6 shadow-lg z-(--z-nav-overlay);
   }
 
   .article-content {
@@ -72,16 +81,16 @@
   }
 
   .article-content blockquote.md-alert {
-    --alert-color: #0969da;
+    --alert-color: var(--color-alert-info);
     @apply not-italic border-l-4 rounded-r px-4 py-3 my-4;
     border-color: var(--alert-color);
     background-color: color-mix(in srgb, var(--alert-color) 10%, transparent);
   }
 
-  .article-content blockquote.md-alert-tip      { --alert-color: #287d3d; }
-  .article-content blockquote.md-alert-important { --alert-color: #8250df; }
-  .article-content blockquote.md-alert-warning  { --alert-color: #E0B507; }
-  .article-content blockquote.md-alert-caution  { --alert-color: #A72326; }
+  .article-content blockquote.md-alert-tip      { --alert-color: var(--color-alert-tip); }
+  .article-content blockquote.md-alert-important { --alert-color: var(--color-alert-important); }
+  .article-content blockquote.md-alert-warning  { --alert-color: var(--color-alert-warning); }
+  .article-content blockquote.md-alert-caution  { --alert-color: var(--color-alert-caution); }
 
   .article-content blockquote.md-alert p {
     @apply m-0;
