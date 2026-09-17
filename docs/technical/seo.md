@@ -177,3 +177,15 @@ The markdown templates use `.RawContent` (the literal markdown source) rather th
 This is a template-level partial, not a general-purpose HTML→markdown converter — a fine, low-risk trade-off given the small, known set of shortcodes actually used in content. Adding a new shortcode that should render inline in markdown output requires adding a case to `markdown-body.md`; otherwise it silently degrades to being stripped.
 
 Pages with no dedicated `.md` template (e.g. `content/business-directory.md`, the virtual poppy wall) fall back to `_default/single.md`, which just emits their raw front matter/body — harmless since those pages carry little prose content themselves (the real content is data-driven/interactive).
+
+### Homepage `Link` headers
+
+Per [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288) and [RFC 9727 §3](https://www.rfc-editor.org/rfc/rfc9727#section-3), the homepage response also carries an HTTP-level `Link` header (set in `static/_headers`, not just the `<link>` tags in `<head>`) so agents doing a headers-only request can discover machine-readable resources without parsing HTML:
+
+```
+Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"
+```
+
+- `rel="api-catalog"` points at the (empty) [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727) API catalog at `/.well-known/api-catalog` — see `static/.well-known/api-catalog`. Empty `item` array is a deliberate "we checked, there are zero public APIs" statement, distinct from a 404.
+- `rel="describedby"` points at `/llms.txt`, the same markdown index described above.
+- `service-desc`/`service-doc` (also registered relation types for this use case) are intentionally not used — they describe an actual API specification/documentation, and this site doesn't publish one.
