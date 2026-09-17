@@ -1,6 +1,12 @@
 /.well-known/traffic-advice
   Content-Type: application/trafficadvice+json
 
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+
+/llms.txt
+  Content-Type: text/markdown; charset=utf-8
+
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
