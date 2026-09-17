@@ -72,7 +72,7 @@ Detailed docs covering specific subsystems live in `docs/`, split by audience: `
 | `docs/technical/javascript.md` | Script inventory and Hugo Pipes usage |
 | `docs/technical/accessibility_testing.md` | a11y workflow and tooling |
 | `docs/technical/cms_infra.md` | CMS auth (GitHub OAuth, aw-auth Worker), config.yml, local dev |
-| `docs/technical/seo.md` | SEO and structured data approach |
+| `docs/technical/seo.md` | SEO and structured data approach, plus the markdown-for-agents output format (`/llms.txt`, per-page `.md` alternates) |
 | `docs/technical/security.md` | CSP headers (`static/_headers`) and other security notes |
 | `docs/technical/deployment.md` | Cloudflare Pages build settings, daily rebuild workflow |
 | `docs/technical/remembrance_map.md` | Road closures map shortcode, GeoJSON data, CSP compatibility |
