@@ -17,6 +17,12 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" type="application/atom+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
+{{- with .OutputFormats.Get "markdown" }}
+<link rel="alternate" type="text/markdown" href="{{ .Permalink }}">
+{{- end }}
+{{- if .IsHome }}
+<link rel="alternate" type="text/markdown" href="{{ "llms.txt" | absURL }}">
+{{- end }}
 {{ with .Site.Params.facebookDomainVerification }}<meta name="facebook-domain-verification" content="{{ . }}">{{ end }}
 {{ with .Site.Params.bingDomainVerification }} <meta name="msvalidate.01" content="{{ . }}">{{ end }}
 {{ partial "opengraph.html" . }}
