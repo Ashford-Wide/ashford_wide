@@ -58,3 +58,23 @@ disableHugoGeneratorInject = true
   [permalinks.page]
     news = "/news/:contentbasename/"
     events = "/events/:contentbasename/"
+
+[mediaTypes]
+  [mediaTypes."text/markdown"]
+    suffixes = ["md"]
+
+[outputFormats]
+  [outputFormats.MARKDOWN]
+    mediaType = "text/markdown"
+    isPlainText = true
+    noUgly = true
+  [outputFormats.LLMSTXT]
+    mediaType = "text/plain"
+    isPlainText = true
+    noUgly = true
+    baseName = "llms"
+
+[outputs]
+  home = ["HTML", "RSS", "LLMSTXT"]
+  page = ["HTML", "MARKDOWN"]
+  section = ["HTML", "MARKDOWN"]
