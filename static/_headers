@@ -1,6 +1,10 @@
 /.well-known/traffic-advice
   Content-Type: application/trafficadvice+json
 
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+  Link: </.well-known/api-catalog>; rel=api-catalog
+
 /*.md
   Content-Type: text/markdown; charset=utf-8
 
