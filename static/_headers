@@ -11,6 +11,9 @@
 /llms.txt
   Content-Type: text/markdown; charset=utf-8
 
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"
+
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
