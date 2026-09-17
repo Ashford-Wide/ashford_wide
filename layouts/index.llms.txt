@@ -1,0 +1,25 @@
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+Ashford Wide is a community organisation in Ashford, Surrey. This file indexes the site's content as plain markdown for agents and other automated readers — every linked page also has an equivalent HTML version at the same path.
+
+## Key pages
+{{ range (slice "/about/" "/business-directory/" "/membership/" "/contact/") }}
+{{- $p := $.Site.GetPage . -}}
+{{- if $p }}
+{{- $mdURL := "" -}}
+{{- with $p.OutputFormats.Get "markdown" }}{{ $mdURL = .Permalink }}{{ end -}}
+- [{{ $p.Title }}]({{ $mdURL }}){{ with $p.Description }} — {{ . }}{{ end }}
+{{- end }}
+{{ end }}
+
+## Sections
+{{ range (slice "news" "events") }}
+{{- $s := $.Site.GetPage (printf "/%s" .) -}}
+{{- if $s }}
+{{- $mdURL := "" -}}
+{{- with $s.OutputFormats.Get "markdown" }}{{ $mdURL = .Permalink }}{{ end -}}
+- [{{ $s.Title }}]({{ $mdURL }})
+{{- end }}
+{{ end }}
