@@ -53,6 +53,10 @@ The file is served with `Content-Type: application/trafficadvice+json`, set via 
 
 `static/auth.md` is served at `/auth.md` per the "Auth.md" agent-registration-discovery convention. This site has no user accounts, login, API, or OAuth infrastructure, so it deliberately takes that convention's "no OAuth metadata available" fallback path: a self-contained document stating there is no registration/provisioning endpoint, no supported auth method, and no credential use, rather than publishing `/.well-known/oauth-protected-resource` or `/.well-known/oauth-authorization-server` metadata pointing at infrastructure that doesn't exist. Content-Type comes from the existing `/*.md` rule in `static/_headers`.
 
+## Agent skills discovery (`/.well-known/agent-skills/index.json`)
+
+`static/.well-known/agent-skills/index.json` is served at `/.well-known/agent-skills/index.json` per the [Agent Skills Discovery RFC](https://github.com/cloudflare/agent-skills-discovery-rfc) v0.2.0. The `skills` array is deliberately empty — this site has no agent-invocable capabilities (no API, no callable actions) for an agent to run, so an honest empty list is published rather than fabricating skill entries (which would also require inventing SHA-256 digests for artifacts that don't exist). Same pattern as the empty `/.well-known/api-catalog`. No `_headers` entry is needed — `.json` already gets the correct `application/json` Content-Type from Cloudflare Pages' default mime inference.
+
 ## Caching (not security-related)
 
 `static/_headers` also sets long-lived `Cache-Control: public, max-age=31536000, immutable` rules for `/css/*`, `/js/*`, and `/images/*.webp` — these are performance rules, not security headers, but they live in the same file. This works safely because Hugo Pipes fingerprints these assets (the filename changes whenever the content does), so an "immutable" cache never serves stale content.
