@@ -148,3 +148,32 @@ All pages output [Open Graph](https://ogp.me/) and [Twitter/X Card](https://deve
 **`twitter:card`** is set to `summary_large_image` when an image is available, otherwise `summary`.
 
 The default OG image (`/images/og-default.jpg`) should be 1200×630px and under 600KB ([Facebook: Images in Link Shares](https://developers.facebook.com/docs/sharing/webmasters/images/) & [WhatsApp: Link Previews](https://developers.facebook.com/documentation/business-messaging/whatsapp/link-previews/)).
+
+## Markdown for agents
+
+Since content already originates as markdown (`content/**/*.md`), the site publishes it directly as static markdown files rather than converting rendered HTML back to markdown at request time (the approach used by [Cloudflare's markdown-for-agents feature](https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/)). This is a plain Hugo output format — no Worker, no runtime content negotiation, no HTML→MD conversion library.
+
+### How it works
+
+- `hugo.toml` registers a `MARKDOWN` output format (`text/markdown`, `.md` suffix) enabled on `page` and `section` kinds, plus an `LLMSTXT` output format (`text/plain`, baseName `llms`) enabled on `home`, producing a root-level `/llms.txt` index.
+- Every content page gets a `.md` sibling next to its `index.html` (e.g. `/news/some-post/index.md`), built from templates in `layouts/**/*.md` that mirror the existing `.html` layout structure (`_default/single.md`, `news/single.md`, `events/single.md`, etc.).
+- `layouts/partials/head.html` links each page's markdown alternate via `<link rel="alternate" type="text/markdown">`; the home page links `/llms.txt` instead.
+- `static/_headers` sets `Content-Type: text/markdown; charset=utf-8` explicitly for `.md` files and `/llms.txt`, as a safety net alongside Cloudflare's own mime-type inference.
+- `layouts/robots.txt` already advertises `Content-Signal: ai-train=yes, ai-input=yes`, so no change was needed there to permit agent access.
+
+### Content and shortcode handling
+
+The markdown templates use `.RawContent` (the literal markdown source) rather than `.Content` (which is always HTML, regardless of output format). Because `.RawContent` skips shortcode rendering, `{{< shortcode >}}` calls would otherwise appear as literal, unevaluated syntax. `layouts/partials/markdown-body.md` handles this with a series of regexp substitutions before any `.md` template outputs the body:
+
+| Shortcode | Markdown equivalent |
+|---|---|
+| `{{< param "x" >}}` | Resolved value from `site.Params` |
+| `{{< image src=".." alt=".." >}}` | `![alt](src)` |
+| `{{< location-pin name=".." placeId=".." >}}` | A Google Maps link |
+| `{{< doc-button href=".." text=".." >}}` | A markdown link |
+| `{{< last-updated >}}` | `_Last updated: <month year>_` from `.Lastmod` |
+| Anything else (`carousel`, `paypal-*`, `membership-tiers`, `flag-grid`, `pin-map`, `road-closure-map`, `aed-map`, `ms-form`, `sponsor-a-poppy`, …) | Dropped — no meaningful markdown equivalent for interactive/visual widgets |
+
+This is a template-level partial, not a general-purpose HTML→markdown converter — a fine, low-risk trade-off given the small, known set of shortcodes actually used in content. Adding a new shortcode that should render inline in markdown output requires adding a case to `markdown-body.md`; otherwise it silently degrades to being stripped.
+
+Pages with no dedicated `.md` template (e.g. `content/business-directory.md`, the virtual poppy wall) fall back to `_default/single.md`, which just emits their raw front matter/body — harmless since those pages carry little prose content themselves (the real content is data-driven/interactive).
