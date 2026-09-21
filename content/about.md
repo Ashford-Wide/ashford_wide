@@ -23,12 +23,10 @@ We run entirely with donations and grants, as well as with the dedication and sk
 
 Our core values are:
 
-- Community first 
-- Integrity & trust 
-- Transparency & honesty 
-- Inclusion & diversity 
-- Collaboration & partnership 
+- Community first
+- Collaboration & partnership
 - Respect & dignity 
+- Inclusion & diversity 
 - Creativity & innovation
 
 ### Events during the year
