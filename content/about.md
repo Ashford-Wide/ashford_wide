@@ -19,6 +19,20 @@ These groups unanimously decided that working together, with one vision would ac
 
 We run entirely with donations and grants, as well as with the dedication and skill of our knowledgable and passionate members.
 
+### Core values
+
+Our core values are:
+
+- Community first 
+- Integrity & trust 
+- Transparency & honesty 
+- Inclusion & diversity 
+- Collaboration & partnership 
+- Respect & dignity 
+- Creativity & innovation
+
+### Events during the year
+
 This year we will be:
 
 - [Putting Up Flags](/town-flags) throughout the year to commemorate key events.
@@ -31,7 +45,7 @@ This year we will be:
 - Having a bubble blowing stall at the Ashford Rotary Classic Car Show with Mr Bubbles on Sunday **6th September**
 - [Remembrance Day](/remembrance-day) parade & service on **Sunday 8th November**
 - Ashford Christmas lights & Christmas tree
-- Annual Ashford Christmas Market on Wednesday **2nd December**
+- Annual Ashford [Christmas Market](/events/christmas-market-2026/) on Wednesday **2nd December**
 - More events to be announced with your support
 
 Ashford Pride did a fantastic job with the flags in the town, commemorating and celebrating special and significant days throughout the year. This is something we have enjoyed carrying on with.
