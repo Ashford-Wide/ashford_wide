@@ -75,8 +75,7 @@ backend:
 | `connect-src` | `https://aw-auth.ashford-wide.workers.dev` | OAuth token exchange |
 | `connect-src` | `data:` | Sveltia loads its branding logo as a `data:` URI |
 | `connect-src` | `https://www.githubstatus.com` | Sveltia's backend-status indicator |
-| `style-src` | `https://fonts.googleapis.com` | Sveltia's Google Fonts stylesheet |
-| `font-src` | `'self' https://fonts.gstatic.com` | Not set previously, so it fell back to `default-src 'self'` and blocked the font files |
+| `font-src` | `'self' https://cdn.jsdelivr.net` | Sveltia's fonts, served via Fontsource/jsDelivr since v0.174.0 (previously Google Fonts) |
 | `img-src` | `blob:` | Sveltia's local image previews (e.g. before an upload is committed) |
 | `manifest-src` | `'self' blob:` | Sveltia dynamically generates a web app manifest as a `blob:` URL |
 
