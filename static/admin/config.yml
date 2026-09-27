@@ -30,7 +30,9 @@ collections:
       depth: 2
       subfolders: false
     path: "{{year}}/{{slug}}"
-    slug: "{{slug}}"
+    slug:
+      template: "{{slug}}"
+      editable: [create]
     summary: "{{title}} {{draft | ternary('(draft)', '')}}"
     view_filters:
       - label: Drafts
@@ -59,7 +61,9 @@ collections:
       depth: 2
       subfolders: false
     path: "{{year}}/{{slug}}"
-    slug: "{{slug}}"
+    slug:
+      template: "{{slug}}"
+      editable: [create]
     summary: "{{title}} {{draft | ternary('(draft)', '')}}"
     view_filters:
       - label: Drafts
@@ -81,7 +85,9 @@ collections:
     create: true
     delete: false
     extension: md
-    slug: "{{slug}}"
+    slug:
+      template: "{{slug}}"
+      editable: [create]
     fields:
       - { label: Title, name: title, widget: string, maxlength: 60 }
       - { label: Description, name: description, widget: string, maxlength: 150 }
