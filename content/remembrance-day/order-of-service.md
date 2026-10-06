@@ -44,12 +44,6 @@ lastmod: 2026-09-04
 
 <p class="liturgy-speaker">Minister</p>
 
-<p class="liturgy-line">Father, we have sinned against heaven and against you, and are not worthy to be called your children.</p>
-
-<p class="liturgy-line">We turn to you asking that you have mercy on us, and teach us to live rightly in love and peace with you and with all mankind.</p>
-
-<p class="liturgy-response"><span class="liturgy-response-label">All</span> <strong>Amen</strong></p>
-
 <p class="liturgy-line">Almighty God have mercy upon us, pardon and deliver us from all our sins, confirm and strengthen you in all goodness, and keep you in life eternal, through Jesus Christ our Lord.</p>
 
 <p class="liturgy-response"><span class="liturgy-response-label">All</span> <strong>Amen</strong></p>
@@ -64,13 +58,15 @@ lastmod: 2026-09-04
 
 <p class="liturgy-line">God of truth and justice, we hold before you those whose memory we cherish, and those whose names we will never know.</p>
 
-<p class="liturgy-line">Help us to lift our eyes above the torment of this broken world, and grant us the grace to pray for those who wish us harm.</p>
+<p class="liturgy-line">Help us to lift our eyes above the torment of this broken world,</p>
 
-<p class="liturgy-line">As we honour the past, may we put our faith in your future; for you are the source of life and hope, now and forever.</p>
+<p class="liturgy-line">And grant us the grace to pray for those who wish us harm.</p>
+
+<p class="liturgy-line">As we honour the past, may we put our faith in your future;</p>
+
+<p class="liturgy-line">For you are the source of life and hope, now and forever.</p>
 
 <p class="liturgy-response"><span class="liturgy-response-label">All</span> <strong>Amen</strong></p>
-
-<p class="liturgy-rubric">Parade Up</p>
 
 </section>
 
@@ -88,7 +84,7 @@ lastmod: 2026-09-04
 <p class="liturgy-response"><span class="liturgy-response-label">All</span> <strong>We will remember them</strong></p>
 
 <p class="liturgy-plain">The Last Post</p>
-<p class="liturgy-plain">Silence</p>
+<p class="liturgy-plain"><span class="liturgy-response-label">(Silence)</span></p>
 <p class="liturgy-plain">Reveille</p>
 <p class="liturgy-plain">Kohima Epitaph</p>
 
@@ -97,57 +93,39 @@ lastmod: 2026-09-04
 <p class="liturgy-line">When you go home tell them of us and say,</p>
 <p class="liturgy-line">for your tomorrow we gave our today.</p>
 
-<p class="liturgy-rubric">At ease</p>
-
 </section>
 
 <section>
 
-<p class="liturgy-plain">Bible Reading: Micah 6.6-8</p>
-
-<p class="liturgy-speaker">Minister</p>
-
-<p class="liturgy-line">What can we bring to the Lord?</p>
-
-<p class="liturgy-line">Should we bring burnt offerings? Should we bow before God Most High with offerings of young calves?</p>
-
-<p class="liturgy-line">Should we offer him thousands of rams and ten thousand rivers of olive oil? Should we sacrifice our firstborn children to pay for our sins?</p>
-
-<p class="liturgy-line">No, O people, the Lord has told you what is good, and this is what he requires of you: to do what is right, to love mercy, and to walk humbly with your God.</p>
-
-<p class="liturgy-line">This is the Word of the Lord.</p>
-
-<p class="liturgy-response"><span class="liturgy-response-label">All</span> <strong>Thanks be to God</strong></p>
-
-</section>
-
-<section>
-
-## Hymn: O God, our help in ages past
+## Hymn: Jerusalem
 
 <div class="liturgy-hymn">
+
 <p>
-O God, our help in ages past,<br>
-our hope for years to come,<br>
-our shelter from the stormy blast,<br>
-and our eternal home:
+And did those feet in ancient time,<br>
+Walk upon England's mountains green:<br>
+And was the holy Lamb of God,<br>
+On Englands pleasant pastures seen!</p>
+
+<p>
+And did the Countenance Divine,<br>
+Shine forth upon our clouded hills?<br>
+And was Jerusalem builded here,<br>
+Among these dark Satanic Mills?
 </p>
+
 <p>
-Under the shadow of thy throne,<br>
-thy saints have dwelt secure;<br>
-sufficient is thine arm alone,<br>
-and our defense is sure.
+Bring me my Bow of burning gold:<br>
+Bring me my Arrows of desire:<br>
+Bring me my Spear: O clouds unfold:<br>
+Bring me my Chariot of fire!
 </p>
+
 <p>
-Before the hills in order stood,<br>
-or earth received her frame,<br>
-from everlasting thou art God,<br>
-to endless years the same.
-</p>
-<p>
-O God, our help in ages past,<br>
-our hope for years to come,<br>
-be thou our guide while troubles last, and our eternal home!
+I will not cease from Mental Fight,<br>
+Nor shall my Sword sleep in my hand:<br>
+Till we have built Jerusalem,<br>
+In Englands green & pleasant Land.
 </p>
 </div>
 
@@ -173,7 +151,13 @@ be thou our guide while troubles last, and our eternal home!
 
 <p class="liturgy-line">We pray for peacemakers and peacekeepers; those who seek to keep this world secure and free;</p>
 
-<p class="liturgy-line">For all who bear the burden and privilege of leadership, political, military and religious; asking for gifts of wisdom and resolve in the search for reconciliation and peace.</p>
+<p class="liturgy-line">For all who bear the burden and privilege of leadership,</p>
+
+<p class="liturgy-line">Political, military and religious;</p>
+
+<p class="liturgy-line">Asking for gifts of wisdom and resolve</p>
+
+<p class="liturgy-line">In the search for reconciliation and peace.</p>
 
 <p class="liturgy-line">May God give peace:</p>
 
@@ -237,8 +221,6 @@ Amen.
 
 <p class="liturgy-response"><span class="liturgy-response-label">All</span> <strong>Amen</strong></p>
 
-<p class="liturgy-rubric">Parade Up</p>
-
 </section>
 
 <section>
@@ -257,8 +239,6 @@ God save the King.
 </p>
 </div>
 
-<p class="liturgy-rubric">At ease</p>
-
 </section>
 
 <section>
@@ -271,9 +251,19 @@ God save the King.
 
 <p class="liturgy-speaker">Minister</p>
 
-<p class="liturgy-line">God grant to the living grace, to the departed rest, to the Church, The King, the Commonwealth and all people, unity, peace and concord, and to us and all God's servants, life everlasting.</p>
+<p class="liturgy-line">God grant to the living grace,</p>
 
-<p class="liturgy-line">And the blessing of God Almighty, Father, Son and Holy Spirit be among you all and remain with you always.</p>
+<p class="liturgy-line">to the departed rest,</p>
+
+<p class="liturgy-line">to the Church, The King, the Commonwealth</p>
+
+<p class="liturgy-line">and all people, unity, peace and concord,</p>
+
+<p class="liturgy-line">and to us and all God's servants, life everlasting.</p>
+
+<p class="liturgy-line">And the blessing of God Almighty,</p>
+
+<p class="liturgy-line">Father, Son and Holy Spirit be among you all and remain with you always.</p>
 
 <p class="liturgy-response"><span class="liturgy-response-label">All</span> <strong>Amen</strong></p>
 
