@@ -15,10 +15,10 @@ lastmod: 2026-09-22
 
 The Ashford Wide [Christmas Market](/events/christmas-market-2026/) takes place on Wednesday 2nd December 2026.
 
-- Christmas Tree (£900): Your business banner around the base of Ashford's most photographed Christmas decoration for 6 weeks over Christmas and New Year
-- Christmas Tree Lighting (£1200): Join Spelthorne's Mayor and Father Christmas in lighting the Ashford Wide Christmas Tree at the Ashford Wide Market, get your business name heard!
-- Christmas Lights (£2500): Did you know the council doesn't pay for Ashford's Christmas lights? Help Ashford Wide light us Ashford for another year
-- Christmas Market (£500): The biggest event of the year! Be seen by 5000 vistiors & 50+ vendors and get your business associated with the most magical time of the year.
+- Christmas Tree (£950): Your business banner around the base of Ashford’s most photographed Christmas decoration for 6 weeks over Christmas and New Year
+- Christmas Lights (£1500): Did you know the council doesn’t pay for Ashford’s Christmas lights? Help Ashford Wide light us Ashford for another year
+- Christmas Market (£500): The biggest event of the year! Be seen by 2000 visitors & 50+ vendors and get your business associated with the most magical time of the year.
+
 
 ### Christmas Marketing Prices and information
 
