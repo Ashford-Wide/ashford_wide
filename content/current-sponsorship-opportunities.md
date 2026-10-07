@@ -27,9 +27,12 @@ If sponsorship isn't right for your business we have a range of advertising opti
 - Have your business seen by 5000+ visitors to the Christmas market
 - Why not join our Business Members (£150pa) and access our reduced advertising prices: 
 
-|  | Full page | Half page | Quarter page |
-|---|---|---|---|
-| Member price | £125 | £75 | £50 |
-| Non-member price | £225 | £175 | £155 |
+| Size | Member price | Non-member price | Member saving |
+| --- | --- | --- | --- |
+| Full page | £170 | £225 | £55 |
+| Half page | £125 | £175 | £50 |
+| Quarter page | £110 | £155 | £45 |
 
 Contact [{{< param "businessEmail" >}}](mailto:{{< param "businessEmail" >}}) for more information or to talk about customising sponsorship options.
+
+The deadline for getting your advert material in, and payment, will be Friday 13th November at the latest. You can create your own advert, or we can discuss advert content creation as an additional service through Ashford Wide, with the deadline for that being the 30th October. The slots often fill up before this date, however.
