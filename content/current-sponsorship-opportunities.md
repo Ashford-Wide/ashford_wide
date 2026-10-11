@@ -24,7 +24,7 @@ The Ashford Wide [Christmas Market](/events/christmas-market-2026/) takes place 
 
 If sponsorship isn't right for your business we have a range of advertising options in our Christmas brochure to suit your buget
 
-- Have your business seen by 5000+ visitors to the Christmas market
+- Have your business seen by 2000+ visitors to the Christmas market
 - Why not join our Business Members (£150pa) and access our reduced advertising prices: 
 
 | Size | Member price | Non-member price | Member saving |
