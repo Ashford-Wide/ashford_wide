@@ -22,6 +22,6 @@ Or please email business@ashfordwide.com for more information, for an invoice, o
 
 You can still support our work even if banners are not for you.
 
-- [Donate to us directly or via Paypal](http://localhost:1313/support)
-- [Sponsor a Remembrance Day Poppy](http://localhost:1313/remembrance-day/sponsor-a-poppy/)
-- [Volunteering at our events](http://localhost:1313/volunteer/)
+- [Donate to us directly or via Paypal](/support)
+- [Sponsor a Remembrance Day Poppy](/remembrance-day/sponsor-a-poppy/)
+- [Volunteering at our events](/volunteer/)
