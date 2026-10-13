@@ -265,7 +265,10 @@ businesses:
     logo: /images/businesses/the_uniform_guy.png
   - name: Professional Energy Solutions
     category: Energy
-    description: We specialise in the installation of solar PV panels and providing professional advice on feed in tariffs, solar panel products and COMBI systems.
+    description: |-
+      We provide professional Solar PV, Battery Storage and EV Charging solutions for both domestic and commercial properties, from initial design and installation through to ongoing support.
+      
+      Our service and maintenance work covers existing solar, battery and EV charging systems, including fault-finding, performance checks, repairs, upgrades and general system maintenance.
     website: https://proenergysolutions-ltd.co.uk/
     telephone: '01784390922'
     mobile: ''
