@@ -8,7 +8,7 @@
     {{ end }}
   </div>
 </div>
-{{ with $biz.description }}<p class="text-sm text-text leading-normal">{{ . }}</p>{{ end }}
+{{ with $biz.description }}<p class="text-sm text-text leading-normal whitespace-pre-line">{{ . }}</p>{{ end }}
 {{ if or $biz.telephone $biz.mobile $biz.email $biz.website }}
 <ul class="flex flex-col gap-1 mt-1 p-0 list-none">
   {{ with $biz.telephone }}<li class="flex items-center gap-1.5 text-fine text-muted hover:text-surface transition-colors duration-150">
