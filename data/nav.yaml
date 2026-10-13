@@ -9,9 +9,6 @@ items:
     url: "/remembrance-day"
     weight: 25
     showIf: "showRemembrance"
-  - name: "News"
-    url: "/news"
-    weight: 30
   - name: "Business Directory"
     url: "/business-directory"
     weight: 40
@@ -24,3 +21,6 @@ items:
   - name: "Contact Us"
     url: "/contact"
     weight: 80
+  - name: "Sponsor a Poppy"
+    url: "/remembrance-day/sponsor-a-poppy/"
+    weight: 5
