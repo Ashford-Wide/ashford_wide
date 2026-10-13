@@ -263,3 +263,16 @@ businesses:
     linkedin: ''
     x: ''
     logo: /images/businesses/the_uniform_guy.png
+  - name: Professional Energy Solutions
+    category: Energy
+    description: We specialise in the installation of solar PV panels and providing professional advice on feed in tariffs, solar panel products and COMBI systems.
+    website: https://proenergysolutions-ltd.co.uk/
+    telephone: '01784390922'
+    mobile: ''
+    email: 'info@proenergysolutions-ltd.co.uk'
+    placeId: ''
+    facebook: ''
+    instagram: 
+    linkedin: ''
+    x: ''
+    logo: /images/businesses/proenergysolutions.jpg
