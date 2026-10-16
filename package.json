@@ -23,7 +23,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
     "accessibility-checker": "^4.0.34",
-    "postcss": "^8.5.29",
+    "postcss": "^8.5.30",
     "postcss-cli": "^12.0.0",
     "tailwindcss": "^4.3.3"
   },
