@@ -6,7 +6,7 @@ This repo contains the code for a static website for Ashford Wide, a non-profit 
 
 - **Live domain:** `https://www.ashfordwide.com/`  
 - **Stack:**:
-  - Hugo v0.167.0
+  - Hugo v0.169.0
   - Tailwind CSS v4
   - No JS framework
   - Sveltia CMS
