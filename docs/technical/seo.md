@@ -35,7 +35,7 @@ Output on every page via `partials/jsonld/org.html`.
 | `companyRegistration` | `params.companyNumber` | Same value as `identifier.value`, set alongside it — omitted if blank |
 | `knowsAbout` | hardcoded | Community Development ([Wikidata Q5154974](https://www.wikidata.org/wiki/Q5154974)) |
 | `areaServed` | hardcoded + generated | A `City` node (Ashford, [Wikidata Q725270](https://www.wikidata.org/wiki/Q725270)) plus a `Place` node whose `geo` is a `GeoShape` polygon computed at build time from `assets/geo/ashford.geojson` |
-| `sameAs` | `params.facebook`, `.twitter`, `.instagram`, `.googleBusinessProfile`, plus the Companies House URL if `companyNumber` is set | Omitted entirely if none are present |
+| `sameAs` | `params.facebook`, `.twitter`, `.instagram`, `.linkedin`, `.googleBusinessProfile`, plus the Companies House URL if `companyNumber` is set | Omitted entirely if none are present |
 | `contactPoint` | `params.email` | `ContactPoint` with `contactType: "customer service"` — omitted if `email` is blank |
 | `potentialAction` | hardcoded + `baseURL` | `DonateAction` with `recipient` set to the org and `target` pointing to `/support/` |
 
