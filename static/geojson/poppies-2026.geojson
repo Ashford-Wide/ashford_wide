@@ -4,7 +4,7 @@
         {
             "type": "Feature",
             "properties": {
-                "label": "Exemplo Ducimus",
+                "label": "Exemplo Ducemus",
                 "w3w": "///single.exist.error"
             },
             "geometry": {
@@ -634,7 +634,7 @@
         {
             "type": "Feature",
             "properties": {
-                "label": "County Carpets DAMAGED",
+                "label": "County Carpets",
                 "w3w": "///plan.pill.clean"
             },
             "geometry": {
