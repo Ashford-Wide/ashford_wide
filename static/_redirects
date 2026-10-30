@@ -10,6 +10,8 @@
 /feed    /index.xml    301
 
 # Moved pages
+
+/elementor-15588/    /remembrance-day/sponsor-a-poppy/    301
 /elementor-15817/    /volunteer/    301
 /remembrance-day/remembrance-order-of-services/    /remembrance-day/order-of-services/    301
 /business-membership/    /membership/    301
