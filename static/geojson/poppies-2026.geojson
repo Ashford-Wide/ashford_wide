@@ -1,0 +1,705 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Exemplo Ducimus",
+                "w3w": "///single.exist.error"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461513,
+                    51.432608
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Wallace “Wally” Albert Duke",
+                "w3w": "///drips.vague.mice"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461254,
+                    51.432554
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Holmes & Daughters",
+                "w3w": "///decent.calm.storms"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461081,
+                    51.432501
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Holmes & Daughters",
+                "w3w": "///defend.rope.glitz"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.460778,
+                    51.432474
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///damage.origin.bother"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.460215,
+                    51.432366
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///riding.gently.song"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.459826,
+                    51.432285
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///chains.oiled.learn"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.459869,
+                    51.432393
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///roses.attend.tell"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.460605,
+                    51.432527
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///super.drums.affair"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.460864,
+                    51.432581
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///emerge.hunter.palms"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461081,
+                    51.432635
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///milk.rarely.slug"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46134,
+                    51.432716
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///baking.smashes.slows"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461773,
+                    51.432851
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///awards.gentle.task"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461903,
+                    51.432878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///small.admire.pure"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461989,
+                    51.432905
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///codes.edge.woes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462076,
+                    51.432932
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///decks.feel.solved"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462768,
+                    51.433147
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///boring.wallet.boxer"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.463677,
+                    51.433417
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///pint.pass.towers"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.464499,
+                    51.433713
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///mutual.treat.calculating"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.464888,
+                    51.433956
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///urgent.sport.film"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465061,
+                    51.434091
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///older.tender.voting"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465191,
+                    51.434333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///lush.fever.decay"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465624,
+                    51.43498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///prop.voices.washed"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46597,
+                    51.435438
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Turnex Tools",
+                "w3w": "///flown.scar.punt"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.466143,
+                    51.435573
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ned Ruffle",
+                "w3w": "///spit.faster.oiled"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46623,
+                    51.435519
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///tight.dined.wisely"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46623,
+                    51.435492
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///nets.wakes.remote"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.466273,
+                    51.435438
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///sings.plan.awake"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.466922,
+                    51.43595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Rita Robinson",
+                "w3w": "///intent.farms.wiping"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.467831,
+                    51.435896
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Second Chance Emporium",
+                "w3w": "///slam.weeks.entire"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46796,
+                    51.435896
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "To those who gave their lives",
+                "w3w": "///space.hugs.shaky"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46809,
+                    51.435869
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "EP&Co",
+                "w3w": "///feels.agree.join"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46822,
+                    51.435842
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Woodthorpe Methodist Church",
+                "w3w": "///vast.rival.crop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.467917,
+                    51.435789
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ingeborg McAleer",
+                "w3w": "///memo.active.craft"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.467311,
+                    51.435816
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Francesca Parsons",
+                "w3w": "///union.stove.sailor"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.4661,
+                    51.43533
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///forks.quarrel.olive"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465148,
+                    51.434037
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///fact.able.fish"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.464975,
+                    51.433767
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///shadow.gent.last"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.464802,
+                    51.433713
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ashford Kitchens",
+                "w3w": "///flock.salsa.quit"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462552,
+                    51.432986
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Jeremy Jones",
+                "w3w": "///winner.successes.crowned"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462292,
+                    51.432905
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Harry WF Dickens",
+                "w3w": "///belts.winks.post"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462163,
+                    51.432824
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Clarendon Primary School",
+                "w3w": "///lion.pills.ramp"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462163,
+                    51.43277
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "In Memory of Simon",
+                "w3w": "///below.daisy.rang"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462033,
+                    51.432797
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ashford Kitchens",
+                "w3w": "///fault.thing.scan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461946,
+                    51.43277
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ash Women’s Club",
+                "w3w": "///ranked.lamps.print"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46186,
+                    51.432743
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "County Carpets DAMAGED",
+                "w3w": "///plan.pill.clean"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461816,
+                    51.432743
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Brenda Eva",
+                "w3w": "///pill.dunes.rails"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461773,
+                    51.432743
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Shades Hair Salon",
+                "w3w": "///apply.dwell.falls"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461816,
+                    51.432797
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Shades Hair Salon",
+                "w3w": "///watch.survey.about"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.461773,
+                    51.432797
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ashford Osteopathy & Healthcare",
+                "w3w": "///life.spots.fonts"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462163,
+                    51.432689
+                ]
+            }
+        }
+    ]
+}
