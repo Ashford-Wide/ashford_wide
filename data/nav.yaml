@@ -21,6 +21,6 @@ items:
   - name: "Contact Us"
     url: "/contact"
     weight: 80
-  - name: "Sponsor a Poppy"
-    url: "/remembrance-day/sponsor-a-poppy/"
+  - name: "Virtual Poppy Wall"
+    url: "/remembrance-day/virtual-poppy-wall/"
     weight: 5
