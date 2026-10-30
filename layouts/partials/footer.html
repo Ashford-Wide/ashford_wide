@@ -44,9 +44,6 @@
         {{ with .Site.Params.twitter }}
         {{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "Twitter" "icon" "icons/twitter.html" "context" $) }}
         {{ end }}
-        {{ with .Site.Params.linkedin }}
-        {{ partial "external-link.html" (dict "href" . "class" $socialBtnClass "ariaLabel" "LinkedIn" "icon" "icons/linkedin.html" "context" $) }}
-        {{ end }}
         <a href="/index.xml" class="flex items-center justify-center w-9 h-9 rounded-full border border-surface/25 text-surface/65 hover:bg-surface hover:text-white transition-all duration-200" aria-label="Atom feed">
           {{ partial "icons/rss.html" . }}
         </a>
