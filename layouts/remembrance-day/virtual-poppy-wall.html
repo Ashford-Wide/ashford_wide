@@ -28,8 +28,8 @@
       {{- range $entries -}}
       <div class="bg-white border border-border rounded p-6 flex flex-col items-center text-center shadow">
         {{ partial "image.html" (dict "src" "/images/poppy.png" "alt" "Poppy" "class" "w-28 h-auto mb-4") }}
-        <p class="text-body-md font-bold text-surface leading-snug">{{ .name }}</p>
-        {{ with .dedication }}<p class="text-sm text-text mt-2 leading-relaxed italic">{{ . }}</p>{{ end }}
+        <p class="text-body-md font-bold text-surface leading-snug whitespace-pre-line">{{ .name }}</p>
+        {{ with .dedication }}<p class="text-sm text-text mt-2 leading-relaxed italic whitespace-pre-line">{{ . }}</p>{{ end }}
         {{ with .from }}<p class="text-fine text-muted mt-3">&mdash; {{ . }}</p>{{ end }}
       </div>
       {{- end -}}
