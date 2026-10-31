@@ -30,14 +30,16 @@
   dedication: "In remembrance, with gratitude"
   from: "EP&CO Property Professional"
 
-- name: "Sergeant Simon Hamilton-Jewell; 
-Corporal Russell Aston; 
-Corporal Paul Long; 
-Corporal Simon Miller; 
-Lance Corporal Benjamin Hyde; 
-Lance Corporal Thomas Keys; "
-  dedication: "156 Provost Company - Royal Military Police - Al Majar Al Kabir 24/06/2003
-  Exemplo Ducemus"
+- name: |-
+    Sergeant Simon Hamilton-Jewell
+    Corporal Russell Aston
+    Corporal Paul Long
+    Corporal Simon Miller
+    Lance Corporal Benjamin Hyde
+    Lance Corporal Thomas Keys
+  dedication: |-
+    156 Provost Company - Royal Military Police - Al Majar Al Kabir 24/06/2003
+    Exemplo Ducemus
   from: "David Wilkinson"
 
 - name: ""
@@ -104,7 +106,12 @@ Lance Corporal Thomas Keys; "
   dedication: "With Best Wishes & Grateful Thanks to all our Heroes"
   from: "Walton Meats"
 
-
 - name: ""
   dedication: "With thanks to those who gave so much"
   from: "Ash Women's Club"
+
+- name: |- 
+    Sergeant Alfred William Pratt
+    Seaman John Lewcock
+  dedication: ""
+  from: "Zoe Cox and Joyce Surman"
