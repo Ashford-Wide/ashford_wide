@@ -4,8 +4,7 @@
 /news-and-events/    /news/    301
 
 # WordPress common paths
-/wp-admin    /admin/    301
-/wp-admin/    /admin/    301
+/wp-*    /    301
 /feed/    /index.xml    301
 /feed    /index.xml    301
 
