@@ -4,7 +4,6 @@
 /news-and-events/    /news/    301
 
 # WordPress common paths
-/wp-*    /    301
 /feed/    /index.xml    301
 /feed    /index.xml    301
 
@@ -12,7 +11,7 @@
 
 /elementor-15588/    /remembrance-day/sponsor-a-poppy/    301
 /elementor-15817/    /volunteer/    301
-/remembrance-day/remembrance-order-of-services/    /remembrance-day/order-of-services/    301
+/remembrance-day/remembrance-order-of-services/    /remembrance-day/order-of-service/    301
 /business-membership/    /membership/    301
 /christmas-market/    /events/christmas-market-2025/    301
 /events/list/    /events/    301
@@ -41,11 +40,12 @@
 /timeless-ims/    /business-member/timeless-ims/    301
 /energie-fitness/    /business-directory/    301
 
-# Wildcard redirects
+# Wildcard redirects (more specific patterns before broader ones)
+/wp-*    /    301
 /news-and-events/*    /news/:splat    301
 /event/*    /events/:splat    301
-/category/*    /    301
 /author/*    /news/    301
 /events/category/*    /events/    301
 /events/tag/*    /events/    301
 /category/news/*    /news/    301
+/category/*    /    301
