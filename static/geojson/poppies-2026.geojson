@@ -700,6 +700,146 @@
                     51.432689
                 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ashford Kitchens",
+                "w3w": "///into.cove.couches"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.463331,
+                    51.433309
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "A–Z Electricals",
+                "w3w": "///hook.stove.slides"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46385,
+                    51.433498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ashford Kitchens",
+                "w3w": "///ending.keen.proof"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.464759,
+                    51.433848
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Agnes & John Kielty",
+                "w3w": "///rams.lows.alone"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.464283,
+                    51.433498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ashford Youth Club",
+                "w3w": "///logo.gossip.arts"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.46385,
+                    51.433363
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Ashford CofE Primary School",
+                "w3w": "///repair.woven.modes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.463417,
+                    51.433228
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///wells.seat.runs"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.463158,
+                    51.433147
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///moons.darker.marble"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462855,
+                    51.43312
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///lunch.tolls.planet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.462855,
+                    51.433147
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "Walton Meats",
+                "w3w": "///asleep.discouraged.canny"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.465624,
+                    51.434684
+                ]
+            }
         }
     ]
 }
