@@ -14,19 +14,6 @@ Prize winners will be announced on Friday 4th December.
 
 Buy 1 ticket for £1 or bundle up with 5 tickets for £4.
 
-## Prizes
-
-1st Prize - an invertebrate starter kit worth £90 - donated by Walk On The Wildside
-
-Other prizes include:
-- £35 Steak Shake Voucher
-- £60 voucher for Tango’d sun beds 
-- £40 turkey from Walton Meats
-- bag, scarf, and accessories donated by Pure Accessories in Shepperton
-- £10 voucher for CJs Pets
-- £10 voucher for Diamond Scissors Barbers
-- £20 voucher from Elite Beauty
-
 ## Buy your tickets
 
 Instructions for buying a ticket online:
