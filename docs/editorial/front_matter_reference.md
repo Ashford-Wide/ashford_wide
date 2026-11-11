@@ -19,6 +19,7 @@ organiser: "Surrey County Council"        # optional — name of organising body
 organiserUrl: "https://example.com"       # optional — link for the organiser, shown as icon next to their name
 description: "Short summary shown on event cards and in meta tags."
 image: "/images/events/summer-market-2026.jpg"  # optional
+imageCaption: "Stalls on the High Street"  # optional — caption shown under the image on the page
 endDate: "2026-07-12"       # optional — only for multi-day events
 cancelled: true             # optional — defaults to false; marks the event as cancelled
 eventStatus: EventCancelled # optional — overrides default EventScheduled
@@ -56,6 +57,7 @@ date: 2026-03-15
 author: "Ashford Wide Team"
 description: "Short summary shown on news cards."
 image: "/images/news/spring-events.jpg"  # optional
+imageCaption: "Daffodils in Ashford"  # optional — caption shown under the image on the page
 hideImage: true  # optional — keeps `image` for the news card/social share, hides the hero photo on the article page itself
 ---
 ```
@@ -66,6 +68,8 @@ hideImage: true  # optional — keeps `image` for the news card/social share, hi
 ---
 title: "Page Title"
 description: "Used in <meta name='description'> and page header subtitle."
+image: "/images/christmas-raffle-2026.jpeg"  # optional — shown at the top of the page
+imageCaption: "Some of this year's raffle prizes"  # optional — caption shown under the image
 layout: "business-directory"  # optional — overrides the default template
 ---
 ```
