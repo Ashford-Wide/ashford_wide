@@ -9,9 +9,12 @@
 <section class="py-4">
   <div class="max-w-[800px] mx-auto px-6">
     {{ with .Params.image }}
-    <div class="rounded mb-8 overflow-hidden bg-image-bg flex justify-center">
-      {{ partial "image.html" (dict "src" . "alt" $.Title "class" "max-w-full h-auto max-h-[600px]" "width" 1200) }}
-    </div>
+    <figure class="mb-8">
+      <div class="rounded overflow-hidden bg-image-bg flex justify-center">
+        {{ partial "image.html" (dict "src" . "alt" $.Title "class" "max-w-full h-auto max-h-[600px]" "width" 1200) }}
+      </div>
+      {{ with $.Params.imageCaption }}<figcaption class="mt-2 text-caption text-muted">{{ . }}</figcaption>{{ end }}
+    </figure>
     {{ end }}
     {{ with .Params.videoID }}
     <div class="mb-8">
