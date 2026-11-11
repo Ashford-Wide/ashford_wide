@@ -73,6 +73,7 @@ Full reference: [Hugo shortcodes](https://gohugo.io/shortcodes/) · [Custom shor
 | `shortcodes/paypal-flags.html` | PayPal button for sponsoring a St George's flag |
 | `shortcodes/paypal-poppy.html` | PayPal button for sponsoring a Remembrance poppy |
 | `shortcodes/paypal-rememberance.html` | PayPal donation button for Remembrance Day |
+| `shortcodes/paypal-raffle.html` | PayPal hosted button (newer `HostedButtons` SDK) for buying Christmas raffle tickets |
 | `shortcodes/team.html` | Renders the About page team list from `data/team.yaml` with Schema.org `Person` microdata |
 | `shortcodes/carousel.html` | Image carousel/slider |
 | `shortcodes/flag-grid.html` | Grid of sponsored St George's flags (town-flags page) |
