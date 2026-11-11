@@ -13,7 +13,10 @@
     {{ with .Params.image }}
     {{- $aspect := "aspect-[16/9]" -}}
     {{- if eq $.Params.imageAspect "square" }}{{- $aspect = "aspect-square" -}}{{ end }}
-    {{ partial "image.html" (dict "src" . "alt" $.Title "class" (printf "w-full max-w-200 rounded mb-8 %s object-cover" $aspect) "loading" "eager" "width" 1200) }}
+    <figure class="mb-8">
+      {{ partial "image.html" (dict "src" . "alt" $.Title "class" (printf "w-full max-w-200 rounded %s object-cover" $aspect) "loading" "eager" "width" 1200) }}
+      {{ with $.Params.imageCaption }}<figcaption class="mt-2 text-caption text-muted">{{ . }}</figcaption>{{ end }}
+    </figure>
     {{ end }}
 
     <div class="flex flex-wrap items-start gap-6 my-6 p-5 bg-ui-light rounded">
