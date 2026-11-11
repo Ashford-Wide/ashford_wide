@@ -23,7 +23,7 @@ Shortcodes are special tags that insert dynamic content into an otherwise-plain 
 | `{{< doc-button >}}` | Button linking to a downloadable document |
 | `{{< last-updated >}}` | Outputs the page's last-modified date |
 | `{{< membership-tiers >}}` | Membership tier comparison cards |
-| `{{< paypal-donate >}}`, `paypal-banner`, `paypal-flags`, `paypal-poppy`, `paypal-rememberance`, `paypal-business-annual`, `paypal-business-monthly` | PayPal payment buttons for different purposes — see [docs/technical/hugo/template_architecture.md](../technical/hugo/template_architecture.md) for the full list |
+| `{{< paypal-donate >}}`, `paypal-banner`, `paypal-flags`, `paypal-poppy`, `paypal-rememberance`, `paypal-raffle`, `paypal-business-annual`, `paypal-business-monthly` | PayPal payment buttons for different purposes — see [docs/technical/hugo/template_architecture.md](../technical/hugo/template_architecture.md) for the full list |
 | `{{< join-us-button >}}` / `{{< support-us-button >}}` | Standard call-to-action buttons |
 
 Full shortcode reference (every file, what it renders, where it's implemented): [docs/technical/hugo/template_architecture.md](../technical/hugo/template_architecture.md#shortcodes).
