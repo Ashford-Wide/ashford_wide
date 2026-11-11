@@ -32,9 +32,9 @@ Other prizes include:
 Instructions for buying a ticket online:
 - You must be over 18
 - Make a PayPal payment using the button below by inputting the total price of the tickets you want to buy
-- You must complete this step for your entry to be successful 
 - Make the payment and record your PayPal transaction number
 - Fill out the form below with all the key information to be in with a chance of winning the prize
+- You must complete this step for your entry to be successful
 
 Email [{{< param "email" >}}](mailto:{{< param "email" >}}) for more information or for other ways to pay.
 
