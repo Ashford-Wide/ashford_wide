@@ -13,7 +13,7 @@ Shortcodes are special tags that insert dynamic content into an otherwise-plain 
 | Shortcode | Use |
 |---|---|
 | `{{< param "email" >}}` | Outputs a site-wide value from `hugo.toml` (e.g. an email address) — keeps content in sync with config instead of hardcoding. See [docs/technical/hugo/configuration.md](../technical/hugo/configuration.md) for available param names. |
-| `{{< image src="/images/foo.jpg" alt="..." >}}` | Inserts an image, processed through the site's image pipeline. See [docs/editorial/images.md](images.md). |
+| `{{< image src="/images/foo.jpg" alt="..." caption="..." >}}` | Inserts an image, processed through the site's image pipeline, with an optional caption. Available in the CMS as Insert → Image. See [docs/editorial/images.md](images.md). |
 | `{{< location-pin placeId="..." >}}` | Small map-pin icon linking to a Google Maps place |
 | `{{< pin-map >}}` | Embeds a Leaflet pin/marker map |
 | `{{< road-closure-map >}}` | Embeds the Remembrance Sunday road closures map — see [docs/technical/remembrance_map.md](../technical/remembrance_map.md) |
