@@ -18,7 +18,9 @@ Cloudflare Pages runs the Hugo build itself, so there is no build step in GitHub
 | Root directory | *(leave blank)* |
 | Build cache | Enabled (**Settings → Build → Build cache**) |
 
-Hugo version is not pinned in Cloudflare Pages config — if a specific version is ever required, set the `HUGO_VERSION` environment variable in the Cloudflare Pages dashboard.
+The site targets **Hugo v0.170.0**. That version is recorded in `.hugo-version` and pinned in the accessibility CI workflow (`.github/workflows/a11y.yml`). Set the `HUGO_VERSION` environment variable to `0.170.0` in the Cloudflare Pages dashboard (**Settings → Variables and Secrets**) so production builds use the same version. Without it, Cloudflare uses its build image's default Hugo version, which may differ. When upgrading Hugo, update all three places together.
+
+Since v0.170.0, Hugo ships as a single standard binary with no separate "extended" edition. This site doesn't use Sass, so nothing else needs to change.
 
 The `--cacheDir` flag plus the dashboard's Build cache setting let Cloudflare persist Hugo's `.cache` directory between builds, so image processing isn't repeated from scratch on every deploy. Hugo is auto-detected via `hugo.toml` at the repo root; see [Cloudflare's Hugo build caching docs](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks). Cache is purged 7 days after its last read, so an idle repo could see one slower "cold" build — the [daily rebuild](#daily-rebuild) below incidentally keeps the cache warm by triggering a build every day regardless of content changes.
 
