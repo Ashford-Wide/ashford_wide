@@ -2,7 +2,6 @@ baseURL = "https://www.ashfordwide.com"
 locale = "en-GB"
 title = "Ashford Wide"
 publishDir = "public"
-paginate = 9
 buildDrafts = false
 buildFuture = true
 enableRobotsTXT = true
@@ -28,6 +27,9 @@ disableHugoGeneratorInject = true
   instagram = "https://www.instagram.com/ashfordwide"
   linkedin = "https://www.linkedin.com/company/ashford-wide/"
   googleBusinessProfile = "https://www.google.com/maps?cid=13625238142268584475"
+
+[pagination]
+  pagerSize = 9
 
 [security]
   [security.node]
