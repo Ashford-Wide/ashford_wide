@@ -1,1 +1,9 @@
-{{ partial "image.html" (dict "src" (.Get "src") "alt" (.Get "alt") "width" (.Get "width") "class" (.Get "class") "loading" (.Get "loading")) }}
+{{- $img := partial "image.html" (dict "src" (.Get "src") "alt" (.Get "alt") "width" (.Get "width") "class" (.Get "class") "loading" (.Get "loading")) -}}
+{{- with .Get "caption" -}}
+<figure>
+  {{ $img }}
+  <figcaption class="mt-2 text-caption text-muted">{{ . | $.Page.RenderString }}</figcaption>
+</figure>
+{{- else -}}
+{{ $img }}
+{{- end -}}
