@@ -25,8 +25,7 @@ jobs:
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.169.0'
-          extended: true
+          hugo-version: '0.170.0'
 
       - name: Install dependencies
         run: npm ci
