@@ -52,7 +52,7 @@ collections:
       - { label: Image, name: image, widget: image, required: false, media_folder: "/assets/images/events", public_folder: "/images/events" }
       - { label: Image Aspect, name: imageAspect, widget: select, options: ["square", "16:9"], required: false, hint: "Defaults to 16:9 if not set" }
       - { label: Image Caption, name: imageCaption, widget: string, required: false, hint: "Optional caption shown under the image on the page" }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
   - name: news
     label: News
@@ -79,7 +79,7 @@ collections:
       - { label: Image, name: image, widget: image, required: false, media_folder: "/assets/images/news", public_folder: "/images/news" }
       - { label: Image Caption, name: imageCaption, widget: string, required: false, hint: "Optional caption shown under the image on the page" }
       - { label: "Hide image on page", name: hideImage, widget: boolean, default: false, required: false, hint: "Still used for the news card and social share preview; hides just the hero photo on the article page itself" }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
   - name: pages
     label: Pages
@@ -95,7 +95,7 @@ collections:
       - { label: Description, name: description, widget: string, maxlength: 150 }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Image Caption, name: imageCaption, widget: string, required: false, hint: "Optional caption shown under the image on the page" }
-      - { label: Body, name: body, widget: markdown, required: false }
+      - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false, required: false }
 
   - name: remembrance
     label: Remembrance
@@ -108,7 +108,7 @@ collections:
           - { label: Description, name: description, widget: string, maxlength: 150 }
           - { label: Vimeo Video ID, name: videoID, widget: string, required: false, hint: "e.g. 1180234252 (from the Vimeo video URL)" }
           - { label: Video Title, name: videoTitle, widget: string, required: false }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
       - label: Order of Services
         name: order-of-services
@@ -116,7 +116,7 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
       - label: Sponsor a Poppy
         name: sponsor-a-poppy
@@ -124,7 +124,7 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
       - label: Virtual Poppy Wall
         name: virtual-poppy-wall
@@ -132,7 +132,7 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
       - label: Road Closures
         name: road-closures
@@ -140,7 +140,7 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
   - name: businesses
     label: Business Directory
