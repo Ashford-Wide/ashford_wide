@@ -39,6 +39,18 @@ To insert an image directly in the Markdown body of a page, use the `{{< image >
 {{< image src="/images/foo.jpg" alt="Description" class="w-full rounded" >}}
 ```
 
+In the CMS, use **Insert → Image** in the Body editor. It gives you fields for the image, alt text and an optional caption, and writes the shortcode for you.
+
+To add a caption, use the `caption` parameter. It's shown under the image and can include Markdown links and bold/italic:
+
+```markdown
+{{< image src="/images/foo.jpg" alt="Description" caption="Photo by [Jane Doe](https://example.com)" >}}
+```
+
+If the alt text or caption needs a double quote, write it as `\"`. The CMS does this automatically.
+
+Plain Markdown images (`![Description](/images/foo.jpg)`) also go through the image pipeline, but they can't have a caption.
+
 ## Choosing a size and shape
 
 If you're making images in Canva, the table below gives the aspect ratio to design at and the minimum size to export for each use case on the site. Treat "minimum export size" as a floor, not just a target — the pipeline will happily scale a smaller image up to fit, which makes it look soft/blurry rather than erroring. Only some use cases are auto-cropped (see the last column); where cropping does happen it's always anchored to the centre of the image with no configurable focal point, so keep the important subject in the middle of the frame rather than off to one edge.
