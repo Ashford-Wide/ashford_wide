@@ -66,6 +66,17 @@ backend:
 
 `auth_endpoint` is left at its default (`/auth`), matching the route the Worker exposes.
 
+### Body images and custom editor components
+
+`static/admin/editor-components.js` (loaded after `sveltia-cms.js` in `static/admin/index.html`) registers a `hugo-image` editor component that inserts the `{{< image >}}` shortcode, with Image, Alt text and Caption fields. The `width`, `class` and `loading` params are kept as hidden fields so existing shortcodes round-trip unchanged.
+
+Every `widget: markdown` Body field sets `editor_components: [code-block, hugo-image]` and `linked_images: false`, which removes Sveltia's built-in `image` component. That component is not safe for this site:
+
+- An image with a caption (Sveltia v0.266.0+) is saved as a raw HTML `<figure><img src="/images/...">`. Raw HTML bypasses Hugo's image pipeline, and because `media_folder` is `/assets/images`, the original file is never published, so the image 404s.
+- A plain Markdown image (`![alt](/images/...)`) is handled by `layouts/_default/_markup/render-image.html`, which routes it through `partials/image.html`. So hand-written Markdown images are fine, but captions need the shortcode.
+
+When adding another registered component, add its `id` to the `editor_components` lists in `config.yml`.
+
 ### CSP requirements
 
 `static/_headers` must allow the Worker origin in `connect-src` (the login popup calls it via `fetch`/XHR), and must allow Sveltia CMS's own asset loading:
