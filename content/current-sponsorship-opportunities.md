@@ -9,6 +9,7 @@ lastmod: 2026-09-22
     src1="/images/events/christmas/christmas_sponsorship_1.png"
     src2="/images/events/christmas/christmas_sponsorship_2.png"
     src3="/images/events/christmas/christmas_sponsorship_3.png"
+    src4="/images/christmas-tree-square-2026.jpeg"
 >}}
 
 ## Sponsor the Ashford Wide this Christmas!
