@@ -14,6 +14,8 @@
 {{- if $img -}}
   {{- $qSuffix := "" -}}
   {{- with $quality }}{{- $qSuffix = printf " q%d" . -}}{{- end -}}
+  {{/* Cap unsized output at 2000px wide — full-res AVIF encodes of large photos exhaust memory */}}
+  {{- if and (not $width) (gt $img.Width 2000) -}}{{- $width = 2000 -}}{{- end -}}
   {{- if $width -}}
     {{- $img = $img.Resize (printf "%dx %s%s" $width $format $qSuffix) -}}
   {{- else -}}
