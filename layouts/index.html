@@ -7,7 +7,7 @@
 {{- end -}}
 <section
   class="relative min-h-[420px] md:min-h-[520px] flex items-center bg-surface bg-center bg-cover bg-no-repeat text-white after:content-[''] after:absolute after:inset-0 after:bg-black/55"
-  {{ with $heroBg }}style="background-image:url('{{ . }}')"{{ end }}>
+  {{ with $heroBg }}style="background-image:url('{{ . }}'){{ with $.Params.imagePosition }};background-position:{{ . }}{{ end }}"{{ end }}>
   <div class="max-w-container mx-auto px-6 relative z-10 w-full">
     <div class="max-w-[680px]">
       <h1 class="text-h1 font-bold leading-[1.15] mb-4">{{ .Site.Params.description }}</h1>
