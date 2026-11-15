@@ -53,11 +53,11 @@ Plain Markdown images (`![Description](/images/foo.jpg)`) also go through the im
 
 ## Choosing a size and shape
 
-If you're making images in Canva, the table below gives the aspect ratio to design at and the minimum size to export for each use case on the site. Treat "minimum export size" as a floor, not just a target — the pipeline will happily scale a smaller image up to fit, which makes it look soft/blurry rather than erroring. Only some use cases are auto-cropped (see the last column); where cropping does happen it's always anchored to the centre of the image with no configurable focal point, so keep the important subject in the middle of the frame rather than off to one edge.
+If you're making images in Canva, the table below gives the aspect ratio to design at and the minimum size to export for each use case on the site. Treat "minimum export size" as a floor, not just a target — the pipeline will happily scale a smaller image up to fit, which makes it look soft/blurry rather than erroring. Only some use cases are auto-cropped (see the last column); where cropping does happen it's anchored to the centre of the image (the homepage hero is the one exception — see [Homepage hero image](#homepage-hero-image) below), so keep the important subject in the middle of the frame rather than off to one edge.
 
 | Use case | Aspect ratio | Minimum export size | Cropped automatically? |
 |---|---|---|---|
-| Homepage hero / full-width background | Wide landscape, ~2:1 | 1600×800 | Yes — centre-cropped to fit |
+| Homepage hero / full-width background | Wide landscape, ~2:1 | 1600×800 | Yes — centre-cropped by default; crop position adjustable via `imagePosition` |
 | Event image (default) | 16:9 | 1200×675 | Yes — centre-cropped |
 | Event image (`imageAspect: square`) | 1:1 | 1200×1200 | Yes — centre-cropped |
 | News article image | 16:9 | 1200×675 | Yes — centre-cropped (no square option for news) |
@@ -70,3 +70,27 @@ If you're making images in Canva, the table below gives the aspect ratio to desi
 | OG / social share image | ~1.91:1 | 1200×630 | No — used exactly as uploaded (not resized or cropped), so export at the final size and ratio |
 
 Business-member profile pages have their own hero banner (16:5, 1400×480) and promo-card (16:9) image sizing — see [docs/editorial/business_pages.md](business_pages.md) rather than duplicating it here.
+
+## Homepage hero image
+
+The homepage hero image isn't editable in the CMS. It's set in the front matter of `content/_index.md`:
+
+```yaml
+image: "/images/christmas-tree-2026.jpeg"
+imagePosition: "center 4%"
+```
+
+- `image` is the photo, stored in `assets/images/`.
+- `imagePosition` is optional and controls which part of the photo stays visible when it's cropped. It takes a CSS `background-position` value: `"center 4%"` keeps the top of the photo in view, `"center bottom"` the bottom. If you leave it out, the crop is centred.
+
+The hero is very wide on desktop (up to about 3.7:1) and close to square on phones, so how much gets cropped changes a lot between screens. Check the homepage at desktop, tablet and phone widths after changing either field. The hero also has a 55% dark overlay to keep the heading readable, so bright photos work best.
+
+### Undoing the Christmas tree hero (after Christmas)
+
+For Christmas 2026 the hero uses a portrait photo of the town Christmas tree. Its crop is anchored near the top with `imagePosition: "center 4%"` so the star stays visible. When the season is over:
+
+1. In `content/_index.md`, set `image:` back to the year-round photo: `"/images/home-primary-image.jpg"`.
+2. **Delete the `imagePosition:` line.** If you leave it in, the landscape photo will be cropped from the top instead of the centre.
+3. Check the homepage on desktop and on a phone before publishing.
+
+`ogImage` in `hugo.toml` (the image used in social media link previews) wasn't changed for Christmas, so there's nothing to undo there.
