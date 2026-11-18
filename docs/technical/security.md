@@ -15,7 +15,7 @@ Current policy summary:
 | `frame-src` | `https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com https://www.paypal.com https://forms.cloud.microsoft` | Vimeo, YouTube, Instagram, PayPal, and Microsoft Forms embeds |
 | `default-src` | `'self'` | Everything else self-hosted |
 | `manifest-src` | `'self' blob:` | Sveltia CMS dynamically generates a web app manifest as a `blob:` URL |
-| `connect-src` | `'self' data: https://unpkg.com https://api.github.com https://www.paypal.com https://aw-auth.ashford-wide.workers.dev https://www.githubstatus.com` | Sveltia CMS communicates with the GitHub API and the [aw-auth](https://github.com/Ashford-Wide/aw-auth) OAuth Worker (see [`docs/technical/cms_infra.md`](cms_infra.md)); `data:` for its branding logo; `githubstatus.com` for its backend-status indicator |
+| `connect-src` | `'self' data: https://unpkg.com https://api.github.com https://www.paypal.com https://api.paypal.com https://aw-auth.ashford-wide.workers.dev https://www.githubstatus.com` | Sveltia CMS communicates with the GitHub API and the [aw-auth](https://github.com/Ashford-Wide/aw-auth) OAuth Worker (see [`docs/technical/cms_infra.md`](cms_infra.md)); `data:` for its branding logo; `githubstatus.com` for its backend-status indicator; `api.paypal.com` for the PayPal hosted-buttons SDK (it fetches an OAuth token before loading the button config and creating the order) |
 | `object-src` | `'none'` | Prevent `<object>` and `<embed>` |
 | `base-uri` | `'self'` | Prevent `<base>` tag hijacking |
 | `form-action` | `'self' https://www.paypal.com` | PayPal donate form |
