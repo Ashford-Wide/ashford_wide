@@ -27,37 +27,15 @@ The Christmas Market takes place on Church Road, Ashford, TW15. Ashford town cen
 
 We look forward to seeing you there!
 
-Please be aware certain roads and parking spaces will be unavavile to vehicle traffic on the day of the event.
+Please be aware certain roads and parking spaces will be unavailable to vehicle traffic on the day of the event.
 
-## Want to get involved?
+## Christmas Raffle
 
-If you're interested in running a stall, please fill in this form with your business information and we will email you with booking details.
+Over £500 of prizes to be won, donated by our wonderful high street businesses. Buy 1 ticket for £1 or bundle up with 5 tickets for £4.
 
-{{< ms-form id="NEgu08n0fUW8ZxkXU5yN_ZeoR_TFYslLk399YP0cxRBUNlU3S0JSTVNKN0xCNVBEWlRGWUNJQ0NVUi4u" title="Ashford Wide Summer Fair feedback form" >}}
+Buy tickets online until 3rd December and at our Christmas Market on 2nd December. Winners announced on Friday 4th December.
 
-What you need to know about having a stall at the Ashford Wide Christmas Market: 
-
-- You will need to share your in-date Public Liabilty Insurance (PLI) certificate
-- Certain vendors may be asked to supply equipment safety certificates, risk assessments, and Food Standards hygiene rating, along with other information
-- A safe and secure gazebo or set-up
-- A list of products, services offered, or images/dimensions of your set-up (food and alcohol vendors)
-- A TENs license will be in place for the event for those serving or selling alcohol
-- We cannot accept MLMs or certain services and retain the right to refuse any seller
-
-The estimated plot fees follow which vary for stall type, these fees are only estimated and may change when you come to book:
-
-- Standard plot £50
-- Cold food and cafe £75
-- Small alcohol vendor £75
-- Bar £150
-- Desserts £125
-- Hot Food £150
-- To hire a commercial grade gazebo in addition is £60
-- Hot food vendors can access electricity for and additional £10
-
-We cannot guartantee that your stall will be the only one of its kind or that other people won't be selling the same things as you, but we try to limit the numbers of stalls of the same type and spread stalls out.
-
-For more information on stalls and how to get involved with other parts of the Christmas Market including entertainment or volunteering please email [{{< param "email" >}}](mailto:{{< param "email" >}}).
+For more information, and to buy your raffle tickets, visit our [Christmas Raffle page](/christmas-raffle/).
 
 ## Donate
 
