@@ -6,11 +6,11 @@ date: 2026-11-11
 
 {{< carousel orientation="auto"
     src1="/images/events/christmas/christmas-first-prize-2026.png"
-    alt1="Inverabrate Vivarium and Ghost Mantis and full set up"
+    alt1="Invertebrate Vivarium and Ghost Mantis and full set up"
     src2="/images/events/christmas/christmas-second-prize-2026.png"
     alt2="Tangoed Sunbeds - 60 minute tanning session "
     src3="/images/events/christmas/christmas-third-prize-2026.png"
-    alt3="Walton Meats Butchers, Ashford - Fresh whole turkey to feed upto 6/8 people"
+    alt3="Walton Meats Butchers, Ashford - Fresh whole turkey to feed up to 6/8 people"
     src4="/images/events/christmas/christmas-fourth-prize-2026.png"
     alt4="Steak Shack Ashford - £35 voucher"
     src5="/images/events/christmas/christmas-fifth-prize-2026.png"
@@ -21,9 +21,9 @@ Buy your tickets today to be entered to the Ashford Wide Christmas raffle! With 
 
 ## The Prizes
 
-- Walk On The Wildside Reptile & Aquatic Ashford - Inverabrate Vivarium / Ghost Mantis and full set up (£130)
+- Walk On The Wildside Reptile & Aquatic Ashford - Invertebrate Vivarium / Ghost Mantis and full set up (£130)
 - Tangoed sunbeds - 60 minute tanning session (£60)
-- Walton Meats Butchers, Ashford - Fresh whole turkey to feed upto 6/8 people
+- Walton Meats Butchers, Ashford - Fresh whole turkey to feed up to 6/8 people
 - Steak Shack Ashford - £35 voucher
 - Pure Accessories - Navy blue cross body camera bag with scarf (£30)
 - Card Factory Ashford - Selection of children's gifts (£100)
