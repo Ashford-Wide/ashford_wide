@@ -18,7 +18,7 @@ Shortcodes are special tags that insert dynamic content into an otherwise-plain 
 | `{{< pin-map >}}` | Embeds a Leaflet pin/marker map |
 | `{{< road-closure-map >}}` | Embeds the Remembrance Sunday road closures map — see [docs/technical/remembrance_map.md](../technical/remembrance_map.md) |
 | `{{< team >}}` | Renders the team list from `data/team.yaml` (used on the About page) |
-| `{{< carousel >}}` | Image carousel/slider |
+| `{{< carousel >}}` | Image carousel/slider (up to five images, `src1`–`src5` with `alt1`–`alt5`). Set `orientation` to choose the frame shape: `portrait` (3:4, the default), `horizontal` (16:9), or `auto` (matches the first image's shape, best when all images are the same size). See [docs/editorial/images.md](images.md). |
 | `{{< flag-grid >}}` | Grid of sponsored St George's flags |
 | `{{< doc-button >}}` | Button linking to a downloadable document |
 | `{{< last-updated >}}` | Outputs the page's last-modified date |
