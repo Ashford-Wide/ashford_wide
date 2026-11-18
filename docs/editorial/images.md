@@ -64,7 +64,7 @@ If you're making images in Canva, the table below gives the aspect ratio to desi
 | Half-width section image | 16:9 | 900×506 | Yes — centre-cropped |
 | Generic page feature image | Flexible — shown uncropped, capped at 600px tall on the page | 1200px wide | No — shown at its natural ratio, so pick a shape that already looks right uncropped |
 | `{{< image >}}` shortcode (in-body, no extra class) | Whatever suits the content | Match the intended display width | No — shown at natural ratio unless you add your own aspect-ratio class |
-| Carousel slide (`{{< carousel >}}`) | Portrait, 3:4 | 900×1200 | Yes — centre-cropped |
+| Carousel slide (`{{< carousel >}}`) | Portrait, 3:4 by default; 16:9 with `orientation="horizontal"`; any shape with `orientation="auto"` | 900×1200 (portrait) | Yes, centre-cropped to the frame. With `orientation="auto"` the frame matches the first image, so a set of same-sized images shows uncropped |
 | Flag grid (`{{< flag-grid >}}`) | Portrait, ~3:4 | 1200×1600 | Yes — centre-cropped to a fixed display height |
 | Business / member logo | Any — square or landscape both work | 500px on the longest side; a transparent-background PNG is recommended | No — letterboxed, never cropped |
 | OG / social share image | ~1.91:1 | 1200×630 | No — used exactly as uploaded (not resized or cropped), so export at the final size and ratio |
