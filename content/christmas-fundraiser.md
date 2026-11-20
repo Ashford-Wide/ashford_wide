@@ -62,3 +62,20 @@ Ashford Wide is a registered non-profit with all proceeds going back into our co
 {{< paypal-raffle >}}
 
 If you have any questions about the fundraiser, please email [{{< param "email" >}}](mailto:{{< param "email" >}}).
+
+## Terms and conditions
+
+1. This fundraiser is open to UK residents aged 18 or over.
+2. Entries cost £1 per token, or £4 for 5. Payment must be made via the PayPal link provided.
+3. Ashford Wide reserves the right to exclude entries where payment cannot be verified or the required information has not been provided.
+4. You can purchase entry tokens yat our Christmas market event as well, on the 2nd December.
+5. Numbers will be selected on Friday 4th December. Recipients will be selected at random.
+6. Recipients will be contacted using the email address provided by Paypal. If a recipient cannot be contacted within 14 days, Ashford Wide reserves the right to make another selection.
+7. Items are non-transferable and cannot be exchanged for cash.
+8. All proceeds go to support the activities of Ashford Wide CIC.
+9. Personal information will only be used to administer the fundraiser, verify entries and contact recipients. Information will be handled in accordance with Ashford Wide's privacy policy.
+10. You will receive a confirmation email confirming yourentries once you have made payment.
+
+By submitting payment with PayPal, you confirm that you have read and agree to these Terms & Conditions.
+
+Please contact [{{< param "email" >}}](mailto:{{< param "email" >}}) for other ways to pay. Entry tokens are also be available in person at the Christmas Market on the 2nd December.
