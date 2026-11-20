@@ -2,7 +2,7 @@
 title: Business Lamppost Banners
 description: Advertise your business to the people of Ashford with cost-friendly lamppost banners
 image: /images/business-banner-poster.jpg
-draft: false
+draft: true
 ---
 
 Promote your business with high street lamppost banners in Ashford town centre. Less than half the price of banners in other towns and locations!
