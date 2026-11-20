@@ -72,6 +72,7 @@ date: 2024-01-01             # optional — when the page was first published
 lastmod: 2026-07-10          # optional — when the page was last significantly updated
 image: "/images/christmas-raffle-2026.jpeg"  # optional — shown at the top of the page
 imageCaption: "Some of this year's raffle prizes"  # optional — caption shown under the image
+hideImage: true  # optional — keeps `image` for the social share preview and schema.org, hides it on the page itself
 layout: "business-directory"  # optional — overrides the default template
 ---
 ```
