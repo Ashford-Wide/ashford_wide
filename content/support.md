@@ -35,7 +35,3 @@ Find [how you can become a member](/membership) and support the work of Ashford 
 ## Sponsorship
 
 Support events in the heart of Ashford and have your brand seen by hundreds of local residents by [sponsoring](/sponsorship) a local event.
-
-## Banners
-
-Learn about about our hyper-local marketing in the heart of Ashford with [a lamppost banner](/business-lamppost-banners).
