@@ -97,6 +97,7 @@ collections:
       - { label: Last Updated, name: lastmod, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "Change this when you make a significant update to the page" }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Image Caption, name: imageCaption, widget: string, required: false, hint: "Optional caption shown under the image on the page" }
+      - { label: "Hide image on page", name: hideImage, widget: boolean, default: false, required: false, hint: "Still used for the social share preview; hides just the photo at the top of the page itself" }
       - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false, required: false }
 
   - name: remembrance
