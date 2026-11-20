@@ -93,6 +93,8 @@ collections:
     fields:
       - { label: Title, name: title, widget: string, maxlength: 60 }
       - { label: Description, name: description, widget: string, maxlength: 150 }
+      - { label: Published Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "When the page was first published" }
+      - { label: Last Updated, name: lastmod, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "Change this when you make a significant update to the page" }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Image Caption, name: imageCaption, widget: string, required: false, hint: "Optional caption shown under the image on the page" }
       - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false, required: false }
@@ -116,6 +118,8 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
+          - { label: Published Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "When the page was first published" }
+          - { label: Last Updated, name: lastmod, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "Change this when you make a significant update to the page" }
           - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
       - label: Sponsor a Poppy
@@ -124,6 +128,8 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
+          - { label: Published Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "When the page was first published" }
+          - { label: Last Updated, name: lastmod, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "Change this when you make a significant update to the page" }
           - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
       - label: Virtual Poppy Wall
@@ -132,6 +138,8 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
+          - { label: Published Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "When the page was first published" }
+          - { label: Last Updated, name: lastmod, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "Change this when you make a significant update to the page" }
           - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
       - label: Road Closures
@@ -140,6 +148,8 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, maxlength: 60 }
           - { label: Description, name: description, widget: string, maxlength: 150 }
+          - { label: Published Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "When the page was first published" }
+          - { label: Last Updated, name: lastmod, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false, hint: "Change this when you make a significant update to the page" }
           - { label: Body, name: body, widget: markdown, editor_components: [code-block, hugo-image], linked_images: false }
 
   - name: businesses
