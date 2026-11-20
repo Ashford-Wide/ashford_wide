@@ -10,8 +10,8 @@
   <div class="max-w-[800px] mx-auto px-6">
     {{ with .Params.image }}
     <figure class="mb-8">
-      <div class="rounded overflow-hidden bg-image-bg flex justify-center">
-        {{ partial "image.html" (dict "src" . "alt" $.Title "class" "max-w-full h-auto max-h-[600px]" "width" 1200) }}
+      <div class="rounded overflow-hidden bg-white flex justify-center">
+        {{ partial "image.html" (dict "src" . "alt" $.Title "class" "w-auto max-w-full h-auto max-h-[600px] object-contain" "width" 1200) }}
       </div>
       {{ with $.Params.imageCaption }}<figcaption class="mt-2 text-caption text-muted">{{ . }}</figcaption>{{ end }}
     </figure>
