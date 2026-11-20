@@ -29,13 +29,13 @@ We look forward to seeing you there!
 
 Please be aware certain roads and parking spaces will be unavailable to vehicle traffic on the day of the event.
 
-## Christmas Raffle
+## Christmas Fundraiser
 
-Over £500 of prizes to be won, donated by our wonderful high street businesses. Buy 1 ticket for £1 or bundle up with 5 tickets for £4.
+Over £500 of prizes to be won, donated by our wonderful high street businesses. Buy 1 token for £1 or bundle up with 5 tokens for £4.
 
-Buy tickets online until 3rd December and at our Christmas Market on 2nd December. Winners announced on Friday 4th December.
+Buy tokens online until 3rd December and at our Christmas Market on 2nd December. Winners announced on Friday 4th December.
 
-For more information, and to buy your raffle tickets, visit our [Christmas Raffle page](/christmas-raffle/).
+For more information, and to buy your fundraiser tickets, visit our [Christmas Raffle page](/christmas-fundraiser/).
 
 ## Donate
 
