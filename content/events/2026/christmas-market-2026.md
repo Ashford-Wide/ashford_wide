@@ -35,7 +35,7 @@ Over £500 of prizes to be won, donated by our wonderful high street businesses.
 
 Buy tokens online until 3rd December and at our Christmas Market on 2nd December. Winners announced on Friday 4th December.
 
-For more information, and to buy your fundraiser tickets, visit our [Christmas Raffle page](/christmas-fundraiser/).
+For more information, and to buy your fundraiser tickets, visit our [Christmas Fundraiser page](/christmas-fundraiser/).
 
 ## Donate
 
