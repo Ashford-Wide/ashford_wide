@@ -3,6 +3,8 @@ title: Ashford Wide Christmas Fundraiser
 description: Take home one of over £500 worth of gifts donated by Ashford's wonderful high street businesses. Entries at £1 each or 5 for £4.
 date: 2026-11-11
 lastmod: 2026-11-20
+image: /images/events/christmas/christmas-first-prize-2026.png
+hideImage: true
 ---
 
 {{< carousel orientation="auto"
