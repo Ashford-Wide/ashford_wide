@@ -68,8 +68,18 @@ hideImage: true  # optional — keeps `image` for the news card/social share, hi
 ---
 title: "Page Title"
 description: "Used in <meta name='description'> and page header subtitle."
+date: 2024-01-01             # optional — when the page was first published
+lastmod: 2026-07-10          # optional — when the page was last significantly updated
 image: "/images/christmas-raffle-2026.jpeg"  # optional — shown at the top of the page
 imageCaption: "Some of this year's raffle prizes"  # optional — caption shown under the image
 layout: "business-directory"  # optional — overrides the default template
 ---
 ```
+
+`date` and `lastmod` are Hugo's standard date fields. Neither is shown on the page by default; they are used for:
+
+- **Schema.org output** — `date` becomes `datePublished`; `lastmod` becomes `dateModified` and `lastReviewed`. Each is omitted if not set.
+- **Sitemap** — `lastmod` is output as `<lastmod>` in `sitemap.xml`, which tells search engines when to recrawl.
+- **`{{< last-updated >}}` shortcode** — renders "Last updated: Month YYYY" from `lastmod`, wherever you place it in the page body (see `content/data.md`).
+
+If `lastmod` is omitted it falls back to `date` (Git-based last-modified dates are not enabled). Saving a page in the CMS does **not** update `lastmod` automatically — change the **Last Updated** field yourself when you make a meaningful content change, but not for typo fixes. Both fields are available in the CMS for the **Pages** collection and the four Remembrance pages.
