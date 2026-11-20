@@ -6,8 +6,6 @@ hero_image: ''
 date: 2024-01-01
 lastmod: 2026-07-10
 ---
-> [!NOTE]
-> [Learn about our high street business banners](/business-lamppost-banners)
 
 ## Join Ashford Wide
 
@@ -49,7 +47,6 @@ As an Ashford Wide business member, you'll benefit from:
 You can still support our work even if membership is not for you.
 
 - [Donate to us directly or via Paypal](/support)
-- [Learn about our high street business banners](/business-lamppost-banners)
 - [Learn about sponsorship packages](/sponsorship)
 - [Sponsor a Remembrance Day Poppy or donate to Remembrance Sunday](/remembrance-day/sponsor-a-poppy/)
 - [Volunteering at our events](/volunteer/)
