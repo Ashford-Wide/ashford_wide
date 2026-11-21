@@ -4,7 +4,7 @@
 |------|-------|
 | **Empty `content/business-member/` folder** | `layouts/business-member/single.html` and its docs describe a working business profile-page template, but no page currently exists in `content/business-member/` — the one example page that used to live there was created and deleted. The template is currently dead code from a content perspective. |
 | **Dead partial: `layouts/partials/jsonld/closures.html`** | Hand-written `Event`/`Place` JSON-LD for the road closures page — not called by any template. Either wire it up or delete it. |
-| **daisyui is loaded for a single component** | Loaded in `assets/css/main.css` purely for its `carousel`/`carousel-item` classes, used only in `layouts/shortcodes/carousel.html`. Worth knowing before assuming it can be safely removed. |
+| **daisyui is loaded for a single component** | Loaded in `assets/css/main.css` with `include: carousel`, purely for its `carousel`/`carousel-item` classes, used only in `layouts/shortcodes/carousel.html`. Replacing it with a few lines of custom CSS would remove the dependency entirely. |
 | **No `data/members.yaml`** | Some older code comments/docs referenced a members data file distinct from the business directory; it never existed. The homepage member logo marquee reads from `data/businesses.yaml` instead — see [docs/technical/hugo/data_files.md](hugo/data_files.md). |
 
 ## Cloudflare Features
