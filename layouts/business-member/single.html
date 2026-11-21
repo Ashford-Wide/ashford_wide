@@ -6,7 +6,7 @@
 <div class="relative aspect-[16/5] overflow-hidden">
   {{ partial "image.html" (dict "src" .Params.header_image "alt" .Title "class" "w-full h-full object-cover" "loading" "eager" "width" 1400) }}
   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-  <div class="absolute bottom-0 left-0 right-0 px-6 pb-8" style="max-width: var(--width-container); margin: 0 auto;">
+  <div class="absolute bottom-0 left-0 right-0 max-w-container mx-auto px-6 pb-8">
     <h1 class="text-h2 font-bold text-white">{{ .Title }}</h1>
     {{ with .Description }}<p class="mt-1 text-white/80 text-body-md">{{ . }}</p>{{ end }}
   </div>
@@ -103,7 +103,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {{ range . }}
       {{- $section := . -}}
-      <div class="bg-white rounded overflow-hidden" style="box-shadow: var(--shadow);">
+      <div class="bg-white rounded overflow-hidden shadow">
         {{ with $section.image }}
         {{ partial "image.html" (dict "src" . "alt" ($section.title | default "") "class" "w-full aspect-[16/9] object-cover" "width" 800) }}
         {{ end }}
@@ -123,7 +123,7 @@
 
 <div class="py-10">
   <div class="max-w-container mx-auto px-6">
-    <a href="/business-directory" class="inline-block px-6 py-[0.6rem] rounded text-body-sm font-semibold cursor-pointer border-2 border-surface bg-surface text-white hover:bg-white hover:text-surface transition-colors leading-[1.4]">&larr; Back to Business Directory</a>
+    <a href="/business-directory" class="button button-dark">&larr; Back to Business Directory</a>
   </div>
 </div>
 
