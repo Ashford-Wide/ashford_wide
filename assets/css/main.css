@@ -1,7 +1,16 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+
+/* Only scan files that can contain class names. Paths are relative to the
+   project root (Hugo Pipes runs PostCSS from there). Without source(none),
+   Tailwind also scans docs/ and generates CSS for classes mentioned there. */
+@source "layouts";
+@source "content";
+@source "assets/js";
+
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: false;
+  include: carousel; /* only component used (shortcodes/carousel.html) */
 }
 
 @theme {
@@ -23,7 +32,6 @@
   --text-body: 0.95rem;
   --text-body-md: 1.05rem;
   --text-body-lg: 1.2rem;
-  --text-subtitle: 1.15rem;
   --text-display-sm: 1.75rem;
   --text-display-lg: 4rem;
   --text-h1: clamp(2rem,5vw,3.25rem);
@@ -34,9 +42,6 @@
 
   --shadow: 0 2px 8px rgba(0,0,0,.1);
   --shadow-lg: 0 .5rem 1.5rem rgba(0,0,0,.2);
-
-  --translate-lift: 3px;
-  --translate-lift-sm: 2px;
 
   --spacing-header: 72px;
   --width-container: 1200px;
@@ -57,9 +62,31 @@
   }
 }
 
+/* Buttons — combine .button with one colour variant; layout utilities
+   (inline-flex, gap-2, mt-2, no-underline) can be added alongside.
+   Defined with @utility (not @layer components) so they sit in the utilities
+   layer and still win over .article-content's prose link styles when a button
+   shortcode is used inside page content. */
+@utility button {
+  @apply inline-block px-6 py-[0.6rem] rounded border-2 text-body-sm font-semibold leading-[1.4]
+    cursor-pointer transition-colors;
+}
+
+@utility button-primary {
+  @apply border-secondary bg-secondary text-white hover:bg-white hover:text-secondary;
+}
+
+@utility button-dark {
+  @apply border-surface bg-surface text-white hover:bg-white hover:text-surface;
+}
+
+@utility button-outline-light {
+  @apply border-white bg-transparent text-white hover:bg-white hover:text-surface;
+}
+
 @layer components {
   .nav-open {
-    @apply !flex flex-col items-start fixed top-header left-0 right-0 bg-white p-6 shadow-lg z-(--z-nav-overlay);
+    @apply flex! flex-col items-start fixed top-header left-0 right-0 bg-white p-6 shadow-lg z-(--z-nav-overlay);
   }
 
   .article-content {
@@ -67,8 +94,21 @@
       prose-headings:text-surface
       prose-a:text-surface prose-a:underline
       prose-strong:text-surface
-      prose-code:before:content-none prose-code:after:content-none;
-    color: var(--color-text);
+      prose-code:before:content-none prose-code:after:content-none
+      prose-code:font-normal prose-code:px-[0.5em] prose-code:py-[0.2em];
+
+    /* Pin the typography plugin's remaining colours to the site palette
+       (otherwise it falls back to its own grey scale). */
+    --tw-prose-body: var(--color-text);
+    --tw-prose-quotes: var(--color-text);
+    --tw-prose-quote-borders: var(--color-text);
+    --tw-prose-bullets: var(--color-text);
+    --tw-prose-counters: var(--color-text);
+    --tw-prose-hr: var(--color-text);
+    --tw-prose-code: var(--color-text);
+    --tw-prose-captions: var(--color-text);
+    --tw-prose-th-borders: var(--color-text);
+    --tw-prose-td-borders: var(--color-text);
   }
 
   .article-content .leaflet-container img {
@@ -102,7 +142,7 @@
   }
 
   .liturgy-heading-lede {
-    @apply !mt-0;
+    @apply mt-0!;
   }
 
   .liturgy-speaker {
