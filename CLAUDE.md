@@ -36,7 +36,7 @@ No separate lint command — Hugo build validates templates; Tailwind errors sur
 
 ### Assets
 
-- `assets/css/main.css` — Tailwind v4 entry point. Custom design tokens defined with `@theme`; custom component classes in `@layer components`. Key tokens: `--color-surface` (#212529), `--color-secondary` (#287d3d), `--color-text` (#333).
+- `assets/css/main.css` — Tailwind v4 entry point. Custom design tokens defined with `@theme`; custom component classes in `@layer components`; button classes (`button` + `button-primary`/`button-dark`/`button-outline-light`) via `@utility` — use these rather than repeating long utility strings. Tailwind only scans `layouts/`, `content/` and `assets/js/` (`@source` lines). Key tokens: `--color-surface` (#212529), `--color-secondary` (#287d3d), `--color-text` (#333).
 - `assets/js/` — Three scripts: `nav.js` (mobile hamburger nav), `business-directory.js` (category filtering), `vimeo-facade.js` (lazy video loading). Hugo Pipes minifies and fingerprints these in production.
 
 ### CMS
