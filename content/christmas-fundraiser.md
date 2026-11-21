@@ -7,19 +7,6 @@ image: /images/events/christmas/christmas-first-prize-2026.png
 hideImage: true
 ---
 
-{{< carousel orientation="auto"
-    src1="/images/events/christmas/christmas-first-prize-2026.png"
-    alt1="Invertebrate Vivarium and Ghost Mantis and full set up"
-    src2="/images/events/christmas/christmas-second-prize-2026.png"
-    alt2="Tangoed Sunbeds - 60 minute tanning session "
-    src3="/images/events/christmas/christmas-third-prize-2026.png"
-    alt3="Walton Meats Butchers, Ashford - Fresh whole turkey to feed up to 6/8 people"
-    src4="/images/events/christmas/christmas-fourth-prize-2026.png"
-    alt4="Steak Shack Ashford - £35 voucher"
-    src5="/images/events/christmas/christmas-fifth-prize-2026.png"
-    alt5="Pure Accessories - Navy blue cross body camera bag with scarf"
->}}
-
 Get your tokens today to be entered to the Ashford Wide Christmas Community Fundraiser! With over £500 worth of gifts to be won, donated by our wonderful high street businesses.
 
 ## Santa's Special Gifts
