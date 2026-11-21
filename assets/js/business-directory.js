@@ -19,7 +19,7 @@
         card.style.display = show ? '' : 'none';
         if (show) visible++;
       });
-      empty.style.display = visible === 0 ? 'block' : 'none';
+      empty.hidden = visible !== 0;
     });
   });
 })();
