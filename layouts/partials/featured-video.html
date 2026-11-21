@@ -6,12 +6,12 @@
 {{- with resources.GetRemote (printf "https://vimeo.com/api/oembed.json?url=https://vimeo.com/%s" .) -}}
 {{- with . | transform.Unmarshal -}}{{- $thumb = .thumbnail_url -}}{{- end -}}
 {{- end -}}
-<div class="rounded overflow-hidden" style="padding:56.25% 0 0 0;position:relative;">
+<div class="relative aspect-video rounded overflow-hidden">
   <div id="vimeo-facade" role="button" tabindex="0" aria-label="Play video: {{ $videoTitle }}"
     data-video-id="{{ . }}"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;{{ if $thumb }}background:url('{{ $thumb }}') center/cover no-repeat #212529;{{ else }}background:#212529;{{ end }}">
-    <div
-      style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(33,37,41,0.82);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+    class="absolute inset-0 cursor-pointer bg-surface bg-cover bg-center bg-no-repeat"
+    {{- with $thumb }} style="background-image:url('{{ . }}')"{{ end }}>
+    <div class="absolute top-1/2 left-1/2 -translate-1/2 size-16 rounded-full bg-surface/82 flex items-center justify-center">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
         <polygon points="6,3 20,12 6,21" />
       </svg>
