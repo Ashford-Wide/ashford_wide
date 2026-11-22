@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div class="relative z-0 my-6 rounded-lg overflow-hidden">
+  <div id="christmas-market-map" class="h-[420px]"></div>
+</div>
+<script>
+(function () {
+  var map = L.map('christmas-market-map');
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+  fetch('/geojson/christmas.geojson')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var layer = L.geoJSON(data, {
+        // Skip unnamed features (e.g. stray zero-area shapes left over from editing in geojson.io)
+        filter: function (feature) {
+          return feature.properties && feature.properties.name;
+        },
+        // Points with an "emoji" property get that emoji as their icon; anything else falls back to Leaflet's default pin
+        pointToLayer: function (feature, latlng) {
+          var emoji = feature.properties.emoji;
+          if (!emoji) {
+            return L.marker(latlng, { title: feature.properties.name });
+          }
+          return L.marker(latlng, {
+            title: feature.properties.name,
+            alt: feature.properties.name,
+            icon: L.divIcon({
+              className: 'text-[32px] leading-none text-center',
+              html: '<span role="img" aria-label="' + feature.properties.name + '">' + emoji + '</span>',
+              iconSize: [36, 36],
+              iconAnchor: [18, 32],
+              popupAnchor: [0, -28]
+            })
+          });
+        },
+        style: function () {
+          return {
+            color: '#287d3d',
+            weight: 3,
+            opacity: 0.9,
+            fillColor: '#287d3d',
+            fillOpacity: 0.3
+          };
+        },
+        onEachFeature: function (feature, layer) {
+          layer.bindPopup('<strong>' + feature.properties.name + '</strong>');
+        }
+      }).addTo(map);
+      map.fitBounds(layer.getBounds(), { padding: [20, 20] });
+    });
+}());
+</script>
