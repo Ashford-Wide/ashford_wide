@@ -78,6 +78,7 @@ Full reference: [Hugo shortcodes](https://gohugo.io/shortcodes/) · [Custom shor
 | `shortcodes/carousel.html` | Image carousel/slider |
 | `shortcodes/flag-grid.html` | Grid of sponsored St George's flags (town-flags page) |
 | `shortcodes/aed-map.html` | Leaflet map of defibrillator locations, reads `static/geojson/aed.geojson` |
+| `shortcodes/christmas-market-map.html` | Leaflet map of the Christmas Market zones, reads `static/geojson/christmas.geojson` (shaded polygons plus point markers — points with an `emoji` property show that emoji, other points a default pin; popup shows each feature's `name`; unnamed features are skipped) |
 | `shortcodes/pin-map.html` | Leaflet pin/marker map (used for the virtual poppy wall, reads `static/geojson/poppies-2025.geojson`) |
 | `shortcodes/road-closure-map.html` | Leaflet map of Remembrance Sunday road closures — see [docs/technical/remembrance_map.md](../remembrance_map.md) |
 | `shortcodes/location-pin.html` | Small inline map-pin icon linking to a Google Maps Place ID |
