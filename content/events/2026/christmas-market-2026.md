@@ -21,6 +21,12 @@ Get ready to step into the festive spirit at the Ashford Wide Christmas Market! 
 - A visit from Santa Claus and a free Santa's grotto
 - Beautifully lit streets and a warm, festive atmosphere
 
+## Santa's Grotto
+
+Book a FREE half hour timeslot for your little ones to visit Santa's grotto at Ashford Wides Christmas Market (includes a free gift):
+
+{{< support-us-button href="https://www.trybooking.com/uk/event/129280" text="Book a Grotto Visit" >}}
+
 ## Getting There
 
 The Christmas Market takes place on Church Road, Ashford, TW15. Ashford town centre is easily accessible by train, bus, and on foot from the town's car parks.
