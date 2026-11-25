@@ -1,0 +1,21 @@
+{{- /* Image is optional — drop a file at this path and it appears; until then the block is text-only */ -}}
+{{- $image := "/images/events/christmas/santa-grotto.JPG" -}}
+{{- $hasImage := resources.Get (strings.TrimPrefix "/" $image) -}}
+<section class="py-8 bg-ui-light">
+  <div class="max-w-container mx-auto px-6">
+    <div class="grid grid-cols-1 {{ if $hasImage }}md:grid-cols-2{{ end }} items-center gap-12">
+      <div>
+        <h2 class="text-h3 font-bold mb-3">Visit Santa's Grotto</h2>
+        <p class="text-muted text-body-md mb-6">Book a free half-hour timeslot for your little ones to visit Santa's grotto at the Ashford Wide Christmas Market, including a free gift.</p>
+        <p class="text-muted text-body-md mb-6">Wednesday 2nd December, 6pm&ndash;8pm, at Ashford Library on Church Road. Places are limited, so book early.</p>
+        <a href="https://www.trybooking.com/uk/event/129280"
+          class="button button-primary">Book a Grotto Visit</a>
+      </div>
+      {{- if $hasImage }}
+      <div class="md:order-first">
+        {{ partial "image.html" (dict "src" $image "alt" "Santa's grotto at the Ashford Wide Christmas Market" "class" "w-full h-auto rounded" "width" 900) }}
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
