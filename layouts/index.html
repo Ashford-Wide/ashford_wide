@@ -22,9 +22,9 @@
   </div>
 </section>
 
-{{/* ── Homepage promo (set params.activePromo in hugo.toml to enable) ── */}}
-{{- with .Site.Params.activePromo -}}
-  {{- partial (printf "homepage/%s.html" .) $ -}}
+{{/* ── Homepage promos (set params.activePromo in hugo.toml — a slug or a list of slugs) ── */}}
+{{- range slice | append .Site.Params.activePromo -}}
+  {{- with . -}}{{- partial (printf "homepage/%s.html" .) $ -}}{{- end -}}
 {{- end -}}
 
 {{/* ── Upcoming Events ── */}}
