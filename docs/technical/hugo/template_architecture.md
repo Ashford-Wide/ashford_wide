@@ -140,7 +140,7 @@ Outputs nothing if `startTime` is not set. Outputs `10am` if only `startTime` is
 
 ## Homepage Promotions
 
-Seasonal or campaign-specific promotional blocks can be added to the homepage without touching `index.html`. Each promotion is a self-contained partial in `layouts/partials/homepage/`. One can be activated at a time via `hugo.toml`.
+Seasonal or campaign-specific promotional blocks can be added to the homepage without touching `index.html`. Each promotion is a self-contained partial in `layouts/partials/homepage/`. One or more can be activated via `hugo.toml`.
 
 ### Enabling a promo
 
@@ -151,13 +151,19 @@ Set `activePromo` in `hugo.toml` to the filename of the partial (without `.html`
   activePromo = "best-dressed-window"
 ```
 
+To show several promos, use a list — they render in the order given:
+
+```toml
+  activePromo = ["christmas-raffle", "santas-grotto"]
+```
+
 Set it to an empty string (or omit it) to show nothing:
 
 ```toml
   activePromo = ""
 ```
 
-The block renders between the hero and the About section on the homepage.
+The blocks render between the hero and the Upcoming Events section on the homepage.
 
 ### Adding a new promo
 
@@ -168,18 +174,23 @@ Create a new file in `layouts/partials/homepage/`, e.g. `layouts/partials/homepa
 | File | Campaign |
 |------|----------|
 | `partials/homepage/best-dressed-window.html` | Best Dressed Window & Best Dressed Christmas Tree voting |
+| `partials/homepage/business-network-event.html` | Business Networking event RSVP |
+| `partials/homepage/christmas-raffle.html` | Christmas Fundraiser tickets |
+| `partials/homepage/remembrance.html` | Remembrance |
+| `partials/homepage/santas-grotto.html` | Santa's Grotto booking (TryBooking). Image is optional — it appears once `assets/images/events/christmas/santa-grotto.JPG` exists |
+| `partials/homepage/summer-fair.html` | Summer Fair |
 
 ### How it works
 
 `layouts/index.html` contains:
 
 ```go
-{{- with .Site.Params.activePromo -}}
-  {{- partial (printf "homepage/%s.html" .) $ -}}
+{{- range slice | append .Site.Params.activePromo -}}
+  {{- with . -}}{{- partial (printf "homepage/%s.html" .) $ -}}{{- end -}}
 {{- end -}}
 ```
 
-`with` short-circuits when `activePromo` is empty, so no partial is loaded. When set, Hugo resolves the partial path at build time — an invalid name will cause a build error, catching typos early.
+`slice | append` turns a single string into a one-item list and leaves a list as it is, so both forms work. `with` skips empty values, so `""` loads nothing. For each slug, Hugo resolves the partial path at build time — an invalid name will cause a build error, catching typos early.
 
 ## Navigation
 
