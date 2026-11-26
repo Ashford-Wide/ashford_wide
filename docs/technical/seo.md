@@ -186,6 +186,28 @@ Per [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288) and [RFC 9727 §3](https:
 Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"
 ```
 
-- `rel="api-catalog"` points at the (empty) [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727) API catalog at `/.well-known/api-catalog` — see `static/.well-known/api-catalog`. Empty `item` array is a deliberate "we checked, there are zero public APIs" statement, distinct from a 404.
+- `rel="api-catalog"` points at the [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727) API catalog at `/.well-known/api-catalog` — see `static/.well-known/api-catalog`. Its only `item` is the `/.well-known/search` endpoint provided by [Search for Agents](#search-for-agents-well-knownsearch); keep the catalog in sync if that feature is ever turned off.
 - `rel="describedby"` points at `/llms.txt`, the same markdown index described above.
 - `service-desc`/`service-doc` (also registered relation types for this use case) are intentionally not used — they describe an actual API specification/documentation, and this site doesn't publish one.
+
+## Search for agents (`/.well-known/search`)
+
+The site uses Cloudflare's [Search for Agents](https://blog.cloudflare.com/search-for-agents/) feature, which gives AI agents a search endpoint on our own domain. It is a **zone-level setting in the Cloudflare dashboard, not something in this repo**. It was enabled through the zone's Quick Actions. Cloudflare crawls the live site into an AI Search instance, which you can find under **AI → AI Search** in the account. Reranking, cache and recrawl settings are changed there.
+
+What Cloudflare provides at the edge, with no code in this repo:
+
+- `GET /.well-known/search?q=<query>`, which returns matching page excerpts as markdown with relevance scores. A `QUERY` request with the query in the body does the same search.
+- `agent:` meta tags injected into the `<head>` of every HTML response, describing the endpoint. They don't appear in our templates or in `hugo server` output.
+
+What the repo does to advertise the endpoint:
+
+- `static/.well-known/api-catalog` lists `/.well-known/search` as its only `item`.
+- `layouts/index.llms.txt` has a "Search" section describing the endpoint.
+
+Notes:
+
+- The endpoint is served by Cloudflare before requests reach Pages, so nothing should be placed at `static/.well-known/search`.
+- The index is built from the rendered HTML, so past events are indexed alongside upcoming ones. Agents need to check dates in the excerpts.
+- Usage is billed under AI Search pricing, which includes a free allowance. This site is small enough to stay well within it.
+- Agent access is still subject to the zone's bot management, AI Crawl Control and WAF rules. If search returns nothing, check that those aren't blocking the indexing crawler.
+- `/.well-known/agent-skills/index.json` deliberately still lists no skills (see `security.md`). The search endpoint is advertised through the API catalog and `llms.txt` instead.
