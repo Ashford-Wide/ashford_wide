@@ -31,7 +31,6 @@ baseof.html
 | `layouts/_default/business-directory.html` | Business directory — data-driven, category filter, JS filtering |
 | `layouts/business-member/single.html` | Single business member profile page — hero image, logo + contact details panel, social icons row, optional intro prose, two-column promo section grid |
 | `layouts/_default/list.html` | Default section list (fallback) |
-| `layouts/_default/taxonomy.html` | Tag/taxonomy pages |
 | `layouts/sitemap.xml` | Custom sitemap — `<loc>` and `<lastmod>` only, no priority/changefreq |
 | `layouts/404.html` | 404 page |
 
