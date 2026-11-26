@@ -78,7 +78,6 @@ The site has Atom 1.0 feeds built automatically at the same URLs previously used
 - `/index.xml` - Site-wide feed
 - `/events/index.xml` - Events feed
 - `/news/index.xml` - News feed
-- `/tags/index.xml` - Tags taxonomy feed
 - `/remembrance-day/index.xml` - Remembrance Day section feed
 
 Hugo's RSS output format is used internally (keeping URLs as `index.xml`), but the template at `layouts/_default/rss.xml` outputs valid Atom 1.0 XML. The autodiscovery `<link>` in `head.html` uses `type="application/atom+xml"`.
