@@ -55,7 +55,7 @@ The file is served with `Content-Type: application/trafficadvice+json`, set via 
 
 ## Agent skills discovery (`/.well-known/agent-skills/index.json`)
 
-`static/.well-known/agent-skills/index.json` is served at `/.well-known/agent-skills/index.json` per the [Agent Skills Discovery RFC](https://github.com/cloudflare/agent-skills-discovery-rfc) v0.2.0. The `skills` array is deliberately empty — this site has no agent-invocable capabilities (no API, no callable actions) for an agent to run, so an honest empty list is published rather than fabricating skill entries (which would also require inventing SHA-256 digests for artifacts that don't exist). Same pattern as the empty `/.well-known/api-catalog`. No `_headers` entry is needed — `.json` already gets the correct `application/json` Content-Type from Cloudflare Pages' default mime inference.
+`static/.well-known/agent-skills/index.json` is served at `/.well-known/agent-skills/index.json` per the [Agent Skills Discovery RFC](https://github.com/cloudflare/agent-skills-discovery-rfc) v0.2.0. The `skills` array is deliberately empty — this site has no agent-invocable capabilities (no API, no callable actions) for an agent to run, so an honest empty list is published rather than fabricating skill entries (which would also require inventing SHA-256 digests for artifacts that don't exist). The search endpoint provided by Cloudflare's Search for Agents (see `seo.md`) is advertised through `/.well-known/api-catalog` and `/llms.txt`, not here. No `_headers` entry is needed — `.json` already gets the correct `application/json` Content-Type from Cloudflare Pages' default mime inference.
 
 ## Caching (not security-related)
 
