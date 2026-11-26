@@ -34,6 +34,12 @@ This workflow POSTs to a Cloudflare Pages Deploy Hook. The hook URL is stored as
 
 To create or replace the hook: Cloudflare Pages dashboard → your project → **Settings → Builds & deployments → Deploy Hooks**. After generating the URL, add or update the repository secret at **GitHub → Settings → Secrets and variables → Actions → Repository secrets**.
 
+## Cloudflare zone features
+
+Some agent-facing behaviour is configured in the Cloudflare dashboard for the `ashfordwide.com` zone, not in this repo:
+
+- **Search for Agents**: serves `/.well-known/search` and injects `agent:` meta tags into HTML responses. Its index lives under **AI → AI Search**. See [seo.md](seo.md#search-for-agents-well-knownsearch).
+
 ## GitHub Actions workflows
 
 | Workflow | Trigger | Purpose |
