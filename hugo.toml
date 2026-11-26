@@ -6,6 +6,7 @@ buildDrafts = false
 buildFuture = true
 enableRobotsTXT = true
 disableHugoGeneratorInject = true
+disableKinds = ["taxonomy", "term"]
 
 [params]
   legalName = "Ashford Wide"
@@ -40,9 +41,6 @@ disableHugoGeneratorInject = true
 
 [markup.goldmark.renderer]
   unsafe = true
-
-[taxonomies]
-  tag = "tags"
 
 [privacy]
   [privacy.instagram]
