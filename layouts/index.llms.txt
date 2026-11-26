@@ -23,3 +23,7 @@ Ashford Wide is a community organisation in Ashford, Surrey. This file indexes t
 - [{{ $s.Title }}]({{ $mdURL }})
 {{- end }}
 {{ end }}
+
+## Search
+
+Full-text search across the site is available at `{{ "/.well-known/search" | absURL }}?q=<query>` (GET), or via `QUERY {{ "/.well-known/search" | absURL }}` with the query in the request body. Results are excerpts from site pages, returned as markdown with relevance scores.
