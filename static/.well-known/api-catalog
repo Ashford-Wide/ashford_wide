@@ -2,7 +2,12 @@
   "linkset": [
     {
       "anchor": "https://www.ashfordwide.com/.well-known/api-catalog",
-      "item": []
+      "item": [
+        {
+          "href": "https://www.ashfordwide.com/.well-known/search",
+          "title": "Site search for agents (Cloudflare Search for Agents)"
+        }
+      ]
     }
   ]
 }
