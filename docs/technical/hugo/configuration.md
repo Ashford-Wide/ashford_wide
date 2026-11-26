@@ -14,6 +14,7 @@ buildDrafts = false
 buildFuture = true       # Required — events are often future-dated
 enableRobotsTXT = true
 disableHugoGeneratorInject = true
+disableKinds = ["taxonomy", "term"]  # No tags/categories pages, feeds or sitemap entries
 
 [params]
   legalName = "Ashford Wide"                 # Legal registered name — used in org JSON-LD
@@ -45,9 +46,6 @@ disableHugoGeneratorInject = true
 
 [markup.goldmark.renderer]
   unsafe = true   # Allows raw HTML inside Markdown
-
-[taxonomies]
-  tag = "tags"
 
 [privacy]
   [privacy.instagram]
