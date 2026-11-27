@@ -16,9 +16,9 @@ image: /images/events/spring-market.jpg
 
 The news and events templates automatically process the image through the site's image pipeline. The same path is used for the OG image and JSON-LD structured data — both will also point to the processed AVIF.
 
-### Event image aspect ratio
+### Event and news image aspect ratio
 
-Event images default to a 16:9 crop. To display the image square instead, add `imageAspect: square` to the event's front matter:
+Event and news images default to a 16:9 crop. To display the image square instead (on both the card and the page), add `imageAspect: square` to the front matter:
 
 ```yaml
 ---
@@ -60,7 +60,8 @@ If you're making images in Canva, the table below gives the aspect ratio to desi
 | Homepage hero / full-width background | Wide landscape, ~2:1 | 1600×800 | Yes — centre-cropped by default; crop position adjustable via `imagePosition` |
 | Event image (default) | 16:9 | 1200×675 | Yes — centre-cropped |
 | Event image (`imageAspect: square`) | 1:1 | 1200×1200 | Yes — centre-cropped |
-| News article image | 16:9 | 1200×675 | Yes — centre-cropped (no square option for news) |
+| News article image (default) | 16:9 | 1200×675 | Yes — centre-cropped |
+| News article image (`imageAspect: square`) | 1:1 | 1200×1200 | Yes — centre-cropped |
 | Half-width section image | 16:9 | 900×506 | Yes — centre-cropped |
 | Generic page feature image | Flexible — shown uncropped, capped at 600px tall on the page | 1200px wide | No — shown at its natural ratio, so pick a shape that already looks right uncropped |
 | `{{< image >}}` shortcode (in-body, no extra class) | Whatever suits the content | Match the intended display width | No — shown at natural ratio unless you add your own aspect-ratio class |
