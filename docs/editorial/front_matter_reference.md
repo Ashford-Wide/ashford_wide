@@ -57,6 +57,7 @@ date: 2026-03-15
 author: "Ashford Wide Team"
 description: "Short summary shown on news cards."
 image: "/images/news/spring-events.jpg"  # optional
+imageAspect: square  # optional — "square" for a 1:1 crop; defaults to 16:9
 imageCaption: "Daffodils in Ashford"  # optional — caption shown under the image on the page
 hideImage: true  # optional — keeps `image` for the news card/social share, hides the hero photo on the article page itself
 ---
