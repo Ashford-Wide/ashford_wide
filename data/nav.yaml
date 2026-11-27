@@ -18,6 +18,9 @@ items:
   - name: "Sponsorship"
     url: "/sponsorship"
     weight: 60
+  - name: "News"
+    url: "/news"
+    weight: 70
   - name: "Contact Us"
     url: "/contact"
     weight: 80
